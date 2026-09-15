@@ -488,6 +488,43 @@
   .s-profile .sub { font-size: 24px; margin-bottom: 26px; }
   .s-profile .deco { display: none; }
 
+  /* ============ Daraxt (tree): sulola / avlodlar ============ */
+  .s-tree .twrap { display: grid; grid-template-columns: 560px 1fr; gap: 40px; align-items: center; flex: 1; min-height: 0; }
+  .s-tree h1 { font-size: 58px; line-height: 1.06; margin: 0 0 16px; letter-spacing: -0.02em; }
+  .s-tree .sub { font-size: 23px; margin-bottom: 22px; }
+  .s-tree svg.tr { width: 100%; height: 640px; overflow: visible; }
+  .s-tree .tl { fill: none; stroke: var(--ink-soft); stroke-width: 3; opacity: 0.45; stroke-dasharray: 800; stroke-dashoffset: 800; }
+  .slide.active.s-tree .tl { animation: draw 0.8s var(--ease) both; animation-delay: calc(var(--d) * 1ms); }
+  .s-tree .tn { opacity: 0; transform-box: fill-box; transform-origin: center; }
+  .slide.active.s-tree .tn { animation: nodeIn 0.6s cubic-bezier(0.2, 1.1, 0.3, 1) both; animation-delay: calc(var(--d) * 1ms); }
+  .s-tree .tn .dot { fill: var(--nc, var(--a)); }
+  .s-tree .tn .halo { fill: var(--nc, var(--a)); opacity: 0.16; }
+  .s-tree .tn .em { text-anchor: middle; dominant-baseline: central; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .s-tree .tn .lb { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 17px; fill: var(--ink); text-anchor: middle; paint-order: stroke; stroke: var(--bg); stroke-width: 6px; stroke-linejoin: round; }
+  .s-tree .tn .lb2 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; fill: var(--ink-soft); text-anchor: middle; }
+  .s-tree .rowlbl { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; fill: var(--a); }
+  .s-tree .deco { display: none; }
+
+  /* ============ Ildiz (roots): shaxsiyat → leverage → natija ============ */
+  .s-roots .rwrap { display: grid; grid-template-columns: 1fr 640px; gap: 40px; align-items: center; flex: 1; min-height: 0; }
+  .s-roots h1 { font-size: 58px; line-height: 1.06; margin: 0 0 16px; letter-spacing: -0.02em; }
+  .s-roots .sub { font-size: 23px; margin-bottom: 22px; }
+  .s-roots svg.rt { width: 100%; height: 660px; overflow: visible; }
+  .s-roots .ground { stroke: var(--rule); stroke-width: 6; stroke-linecap: round; }
+  .s-roots .soil { fill: var(--as); opacity: 0.6; }
+  .s-roots .root { fill: none; stroke: #8B5E34; stroke-width: 10; stroke-linecap: round; stroke-dasharray: 500; stroke-dashoffset: 500; }
+  .slide.active.s-roots .root { animation: draw 1.2s ease-out both; animation-delay: calc(var(--d) * 1ms); }
+  .s-roots .trunk { fill: #8B5E34; transform-origin: 350px 420px; transform-box: view-box; transform: scaleY(0); }
+  .slide.active.s-roots .trunk { animation: growY 1s var(--ease) 1.6s both; }
+  .s-roots .crown { transform-origin: 350px 380px; transform-box: view-box; opacity: 0; }
+  .slide.active.s-roots .crown { animation: nodeIn 0.9s cubic-bezier(0.2, 1.1, 0.3, 1) 2.4s both; }
+  .s-roots .fruit { opacity: 0; transform-box: fill-box; transform-origin: center; }
+  .slide.active.s-roots .fruit { animation: nodeIn 0.5s cubic-bezier(0.2, 1.2, 0.3, 1) both; animation-delay: calc(3.1s + var(--d) * 1ms); }
+  .s-roots .tag { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; text-anchor: middle; opacity: 0; }
+  .slide.active.s-roots .tag { animation: fadeIn1 0.6s ease both; animation-delay: calc(var(--d) * 1ms); }
+  .s-roots .tag.t1 { fill: #8B5E34; } .s-roots .tag.t2 { fill: var(--ink); } .s-roots .tag.t3 { fill: var(--red); }
+  .s-roots .deco { display: none; }
+
   /* ============ To'xtang slaydi ============ */
   .s-stop { justify-content: center; align-items: center; text-align: center; background: var(--red); color: #fff; }
   .s-stop .toprule { background: #fff; }
@@ -988,6 +1025,52 @@
       <div class="rv" style="--i:1"><div class="avwrap"><div class="avring"></div><div class="av"><img src="${esc(s.img)}" alt=""></div></div>${s.name ? '<div class="name">' + esc(s.name) + (s.role ? '<span>' + fmt(s.role) + '</span>' : '') + '</div>' : ''}</div>
       <div class="txt"><h1 class="rv" style="--i:2">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:3">' + fmt(s.s) + '</div>' : ''}${s.items ? '<ol class="plist2">' + s.items.map((t, j) => '<li class="rv" style="--i:' + (4 + j) + '"><b>' + (j + 1) + '</b><span>' + fmt(t) + '</span></li>').join('') + '</ol>' : ''}</div>
     </div>${note(s.note)}`;
+
+  R.tree = (s) => {
+    const W = 960, H = 640, cols = ['var(--blue)', 'var(--green)', 'var(--orange)', 'var(--red)'];
+    const kids = s.kids || [], n = kids.length;
+    const leaves = s.leaves || null;
+    const rx = W / 2, ry = 90, kr = n > 6 ? 30 : 40, ky = leaves ? 330 : 380, ly = 560;
+    const gap = Math.min(150, (W - 80) / Math.max(1, n));
+    const kx = (i) => rx + (i - (n - 1) / 2) * gap;
+    let out = '';
+    const root = s.root || { icon: '👤', label: '' };
+    out += `<g class="tn" style="--d:200;--nc:var(--a)"><circle class="halo" cx="${rx}" cy="${ry}" r="66"/><circle class="dot" cx="${rx}" cy="${ry}" r="50"/><text class="em" x="${rx}" y="${ry}" style="font-size:44px">${esc(root.icon)}</text><text class="lb" x="${rx}" y="${ry + 82}">${esc(root.label)}</text>${root.sub ? '<text class="lb2" x="' + rx + '" y="' + (ry + 104) + '">' + esc(root.sub) + '</text>' : ''}</g>`;
+    kids.forEach((k, i) => {
+      const x = kx(i), d = 500 + i * 140;
+      out += `<path class="tl" style="--d:${d}" d="M${rx},${ry + 50} C${rx},${ry + 150} ${x},${ky - 130} ${x},${ky - kr}"/>`;
+      out += `<g class="tn" style="--d:${d + 200};--nc:${cols[i % 4]}"><circle class="halo" cx="${x}" cy="${ky}" r="${kr + 12}"/><circle class="dot" cx="${x}" cy="${ky}" r="${kr}"/><text class="em" x="${x}" y="${ky}" style="font-size:${kr > 30 ? 34 : 26}px">${esc(k.icon || '')}</text>${k.label ? '<text class="lb" x="' + x + '" y="' + (ky + kr + 26) + '" style="font-size:' + (n > 6 ? 14 : 17) + 'px">' + esc(k.label) + '</text>' : ''}</g>`;
+      if (leaves && leaves[i] != null) {
+        const d2 = 500 + n * 140 + i * 120;
+        out += `<path class="tl" style="--d:${d2}" d="M${x},${ky + kr} L${x},${ly - 30}"/>`;
+        out += `<g class="tn" style="--d:${d2 + 150};--nc:${cols[(i + 2) % 4]}"><circle class="dot" cx="${x}" cy="${ly}" r="26" style="opacity:0.9"/><text class="em" x="${x}" y="${ly}" style="font-size:22px">${esc(s.leafIcon || '🏠')}</text><text class="lb" x="${x}" y="${ly + 48}" style="font-size:14px">${esc(leaves[i])}</text></g>`;
+      }
+    });
+    if (s.rowLabel) out += `<text class="rowlbl tn" style="--d:${500 + n * 140}" x="0" y="${ky - kr - 34}">${esc(s.rowLabel)}</text>`;
+    if (leaves && s.leafLabel) out += `<text class="rowlbl tn" style="--d:${500 + n * 260}" x="0" y="${ly - 60}">${esc(s.leafLabel)}</text>`;
+    return `${kicker(s.k)}<div class="twrap">
+      <div class="txt"><h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}${s.items ? '<ol class="plist2">' + s.items.map((t, j) => '<li class="rv" style="--i:' + (3 + j) + '"><b>' + (j + 1) + '</b><span>' + fmt(t) + '</span></li>').join('') + '</ol>' : ''}</div>
+      <div class="rv" style="--i:2"><svg class="tr" viewBox="0 0 ${W} ${H}">${out}</svg></div>
+    </div>${note(s.note)}`;
+  };
+
+  R.roots = (s) => {
+    const fruits = [[300, 200], [380, 170], [440, 250], [280, 280], [350, 300], [410, 330], [250, 220]];
+    const rootsD = ['M350,420 C330,470 290,500 240,545', 'M350,420 C365,480 405,510 445,560', 'M350,420 C340,470 300,560 300,605', 'M350,420 C372,478 425,495 480,515', 'M350,420 C345,470 335,540 365,595', 'M350,420 C325,470 260,480 215,500'];
+    const svg = `<rect class="soil" x="0" y="420" width="700" height="230" rx="0"/>
+      ${rootsD.map((d, i) => '<path class="root" style="--d:' + (300 + i * 180) + '" d="' + d + '"/>').join('')}
+      <line class="ground" x1="20" y1="420" x2="680" y2="420"/>
+      <rect class="trunk" x="326" y="245" width="48" height="178" rx="12"/>
+      <g class="crown"><circle cx="350" cy="230" r="140" fill="#16A34A"/><circle cx="240" cy="280" r="95" fill="#22C55E"/><circle cx="460" cy="280" r="95" fill="#22C55E"/><circle cx="350" cy="150" r="90" fill="#4ADE80" opacity="0.9"/></g>
+      ${fruits.map((f, i) => '<circle class="fruit" style="--d:' + (i * 140) + '" cx="' + f[0] + '" cy="' + f[1] + '" r="15" fill="#E11D48" stroke="#fff" stroke-width="4"/>').join('')}
+      <text class="tag t1" style="--d:1300" x="350" y="640">${esc((s.tags && s.tags[0]) || 'Shaxsiyat')}</text>
+      <text class="tag t2" style="--d:2400" x="530" y="340">${esc((s.tags && s.tags[1]) || 'Leverage')}</text>
+      <text class="tag t3" style="--d:3600" x="350" y="40">${esc((s.tags && s.tags[2]) || 'Natija')}</text>`;
+    return `${kicker(s.k)}<div class="rwrap">
+      <div class="txt"><h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}${s.items ? '<ol class="plist2">' + s.items.map((t, j) => '<li class="rv" style="--i:' + (3 + j) + '"><b>' + (j + 1) + '</b><span>' + fmt(t) + '</span></li>').join('') + '</ol>' : ''}</div>
+      <div class="rv" style="--i:2"><svg class="rt" viewBox="0 0 700 660">${svg}</svg></div>
+    </div>${note(s.note)}`;
+  };
 
   R.section = (s) => `${heroIcon(s)}
     <div class="num rv" style="--i:0">${fmt(s.n || '')}</div>
