@@ -22,6 +22,14 @@ module.exports = {
 
     { t: 'curve', color: 'blue', icon: '🧠', k: 'Knowledge management · qaydlarni yig\'ib borish', h: 'Eshitganingizdan qanchasi esda qoladi?', points: [{ x: 'Hozir', v: 100 }, { x: '1 soatdan keyin', v: 44 }, { x: '1 kundan keyin', v: 33 }, { x: '2 kundan keyin', v: 28 }], big: '72%', bigLabel: 'ikki kunda unutiladi', side: 'Shuning uchun bilimni yig\'ib borish tizimi kerak. Vosita: *Obsidian.*' },
 
+    { t: 'brain', color: 'green', k: 'Knowledge management · qaydlarni yig\'ib borish', h: 'Building your *second brain*', s: 'Ikkinchi miyangizni quring: bilim boshda emas, tizimda saqlanadi.', title: 'Obsidian · bog\'langan qaydlar',
+      steps: [
+        { icon: '📒', h: 'Daftar yo\'qoladi, esdan chiqadi', p: 'Qog\'oz ham, xotira ham ishonchsiz', c: '#FFE4E6' },
+        { icon: '🗂️', h: 'Knowledge management', p: 'Bilimni tizimli yig\'ib borish kerak', c: '#FFEDD5' },
+        { icon: '🧠', h: 'Second brain — ikkinchi miya', p: 'Hamma qaydlar bir joyda va o\'zaro bog\'langan', c: '#DCFCE7' },
+        { icon: '💻', h: 'Obsidian dasturi', p: 'Biz ikkinchi miyani shu yerda quramiz', tool: true }
+      ] },
+
     { t: 'section', icon: '💡', n: '1', h: 'Unique knowledge — noyob bilim', s: 'Birinchi richak' },
 
     { t: 'vs', k: 'How · noyob bilim qanday yig\'iladi?', h: 'Bir nechta sohani bitta odamda birlashtirish', a: { h: 'Misol: muhandis', tone: 'neutral', items: ['Fizik fikrlash', 'Muhandislik', 'Biznes management', 'Risk management', 'Work ethics', 'Leadership', 'Learning', 'Programming', 'Multi-industrial system thinking'] }, b: { h: 'Misol: men', tone: 'gold', items: ['Ingliz tili', 'Teaching', 'Learning', 'Business management', 'Marketing', 'Leadership', 'Strategy', 'Psychology'] }, note: 'Why: *siz bilan raqobat qilish qiyin bo\'lib qoladi.*' },
