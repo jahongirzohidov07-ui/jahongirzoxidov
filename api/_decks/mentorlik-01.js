@@ -30,6 +30,16 @@ module.exports = {
         { icon: '💻', h: 'Obsidian dasturi', p: 'Biz ikkinchi miyani shu yerda quramiz', tool: true }
       ] },
 
+    { t: 'circles', color: 'blue', k: 'Har bir mavzuda 3 ta savol', h: 'What\'s our *Why?*', s: 'Har bir o\'rgangan narsamizga doim shu uchta savolga javob beramiz.',
+      rings: [
+        { label: 'WHY', short: '?', h: 'Nega?', p: 'Maqsadimiz: nima uchun buni qilamiz' },
+        { label: 'HOW', short: '⚙', h: 'Qanday?', p: 'Buni qanday qilamiz' },
+        { label: 'WHAT', short: '✓', h: 'Nima?', p: 'Nima qilamiz va qanday natija olamiz' }
+      ] },
+
+    { t: 'pulley', color: 'orange', k: 'Leverage — richak nima?', h: 'Richak qancha *ko\'p* bo\'lsa, hayot yuki shuncha *yengil*', load: 'HAYOT YUKI',
+      cap: 'Biz shu dasturda *9 ta richakni* o\'rganamiz. Har biri qo\'shilgani sari hayot yuki yengillashib boraveradi.' },
+
     { t: 'section', icon: '💡', n: '1', h: 'Unique knowledge — noyob bilim', s: 'Birinchi richak' },
 
     { t: 'vs', k: 'How · noyob bilim qanday yig\'iladi?', h: 'Bir nechta sohani bitta odamda birlashtirish', a: { h: 'Misol: muhandis', tone: 'neutral', items: ['Fizik fikrlash', 'Muhandislik', 'Biznes management', 'Risk management', 'Work ethics', 'Leadership', 'Learning', 'Programming', 'Multi-industrial system thinking'] }, b: { h: 'Misol: men', tone: 'gold', items: ['Ingliz tili', 'Teaching', 'Learning', 'Business management', 'Marketing', 'Leadership', 'Strategy', 'Psychology'] }, note: 'Why: *siz bilan raqobat qilish qiyin bo\'lib qoladi.*' },

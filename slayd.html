@@ -285,6 +285,103 @@
   @keyframes pulse { 0% { transform: scale(0.85); opacity: 0.7; } 100% { transform: scale(1.5); opacity: 0; } }
   .s-brain .folio-bg { opacity: 0.07; }
 
+  /* ============ Oltin doira (circles): WHY / HOW / WHAT ============ */
+  .s-circles .cwrap { display: grid; grid-template-columns: 640px 1fr; gap: 60px; align-items: center; flex: 1; min-height: 0; }
+  .s-circles .rings { position: relative; width: 620px; height: 620px; margin: 0 auto; }
+  .s-circles .orbit { position: absolute; inset: -22px; border-radius: 50%; border: 3px dashed var(--a); opacity: 0.3; }
+  .slide.active.s-circles .orbit { animation: spin 60s linear infinite, fadeTo 1s var(--ease) 1.6s both; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes fadeTo { from { opacity: 0; } to { opacity: 0.3; } }
+  .s-circles .ring { position: absolute; border-radius: 50%; display: flex; align-items: flex-end; justify-content: center; opacity: 0; transform-origin: center; box-shadow: 0 14px 40px rgba(27,31,42,0.10); }
+  .s-circles .ring b { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: 0.14em; padding-bottom: 24px; }
+  .s-circles .ring.i2 { inset: 0; background: var(--rb2, #BFDBFE); color: var(--rf2, #1E3A8A); }
+  .s-circles .ring.i1 { inset: 95px; background: var(--rb1, #FDE68A); color: var(--rf1, #78350F); }
+  .s-circles .ring.i0 { inset: 190px; background: var(--rb0, var(--orange)); color: var(--rf0, #fff); align-items: center; }
+  .s-circles .ring.i0 b { padding: 0; font-size: 38px; }
+  .slide.active.s-circles .ring { animation: ringIn 0.9s cubic-bezier(0.2, 1.1, 0.3, 1) both; }
+  .slide.active.s-circles .ring.i0 { animation-delay: 0.35s; }
+  .slide.active.s-circles .ring.i1 { animation-delay: 0.8s; }
+  .slide.active.s-circles .ring.i2 { animation-delay: 1.25s; }
+  @keyframes ringIn { from { opacity: 0; transform: scale(0.15); } to { opacity: 1; transform: none; } }
+  .s-circles .pulse { position: absolute; inset: 190px; border-radius: 50%; border: 4px solid var(--orange); opacity: 0; transform-origin: center; }
+  .slide.active.s-circles .pulse { animation: pulse 2.4s ease-out 2s infinite; }
+  .s-circles h1 { font-size: 66px; line-height: 1.04; margin: 0 0 18px; letter-spacing: -0.02em; }
+  .s-circles .sub { font-size: 24px; margin-bottom: 30px; }
+  .s-circles .legend { display: flex; flex-direction: column; gap: 12px; }
+  .s-circles .lg { display: flex; align-items: center; gap: 18px; background: var(--card); border: 1px solid var(--card-line); box-shadow: var(--shadow); border-radius: 18px; padding: 14px 20px 14px 14px; }
+  .s-circles .lg .sw { flex: none; width: 58px; height: 58px; border-radius: 14px; display: grid; place-items: center; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 20px; }
+  .s-circles .lg b { display: block; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink); line-height: 1.2; }
+  .s-circles .lg b em { font-style: normal; color: var(--a); }
+  .s-circles .lg span { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 17px; color: var(--ink-soft); margin-top: 3px; line-height: 1.3; }
+  .s-circles .lg.i0 .sw { background: var(--rb0, var(--orange)); color: var(--rf0, #fff); }
+  .s-circles .lg.i1 .sw { background: var(--rb1, #FDE68A); color: var(--rf1, #78350F); }
+  .s-circles .lg.i2 .sw { background: var(--rb2, #BFDBFE); color: var(--rf2, #1E3A8A); }
+
+  /* ============ Richak misoli (lever): 3 ta panel ============ */
+  .s-lever .lwrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; flex: 1; min-height: 0; align-items: stretch; }
+  .s-lever .lp { background: var(--card); border: 1px solid var(--card-line); border-radius: 24px; box-shadow: var(--shadow); padding: 20px 24px 18px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .s-lever .lp::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--pc); }
+  .s-lever .lp .tag { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pc); }
+  .s-lever .lp h3 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 24px; margin: 6px 0 0; color: var(--ink); }
+  .s-lever .lp p { margin: 6px 0 0; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.4; color: var(--ink-soft); min-height: 44px; }
+  .s-lever .lp svg { width: 100%; height: 262px; overflow: visible; margin-top: 4px; }
+  .s-lever .lp .hand { font-size: 40px; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .s-lever .lp .face { font-size: 54px; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .s-lever .lp .lbl { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 20px; fill: var(--ink); }
+  .s-lever .lp .kg { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; fill: #fff; text-anchor: middle; }
+  .s-lever .lp .ground { stroke: var(--rule); stroke-width: 4; stroke-linecap: round; }
+  .s-lever .lp .rock { fill: #64748B; }
+  .s-lever .lp .beam-bar { fill: #B45309; }
+  .s-lever .lp .ful { fill: var(--ink-soft); }
+  .s-lever .lp .arrow { stroke: var(--pc); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  .s-lever .beam { transform-box: view-box; transform-origin: var(--ox) var(--oy); }
+  .slide.active.s-lever .beam { animation: tilt 1.8s cubic-bezier(0.3, 0.9, 0.3, 1) both; animation-delay: var(--d); }
+  @keyframes tilt { 0% { transform: rotate(0deg); } 40% { transform: rotate(0deg); } 100% { transform: rotate(var(--ang)); } }
+  .slide.active.s-lever .shake { animation: shake 0.9s ease-in-out 0.9s 2; transform-box: view-box; transform-origin: center; }
+  @keyframes shake { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-3px, 0); } 75% { transform: translate(3px, 0); } }
+  .s-lever .lp .force { margin-top: auto; padding-top: 12px; display: flex; align-items: center; gap: 14px; }
+  .s-lever .lp .force b { font-family: 'Fraunces', serif; font-weight: 700; font-size: 46px; line-height: 1; color: var(--pc); letter-spacing: -0.02em; white-space: nowrap; }
+  .s-lever .lp .force .bw { flex: 1; height: 16px; border-radius: 8px; background: var(--rule); overflow: hidden; }
+  .s-lever .lp .force .bar { height: 100%; border-radius: 8px; background: var(--pc); width: var(--w); transform-origin: left; transform: scaleX(0); }
+  .slide.active.s-lever .force .bar { animation: growX 1s var(--ease) both; animation-delay: var(--d); }
+  @keyframes growX { to { transform: scaleX(1); } }
+  .s-lever .lp .force span { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+  .s-lever .lp.p0 { --pc: var(--red); } .s-lever .lp.p1 { --pc: var(--orange); } .s-lever .lp.p2 { --pc: var(--green); }
+
+  /* ============ Bloklar (pulley): richak qancha ko'p — yuk shuncha yengil ============ */
+  .s-pulley .pwrap { display: grid; grid-template-columns: 1fr 460px; gap: 40px; flex: 1; min-height: 0; align-items: center; }
+  .s-pulley svg.scene { width: 100%; height: 540px; overflow: visible; display: block; }
+  .s-pulley .h { margin-bottom: 22px; }
+  .s-pulley .deco { display: none; }
+  .s-pulley .cap { margin-top: 14px; font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.4; color: var(--ink-soft); }
+  .s-pulley .beam { fill: var(--ink-soft); }
+  .s-pulley .hatch, .s-pulley .floor { stroke: var(--rule); stroke-width: 3; stroke-linecap: round; }
+  .s-pulley .floor { stroke-width: 5; }
+  .s-pulley .hang { stroke: var(--ink-soft); stroke-width: 5; }
+  .s-pulley .pul { opacity: 0; transform: scale(0.3); transform-box: fill-box; transform-origin: center; transition: opacity 0.4s var(--ease), transform 0.5s cubic-bezier(0.2, 1.2, 0.3, 1); }
+  .s-pulley .pul.on { opacity: 1; transform: none; }
+  .s-pulley .pul .o { fill: #fff; stroke: var(--ink); stroke-width: 6; }
+  .s-pulley .pul .i { fill: var(--ink); }
+  .s-pulley .load { transition: transform 0.55s var(--ease); }
+  .s-pulley .load rect { fill: #334155; }
+  .s-pulley .load .lt { fill: #fff; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: 0.12em; text-anchor: middle; }
+  .s-pulley .load .ls { fill: #CBD5E1; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 20px; text-anchor: middle; }
+  .s-pulley .rope { fill: none; stroke: #B45309; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+  .s-pulley .rope.draw { stroke-dasharray: 6000; stroke-dashoffset: 6000; animation: draw 0.6s ease-out forwards; }
+  .s-pulley .man { font-size: 150px; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .s-pulley .fk { fill: var(--a); font-family: 'Fraunces', serif; font-weight: 700; font-size: 54px; letter-spacing: -0.02em; }
+  .s-pulley .fl { fill: var(--ink-soft); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .s-pulley .lv { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .s-pulley .lv li { display: flex; align-items: center; gap: 12px; padding: 5px 14px 5px 7px; border-radius: 12px; background: var(--card); border: 1px solid var(--card-line); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 19px; color: var(--muted); opacity: 0.45; transform: translateX(14px); transition: all 0.45s var(--ease); }
+  .s-pulley .lv li.on { opacity: 1; color: var(--ink); transform: none; box-shadow: var(--shadow); border-color: var(--a); }
+  .s-pulley .lv li .n { flex: none; width: 34px; height: 34px; border-radius: 10px; background: var(--as); color: var(--a); display: grid; place-items: center; font-size: 15px; font-weight: 800; }
+  .s-pulley .lv li.on .n { background: var(--a); color: #fff; }
+  .s-pulley .lv li .ic { font-size: 22px; line-height: 1; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .s-pulley .meter { margin-top: 14px; display: flex; align-items: baseline; gap: 14px; font-family: 'Inter', sans-serif; }
+  .s-pulley .meter b { font-family: 'Fraunces', serif; font-weight: 700; font-size: 54px; line-height: 1; color: var(--a); letter-spacing: -0.02em; }
+  .s-pulley .meter span { color: var(--ink-soft); font-size: 18px; font-weight: 600; }
+  .s-pulley .meter em { font-style: normal; color: var(--ink); font-weight: 800; }
+
   /* ============ To'xtang slaydi ============ */
   .s-stop { justify-content: center; align-items: center; text-align: center; background: var(--red); color: #fff; }
   .s-stop .toprule { background: #fff; }
@@ -690,6 +787,59 @@
     </div>`;
   };
 
+  R.circles = (s) => {
+    const rings = s.rings || [{ label: 'WHY', h: 'Nega?', p: 'Maqsad: nima uchun buni qilamiz' }, { label: 'HOW', h: 'Qanday?', p: 'Buni qanday qilamiz' }, { label: 'WHAT', h: 'Nima?', p: 'Nima qilamiz va natijamiz' }];
+    const ringsHtml = rings.map((r, i) => '<div class="ring i' + i + '"><b>' + esc(r.label) + '</b></div>').reverse().join('');
+    const legend = rings.map((r, i) => '<div class="lg i' + i + ' rv" style="--i:' + (3 + i * 4) + '"><div class="sw">' + esc(r.short || (i + 1)) + '</div><div><b>' + esc(r.label) + ' · <em>' + fmt(r.h) + '</em></b>' + (r.p ? '<span>' + fmt(r.p) + '</span>' : '') + '</div></div>').join('');
+    return `${kicker(s.k)}<div class="cwrap">
+      <div class="rings"><div class="orbit"></div>${ringsHtml}<div class="pulse"></div></div>
+      <div class="txt"><h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}<div class="legend">${legend}</div></div>
+    </div>`;
+  };
+
+  R.lever = (s) => {
+    const P = s.panels || [
+      { tag: 'Richaksiz', h: 'Qo\'l bilan ko\'tarish', p: 'Butun og\'irlik sizning yelkangizda. Yordamchi yo\'q.', kg: '100 kg', w: '100%', face: '😫', cap: 'ko\'tarolmaydi' },
+      { tag: 'Qisqa richak', h: 'Yelka qisqa', p: 'Tayanch nuqta toshga yaqin, lekin richak qisqa — kuch ikki barobar kamayadi.', kg: '50 kg', w: '50%', face: '🙂', cap: 'ikki barobar oson' },
+      { tag: 'Uzun richak', h: 'Yelka uzun', p: 'Tayanch nuqta toshga yaqin, richak uzun — o\'sha tosh o\'n barobar yengil.', kg: '10 kg', w: '10%', face: '😎', cap: 'bir barmoq bilan' }
+    ];
+    const rock = (x, base, w, h, kg) => `<path class="rock" d="M${x - w / 2},${base} C${x - w / 2 - 6},${base - h * 0.6} ${x - w * 0.3},${base - h} ${x},${base - h} C${x + w * 0.38},${base - h + 2} ${x + w / 2 + 4},${base - h * 0.5} ${x + w / 2 - 6},${base} Z"/><text class="kg" x="${x}" y="${base - h * 0.42}">${esc(kg)}</text>`;
+    const arrow = (x, y1, y2, sw) => `<path class="arrow" style="stroke-width:${sw}" d="M${x},${y1} L${x},${y2} M${x - 16},${y2 - 18} L${x},${y2} L${x + 16},${y2 - 18}"/>`;
+    const svgs = [
+      // 0: richaksiz
+      `<line class="ground" x1="20" y1="225" x2="420" y2="225"/><g class="shake">${rock(150, 225, 150, 100, '100 kg')}</g>
+       <text class="face" x="330" y="120" text-anchor="middle">${esc(P[0].face)}</text>${arrow(330, 205, 150, 10).replace('L330,150 M314,132 L330,150 L346,132', 'L330,150 M314,168 L330,150 L346,168')}
+       <text class="lbl" x="330" y="245" text-anchor="middle" style="font-size:16px;fill:var(--pc)">${esc(P[0].cap)}</text>`,
+      // 1: qisqa richak (tayanch 200, yelka 90→350)
+      `<line class="ground" x1="20" y1="225" x2="420" y2="225"/><polygon class="ful" points="200,180 170,225 230,225"/>
+       <g class="beam" style="--ox:200px;--oy:180px;--ang:12deg;--d:${0.9}s"><rect class="beam-bar" x="90" y="166" width="260" height="14" rx="7"/>${rock(125, 166, 110, 75, '100 kg')}${arrow(350, 72, 150, 10)}<text class="hand" x="350" y="52" text-anchor="middle">👇</text></g>
+       <text class="face" x="270" y="120" text-anchor="middle">${esc(P[1].face)}</text>
+       <text class="lbl" x="350" y="245" text-anchor="middle" style="font-size:16px;fill:var(--pc)">${esc(P[1].cap)}</text>`,
+      // 2: uzun richak (tayanch 150, yelka 90→430)
+      `<line class="ground" x1="20" y1="225" x2="440" y2="225"/><polygon class="ful" points="150,180 122,225 178,225"/>
+       <g class="beam" style="--ox:150px;--oy:180px;--ang:9deg;--d:${1.5}s"><rect class="beam-bar" x="90" y="166" width="340" height="14" rx="7"/>${rock(122, 166, 110, 75, '100 kg')}${arrow(425, 112, 152, 7)}<text class="hand" x="425" y="98" text-anchor="middle" style="font-size:28px">👇</text></g>
+       <text class="face" x="290" y="120" text-anchor="middle">${esc(P[2].face)}</text>
+       <text class="lbl" x="370" y="245" text-anchor="middle" style="font-size:16px;fill:var(--pc)">${esc(P[2].cap)}</text>`
+    ];
+    const panels = P.map((p, i) => `<div class="lp p${i} rv" style="--i:${2 + i * 2}"><div class="tag">${fmt(p.tag)}</div><h3>${fmt(p.h)}</h3>${p.p ? '<p>' + fmt(p.p) + '</p>' : ''}
+      <svg viewBox="0 0 440 250">${svgs[i] || ''}</svg>
+      <div class="force"><b>${esc(p.kg)}</b><div class="bw"><div class="bar" style="--w:${esc(p.w)};--d:${0.6 + i * 0.5}s"></div></div><span>${esc(p.fl || 'kuch kerak')}</span></div></div>`).join('');
+    return `${kicker(s.k)}<h1 class="h small rv" style="--i:1">${fmt(s.h)}</h1><div class="lwrap">${panels}</div>${note(s.note)}`;
+  };
+
+  R.pulley = (s) => {
+    const items = s.items || [
+      { icon: '💡', h: 'Noyob bilim' }, { icon: '🔗', h: 'Noyob aloqalar' }, { icon: '💰', h: 'Kapital' }, { icon: '👥', h: 'Jamoa' }, { icon: '🏠', h: 'Oila' },
+      { icon: '📣', h: 'Auditoriya' }, { icon: '🤝', h: 'Sherik' }, { icon: '🏅', h: 'Obro\'' }, { icon: '🌟', h: 'Shaxsiyat' }
+    ];
+    const li = items.map((it, j) => `<li><span class="n">${j + 1}</span><span class="ic">${esc(it.icon || '')}</span><span>${fmt(it.h)}</span></li>`).join('');
+    return `${kicker(s.k)}<h1 class="h small rv" style="--i:1">${fmt(s.h)}</h1>
+      <div class="pwrap">
+        <div class="rv" style="--i:2"><svg class="scene" viewBox="0 0 880 580" data-n="${items.length}" data-load="${esc(s.load || 'HAYOT YUKI')}" data-step="${s.step || 520}"></svg></div>
+        <div class="rv" style="--i:3"><ul class="lv">${li}</ul><div class="meter"><b class="kuch">100 kg</b><span>kuch kerak · <em class="cnt">1</em> ta richak</span></div>${s.cap ? '<div class="cap">' + fmt(s.cap) + '</div>' : ''}</div>
+      </div>`;
+  };
+
   R.section = (s) => `${heroIcon(s)}
     <div class="num rv" style="--i:0">${fmt(s.n || '')}</div>
     <h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
@@ -820,6 +970,54 @@
     });
   }
 
+  /* ---- bloklar sahnasi (pulley) ---- */
+  const PU = { TX: [210, 298, 386, 474, 562], TY: 100, BX: [254, 342, 430, 518], LX: 190, LW: 380, LH: 116, L0: 396, R: 26, HAND: [762, 400], RISE: 12 };
+  function pulleyBuild(svg) {
+    const { TX, TY, BX, LX, LW, LH, L0, R } = PU;
+    let h = '<rect class="beam" x="40" y="36" width="800" height="18" rx="9"/>';
+    for (let x = 60; x <= 820; x += 30) h += `<line class="hatch" x1="${x}" y1="34" x2="${x + 14}" y2="18"/>`;
+    h += '<line class="floor" x1="40" y1="566" x2="840" y2="566"/>';
+    TX.forEach((x, j) => { h += `<g class="pul t" data-i="${2 * j + 1}"><line class="hang" x1="${x}" y1="54" x2="${x}" y2="${TY - R}"/><circle class="o" cx="${x}" cy="${TY}" r="${R}"/><circle class="i" cx="${x}" cy="${TY}" r="8"/></g>`; });
+    h += '<g class="load">';
+    BX.forEach((x, j) => { h += `<g class="pul b" data-i="${2 * j + 2}"><line class="hang" x1="${x}" y1="${L0 - 34}" x2="${x}" y2="${L0 + 4}"/><circle class="o" cx="${x}" cy="${L0 - 34}" r="${R}"/><circle class="i" cx="${x}" cy="${L0 - 34}" r="8"/></g>`; });
+    h += `<rect x="${LX}" y="${L0}" width="${LW}" height="${LH}" rx="16"/><text class="lt" x="${LX + LW / 2}" y="${L0 + 58}">${esc(svg.dataset.load)}</text><text class="ls" x="${LX + LW / 2}" y="${L0 + 94}">100 kg</text></g>`;
+    h += '<path class="rope" d=""/>';
+    h += '<text class="man" x="800" y="556" text-anchor="middle">🧍</text>';
+    h += '<text class="fl" x="800" y="306" text-anchor="middle">kuch</text><text class="fk" x="800" y="362" text-anchor="middle">100 kg</text>';
+    svg.innerHTML = h;
+  }
+  function pulleyRope(k, dy) {
+    const { TX, TY, BX, L0, R, HAND } = PU;
+    const top = L0 - dy;
+    let d = `M${TX[0] - R},${top}`;
+    for (let i = 1; i <= k; i++) {
+      if (i % 2) { const x = TX[(i - 1) / 2]; d += ` L${x - R},${TY} A${R},${R} 0 0 1 ${x + R},${TY}`; }
+      else { const x = BX[i / 2 - 1], y = top - 34; d += ` L${x - R},${y} A${R},${R} 0 0 0 ${x + R},${y}`; }
+    }
+    return d + ` L${HAND[0]},${HAND[1]}`;
+  }
+  function pulleyStep(slideEl, svg, k) {
+    const dy = (k - 1) * PU.RISE;
+    svg.querySelectorAll('.pul').forEach(p => p.classList.toggle('on', +p.dataset.i <= k));
+    svg.querySelector('.load').style.transform = 'translateY(' + (-dy) + 'px)';
+    const rope = svg.querySelector('.rope');
+    rope.setAttribute('d', pulleyRope(k, dy)); rope.classList.remove('draw'); void rope.getBoundingClientRect(); rope.classList.add('draw');
+    const f = Math.round(100 / k) + ' kg';
+    svg.querySelector('.fk').textContent = f;
+    const kuch = slideEl.querySelector('.kuch'), cnt = slideEl.querySelector('.cnt');
+    if (kuch) kuch.textContent = f; if (cnt) cnt.textContent = k;
+    slideEl.querySelectorAll('.lv li').forEach((li, j) => li.classList.toggle('on', j < k));
+  }
+  function runPulley(slideEl, instant) {
+    const svg = slideEl.querySelector('svg.scene'); if (!svg) return;
+    pulleyBuild(svg);
+    const N = +svg.dataset.n, step = +svg.dataset.step || 520;
+    if (instant) { pulleyStep(slideEl, svg, N); return; }
+    let k = 1; pulleyStep(slideEl, svg, 1);
+    const tick = () => { if (!slideEl.classList.contains('active') || k >= N) return; k++; pulleyStep(slideEl, svg, k); setTimeout(tick, step); };
+    setTimeout(tick, 1500);
+  }
+
   function show(i, dir) {
     if (i < 0 || i >= slides.length) return;
     if (cur >= 0) slides[cur].classList.remove('active', 'in', 'back');
@@ -828,6 +1026,7 @@
     s.classList.add('active', dir === 'back' ? 'back' : 'in');
     frags(i).forEach(f => f.classList.toggle('on', dir === 'back'));
     if (dir !== 'back') countUp(s);
+    runPulley(s, dir === 'back');
     history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1));
     updateHud();
   }
