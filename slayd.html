@@ -182,6 +182,34 @@
   .s-cover.vB .lesson { color: var(--ink-soft); }
   .s-cover .toprule, .s-cover .folio-bg { display: none; }
 
+
+  /* ============ Foto slayd ============ */
+  .s-photo { padding: 0; }
+  .s-photo .img { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .s-photo.full .ov { position: absolute; inset: 0; background: linear-gradient(100deg, var(--a) 0%, var(--a) 34%, color-mix(in srgb, var(--a) 55%, transparent) 55%, transparent 78%); }
+  .s-photo.split .img { left: 50%; }
+  .s-photo.split .pnl { position: absolute; left: 0; top: 0; bottom: 0; width: 50%; background: var(--a); }
+  .s-photo.split .pnl::after { content: ''; position: absolute; left: 100%; top: 0; bottom: 0; width: 90px; background: linear-gradient(90deg, var(--a), transparent); }
+  .s-photo .txt { position: absolute; left: 120px; top: 0; bottom: 0; width: 640px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+  .s-photo .kicker { color: #fff; opacity: 0.9; }
+  .s-photo .kicker::before { background: #fff; }
+  .s-photo h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 74px; line-height: 1.06; color: #fff; margin: 0 0 26px; letter-spacing: -0.02em; }
+  .s-photo h1 em.hl, .s-photo .analogy em.hl { color: #FFD166; }
+  .s-photo .sub { color: #fff; opacity: 0.95; font-size: 30px; margin-bottom: 30px; }
+  .s-photo.has-list h1 { font-size: 60px; margin-bottom: 30px; }
+  .s-photo .analogy { display: inline-flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.35); backdrop-filter: blur(6px); border-radius: 16px; padding: 16px 22px; font-family: 'Inter', sans-serif; font-size: 20px; line-height: 1.4; color: #fff; }
+  .s-photo .analogy .ic { font-size: 34px; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .s-photo ol.plist { list-style: none; margin: 0; padding: 0; }
+  .s-photo ol.plist li { display: flex; gap: 16px; align-items: flex-start; font-family: 'Literata', serif; font-size: 25px; line-height: 1.35; color: #fff; margin-bottom: 16px; }
+  .s-photo ol.plist li b { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 17px; color: var(--a); background: #fff; margin-top: 2px; }
+  .s-photo ol.plist li:nth-child(4n+2) b { background: #FFD166; color: #7A4B00; }
+  .s-photo ol.plist li:nth-child(4n+3) b { background: #A7F3D0; color: #065F46; }
+  .s-photo ol.plist li:nth-child(4n+4) b { background: #FECDD3; color: #9F1239; }
+  .s-photo .txt.wide { width: 620px; }
+  .s-photo .credit { position: absolute; right: 24px; bottom: 16px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.7); }
+  .s-photo .toprule { background: #fff; }
+  .s-photo .folio-bg { color: #fff; opacity: 0.25; }
+
   /* ============ Bo'lim slaydi (to'liq rangli) ============ */
   .s-section { justify-content: center; background: var(--a, var(--blue)); color: #fff; }
   .s-section .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 220px; line-height: 0.9; color: #fff; opacity: 0.55; margin-bottom: 26px; letter-spacing: -0.04em; }
@@ -488,6 +516,19 @@
       </div>`;
   };
 
+
+  R.photo = (s) => `
+    ${s.layout === 'split' ? '<div class="pnl"></div>' : ''}
+    <div class="img rv" style="--i:0;background-image:url('${esc(s.img)}')${s.focus ? ';background-position:' + esc(s.focus) : ''}${s.zoom ? ';width:' + esc(s.zoom) : ''}"></div>${s.layout !== 'split' ? '<div class="ov"></div>' : ''}
+    <div class="txt">
+      ${kicker(s.k)}
+      <h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
+      ${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}
+      ${s.analogy ? '<div><div class="analogy rv" style="--i:3">' + (s.icon ? '<span class="ic">' + esc(s.icon) + '</span>' : '') + '<span>' + fmt(s.analogy) + '</span></div></div>' : ''}
+      ${s.items ? '<ol class="plist">' + s.items.map((t, j) => '<li' + fragAttr(j + 3, !s.all && !revealAll).replace(' cw', '') + '><b>' + (j + 1) + '</b><span>' + fmt(t) + '</span></li>').join('') + '</ol>' : ''}
+    </div>
+    ${s.credit ? '<div class="credit">' + esc(s.credit) + '</div>' : ''}`;
+
   R.section = (s) => `${heroIcon(s)}
     <div class="num rv" style="--i:0">${fmt(s.n || '')}</div>
     <h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
@@ -586,11 +627,11 @@
       const type = s.t || 'bullets';
       const color = s.color || COLORS[(type === 'section' ? colorIdx + 1 : colorIdx) % 4];
       if (type !== 'title' && type !== 'end' && type !== 'cover') colorIdx++;
-      const d = el('section', 'slide s-' + type + ' c-' + color + (s.icon && type !== 'ask' ? ' has-icon' : '') + (s.variant === 'b' ? ' vB' : ''));
+      const d = el('section', 'slide s-' + type + ' c-' + color + (s.icon && type !== 'ask' ? ' has-icon' : '') + (s.variant === 'b' ? ' vB' : '') + (type === 'photo' ? ' ' + (s.layout || 'full') + (s.items ? ' has-list' : '') : ''));
       const r = R[type] || R.bullets;
       let html = '';
       try { html = r(s, i); } catch (e) { html = '<h1>Slayd xatosi</h1><div class="sub">' + esc(e.message) + '</div>'; }
-      d.innerHTML = (type === 'cover' ? '' : deco(i, s)) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
+      d.innerHTML = ((type === 'cover' || type === 'photo') ? '' : deco(i, s)) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
       d.dataset.notes = s.notes || '';
       stage.appendChild(d);
       return d;

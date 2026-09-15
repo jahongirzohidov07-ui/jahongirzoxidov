@@ -4,13 +4,15 @@ module.exports = {
   slides: [
     { t: 'cover', variant: 'a', photo: '/assets/jahongir.png', badge: 'Xush kelibsiz!', h: 'Mentorship program', s: 'Shogirdlik dasturi', lesson: '*1-dars* · Leverages — richaglar', name: 'Jahongir Zoxidov', role: 'Mentor' },
 
-    { t: 'bullets', icon: '🤝', k: 'Important disclaimer', h: 'Kelishib olaylik', items: [
+    { t: 'photo', layout: 'full', color: 'blue', img: '/assets/velosiped.jpg', zoom: '135%', focus: 'left 30%', k: 'Dasturning shiori', h: 'Before walking, *not falling* are learnt', s: 'Yurishdan oldin yiqilmaslik o\'rganiladi.', credit: 'Foto: Unsplash' },
+
+    { t: 'photo', layout: 'split', color: 'blue', img: '/assets/qol-berish.jpg', focus: 'center', k: 'Important disclaimer', h: 'Kelishib olaylik', items: [
       'Yutqizmaslik qoidalari o\'rgatiladi',
       'Maqsad yo\'lida katta yo\'qotishlar qilinadi',
       'Har bir mavzudan fundamental bilimlar o\'rgatiladi',
       'Aksariyat mavzulardan ekspert emasman',
-      'Mavzu yuzasidan chuqurroq ilm uchun mutaxassis bilan uchrashing'
-    ] },
+      'Chuqurroq ilm uchun mutaxassis bilan uchrashing'
+    ], credit: 'Foto: Unsplash' },
 
     { t: 'ask', icon: '📓', k: 'Savol', h: 'Daftarga yozganlaringiz yo\'qolib ketsa, nima qilasiz?', s: 'Biz yutqizmaslikni o\'rganamiz.' },
 

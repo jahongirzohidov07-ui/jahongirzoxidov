@@ -1,8 +1,9 @@
 'use strict';
 /* Dizayn namunalari — tasdiqlash uchun */
+const ITEMS = ['Yutqizmaslik qoidalari o\'rgatiladi', 'Maqsad yo\'lida katta yo\'qotishlar qilinadi', 'Har bir mavzudan fundamental bilimlar o\'rgatiladi', 'Aksariyat mavzulardan ekspert emasman', 'Chuqurroq ilm uchun mutaxassis bilan uchrashing'];
 module.exports = {
   slides: [
-    { t: 'cover', variant: 'a', photo: '/assets/jahongir.png', badge: 'Xush kelibsiz!', h: 'Mentorship program', s: 'Shogirdlik dasturi', lesson: '*1-dars* · Leverages — richaglar', name: 'Jahongir Zoxidov', role: 'Mentor' },
-    { t: 'cover', variant: 'b', photo: '/assets/jahongir.png', badge: 'Xush kelibsiz!', h: 'Mentorship *program*', s: 'Shogirdlik dasturi', lesson: '*1-dars* · Leverages — richaglar', name: 'Jahongir Zoxidov', role: 'Mentor' }
+    { t: 'photo', layout: 'split', color: 'blue', img: '/assets/qol-berish.jpg', focus: 'center', k: 'Important disclaimer', h: 'Kelishib olaylik', items: ITEMS, all: true, credit: 'Foto: Unsplash' },
+    { t: 'photo', layout: 'split', color: 'green', img: '/assets/kelishuv.jpg', focus: 'center', k: 'Important disclaimer', h: 'Kelishib olaylik', items: ITEMS, all: true, credit: 'Foto: Unsplash' }
   ]
 };
