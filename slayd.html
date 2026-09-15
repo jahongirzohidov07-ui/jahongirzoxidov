@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Slaydlar — Jahongir Zoxidov</title>
+<meta name="theme-color" content="#12172A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2312172A'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='%23C9A45C' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Literata:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #12172A;
+    --bg2: #1A2138;
+    --ink: #EDE7D9;
+    --ink-soft: #BBB4A2;
+    --muted: #8B8778;
+    --gold: #C9A45C;
+    --gold-deep: #9C7A3C;
+    --gold-soft: rgba(201, 164, 92, 0.16);
+    --blue: #8FB0E0;
+    --bad: #D98B79;
+    --good: #93C4A2;
+    --rule: rgba(237, 231, 217, 0.14);
+    --card: rgba(237, 231, 217, 0.05);
+    --card-line: rgba(237, 231, 217, 0.10);
+    --W: 1600px;
+    --H: 900px;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Literata', Georgia, serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-image:
+      radial-gradient(ellipse 1100px 700px at 12% -10%, rgba(201, 164, 92, 0.10), transparent 60%),
+      radial-gradient(ellipse 900px 600px at 100% 110%, rgba(143, 176, 224, 0.10), transparent 60%);
+  }
+  button { font-family: inherit; cursor: pointer; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Sahna: 1600×900 masshtablanadi ---------- */
+  #stageWrap { position: fixed; inset: 0; display: block; }
+  #stage {
+    position: absolute; left: 50%; top: 50%;
+    width: var(--W); height: var(--H);
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center center;
+  }
+
+  .slide {
+    position: absolute; inset: 0;
+    padding: 96px 120px 110px;
+    display: none;
+    flex-direction: column;
+  }
+  .slide.active { display: flex; }
+  .slide.in { animation: slideIn 0.55s var(--ease) both; }
+  .slide.back { animation: slideBack 0.45s var(--ease) both; }
+  @keyframes slideIn   { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
+  @keyframes slideBack { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: none; } }
+
+  /* katta folio raqami (sayt uslubidan) */
+  .folio-bg {
+    position: absolute; right: 100px; bottom: 34px;
+    font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400;
+    font-size: 220px; line-height: 1; color: var(--ink); opacity: 0.045;
+    pointer-events: none; user-select: none; letter-spacing: -0.04em;
+  }
+  .toprule {
+    position: absolute; left: 120px; top: 62px; height: 1px; width: 0;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .slide.active .toprule { animation: rule 1.1s var(--ease) 0.15s both; }
+  @keyframes rule { to { width: 240px; } }
+
+  /* ---------- Elementlar animatsiyasi ---------- */
+  .rv { opacity: 0; }
+  .slide.active .rv { animation: rise 0.7s var(--ease) both; animation-delay: calc(var(--i, 0) * 95ms + 120ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+  .frag { opacity: 0; transform: translateY(18px); transition: opacity 0.5s var(--ease), transform 0.5s var(--ease); }
+  .frag.on { opacity: 1; transform: none; }
+  .slide.active .frag.rv { animation: none; }
+
+  /* ---------- Tipografika ---------- */
+  .kicker {
+    font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 26px;
+  }
+  .kicker .dot { display: inline-block; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin: 0 14px 3px; }
+  h1, h2, h3 { margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 600; letter-spacing: -0.015em; }
+  .h { font-size: 56px; line-height: 1.12; margin-bottom: 44px; max-width: 1240px; }
+  .h.small { font-size: 46px; }
+  .sub { font-family: 'Literata', serif; font-size: 26px; color: var(--ink-soft); line-height: 1.45; max-width: 1100px; }
+  em.hl { font-style: normal; color: var(--gold); }
+  .note {
+    margin-top: auto; padding-top: 28px;
+    font-family: 'Inter', sans-serif; font-size: 20px; color: var(--ink-soft); line-height: 1.5;
+    border-top: 1px solid var(--rule);
+  }
+  .note b { color: var(--gold); font-weight: 600; }
+  .badge {
+    display: inline-block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--bg);
+    background: var(--gold); padding: 8px 14px; border-radius: 999px; vertical-align: middle;
+  }
+  .badge.soft { background: var(--gold-soft); color: var(--gold); }
+
+  /* ---------- Sarlavha slaydi ---------- */
+  .s-title { justify-content: center; align-items: flex-start; }
+  .s-title .kicker { margin-bottom: 40px; }
+  .s-title h1 { font-size: 104px; line-height: 1.02; max-width: 1300px; margin-bottom: 36px; }
+  .s-title .sub { font-size: 34px; }
+  .s-title .meta {
+    position: absolute; left: 120px; bottom: 96px;
+    font-family: 'Inter', sans-serif; font-size: 17px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase;
+  }
+  .s-title .rings { position: absolute; right: -180px; top: -180px; width: 820px; height: 820px; pointer-events: none; }
+  .s-title .rings circle { fill: none; stroke: var(--gold); stroke-opacity: 0.10; stroke-width: 1; transform-origin: center; }
+  .slide.active .rings circle { animation: ring 1.6s var(--ease) both; }
+  .rings circle:nth-child(2) { animation-delay: 0.15s !important; }
+  .rings circle:nth-child(3) { animation-delay: 0.3s !important; }
+  @keyframes ring { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  /* ---------- Bo'lim slaydi ---------- */
+  .s-section { justify-content: center; }
+  .s-section .num {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 200px; line-height: 0.9;
+    color: var(--gold); opacity: 0.5; margin-bottom: 30px; letter-spacing: -0.04em;
+  }
+  .s-section h1 { font-size: 82px; margin-bottom: 26px; max-width: 1300px; }
+  .s-section .sub { font-size: 30px; }
+
+  /* ---------- Ro'yxat ---------- */
+  ul.items { list-style: none; margin: auto 0; padding: 0; }
+  ul.items li {
+    position: relative; padding-left: 46px; font-size: 32px; line-height: 1.38; margin-bottom: 22px; max-width: 1280px;
+  }
+  ul.items li::before {
+    content: ''; position: absolute; left: 6px; top: 18px; width: 12px; height: 12px;
+    background: var(--gold); transform: rotate(45deg);
+  }
+  ul.items.tight li { font-size: 27px; margin-bottom: 14px; }
+  ul.items.tight li::before { top: 15px; width: 10px; height: 10px; }
+
+  /* ---------- Kartalar (steps / grid) ---------- */
+  .cards { display: grid; gap: 22px; margin: auto 0; }
+  .cards.c1 { grid-template-columns: 1fr; }
+  .cards.c2 { grid-template-columns: 1fr 1fr; }
+  .cards.c3 { grid-template-columns: repeat(3, 1fr); }
+  .cards.c4 { grid-template-columns: repeat(4, 1fr); }
+  .card {
+    background: var(--card); border: 1px solid var(--card-line); border-radius: 14px;
+    padding: 28px 30px; position: relative; overflow: hidden;
+  }
+  .card::after {
+    content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px;
+    background: linear-gradient(180deg, var(--gold), transparent);
+  }
+  .card .n { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 14px; }
+  .card h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.3; margin-bottom: 10px; letter-spacing: 0; }
+  .card p { margin: 0; font-size: 20px; line-height: 1.5; color: var(--ink-soft); }
+  .card .tag { position: absolute; right: 18px; top: 18px; }
+  .cards.c2 .card, .cards.c3 .card { padding: 34px 34px; min-height: 250px; }
+  .cards.c2 .card h3 { font-size: 27px; } .cards.c2 .card p { font-size: 22px; }
+  .cards.c3 .card h3 { font-size: 24px; } .cards.c3 .card p { font-size: 20px; }
+  .cards.c4 .card h3 { font-size: 21px; } .cards.c4 .card p { font-size: 18px; }
+  .cards.rows6.c3 .card, .cards.rows6.c2 .card { min-height: 0; }
+  .cards.c4 .card { padding: 22px; }
+  .cards.c4 .card .n { font-size: 36px; }
+  .cards.rows6 .card { padding: 26px 28px; min-height: 210px; }
+  .cards.rows6 .card .n { font-size: 36px; margin-bottom: 10px; }
+  .cards.rows6 .card h3 { font-size: 23px; }
+  .cards.rows6 .card p { font-size: 19px; }
+  .cards.rows6.c4 .card { min-height: 190px; padding: 22px 24px; }
+  .cards.rows6.c4 .card h3 { font-size: 21px; } .cards.rows6.c4 .card p { font-size: 17.5px; }
+
+  /* ---------- Iqtibos ---------- */
+  .s-quote { justify-content: center; }
+  .s-quote .mark {
+    position: absolute; left: 96px; top: 40px; font-family: 'Fraunces', serif; font-size: 360px; line-height: 1;
+    color: var(--gold); opacity: 0.12; pointer-events: none;
+  }
+  .s-quote blockquote { margin: 0; font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 56px; line-height: 1.25; max-width: 1280px; }
+  .s-quote .by { margin-top: 36px; font-family: 'Inter', sans-serif; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  .s-quote .by::before { content: '— '; }
+
+  /* ---------- Savol ---------- */
+  .s-ask { justify-content: center; }
+  .s-ask .qmark {
+    position: absolute; right: 150px; top: 120px; width: 260px; height: 260px; border-radius: 50%;
+    border: 1px solid var(--gold); opacity: 0.35; display: grid; place-items: center;
+    font-family: 'Fraunces', serif; font-size: 190px; font-style: italic; color: var(--gold); pointer-events: none;
+  }
+  .slide.active .qmark { animation: ring 1.2s var(--ease) both; }
+  .s-ask h1 { font-size: 78px; line-height: 1.1; max-width: 1080px; margin-bottom: 30px; }
+  .s-ask .sub { font-size: 28px; }
+
+  /* ---------- Katta gap ---------- */
+  .s-big { justify-content: center; align-items: center; text-align: center; }
+  .s-big h1 { font-size: 88px; line-height: 1.08; max-width: 1320px; margin-bottom: 30px; }
+  .s-big .sub { font-size: 30px; text-align: center; }
+  .s-big .kicker { text-align: center; }
+
+  /* ---------- VS (ikki ustun) ---------- */
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; margin: auto 0; }
+  .col { background: var(--card); border: 1px solid var(--card-line); border-radius: 16px; padding: 34px 36px; display: flex; flex-direction: column; justify-content: center; min-height: 300px; }
+  .col .ch { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .col.bad .ch { color: var(--bad); } .col.good .ch { color: var(--good); } .col.neutral .ch { color: var(--blue); } .col.gold .ch { color: var(--gold); }
+  .col .ch i { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-style: normal; font-size: 15px; font-weight: 700; border: 1px solid currentColor; }
+  .col .cq { font-family: 'Fraunces', serif; font-style: italic; font-size: 30px; line-height: 1.3; margin-bottom: 18px; }
+  .col ul { list-style: none; margin: 0; padding: 0; }
+  .col li { position: relative; padding-left: 34px; font-size: 24px; line-height: 1.4; margin-bottom: 12px; }
+  .col li::before { content: '·'; position: absolute; left: 6px; top: -2px; font-size: 34px; color: var(--muted); line-height: 1; }
+  .col.bad li::before { content: '✕'; font-size: 16px; top: 6px; color: var(--bad); }
+  .col.good li::before { content: '✓'; font-size: 18px; top: 4px; color: var(--good); }
+  .col.gold li::before { content: '◆'; font-size: 12px; top: 8px; color: var(--gold); }
+  .col .cp { font-size: 20px; color: var(--ink-soft); line-height: 1.5; margin-top: 10px; }
+
+  /* ---------- Statistika ---------- */
+  .stats { display: grid; gap: 22px; grid-template-columns: repeat(var(--n, 3), 1fr); margin: auto 0; }
+  .stat { padding: 30px 26px; border-top: 1px solid var(--gold); }
+  .stat .v { font-family: 'Fraunces', serif; font-weight: 600; font-size: 108px; line-height: 1; color: var(--gold); letter-spacing: -0.03em; }
+  .stat .l { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 16px; }
+  .stat .s { font-size: 19px; color: var(--ink-soft); margin-top: 8px; line-height: 1.4; }
+  .stats.n4 .stat .v { font-size: 84px; }
+  .stats.n5 .stat .v, .stats.n6 .stat .v { font-size: 64px; }
+
+  /* ---------- Ball slaydi (checklist band) ---------- */
+  .s-score { justify-content: center; }
+  .s-score .bign {
+    position: absolute; right: 120px; top: 80px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 300px; line-height: 1;
+    color: var(--gold); opacity: 0.10; letter-spacing: -0.05em; pointer-events: none;
+  }
+  .s-score h1 { font-size: 72px; line-height: 1.1; max-width: 1150px; margin-bottom: 30px; }
+  .s-score .sub { font-size: 30px; max-width: 1050px; }
+  .s-score .pts { margin-top: 44px; display: flex; gap: 16px; align-items: center; }
+  .s-score .pts .p { font-family: 'Fraunces', serif; font-size: 56px; font-weight: 600; color: var(--gold); }
+  .s-score .pts .pl { font-family: 'Inter', sans-serif; font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* ---------- Jadval ---------- */
+  table.tbl { border-collapse: collapse; width: 100%; font-size: 23px; margin: auto 0; }
+  table.tbl th { font-family: 'Inter', sans-serif; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); text-align: left; padding: 12px 18px; border-bottom: 1px solid var(--gold); font-weight: 600; }
+  table.tbl td { padding: 16px 18px; border-bottom: 1px solid var(--rule); line-height: 1.4; vertical-align: top; }
+  table.tbl tr td:first-child { font-family: 'Inter', sans-serif; font-weight: 600; color: var(--ink); }
+  table.tbl.compact { font-size: 19px; } table.tbl.compact td { padding: 10px 14px; }
+
+  /* ---------- Oqim (flow) ---------- */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 12px; margin: auto 0; }
+  .flow .pill {
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 26px; padding: 18px 30px; border-radius: 999px;
+    border: 1px solid var(--gold); color: var(--ink); background: var(--gold-soft);
+  }
+  .flow .pill.last { background: var(--gold); color: var(--bg); }
+  .flow .arr { font-family: 'Fraunces', serif; font-size: 40px; color: var(--gold); line-height: 1; }
+  .flow.vertical { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .flow.vertical .pill { font-size: 30px; padding: 20px 36px; }
+  .flow.vertical .arr { padding-left: 34px; font-size: 36px; }
+  .flow.big .pill { font-size: 34px; padding: 26px 44px; }
+  .flow.big .arr { font-size: 52px; }
+
+  /* ---------- Checklist (100 ball) ---------- */
+  .check { columns: 2; column-gap: 40px; font-family: 'Inter', sans-serif; margin: auto 0; }
+  .check.c3 { columns: 3; }
+  .check .row { display: flex; gap: 14px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--rule); break-inside: avoid; font-size: 19px; }
+  .check.few .row { font-size: 27px; padding: 14px 0; gap: 20px; }
+  .check.few .row .rn { width: 48px; }
+  .check .row .rn { color: var(--gold); font-weight: 700; width: 34px; flex: none; }
+  .check .row .rh { flex: 1; }
+  .check .row .rp { color: var(--gold); font-weight: 700; }
+  .check .row.star .rh { color: var(--gold); }
+  .total { margin-top: 26px; font-family: 'Fraunces', serif; font-size: 40px; color: var(--gold); }
+
+  /* ---------- Yakun ---------- */
+  .s-end { justify-content: center; align-items: center; text-align: center; }
+  .s-end h1 { font-size: 110px; margin-bottom: 24px; }
+  .s-end .sub { font-size: 30px; text-align: center; }
+  .s-end .brand { margin-top: 60px; font-family: 'Fraunces', serif; font-size: 28px; color: var(--gold); }
+
+  /* ---------- HUD ---------- */
+  #hud { position: fixed; inset: 0; pointer-events: none; font-family: 'Inter', sans-serif; transition: opacity 0.4s ease; }
+  #hud.hide { opacity: 0; }
+  #hud .tl { position: absolute; left: 22px; top: 18px; font-size: 13px; color: var(--muted); display: flex; gap: 14px; align-items: center; pointer-events: auto; }
+  #hud .tl a { color: var(--gold); border: 1px solid rgba(201,164,92,0.4); padding: 5px 10px; border-radius: 999px; font-weight: 600; }
+  #hud .tr { position: absolute; right: 22px; top: 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.1em; }
+  #hud .bar { position: absolute; left: 0; bottom: 0; height: 3px; background: var(--gold); width: 0; transition: width 0.4s var(--ease); }
+  #hud .keys { position: absolute; right: 22px; bottom: 14px; font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+  #hud .keys b { color: var(--ink-soft); font-weight: 600; }
+
+  /* ---------- Yordam / izohlar ---------- */
+  .overlay {
+    position: fixed; inset: 0; background: rgba(10, 13, 24, 0.86); backdrop-filter: blur(6px);
+    display: none; place-items: center; z-index: 50; padding: 40px;
+  }
+  .overlay.show { display: grid; }
+  .panel { background: var(--bg2); border: 1px solid var(--card-line); border-radius: 16px; padding: 36px 40px; max-width: 760px; width: 100%; font-family: 'Inter', sans-serif; }
+  .panel h2 { font-size: 24px; margin-bottom: 20px; color: var(--gold); font-family: 'Fraunces', serif; }
+  .panel .k { display: grid; grid-template-columns: 180px 1fr; gap: 10px 20px; font-size: 15px; color: var(--ink-soft); }
+  .panel .k b { color: var(--ink); font-weight: 600; }
+  .panel p { font-size: 20px; line-height: 1.6; font-family: 'Literata', serif; }
+
+  /* ---------- PIN eshigi ---------- */
+  #gate { position: fixed; inset: 0; display: none; place-items: center; z-index: 60; }
+  #gate.show { display: grid; }
+  #gate form { width: 360px; text-align: center; font-family: 'Inter', sans-serif; }
+  #gate .brand { font-family: 'Fraunces', serif; font-size: 30px; margin-bottom: 8px; }
+  #gate .hint { color: var(--muted); font-size: 14px; margin-bottom: 26px; }
+  #gate input {
+    width: 100%; font-family: 'Inter', sans-serif; font-size: 28px; letter-spacing: 0.4em; text-align: center;
+    padding: 14px; background: var(--card); border: 1px solid var(--card-line); border-radius: 12px; color: var(--ink); outline: none;
+  }
+  #gate input:focus { border-color: var(--gold); }
+  #gate button { margin-top: 16px; width: 100%; font-size: 16px; font-weight: 600; padding: 14px; border-radius: 12px; border: 0; background: var(--gold); color: var(--bg); }
+  #gate .err { color: var(--bad); font-size: 14px; margin-top: 12px; min-height: 18px; }
+
+  #msg { position: fixed; inset: 0; display: none; place-items: center; font-family: 'Inter', sans-serif; color: var(--ink-soft); font-size: 18px; text-align: center; padding: 40px; }
+  #msg.show { display: grid; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<div id="stageWrap"><div id="stage"></div></div>
+
+<div id="hud">
+  <div class="tl"><a href="/admin" id="backLink">← Panel</a><span id="hudTitle"></span></div>
+  <div class="tr" id="hudCount"></div>
+  <div class="bar" id="hudBar"></div>
+  <div class="keys"><b>→</b> keyingi &nbsp; <b>←</b> oldingi &nbsp; <b>F</b> to'liq ekran &nbsp; <b>?</b> yordam</div>
+</div>
+
+<div class="overlay" id="help">
+  <div class="panel">
+    <h2>Boshqaruv</h2>
+    <div class="k">
+      <b>→ · Space · Enter</b><span>Keyingi qadam (avval slayd ichidagi bandlar, keyin keyingi slayd)</span>
+      <b>← · Backspace</b><span>Oldingi qadam</span>
+      <b>Home · End</b><span>Birinchi · oxirgi slayd</span>
+      <b>F</b><span>To'liq ekran</span>
+      <b>A</b><span>Bandlarni birdaniga ko'rsatish rejimi (yoqish/o'chirish)</span>
+      <b>N</b><span>Ustoz izohlari (agar bo'lsa)</span>
+      <b>H</b><span>Yuqori/pastki yozuvlarni yashirish</span>
+      <b>Esc</b><span>Yopish · panelga qaytish</span>
+      <b>Telefonda</b><span>Chapga/o'ngga surish yoki ekranning o'ng/chap yarmiga bosish</span>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="notes"><div class="panel"><h2>Ustoz izohi</h2><p id="notesText"></p></div></div>
+
+<div id="gate">
+  <form id="gateForm">
+    <div class="brand">Jahongir Zoxidov</div>
+    <div class="hint">Slaydlarni ochish uchun PIN kiriting</div>
+    <input type="password" id="gatePin" inputmode="numeric" autocomplete="off" placeholder="••••••">
+    <button type="submit">Kirish</button>
+    <div class="err" id="gateErr"></div>
+  </form>
+</div>
+
+<div id="msg"></div>
+
+<script>
+(function () {
+  const W = 1600, H = 900;
+  const stage = document.getElementById('stage');
+  const hud = document.getElementById('hud');
+  const params = new URLSearchParams(location.search);
+  const progId = params.get('d') || '';
+  const lessonN = params.get('n') || '';
+
+  let deck = null;
+  let slides = [];      /* DOM elementlar */
+  let cur = -1;
+  let revealAll = false;
+  try { revealAll = localStorage.getItem('jz_reveal_all') === '1'; } catch (e) {}
+
+  /* ---------- masshtab ---------- */
+  function fit() {
+    const s = Math.min(window.innerWidth / W, window.innerHeight / H);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+
+  /* ---------- yordamchilar ---------- */
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  }
+  /* *matn* -> tilla rang; \n -> <br> */
+  function fmt(s) {
+    return esc(s).replace(/\*([^*]+)\*/g, '<em class="hl">$1</em>').replace(/\n/g, '<br>');
+  }
+  function el(tag, cls, html) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+  function kicker(text) {
+    if (!text) return '';
+    return '<div class="kicker rv" style="--i:0">' + fmt(text) + '</div>';
+  }
+  function note(text) {
+    if (!text) return '';
+    return '<div class="note rv" style="--i:9">' + fmt(text) + '</div>';
+  }
+  function fragAttr(i, on) {
+    return on ? ' class="frag" data-frag="1"' : ' class="rv" style="--i:' + i + '"';
+  }
+
+  /* ---------- slayd turlari ---------- */
+  const R = {};
+
+  R.title = (s, i) => `
+    <svg class="rings" viewBox="0 0 820 820"><circle cx="410" cy="410" r="400"/><circle cx="410" cy="410" r="300"/><circle cx="410" cy="410" r="200"/></svg>
+    ${kicker(s.k)}
+    <h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
+    ${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}
+    <div class="meta rv" style="--i:3">${fmt(s.meta || 'Jahongir Zoxidov')}</div>`;
+
+  R.section = (s) => `
+    <div class="num rv" style="--i:0">${fmt(s.n || '')}</div>
+    <h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
+    ${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}`;
+
+  R.bullets = (s) => {
+    const prog = !s.all && !revealAll;
+    const tight = (s.items || []).length > 6 || (s.items || []).join('').length > 420;
+    return `${kicker(s.k)}<h1 class="h rv ${s.items.length > 5 ? 'small' : ''}" style="--i:1">${fmt(s.h)}</h1>
+      <ul class="items ${tight ? 'tight' : ''}">${s.items.map((t, j) => '<li' + fragAttr(j + 2, prog) + '>' + fmt(t) + '</li>').join('')}</ul>
+      ${note(s.note)}`;
+  };
+
+  function cardsHtml(items, prog, numbered, cols) {
+    const n = items.length;
+    const c = cols || (n <= 1 ? 1 : n <= 2 ? 2 : n <= 3 ? 3 : n === 4 ? 2 : n <= 6 ? 3 : 4);
+    const rows6 = n > 4 ? 'rows6' : '';
+    return `<div class="cards c${c} ${rows6}">${items.map((it, j) => `
+      <div${fragAttr(j + 2, prog)}><div class="card" style="height:100%">
+        ${it.tag ? '<span class="badge soft tag">' + fmt(it.tag) + '</span>' : ''}
+        ${numbered ? '<div class="n">' + fmt(it.n != null ? it.n : String(j + 1).padStart(2, '0')) + '</div>' : (it.icon ? '<div class="n">' + fmt(it.icon) + '</div>' : '')}
+        <h3>${fmt(it.h)}</h3>${it.p ? '<p>' + fmt(it.p) + '</p>' : ''}
+      </div></div>`).join('')}</div>`;
+  }
+  R.steps = (s) => `${kicker(s.k)}<h1 class="h rv ${s.items.length > 3 ? 'small' : ''}" style="--i:1">${fmt(s.h)}</h1>
+    ${cardsHtml(s.items, !s.all && !revealAll, true, s.cols)}${note(s.note)}`;
+  R.grid = (s) => `${kicker(s.k)}<h1 class="h rv ${s.items.length > 3 ? 'small' : ''}" style="--i:1">${fmt(s.h)}</h1>
+    ${cardsHtml(s.items, !!s.prog && !revealAll, false, s.cols)}${note(s.note)}`;
+
+  R.quote = (s) => `<div class="mark">“</div>${kicker(s.k)}
+    <blockquote class="rv" style="--i:1">${fmt(s.q)}</blockquote>
+    ${s.by ? '<div class="by rv" style="--i:2">' + fmt(s.by) + '</div>' : ''}`;
+
+  R.ask = (s) => `<div class="qmark">?</div>${kicker(s.k || 'Savol')}
+    <h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
+    ${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}`;
+
+  R.big = (s) => `${kicker(s.k)}<h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
+    ${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}`;
+
+  function colHtml(c, i, prog) {
+    const tone = c.tone || 'neutral';
+    const icon = tone === 'bad' ? '✕' : tone === 'good' ? '✓' : tone === 'gold' ? '◆' : '·';
+    return `<div${fragAttr(i, prog)}><div class="col ${tone}" style="height:100%">
+      <div class="ch"><i>${icon}</i>${fmt(c.h || '')}</div>
+      ${c.q ? '<div class="cq">' + fmt(c.q) + '</div>' : ''}
+      ${c.items && c.items.length ? '<ul>' + c.items.map(t => '<li>' + fmt(t) + '</li>').join('') + '</ul>' : ''}
+      ${c.p ? '<div class="cp">' + fmt(c.p) + '</div>' : ''}
+    </div></div>`;
+  }
+  R.vs = (s) => `${kicker(s.k)}<h1 class="h rv" style="--i:1">${fmt(s.h)}</h1>
+    <div class="vs">${colHtml(s.a, 2, !s.all && !revealAll)}${colHtml(s.b, 3, !s.all && !revealAll)}</div>${note(s.note)}`;
+
+  R.stats = (s) => `${kicker(s.k)}<h1 class="h rv" style="--i:1">${fmt(s.h)}</h1>
+    <div class="stats n${s.items.length}" style="--n:${s.items.length}">${s.items.map((it, j) => `
+      <div class="stat rv" style="--i:${j + 2}"><div class="v" data-count="${esc(it.v)}">${esc(it.v)}</div>
+      <div class="l">${fmt(it.l)}</div>${it.s ? '<div class="s">' + fmt(it.s) + '</div>' : ''}</div>`).join('')}</div>${note(s.note)}`;
+
+  R.score = (s) => `<div class="bign">${esc(s.n)}</div>${kicker(s.k)}
+    ${s.tag ? '<div class="rv" style="--i:1"><span class="badge">' + fmt(s.tag) + '</span></div><br>' : ''}
+    <h1 class="rv" style="--i:2">${fmt(s.h)}</h1>
+    <div class="sub rv" style="--i:3">${fmt(s.p)}</div>
+    ${s.pts != null ? '<div class="pts rv" style="--i:4"><span class="p">' + esc(s.pts) + '</span><span class="pl">ball</span></div>' : ''}`;
+
+  R.table = (s) => `${kicker(s.k)}<h1 class="h rv ${s.rows.length > 5 ? 'small' : ''}" style="--i:1">${fmt(s.h)}</h1>
+    <table class="tbl ${s.rows.length > 5 ? 'compact' : ''}">${s.head ? '<tr>' + s.head.map(h => '<th>' + fmt(h) + '</th>').join('') + '</tr>' : ''}
+    ${s.rows.map((r, j) => '<tr class="rv" style="--i:' + (j + 2) + '">' + r.map(c => '<td>' + fmt(c) + '</td>').join('') + '</tr>').join('')}</table>${note(s.note)}`;
+
+  R.flow = (s) => {
+    const prog = !s.all && !revealAll;
+    const parts = [];
+    const vertical = s.vertical || s.items.some(t => t.length > 30) || s.items.length > 5;
+    const glyph = vertical ? '↓' : '→';
+    s.items.forEach((t, j) => {
+      if (j) parts.push('<span class="arr' + (prog ? ' frag" data-frag="1"' : ' rv" style="--i:' + (j + 2) + '"') + '>' + glyph + '</span>');
+      parts.push('<span class="pill ' + (j === s.items.length - 1 ? 'last' : '') + (prog ? ' frag" data-frag="1"' : ' rv" style="--i:' + (j + 2) + '"') + '>' + fmt(t) + '</span>');
+    });
+    return `${kicker(s.k)}<h1 class="h rv" style="--i:1">${fmt(s.h)}</h1><div class="flow ${vertical ? 'vertical' : ''} ${s.items.length <= 4 && !vertical ? 'big' : ''}">${parts.join('')}</div>${note(s.note)}`;
+  };
+
+  R.checklist = (s) => `${kicker(s.k)}<h1 class="h small rv" style="--i:1">${fmt(s.h)}</h1>
+    <div class="check ${s.items.length > 16 ? 'c3' : ''} ${s.items.length <= 12 ? 'few' : ''} rv" style="--i:2">${s.items.map(it => `<div class="row ${it.star ? 'star' : ''}"><span class="rn">${esc(it.n)}</span><span class="rh">${fmt(it.h)}</span>${it.pts != null ? '<span class="rp">' + esc(it.pts) + '</span>' : ''}</div>`).join('')}</div>
+    ${s.total ? '<div class="total rv" style="--i:3">' + fmt(s.total) + '</div>' : ''}`;
+
+  R.end = (s) => `<h1 class="rv" style="--i:0">${fmt(s.h || 'Rahmat')}</h1>
+    ${s.s ? '<div class="sub rv" style="--i:1">' + fmt(s.s) + '</div>' : ''}
+    <div class="brand rv" style="--i:2">Jahongir Zoxidov</div>`;
+
+  /* ---------- qurish ---------- */
+  function build() {
+    stage.innerHTML = '';
+    slides = deck.slides.map((s, i) => {
+      const d = el('section', 'slide s-' + (s.t || 'bullets'));
+      const r = R[s.t] || R.bullets;
+      let html = '';
+      try { html = r(s, i); } catch (e) { html = '<h1>Slayd xatosi</h1><div class="sub">' + esc(e.message) + '</div>'; }
+      d.innerHTML = '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
+      d.dataset.notes = s.notes || '';
+      stage.appendChild(d);
+      return d;
+    });
+  }
+
+  function frags(i) { return Array.from(slides[i].querySelectorAll('[data-frag]')); }
+
+  function countUp(slideEl) {
+    slideEl.querySelectorAll('[data-count]').forEach(v => {
+      const raw = v.getAttribute('data-count');
+      const m = raw.match(/^([^0-9]*)([0-9][0-9\s.,]*)(.*)$/);
+      if (!m) return;
+      const numStr = m[2].replace(/[\s,]/g, '');
+      const target = parseFloat(numStr);
+      if (!isFinite(target) || target > 999999) return;
+      const dec = (numStr.split('.')[1] || '').length;
+      const t0 = performance.now(), dur = 1100;
+      function step(t) {
+        const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        v.textContent = m[1] + (target * e).toFixed(dec) + m[3];
+        if (p < 1) requestAnimationFrame(step); else v.textContent = raw;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  function show(i, dir) {
+    if (i < 0 || i >= slides.length) return;
+    if (cur >= 0) slides[cur].classList.remove('active', 'in', 'back');
+    cur = i;
+    const s = slides[i];
+    s.classList.add('active', dir === 'back' ? 'back' : 'in');
+    const fs = frags(i);
+    fs.forEach(f => f.classList.toggle('on', dir === 'back'));
+    if (dir !== 'back') countUp(s);
+    history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1));
+    updateHud();
+  }
+
+  function next() {
+    const fs = frags(cur);
+    const off = fs.find(f => !f.classList.contains('on'));
+    if (off) { off.classList.add('on'); return; }
+    if (cur < slides.length - 1) show(cur + 1, 'fwd');
+  }
+  function prev() {
+    const fs = frags(cur).filter(f => f.classList.contains('on'));
+    if (fs.length) { fs[fs.length - 1].classList.remove('on'); return; }
+    if (cur > 0) show(cur - 1, 'back');
+  }
+
+  function updateHud() {
+    document.getElementById('hudCount').textContent = (cur + 1) + ' / ' + slides.length;
+    document.getElementById('hudBar').style.width = ((cur + 1) / slides.length * 100) + '%';
+  }
+
+  /* ---------- HUD yashirish ---------- */
+  let hudTimer = null, hudLocked = false;
+  function wakeHud() {
+    if (hudLocked) return;
+    hud.classList.remove('hide');
+    clearTimeout(hudTimer);
+    hudTimer = setTimeout(() => hud.classList.add('hide'), 3500);
+  }
+  document.addEventListener('mousemove', wakeHud);
+  document.addEventListener('touchstart', wakeHud, { passive: true });
+
+  /* ---------- boshqaruv ---------- */
+  const help = document.getElementById('help');
+  const notes = document.getElementById('notes');
+  function closeOverlays() { help.classList.remove('show'); notes.classList.remove('show'); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target && e.target.tagName === 'INPUT') return;
+    const k = e.key;
+    if (help.classList.contains('show') || notes.classList.contains('show')) {
+      if (k === 'Escape' || k === '?' || k === 'n' || k === 'N') { closeOverlays(); e.preventDefault(); }
+      return;
+    }
+    if (!slides.length) return;
+    if (k === 'ArrowRight' || k === ' ' || k === 'Enter' || k === 'PageDown' || k === 'ArrowDown' || k === 'l') { next(); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'Backspace' || k === 'PageUp' || k === 'ArrowUp' || k === 'h') { prev(); e.preventDefault(); }
+    else if (k === 'Home') { show(0, 'back'); }
+    else if (k === 'End') { show(slides.length - 1, 'fwd'); }
+    else if (k === 'f' || k === 'F') { toggleFs(); }
+    else if (k === '?') { help.classList.add('show'); }
+    else if (k === 'n' || k === 'N') { showNotes(); }
+    else if (k === 'H') { hudLocked = !hudLocked; hud.classList.toggle('hide', hudLocked); }
+    else if (k === 'a' || k === 'A') {
+      revealAll = !revealAll;
+      try { localStorage.setItem('jz_reveal_all', revealAll ? '1' : '0'); } catch (err) {}
+      const keep = cur; build(); show(keep, 'fwd');
+      frags(cur).forEach(f => f.classList.add('on'));
+    }
+    else if (k === 'Escape') { if (document.fullscreenElement) document.exitFullscreen(); else location.href = '/admin'; }
+    wakeHud();
+  });
+
+  function showNotes() {
+    const t = slides[cur].dataset.notes;
+    document.getElementById('notesText').textContent = t || 'Bu slaydda izoh yo\'q.';
+    notes.classList.add('show');
+  }
+  help.addEventListener('click', closeOverlays);
+  notes.addEventListener('click', closeOverlays);
+
+  function toggleFs() {
+    const d = document.documentElement;
+    if (!document.fullscreenElement) { (d.requestFullscreen || d.webkitRequestFullscreen || function () {}).call(d); }
+    else { (document.exitFullscreen || function () {}).call(document); }
+  }
+
+  /* sichqoncha / sensor */
+  let tx = 0, ty = 0, tt = 0;
+  document.addEventListener('touchstart', (e) => { const t = e.touches[0]; tx = t.clientX; ty = t.clientY; tt = Date.now(); }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    if (help.classList.contains('show') || notes.classList.contains('show')) { closeOverlays(); return; }
+    if (e.target && e.target.closest && e.target.closest('a, button, input')) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - tx, dy = t.clientY - ty;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { dx < 0 ? next() : prev(); return; }
+    if (Math.abs(dx) < 12 && Math.abs(dy) < 12 && Date.now() - tt < 400) {
+      t.clientX > window.innerWidth / 2 ? next() : prev();
+    }
+  });
+  document.getElementById('stageWrap').addEventListener('click', (e) => {
+    if (window.matchMedia('(pointer: coarse)').matches) return; /* telefonda touchend ishlaydi */
+    e.clientX > window.innerWidth / 2 ? next() : prev();
+    wakeHud();
+  });
+
+  /* ---------- yuklash ---------- */
+  const gate = document.getElementById('gate');
+  const msg = document.getElementById('msg');
+  function showMsg(t) { msg.textContent = t; msg.classList.add('show'); }
+
+  function getPin() { try { return localStorage.getItem('jz_pin') || ''; } catch (e) { return ''; } }
+
+  document.getElementById('gateForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = document.getElementById('gatePin').value.trim();
+    if (!v) return;
+    try { localStorage.setItem('jz_pin', v); } catch (err) {}
+    gate.classList.remove('show');
+    load();
+  });
+
+  async function load() {
+    if (!progId || !lessonN) { showMsg('Dastur va dars tanlanmagan. Panelga qayting: /admin'); return; }
+    const pin = getPin();
+    if (!pin) { gate.classList.add('show'); document.getElementById('gatePin').focus(); return; }
+    showMsg('Yuklanmoqda…');
+    let r;
+    try {
+      r = await fetch('/api/dastur?d=' + encodeURIComponent(progId) + '&n=' + encodeURIComponent(lessonN), { headers: { 'x-admin-pin': pin } });
+    } catch (e) { showMsg('Tarmoq xatosi. Qayta urinib ko\'ring.'); return; }
+    if (r.status === 401) {
+      msg.classList.remove('show');
+      document.getElementById('gateErr').textContent = 'PIN noto\'g\'ri';
+      document.getElementById('gatePin').value = '';
+      gate.classList.add('show'); document.getElementById('gatePin').focus();
+      return;
+    }
+    if (!r.ok) {
+      let t = 'Xatolik (' + r.status + ')';
+      try { const j = await r.json(); if (j.error) t = j.error; } catch (e) {}
+      showMsg(t); return;
+    }
+    deck = await r.json();
+    msg.classList.remove('show');
+    if (!deck.slides || !deck.slides.length) { showMsg('Bu dars uchun slaydlar hali tayyorlanmagan.'); return; }
+    document.title = deck.lesson.title + ' — ' + deck.program.title;
+    document.getElementById('hudTitle').textContent = deck.program.title + ' · ' + deck.lesson.n + '-dars · ' + deck.lesson.title;
+    build();
+    const h = parseInt((location.hash || '').replace('#', ''), 10);
+    show(h > 0 && h <= slides.length ? h - 1 : 0, 'fwd');
+    wakeHud();
+  }
+
+  load();
+})();
+</script>
+</body>
+</html>
