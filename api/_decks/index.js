@@ -45,4 +45,6 @@ const programs = [
   }
 ];
 
+programs.push({ id: 'preview', title: 'Dizayn namunalari', subtitle: 'tasdiqlash uchun', lessons: [{ n: 1, title: 'Muqova variantlari', deck: require('./preview') }] });
+
 module.exports = { programs };

@@ -2,7 +2,7 @@
 /* Mentorlik (Shogirdlik) dasturi · 1-dars: Leverages — richaglar */
 module.exports = {
   slides: [
-    { t: 'title', icon: '🚀', k: 'Mentorship program · Shogirdlik dasturi · 1-dars', h: 'Leverages — richaglar', s: 'Before walking, not falling are learnt', meta: 'Jahongir Zoxidov' },
+    { t: 'cover', variant: 'a', photo: '/assets/jahongir.png', badge: 'Xush kelibsiz!', h: 'Mentorship program', s: 'Shogirdlik dasturi', lesson: '*1-dars* · Leverages — richaglar', name: 'Jahongir Zoxidov', role: 'Mentor' },
 
     { t: 'bullets', icon: '🤝', k: 'Important disclaimer', h: 'Kelishib olaylik', items: [
       'Yutqizmaslik qoidalari o\'rgatiladi',

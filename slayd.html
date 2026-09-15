@@ -136,6 +136,52 @@
   .s-title .hero-icon { background: rgba(255,255,255,0.18); box-shadow: none; }
   .s-title .hero-icon::after { border-color: #fff; }
 
+
+  /* ============ Muqova (foto + rang) ============ */
+  .s-cover { padding: 0; color: #fff; overflow: hidden; }
+  .s-cover .bgA { position: absolute; inset: 0; background:
+      radial-gradient(ellipse 900px 700px at 85% 15%, rgba(255,255,255,0.14), transparent 60%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 44px, rgba(255,255,255,0) 44px 92px),
+      linear-gradient(115deg, #1E40AF 0%, #2563EB 45%, #3B82F6 100%); }
+  .s-cover .dots { position: absolute; width: 380px; height: 220px; background-image: radial-gradient(#fff 3.2px, transparent 3.8px); background-size: 22px 22px; opacity: 0.55;
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 72%); mask-image: radial-gradient(ellipse at center, #000 30%, transparent 72%); }
+  .s-cover .dots.d1 { left: 300px; top: -40px; }
+  .s-cover .dots.d2 { right: 120px; bottom: -30px; width: 460px; }
+  .s-cover .photo { position: absolute; left: 130px; top: 190px; width: 520px; height: 520px; border-radius: 50%; overflow: hidden; border: 12px solid #fff; box-shadow: 0 30px 80px rgba(0,0,0,0.35); background: #fff; }
+  .s-cover .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .s-cover .photo-ring { position: absolute; left: 130px; top: 190px; width: 520px; height: 520px; border-radius: 50%; box-shadow: 0 0 0 26px rgba(255,255,255,0.14), 0 0 0 54px rgba(255,255,255,0.07); pointer-events: none; }
+  .s-cover .namecard { position: absolute; left: 130px; width: 520px; top: 664px; display: flex; justify-content: center; }
+  .s-cover .namecard b { background: #fff; color: var(--ink); border-radius: 999px; padding: 12px 26px; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; white-space: nowrap; box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+  .s-cover .namecard span { color: var(--muted); font-weight: 500; margin-left: 10px; }
+  .s-cover em.hl { color: #FFD166; }
+  .s-cover .txt { position: absolute; left: 760px; top: 0; bottom: 0; width: 720px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .s-cover .welcome { display: inline-block; background: var(--orange); color: #fff; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; padding: 12px 22px; border-radius: 999px; margin-bottom: 30px; }
+  .s-cover h1 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 92px; line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; margin: 0 0 22px; }
+  .s-cover .sub { font-family: 'Literata', serif; font-size: 36px; color: #fff; opacity: 0.95; margin-bottom: 30px; }
+  .s-cover .bar4 { display: flex; gap: 8px; margin-bottom: 26px; }
+  .s-cover .bar4 i { height: 8px; width: 70px; border-radius: 4px; display: block; }
+  .s-cover .lesson { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 600; opacity: 0.9; }
+  .s-cover .lesson b { font-weight: 800; }
+  /* B varianti: yorug' fon + ko'k "blob" */
+  .s-cover.vB { color: var(--ink); }
+  .s-cover.vB .bgA { background: #FBFBF8; }
+  .s-cover.vB .blob { position: absolute; right: -260px; top: -160px; width: 1060px; height: 1220px; border-radius: 50%; background: linear-gradient(150deg, #2563EB, #16A34A); }
+  .s-cover.vB .blob2 { position: absolute; left: -140px; bottom: -220px; width: 420px; height: 420px; border-radius: 50%; background: var(--orange-soft); }
+  .s-cover.vB .dots { background-image: radial-gradient(#2563EB 3.2px, transparent 3.8px); opacity: 0.35; }
+  .s-cover.vB .dots.d1 { left: 120px; top: 40px; }
+  .s-cover.vB .dots.d2 { right: auto; left: 560px; bottom: 40px; }
+  .s-cover.vB .photo, .s-cover.vB .photo-ring { left: auto; right: 150px; top: 170px; width: 560px; height: 560px; }
+  .s-cover.vB .photo-ring { box-shadow: 0 0 0 26px rgba(255,255,255,0.18), 0 0 0 54px rgba(255,255,255,0.08); }
+  .s-cover.vB .namecard { left: auto; right: 150px; width: 560px; top: 690px; }
+  .s-cover.vB .namecard b { box-shadow: 0 12px 30px rgba(37,99,235,0.25); }
+  .s-cover.vB em.hl { color: var(--blue); }
+  .s-cover.vB .txt { left: 120px; width: 760px; }
+  .s-cover.vB h1 { color: var(--ink); }
+  .s-cover.vB h1 em { font-style: normal; color: var(--blue); }
+  .s-cover.vB .sub { color: var(--ink-soft); }
+  .s-cover.vB .lesson { color: var(--ink-soft); }
+  .s-cover .toprule, .s-cover .folio-bg { display: none; }
+
   /* ============ Bo'lim slaydi (to'liq rangli) ============ */
   .s-section { justify-content: center; background: var(--a, var(--blue)); color: #fff; }
   .s-section .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 220px; line-height: 0.9; color: #fff; opacity: 0.55; margin-bottom: 26px; letter-spacing: -0.04em; }
@@ -425,6 +471,23 @@
     ${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}
     <div class="meta rv" style="--i:3">${fmt(s.meta || 'Jahongir Zoxidov')}</div>`;
 
+
+  R.cover = (s) => {
+    const b = s.variant === 'b';
+    return `<div class="bgA"></div>${b ? '<div class="blob rv" style="--i:0"></div><div class="blob2"></div>' : ''}
+      <div class="dots d1"></div><div class="dots d2"></div>
+      <div class="photo-ring"></div>
+      <div class="photo rv" style="--i:1"><img src="${esc(s.photo)}" alt=""></div>
+      ${s.name ? '<div class="namecard rv" style="--i:3"><b>' + esc(s.name) + (s.role ? '<span>' + esc(s.role) + '</span>' : '') + '</b></div>' : ''}
+      <div class="txt">
+        ${s.badge ? '<div class="welcome rv" style="--i:1">' + esc(s.badge) + '</div>' : ''}
+        <h1 class="rv" style="--i:2">${b ? fmt(s.h).replace(/<em class="hl">/g, '<em>') : fmt(s.h)}</h1>
+        ${s.s ? '<div class="sub rv" style="--i:3">' + fmt(s.s) + '</div>' : ''}
+        <div class="bar4 rv" style="--i:4"><i style="background:var(--green)"></i><i style="background:var(--orange)"></i><i style="background:var(--red)"></i><i style="background:${b ? 'var(--blue)' : '#fff'}"></i></div>
+        ${s.lesson ? '<div class="lesson rv" style="--i:5">' + fmt(s.lesson) + '</div>' : ''}
+      </div>`;
+  };
+
   R.section = (s) => `${heroIcon(s)}
     <div class="num rv" style="--i:0">${fmt(s.n || '')}</div>
     <h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
@@ -522,12 +585,12 @@
     slides = deck.slides.map((s, i) => {
       const type = s.t || 'bullets';
       const color = s.color || COLORS[(type === 'section' ? colorIdx + 1 : colorIdx) % 4];
-      if (type !== 'title' && type !== 'end') colorIdx++;
-      const d = el('section', 'slide s-' + type + ' c-' + color + (s.icon && type !== 'ask' ? ' has-icon' : ''));
+      if (type !== 'title' && type !== 'end' && type !== 'cover') colorIdx++;
+      const d = el('section', 'slide s-' + type + ' c-' + color + (s.icon && type !== 'ask' ? ' has-icon' : '') + (s.variant === 'b' ? ' vB' : ''));
       const r = R[type] || R.bullets;
       let html = '';
       try { html = r(s, i); } catch (e) { html = '<h1>Slayd xatosi</h1><div class="sub">' + esc(e.message) + '</div>'; }
-      d.innerHTML = deco(i, s) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
+      d.innerHTML = (type === 'cover' ? '' : deco(i, s)) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
       d.dataset.notes = s.notes || '';
       stage.appendChild(d);
       return d;
