@@ -529,6 +529,68 @@
   .s-roots .tag.t1 { fill: #8B5E34; } .s-roots .tag.t2 { fill: var(--ink); } .s-roots .tag.t3 { fill: var(--red); }
   .s-roots .deco { display: none; }
 
+  /* ============ Piramida (pyramid): bosqichlar pastdan yuqoriga ============ */
+  .s-pyramid .pywrap { display: grid; grid-template-columns: 700px 1fr; gap: 50px; align-items: center; flex: 1; min-height: 0; }
+  .s-pyramid h1 { font-size: 56px; line-height: 1.06; margin: 0 0 14px; letter-spacing: -0.02em; }
+  .s-pyramid .sub { font-size: 22px; margin-bottom: 20px; }
+  .s-pyramid svg.py { width: 100%; height: 620px; overflow: visible; }
+  .s-pyramid .lv { opacity: 0; transform-box: fill-box; transform-origin: center bottom; }
+  .slide.active.s-pyramid .lv { animation: pyIn 0.8s cubic-bezier(0.2, 1.1, 0.3, 1) both; animation-delay: calc(var(--d) * 1ms); }
+  @keyframes pyIn { from { opacity: 0; transform: translateY(50px) scale(0.85); } to { opacity: 1; transform: none; } }
+  .s-pyramid .lv path { filter: drop-shadow(0 10px 18px rgba(27,31,42,0.16)); }
+  .s-pyramid .lv .em { text-anchor: middle; dominant-baseline: central; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .s-pyramid .lv .lb { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 26px; letter-spacing: 0.1em; text-transform: uppercase; fill: #fff; text-anchor: middle; dominant-baseline: central; }
+  .s-pyramid .lv .lb.small { font-size: 20px; letter-spacing: 0.06em; }
+  .s-pyramid .lg { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 20px; }
+  .s-pyramid .lg .sw { flex: none; width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; color: #fff; box-shadow: var(--shadow); }
+  .s-pyramid .lg b { display: block; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 24px; color: var(--ink); line-height: 1.2; }
+  .s-pyramid .lg b em { font-style: normal; color: var(--ink-soft); font-weight: 600; }
+  .s-pyramid .lg span { display: block; font-family: 'Literata', serif; font-size: 18px; color: var(--ink-soft); line-height: 1.4; margin-top: 4px; }
+  .s-pyramid .deco { display: none; }
+
+  /* ============ Domino: zanjir reaksiya ============ */
+  .s-domino .dwrap2 { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+  .s-domino svg.dm { width: 100%; height: 260px; overflow: visible; }
+  .s-domino .tile { fill: var(--ink); rx: 8; transform-box: fill-box; transform-origin: right bottom; }
+  .s-domino .tile.c0 { fill: var(--blue); } .s-domino .tile.c1 { fill: var(--green); } .s-domino .tile.c2 { fill: var(--orange); } .s-domino .tile.c3 { fill: var(--red); }
+  .slide.active.s-domino .tile { animation: dfall 0.55s cubic-bezier(0.5, 0, 0.8, 0.4) both; animation-delay: calc(var(--d) * 1ms); }
+  @keyframes dfall { from { transform: rotate(0deg); } to { transform: rotate(var(--ang, 62deg)); } }
+  .s-domino .tile.stand { animation: none !important; }
+  .s-domino .dots { fill: rgba(255,255,255,0.75); }
+  .s-domino .dn { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; fill: var(--ink-soft); text-anchor: middle; }
+  .s-domino .floor { stroke: var(--rule); stroke-width: 6; stroke-linecap: round; }
+  .s-domino .finger { font-size: 46px; text-anchor: middle; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; opacity: 0; }
+  .slide.active.s-domino .finger { animation: fingerPush 0.9s var(--ease) 0.5s both; }
+  @keyframes fingerPush { 0% { opacity: 0; transform: translate(-40px, 0); } 40% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 0; transform: translate(30px, 0); } }
+  .s-domino .dcards { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 14px; }
+  .s-domino .dcd { background: var(--card); border: 2px solid var(--card-line); border-radius: 18px; padding: 16px 14px 14px; box-shadow: var(--shadow); border-top: 6px solid var(--c); }
+  .s-domino .dcd .tg { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); margin-bottom: 8px; }
+  .s-domino .dcd b { display: block; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; line-height: 1.2; color: var(--ink); }
+  .s-domino .dcd span { display: block; font-family: 'Literata', serif; font-size: 14px; line-height: 1.35; color: var(--ink-soft); margin-top: 6px; }
+  .s-domino .dcards.few .dcd b { font-size: 22px; } .s-domino .dcards.few .dcd span { font-size: 16px; }
+  .s-domino .deco { display: none; }
+
+  /* ============ Matritsa (matrix): 2×2 o'yin nazariyasi ============ */
+  .s-matrix .mwrap { display: grid; grid-template-columns: 1fr 660px; gap: 50px; align-items: center; flex: 1; min-height: 0; }
+  .s-matrix h1 { font-size: 56px; line-height: 1.06; margin: 0 0 14px; letter-spacing: -0.02em; }
+  .s-matrix .sub { font-size: 22px; margin-bottom: 20px; }
+  .s-matrix .mx { display: grid; grid-template-columns: 150px 1fr 1fr; grid-template-rows: 110px 1fr 1fr; gap: 12px; height: 560px; }
+  .s-matrix .mh { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 6px; border-radius: 18px; background: var(--as); font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; color: var(--ink); line-height: 1.15; padding: 8px; }
+  .s-matrix .mh .ic { font-size: 40px; line-height: 1; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .s-matrix .corner { display: grid; place-items: center; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); text-align: center; line-height: 1.4; }
+  .s-matrix .cell { border-radius: 22px; background: var(--card); border: 2px solid var(--card-line); box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 14px; gap: 10px; opacity: 0; transform-origin: center; }
+  .slide.active.s-matrix .cell { animation: cellIn 0.6s cubic-bezier(0.2, 1.2, 0.3, 1) both; animation-delay: calc(var(--d) * 1ms); }
+  @keyframes cellIn { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
+  .s-matrix .cell .pv { text-align: center; border-radius: 14px; padding: 10px 6px; }
+  .s-matrix .cell .pv b { display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 34px; line-height: 1; letter-spacing: -0.02em; }
+  .s-matrix .cell .pv small { display: block; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; opacity: 0.8; }
+  .s-matrix .cell .pv.good { background: var(--green-soft); color: #14532D; }
+  .s-matrix .cell .pv.bad { background: var(--red-soft); color: #7F1D1D; }
+  .s-matrix .cell .pv.neutral { background: var(--orange-soft); color: #7A4B00; }
+  .s-matrix .cell .pv.free { background: var(--blue-soft); color: #1E3A8A; }
+  .s-matrix .cell.best { border-color: #F59E0B; box-shadow: 0 0 0 6px rgba(245,158,11,0.18), var(--shadow); }
+  .s-matrix .deco { display: none; }
+
   /* ============ To'xtang slaydi ============ */
   .s-stop { justify-content: center; align-items: center; text-align: center; background: var(--red); color: #fff; }
   .s-stop .toprule { background: #fff; }
@@ -571,6 +633,7 @@
   .cards.c2 { grid-template-columns: 1fr 1fr; }
   .cards.c3 { grid-template-columns: repeat(3, 1fr); }
   .cards.c4 { grid-template-columns: repeat(4, 1fr); }
+  .cards.c5 { grid-template-columns: repeat(5, 1fr); }
   .cw:nth-child(4n+1) { --c: var(--blue);   --cs: var(--blue-soft); }
   .cw:nth-child(4n+2) { --c: var(--green);  --cs: var(--green-soft); }
   .cw:nth-child(4n+3) { --c: var(--orange); --cs: var(--orange-soft); }
@@ -593,6 +656,12 @@
   .cards.rows6 .card p { font-size: 19px; }
   .cards.rows6.c4 .card { min-height: 190px; padding: 22px 24px; }
   .cards.rows6.c4 .card h3 { font-size: 21px; } .cards.rows6.c4 .card p { font-size: 17.5px; }
+  .cards.c5 .card { padding: 20px 18px; min-height: 200px; }
+  .cards.c5 .card .n { min-width: 48px; height: 48px; font-size: 24px; margin-bottom: 12px; }
+  .cards.c5 .card .n.emoji { font-size: 28px; }
+  .cards.c5 .card h3 { font-size: 18px; line-height: 1.25; } .cards.c5 .card p { font-size: 16px; line-height: 1.4; }
+  .cards.rows6.c3 .card { min-height: 180px; padding: 20px 24px; }
+  .cards.rows6.c3 .card h3 { font-size: 20px; } .cards.rows6.c3 .card p { font-size: 17px; }
 
   /* ============ Iqtibos ============ */
   .s-quote { justify-content: center; }
@@ -1080,6 +1149,58 @@
     return `${kicker(s.k)}<div class="rwrap">
       <div class="txt"><h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}${s.items ? '<ol class="plist2">' + s.items.map((t, j) => '<li class="rv" style="--i:' + (3 + j) + '"><b>' + (j + 1) + '</b><span>' + fmt(t) + '</span></li>').join('') + '</ol>' : ''}</div>
       <div class="rv" style="--i:2"><svg class="rt" viewBox="0 0 700 660">${svg}</svg></div>
+    </div>${note(s.note)}`;
+  };
+
+  R.pyramid = (s) => {
+    const L = s.levels || [], n = L.length;
+    const cols = ['var(--blue)', 'var(--green)', 'var(--orange)', 'var(--red)', '#7C3AED'];
+    const W = 700, H = 600, top = 30, bottom = 590, wb = 680, wt = 110, cx = W / 2, lh = (bottom - top) / Math.max(1, n), gap = 8;
+    const wAt = (y) => wt + (wb - wt) * (y - top) / (bottom - top);
+    const svg = L.map((lv, i) => {
+      const y1 = bottom - i * lh, y0 = y1 - lh + gap, w1 = wAt(y1), w0 = wAt(y0);
+      const d = `M${cx - w0 / 2},${y0} L${cx + w0 / 2},${y0} L${cx + w1 / 2},${y1} L${cx - w1 / 2},${y1} Z`;
+      const c = lv.color || cols[i % 5], ym = (y0 + y1) / 2, small = w0 < 300;
+      return `<g class="lv" style="--d:${400 + i * 450}"><path d="${d}" fill="${c}"/>${lv.icon && !small ? '<text class="em" x="' + (cx - 110) + '" y="' + ym + '" style="font-size:' + Math.min(46, lh * 0.5) + 'px">' + esc(lv.icon) + '</text>' : ''}<text class="lb ${small ? 'small' : ''}" x="${lv.icon && !small ? cx + 30 : cx}" y="${ym}">${esc(lv.label)}</text></g>`;
+    }).join('');
+    const legend = L.map((lv, i) => `<div class="lg rv" style="--i:${3 + i * 2}"><div class="sw" style="background:${lv.color || cols[i % 5]}">${esc(lv.icon || (i + 1))}</div><div><b>${esc(lv.label)}${lv.h ? ' · <em>' + fmt(lv.h) + '</em>' : ''}</b>${lv.p ? '<span>' + fmt(lv.p) + '</span>' : ''}</div></div>`).join('');
+    return `${kicker(s.k)}<div class="pywrap">
+      <div class="rv" style="--i:1"><svg class="py" viewBox="0 0 ${W} ${H}">${svg}</svg></div>
+      <div class="txt"><h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}<div class="legend">${legend}</div></div>
+    </div>${note(s.note)}`;
+  };
+
+  R.domino = (s) => {
+    const it = s.items || [], n = it.length;
+    const W = 1500, base = 230, tw = 46, th = 170, span = W - 120, step = span / Math.max(1, n - 1);
+    const x0 = 60;
+    const tiles = it.map((d, i) => {
+      const x = x0 + i * step - tw / 2, last = i === n - 1;
+      const dots = [[x + 14, base - th + 24], [x + tw - 14, base - th + 24], [x + tw / 2, base - th / 2], [x + 14, base - 24], [x + tw - 14, base - 24]].map(p => `<circle class="dots" cx="${p[0]}" cy="${p[1]}" r="4"/>`).join('');
+      return `<text class="dn" x="${x + tw / 2}" y="${base - th - 22}">${i + 1}</text><g class="tile c${i % 4}" style="--d:${800 + i * 380};--ang:${last ? 80 : 62}deg"><rect x="${x}" y="${base - th}" width="${tw}" height="${th}" rx="8"/>${dots}</g>`;
+    }).join('');
+    const cards = it.map((d, i) => `<div class="dcd rv" style="--i:${2 + i};--c:${['var(--blue)', 'var(--green)', 'var(--orange)', 'var(--red)'][i % 4]}">${d.tag ? '<div class="tg">' + fmt(d.tag) + '</div>' : ''}<b>${fmt(d.h)}</b>${d.p ? '<span>' + fmt(d.p) + '</span>' : ''}</div>`).join('');
+    return `${kicker(s.k)}<h1 class="h small rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}
+      <div class="dwrap2">
+        <div class="rv" style="--i:2"><svg class="dm" viewBox="0 0 ${W} 260"><line class="floor" x1="20" y1="${base + 4}" x2="${W - 20}" y2="${base + 4}"/><text class="finger" x="${x0 - 50}" y="${base - th / 2}">👉</text>${tiles}</svg></div>
+        <div class="dcards ${n <= 5 ? 'few' : ''}" style="--n:${n}">${cards}</div>
+      </div>${note(s.note)}`;
+  };
+
+  R.matrix = (s) => {
+    const who = s.who || ['Siz', 'Sherik'];
+    const cols = s.cols || [], rows = s.rows || [], cells = s.cells || [];
+    const hd = (c) => `<div class="mh rv" style="--i:2">${c.icon ? '<span class="ic">' + esc(c.icon) + '</span>' : ''}<span>${fmt(c.h)}</span></div>`;
+    let grid = `<div class="corner rv" style="--i:2">${esc(who[0])}<br>↓ &nbsp; ${esc(who[1])} →</div>${cols.map(hd).join('')}`;
+    rows.forEach((r, i) => {
+      grid += hd(r);
+      (cells[i] || []).forEach((c, j) => {
+        grid += `<div class="cell ${c.best ? 'best' : ''}" style="--d:${900 + (i * cols.length + j) * 450}"><div class="pv ${c.ta || c.tone || 'neutral'}"><b>${fmt(c.a)}</b><small>${esc(who[0])}</small></div><div class="pv ${c.tb || c.tone || 'neutral'}"><b>${fmt(c.b)}</b><small>${esc(who[1])}</small></div></div>`;
+      });
+    });
+    return `${kicker(s.k)}<div class="mwrap">
+      <div class="txt"><h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}${s.items ? '<ol class="plist2">' + s.items.map((t, j) => '<li class="rv" style="--i:' + (4 + j * 2) + '"><b>' + (j + 1) + '</b><span>' + fmt(t) + '</span></li>').join('') + '</ol>' : ''}</div>
+      <div class="mx">${grid}</div>
     </div>${note(s.note)}`;
   };
 
