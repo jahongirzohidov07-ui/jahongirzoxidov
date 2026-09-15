@@ -40,9 +40,25 @@ module.exports = {
     { t: 'pulley', color: 'orange', k: 'Leverage — richak nima?', h: 'Richak qancha *ko\'p* bo\'lsa, hayot yuki shuncha *yengil*', load: 'HAYOT YUKI',
       cap: 'Biz shu dasturda *9 ta richakni* o\'rganamiz. Har biri qo\'shilgani sari hayot yuki yengillashib boraveradi.' },
 
-    { t: 'section', icon: '💡', n: '1', h: 'Unique knowledge — noyob bilim', s: 'Birinchi richak' },
+    /* ---- 1-richak: Noyob bilim ---- */
+    { t: 'photo', layout: 'full', color: 'blue', img: '/assets/olmos-r1.jpg', focus: 'center', k: 'Birinchi richak', h: 'Unique knowledge', s: 'Noyob bilim', num: '1', credit: 'Foto: Unsplash' },
 
-    { t: 'vs', k: 'How · noyob bilim qanday yig\'iladi?', h: 'Bir nechta sohani bitta odamda birlashtirish', a: { h: 'Misol: muhandis', tone: 'neutral', items: ['Fizik fikrlash', 'Muhandislik', 'Biznes management', 'Risk management', 'Work ethics', 'Leadership', 'Learning', 'Programming', 'Multi-industrial system thinking'] }, b: { h: 'Misol: men', tone: 'gold', items: ['Ingliz tili', 'Teaching', 'Learning', 'Business management', 'Marketing', 'Leadership', 'Strategy', 'Psychology'] }, note: 'Why: *siz bilan raqobat qilish qiyin bo\'lib qoladi.*' },
+    { t: 'photo', layout: 'split', color: 'blue', img: '/assets/olmos-brilliant.jpg', focus: 'center', k: 'What · nima?', h: 'Olmos → *Brilliant*', items: [
+      '*Olmos* — xom bilim. Yer ostida ko\'p, hammada bor.',
+      '*Brilliant* — sayqallangan bilim. Kam kishida bor, qimmat.',
+      'Noyob bilim = bir nechta sohani birlashtirib, o\'zingizni *sayqallash*.'
+    ], all: true },
+
+    { t: 'stack', color: 'green', k: 'How · qanday?', h: '*Skill stacking* — ko\'nikmalarni ustma-ust yig\'ish', s: 'Bitta ko\'nikmada dunyoning eng zo\'ri bo\'lish shart emas. Bir nechta ko\'nikma birlashsa — noyob bilim paydo bo\'ladi.', axis: 'Karyera muvaffaqiyati ehtimoli',
+      books: ['Samaradorlik', 'Ishontirish', 'Yozish', 'Psixologiya', 'Shaxsiy moliya'], top: 'Noyob mutaxassis' },
+
+    { t: 'stack', color: 'orange', k: 'Misol · skill stacking', person: { img: '/assets/musk.jpg', name: 'Elon Musk', role: 'Tesla, SpaceX, xAI' }, h: '9 ta ko\'nikma = *1 ta noyob odam*', s: 'Har biri alohida — oddiy. Birga — dunyoda takrorlanmas.', axis: 'Noyoblik',
+      books: ['Fizik fikrlash', 'Muhandislik', 'Biznes management', 'Risk management', 'Work ethics', 'Leadership', 'Learning', 'Programming', 'Multi-industrial system thinking'] },
+
+    { t: 'stack', color: 'red', k: 'Misol · skill stacking', person: { img: '/assets/jahongir-2.jpg', name: 'Jahongir Zoxidov', role: 'Jony Academy, Jony School' }, h: '8 ta ko\'nikma — *mening to\'plamim*', s: 'Ingliz tili o\'qituvchisi ko\'p. Ingliz tili + biznes + marketing + psixologiya — kam.', axis: 'Noyoblik',
+      books: ['Ingliz tili', 'Teaching', 'Learning', 'Business management', 'Marketing', 'Leadership', 'Strategy', 'Psychology'] },
+
+    { t: 'photo', layout: 'full', color: 'red', img: '/assets/noyob.jpg', focus: 'center', k: 'Why · nega?', h: 'Siz bilan *raqobat qilish qiyin* bo\'lib qoladi', s: 'Noyob bilim sizni olomon ichida yagona qiladi: o\'rningizga boshqa odamni qo\'yib bo\'lmaydi.', credit: 'Foto: Unsplash' },
 
     { t: 'section', icon: '🔗', n: '2', h: 'Unique links — noyob aloqalar', s: 'Ikkinchi richak' },
 
