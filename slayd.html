@@ -310,6 +310,10 @@
   .s-circles h1 { font-size: 66px; line-height: 1.04; margin: 0 0 18px; letter-spacing: -0.02em; }
   .s-circles .sub { font-size: 24px; margin-bottom: 30px; }
   .s-circles .legend { display: flex; flex-direction: column; gap: 12px; }
+  .s-circles .legend.many .lg { padding: 9px 16px 9px 10px; }
+  .s-circles .legend.many .lg .sw { width: 46px; height: 46px; font-size: 17px; }
+  .s-circles .legend.many .lg b { font-size: 19px; }
+  .s-circles .legend.many .lg span { font-size: 15px; }
   .s-circles .lg { display: flex; align-items: center; gap: 18px; background: var(--card); border: 1px solid var(--card-line); box-shadow: var(--shadow); border-radius: 18px; padding: 14px 20px 14px 14px; }
   .s-circles .lg .sw { flex: none; width: 58px; height: 58px; border-radius: 14px; display: grid; place-items: center; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 20px; }
   .s-circles .lg b { display: block; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink); line-height: 1.2; }
@@ -933,11 +937,18 @@
 
   R.circles = (s) => {
     const rings = s.rings || [{ label: 'WHY', h: 'Nega?', p: 'Maqsad: nima uchun buni qilamiz' }, { label: 'HOW', h: 'Qanday?', p: 'Buni qanday qilamiz' }, { label: 'WHAT', h: 'Nima?', p: 'Nima qilamiz va natijamiz' }];
-    const ringsHtml = rings.map((r, i) => '<div class="ring i' + i + '"><b>' + esc(r.label) + '</b></div>').reverse().join('');
-    const legend = rings.map((r, i) => '<div class="lg i' + i + ' rv" style="--i:' + (3 + i * 4) + '"><div class="sw">' + esc(r.short || (i + 1)) + '</div><div><b>' + esc(r.label) + ' · <em>' + fmt(r.h) + '</em></b>' + (r.p ? '<span>' + fmt(r.p) + '</span>' : '') + '</div></div>').join('');
+    const n = rings.length;
+    const pal = [['var(--orange)', '#fff'], ['#FDE68A', '#78350F'], ['#BFDBFE', '#1E3A8A'], ['#BBF7D0', '#14532D'], ['#E9D5FF', '#581C87']];
+    const ringsHtml = rings.map((r, i) => {
+      const inset = Math.round((n - 1 - i) * 310 / n), bg = r.bg || pal[i % 5][0], fg = r.fg || pal[i % 5][1];
+      const fs = n > 3 ? (i === 0 ? 26 : 20) : (i === 0 ? 38 : 30), pb = n > 3 ? 14 : 24;
+      const delay = 0.35 + i * (n > 3 ? 0.4 : 0.45);
+      return '<div class="ring i' + i + '" style="inset:' + inset + 'px;background:' + bg + ';color:' + fg + ';animation-delay:' + delay + 's' + (i === 0 ? ';align-items:center' : '') + '"><b style="font-size:' + fs + 'px;padding-bottom:' + (i === 0 ? 0 : pb) + 'px">' + esc(r.label) + '</b></div>';
+    }).reverse().join('');
+    const legend = rings.map((r, i) => '<div class="lg i' + i + ' rv" style="--i:' + (3 + i * 3) + '"><div class="sw" style="background:' + (r.bg || pal[i % 5][0]) + ';color:' + (r.fg || pal[i % 5][1]) + '">' + esc(r.short || (i + 1)) + '</div><div><b>' + esc(r.label) + (r.h ? ' · <em>' + fmt(r.h) + '</em>' : '') + '</b>' + (r.p ? '<span>' + fmt(r.p) + '</span>' : '') + '</div></div>').join('');
     return `${kicker(s.k)}<div class="cwrap">
-      <div class="rings"><div class="orbit"></div>${ringsHtml}<div class="pulse"></div></div>
-      <div class="txt"><h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}<div class="legend">${legend}</div></div>
+      <div class="rings"><div class="orbit"></div>${ringsHtml}<div class="pulse" style="inset:${Math.round((n - 1) * 310 / n)}px"></div></div>
+      <div class="txt"><h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}<div class="legend ${n > 3 ? 'many' : ''}">${legend}</div></div>
     </div>`;
   };
 
