@@ -210,6 +210,53 @@
   .s-photo .toprule { background: #fff; }
   .s-photo .folio-bg { color: #fff; opacity: 0.25; }
 
+
+  /* ============ Egri chiziq (curve) ============ */
+  .curve-wrap { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: center; margin: auto 0; }
+  .curve-wrap svg { width: 100%; height: 440px; overflow: visible; }
+  .curve-wrap .line { fill: none; stroke: var(--a); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 2000; stroke-dashoffset: 2000; }
+  .slide.active .curve-wrap .line { animation: draw 1.6s var(--ease) 0.3s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .curve-wrap .area { fill: var(--a); opacity: 0.12; }
+  .curve-wrap .pt { fill: #fff; stroke: var(--a); stroke-width: 6; }
+  .curve-wrap .lbl { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; fill: var(--ink-soft); text-anchor: middle; }
+  .curve-wrap .val { font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; fill: var(--a); text-anchor: middle; }
+  .curve-wrap .grid { stroke: var(--rule); stroke-width: 1; }
+  .curve-side .big { font-family: 'Fraunces', serif; font-size: 120px; font-weight: 700; color: var(--a); line-height: 1; letter-spacing: -0.03em; }
+  .curve-side .bl { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 12px; }
+  .curve-side .bs { font-size: 22px; color: var(--ink-soft); margin-top: 14px; line-height: 1.45; }
+
+
+  /* ============ Mavzu (topic) slaydi: richag illyustratsiyasi ============ */
+  .s-topic { justify-content: center; background: var(--a); color: #fff; }
+  .s-topic .toprule { background: #fff; }
+  .s-topic .folio-bg { color: #fff; opacity: 0.2; }
+  .s-topic .deco i { background: #fff; color: #fff; border-color: #fff; }
+  .s-topic .kicker { color: #fff; opacity: 0.9; }
+  .s-topic .kicker::before { background: #fff; }
+  .s-topic h1 { font-size: 118px; line-height: 0.98; color: #fff; margin-bottom: 18px; letter-spacing: -0.03em; }
+  .s-topic .sub { color: #fff; opacity: 0.92; font-size: 36px; }
+  .s-topic .art { position: absolute; right: 90px; top: 130px; width: 760px; height: 640px; }
+  .s-topic .art svg { width: 100%; height: 100%; overflow: visible; }
+  .s-topic .beam, .s-topic .rock { transform-origin: 560px 470px; transform-box: view-box; }
+  .slide.active.s-topic .beam { animation: lever 2.2s cubic-bezier(0.3, 0.9, 0.3, 1) 0.6s both; }
+  @keyframes lever { 0% { transform: rotate(0deg); } 35% { transform: rotate(0deg); } 100% { transform: rotate(22deg); } }
+  .slide.active.s-topic .rock { animation: lever 2.2s cubic-bezier(0.3, 0.9, 0.3, 1) 0.6s both; }
+  .s-topic .txt { max-width: 720px; }
+
+  /* ============ To'xtang slaydi ============ */
+  .s-stop { justify-content: center; align-items: center; text-align: center; background: var(--red); color: #fff; }
+  .s-stop .toprule { background: #fff; }
+  .s-stop .folio-bg { color: #fff; opacity: 0.2; }
+  .s-stop .deco i { background: #fff; color: #fff; border-color: #fff; }
+  .s-stop .sign { width: 300px; height: 300px; margin-bottom: 40px; position: relative; display: grid; place-items: center; }
+  .s-stop .sign svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .s-stop .sign .hand { position: relative; font-size: 150px; line-height: 1; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .slide.active.s-stop .sign { animation: stopIn 0.9s cubic-bezier(0.2, 1.2, 0.3, 1) both; }
+  @keyframes stopIn { from { transform: scale(0.3) rotate(-20deg); opacity: 0; } to { transform: none; opacity: 1; } }
+  .s-stop h1 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 128px; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; margin-bottom: 20px; line-height: 1; }
+  .s-stop .sub { color: #fff; opacity: 0.95; font-size: 38px; text-align: center; }
+
   /* ============ Bo'lim slaydi (to'liq rangli) ============ */
   .s-section { justify-content: center; background: var(--a, var(--blue)); color: #fff; }
   .s-section .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 220px; line-height: 0.9; color: #fff; opacity: 0.55; margin-bottom: 26px; letter-spacing: -0.04em; }
@@ -529,6 +576,61 @@
     </div>
     ${s.credit ? '<div class="credit">' + esc(s.credit) + '</div>' : ''}`;
 
+
+  R.curve = (s) => {
+    const pts = s.points || [];
+    const W = 1000, H = 400, padL = 40, padR = 40, padT = 70, padB = 60;
+    const xs = pts.map((p, i) => padL + i * (W - padL - padR) / Math.max(1, pts.length - 1));
+    const ys = pts.map(p => padT + (100 - p.v) / 100 * (H - padT - padB));
+    let d = '';
+    xs.forEach((x, i) => {
+      if (i === 0) { d += 'M' + x + ',' + ys[i]; return; }
+      const cx = (xs[i - 1] + x) / 2;
+      d += ' C' + cx + ',' + ys[i - 1] + ' ' + cx + ',' + ys[i] + ' ' + x + ',' + ys[i];
+    });
+    const area = d + ' L' + xs[xs.length - 1] + ',' + (H - padB) + ' L' + xs[0] + ',' + (H - padB) + ' Z';
+    const grid = [0, 25, 50, 75, 100].map(v => { const y = padT + (100 - v) / 100 * (H - padT - padB); return '<line class="grid" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + y + '" y2="' + y + '"/>'; }).join('');
+    const marks = pts.map((p, i) => `<g class="rv" style="--i:${i + 3}"><circle class="pt" cx="${xs[i]}" cy="${ys[i]}" r="12"/><text class="val" x="${xs[i]}" y="${ys[i] - 26}">${esc(p.v)}%</text><text class="lbl" x="${xs[i]}" y="${H - padB + 36}">${esc(p.x)}</text></g>`).join('');
+    return `${heroIcon(s)}${kicker(s.k)}<h1 class="h rv" style="--i:1">${fmt(s.h)}</h1>
+      <div class="curve-wrap">
+        <svg viewBox="0 0 ${W} ${H}" class="rv" style="--i:2">${grid}<path class="area" d="${area}"/><path class="line" d="${d}"/>${marks}</svg>
+        <div class="curve-side rv" style="--i:4">${s.big ? '<div class="big">' + esc(s.big) + '</div>' : ''}${s.bigLabel ? '<div class="bl">' + fmt(s.bigLabel) + '</div>' : ''}${s.side ? '<div class="bs">' + fmt(s.side) + '</div>' : ''}</div>
+      </div>${note(s.note)}`;
+  };
+
+
+  R.topic = (s) => `
+    <div class="art rv" style="--i:2"><svg viewBox="0 0 760 640" fill="none">
+      <!-- yer -->
+      <rect x="0" y="560" width="760" height="10" rx="5" fill="#fff" opacity="0.35"/>
+      <!-- tayanch -->
+      <path d="M520,560 L600,560 L560,470 Z" fill="#fff"/>
+      <!-- richak va tosh (aylanadi) -->
+      <g class="beam">
+        <rect x="140" y="458" width="600" height="24" rx="12" fill="#fff"/>
+      </g>
+      <g class="rock">
+        <!-- katta tosh richakning chap uchida -->
+        <path d="M150,458 C140,400 175,352 240,346 C300,340 345,380 340,430 C338,448 320,458 300,458 Z" fill="#fff" opacity="0.92"/>
+        <path d="M200,392 C215,372 250,368 275,384" stroke="var(--a)" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+      </g>
+      <!-- kichik kuch: o'ng uchdagi strelka -->
+      <g class="rv" style="--i:4">
+        <path d="M700,300 L700,420" stroke="#FFD166" stroke-width="16" stroke-linecap="round"/>
+        <path d="M660,384 L700,428 L740,384" stroke="#FFD166" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="700" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="30" fill="#FFD166">kichik kuch</text>
+      </g>
+      <g class="rv" style="--i:5">
+        <text x="300" y="192" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="30" fill="#fff" opacity="0.9">katta natija</text>
+      </g>
+    </svg></div>
+    <div class="txt">${kicker(s.k)}<h1 class="rv" style="--i:1">${fmt(s.h)}</h1>${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}</div>`;
+
+  R.stop = (s) => `
+    <div class="sign rv" style="--i:0"><svg viewBox="0 0 300 300"><polygon points="88,6 212,6 294,88 294,212 212,294 88,294 6,212 6,88" fill="#fff"/><polygon points="98,26 202,26 274,98 274,202 202,274 98,274 26,202 26,98" fill="none" stroke="var(--red)" stroke-width="8"/></svg><div class="hand">${esc(s.icon || '✋')}</div></div>
+    <h1 class="rv" style="--i:1">${fmt(s.h || 'To\'xtang!')}</h1>
+    ${s.s ? '<div class="sub rv" style="--i:2">' + fmt(s.s) + '</div>' : ''}`;
+
   R.section = (s) => `${heroIcon(s)}
     <div class="num rv" style="--i:0">${fmt(s.n || '')}</div>
     <h1 class="rv" style="--i:1">${fmt(s.h)}</h1>
@@ -631,7 +733,7 @@
       const r = R[type] || R.bullets;
       let html = '';
       try { html = r(s, i); } catch (e) { html = '<h1>Slayd xatosi</h1><div class="sub">' + esc(e.message) + '</div>'; }
-      d.innerHTML = ((type === 'cover' || type === 'photo') ? '' : deco(i, s)) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
+      d.innerHTML = ((type === 'cover' || type === 'photo' || type === 'topic') ? '' : deco(i, s)) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
       d.dataset.notes = s.notes || '';
       stage.appendChild(d);
       return d;

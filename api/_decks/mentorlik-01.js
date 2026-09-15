@@ -14,13 +14,13 @@ module.exports = {
       'Chuqurroq ilm uchun mutaxassis bilan uchrashing'
     ], credit: 'Foto: Unsplash' },
 
-    { t: 'ask', icon: '📓', k: 'Savol', h: 'Daftarga yozganlaringiz yo\'qolib ketsa, nima qilasiz?', s: 'Biz yutqizmaslikni o\'rganamiz.' },
+    { t: 'topic', color: 'green', k: 'Birinchi mavzu', h: 'Leverages', s: 'Richaglar: kichik kuch bilan katta natija' },
 
-    { t: 'stats', icon: '🧠', k: 'Knowledge management · qaydlarni yig\'ib borish', h: 'Eshitganingizdan qanchasi esda qoladi?', items: [
-      { v: '44%', l: '1 soatdan keyin' },
-      { v: '33%', l: '1 kundan keyin' },
-      { v: '28%', l: '2 kundan keyin' }
-    ], note: 'Shuning uchun bilimni yig\'ib borish tizimi kerak. Vosita: *Obsidian.*' },
+    { t: 'stop', icon: '✋', h: 'To\'xtang!', s: 'Keyingi slaydga shoshilmang.' },
+
+    { t: 'photo', layout: 'full', color: 'orange', img: '/assets/daftar.jpg', zoom: '120%', focus: 'right center', k: 'Savol', h: 'Daftarga yozganlaringiz *yo\'qolib ketsa,* nima qilasiz?', s: 'Biz yutqizmaslikni o\'rganamiz.', credit: 'Foto: Unsplash' },
+
+    { t: 'curve', color: 'blue', icon: '🧠', k: 'Knowledge management · qaydlarni yig\'ib borish', h: 'Eshitganingizdan qanchasi esda qoladi?', points: [{ x: 'Hozir', v: 100 }, { x: '1 soatdan keyin', v: 44 }, { x: '1 kundan keyin', v: 33 }, { x: '2 kundan keyin', v: 28 }], big: '72%', bigLabel: 'ikki kunda unutiladi', side: 'Shuning uchun bilimni yig\'ib borish tizimi kerak. Vosita: *Obsidian.*' },
 
     { t: 'section', icon: '💡', n: '1', h: 'Unique knowledge — noyob bilim', s: 'Birinchi richak' },
 
