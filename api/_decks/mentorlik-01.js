@@ -4,6 +4,17 @@ module.exports = {
   slides: [
     { t: 'cover', variant: 'a', photo: '/assets/jahongir.png', badge: 'Xush kelibsiz!', h: 'Mentorship program', s: 'Shogirdlik dasturi', lesson: '*1-dars* · Leverages — richaglar', name: 'Jahongir Zoxidov', role: 'Mentor' },
 
+    { t: 'table', color: 'green', icon: '💎', k: 'Kursning qiymati', h: 'Siz oladigan bilim — *≈ $20 000* lik tajriba', head: ['Ta\'lim / trening', 'Qiymati'], rows: [
+      ['Universitet — 4 yillik ta\'lim', '*$10 000+*'],
+      ['Alisher Isayev kursi', '$2 500'],
+      ['Aziz Rahimov — mentorlik darslari', '$1 500'],
+      ['O\'quv markazni tizimlashtirish — 2 ta kurs', '$1 200 + $1 000'],
+      ['Pedagogik mahorat kursi', '$800'],
+      ['Ustozlik kursi', '$200'],
+      ['Boshqa treninglar', '$500'],
+      ['*Jami*', '*≈ $20 000*']
+    ], note: 'Universitetning o\'ziga 10 000$ dan ortiq ketgan. Bu dasturga jamlangan ilmlar — shu 20 000$ ga yaqin mablag\' sarflab olingan bilim va tajribaning mohiyati.' },
+
     { t: 'photo', layout: 'full', color: 'blue', img: '/assets/velosiped.jpg', zoom: '135%', focus: 'left 30%', k: 'Dasturning shiori', h: 'Before walking, *not falling* are learnt', s: 'Yurishdan oldin yiqilmaslik o\'rganiladi.', credit: 'Foto: Unsplash' },
 
     { t: 'photo', layout: 'split', color: 'blue', img: '/assets/qol-berish.jpg', focus: 'center', k: 'Important disclaimer', h: 'Kelishib olaylik', items: [
