@@ -11,15 +11,16 @@ module.exports = {
       { v: '10', l: 'kitob', s: 'muallif va qo\'llanmalar' }
     ], note: 'Jony Academy · Jony School · Stech · University of Sunderland bitiruvchisi' },
 
-    { t: 'table', color: 'green', icon: '💎', k: 'Kursning qiymati', h: 'Siz oladigan bilim — *$7 000* lik tajriba', head: ['Trening', 'Muallif', 'Qiymati'], rows: [
-      ['O\'quv markazlarni tizimlashtirish ×2', 'Axrolxo\'ja Rahmatxo\'jayev', '$2 000'],
-      ['Ustozlik mahorati', 'Axrolxo\'ja Rahmatxo\'jayev', '$400'],
-      ['Shogirdlik dasturi', 'Aziz Rahimov', '$1 500'],
-      ['Biznesni davolash', 'Alisher Isayev', '$3 000'],
-      ['Pedagog konsepsiyasi', 'Javohir Quvvatov', '$800'],
-      ['Qo\'shimcha kurslar va seminarlar', 'Boshqa treninglar', '$300'],
-      ['*Jami qiymati*', '', '*$7 000*']
-    ], note: 'Bu modulga jamlangan g\'oyalar yetakchi ustozlar treninglarining mohiyatidan olingan' },
+    { t: 'table', color: 'green', icon: '💎', k: 'Kursning qiymati', h: 'Siz oladigan bilim — *≈ $20 000* lik tajriba', head: ['Ta\'lim / trening', 'Qiymati'], rows: [
+      ['Universitet — 4 yillik ta\'lim', '*$10 000+*'],
+      ['Alisher Isayev kursi', '$2 500'],
+      ['Aziz Rahimov — mentorlik darslari', '$1 500'],
+      ['O\'quv markazni tizimlashtirish — 2 ta kurs', '$1 200 + $1 000'],
+      ['Pedagogik mahorat kursi', '$800'],
+      ['Ustozlik kursi', '$200'],
+      ['Boshqa treninglar', '$500'],
+      ['*Jami*', '*≈ $20 000*']
+    ], note: 'Universitetning o\'ziga 10 000$ dan ortiq ketgan. Bu modulga jamlangan g\'oyalar — shu 20 000$ ga yaqin mablag\' sarflab olingan ilmlarning mohiyati.' },
 
     { t: 'steps', color: 'orange', icon: '🤝', k: 'Kelishib olaylik', h: 'Boshlashdan oldin *uchta narsani* ochiq aytib qo\'yay', all: true, items: [
       { n: '🌉', h: 'Vositachi', p: 'Men bilim sohibi emas, balki vositachiman.' },
