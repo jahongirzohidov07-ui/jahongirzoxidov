@@ -1,3 +1,9 @@
 assets/_tmp/
 
 Claude outputs/
+
+graphify-out/
+.claude/
+CLAUDE.md
+.gitattributes
+
