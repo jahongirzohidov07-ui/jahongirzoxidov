@@ -5,15 +5,45 @@
     {
       "source": "/(admin|slayd)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-        { "key": "Cache-Control", "value": "no-store" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
       ]
     },
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
       ]
+    }
+  ],
+  "functions": {
+    "api/bot.js": {
+      "maxDuration": 60
+    },
+    "api/mgr-morning.js": {
+      "maxDuration": 60
+    },
+    "api/mgr-evening.js": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/mgr-morning",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/mgr-evening",
+      "schedule": "0 16 * * *"
     }
   ]
 }
