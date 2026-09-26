@@ -86,6 +86,8 @@
   .lesson .c { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-soft); white-space: nowrap; }
   .lesson a.open { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: var(--parchment); background: var(--indigo); padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
   .lesson a.open:hover { background: var(--clay-gold); }
+  .lesson a.sk { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; color: var(--indigo); border: 1px solid var(--indigo); padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+  .lesson a.sk:hover { background: var(--indigo); color: var(--parchment); }
   .lesson.off .t { color: var(--ink-soft); }
   .lesson .soon { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-soft); border: 1px dashed var(--rule); padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
 
@@ -287,7 +289,7 @@
           <div class="lesson ${l.ready ? '' : 'off'}">
             <span class="n">${l.n}</span>
             <span class="t">${esc(l.title)}${l.hint ? '<br><span class="c">' + esc(l.hint) + '</span>' : ''}</span>
-            ${l.ready ? '<span class="c">' + l.slides + ' slayd</span><a class="open" href="/slayd?d=' + encodeURIComponent(p.id) + '&n=' + l.n + '">Ochish →</a>' : '<span class="soon">tayyorlanmoqda</span>'}
+            ${l.ready ? '<span class="c">' + l.slides + ' slayd</span>' + (l.script ? '<a class="sk" href="/skript?d=' + encodeURIComponent(p.id) + '&n=' + l.n + '" title="Skript: ma\'qul / izoh">📝 ' + l.script.ok + '/' + l.script.total + (l.script.izoh ? ' · ✎' + l.script.izoh : '') + '</a>' : '') + '<a class="open" href="/slayd?d=' + encodeURIComponent(p.id) + '&n=' + l.n + '">Ochish →</a>' : '<span class="soon">tayyorlanmoqda</span>'}
           </div>`).join('')}</div>
       </div>`).join('');
   }

@@ -810,6 +810,88 @@
   #msg { position: fixed; inset: 0; display: none; place-items: center; font-family: 'Inter', sans-serif; color: var(--ink-soft); font-size: 18px; text-align: center; padding: 40px; }
   #msg.show { display: grid; }
 
+  /* ============ Skript: pastki panel, taqdimotchi va doska rejimlari ============ */
+  #tools { position: absolute; left: 22px; bottom: 14px; display: flex; gap: 8px; pointer-events: auto; }
+  #tools button, .pbtn { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink-soft); background: var(--bg2); border: 1px solid var(--card-line); border-radius: 999px; padding: 6px 12px; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+  #tools button:hover, .pbtn:hover { border-color: var(--blue); color: var(--blue); }
+  #tools button[hidden] { display: none; }
+  body.drawer #stageWrap { bottom: var(--dh, 40vh); }
+  #drawer { position: fixed; left: 0; right: 0; bottom: 0; height: var(--dh, 40vh); background: var(--bg2); border-top: 1px solid var(--card-line); box-shadow: 0 -18px 40px rgba(0,0,0,0.10); display: none; flex-direction: column; z-index: 20; font-family: 'Inter', sans-serif; }
+  body.drawer #drawer { display: flex; }
+  #drawer .dh { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 18px; border-bottom: 1px solid var(--card-line); font-size: 13px; color: var(--muted); }
+  #drawer .dh b { color: var(--ink); font-size: 14px; }
+  #drawer .dh .sp { flex: 1; }
+  #drawer .db { flex: 1; overflow-y: auto; padding: 16px 22px 30px; }
+  .sk { font-family: 'Literata', Georgia, serif; font-size: var(--skfs, 19px); line-height: 1.62; color: var(--ink); max-width: 980px; }
+  .sk p { margin: 0 0 0.75em; }
+  .sk .cue { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.68em; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; margin-right: 8px; vertical-align: 0.12em; background: var(--card-line); color: var(--muted); }
+  .sk .cue.click { background: rgba(58,110,255,0.14); color: var(--blue); }
+  .sk .cue.click.done { background: var(--blue); color: #fff; }
+  .sk .cue.ask { background: rgba(255,140,40,0.16); color: var(--orange); }
+  .sk .cue.pause { background: rgba(120,120,140,0.14); }
+  .sk .cue.task { background: rgba(40,170,110,0.16); color: var(--green); }
+  .sk .cue.board { background: rgba(120,80,220,0.14); color: #7a52d6; }
+  .sk .cue.own { background: rgba(230,60,70,0.12); color: var(--red); text-transform: none; letter-spacing: 0; font-size: 0.8em; white-space: normal; }
+  .sk p.ask { border-left: 4px solid var(--orange); padding-left: 12px; }
+  .sk p.task { border-left: 4px solid var(--green); padding-left: 12px; }
+  .sk p.own { border-left: 4px dashed var(--red); padding-left: 12px; font-style: italic; color: var(--ink-soft); }
+  .sk .empty { color: var(--muted); font-style: italic; }
+  .rv-chip { font-weight: 800; font-size: 12px; padding: 4px 10px; border-radius: 999px; background: var(--card-line); color: var(--muted); }
+  .rv-chip.ok { background: rgba(40,170,110,0.16); color: var(--green); }
+  .rv-chip.izoh { background: rgba(255,140,40,0.16); color: var(--orange); }
+  .rvbtn { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 800; border-radius: 10px; padding: 7px 12px; cursor: pointer; border: 1px solid var(--card-line); background: var(--bg); color: var(--ink-soft); }
+  .rvbtn.okb { border-color: var(--green); color: var(--green); }
+  .rvbtn.okb.on { background: var(--green); color: #fff; }
+  .rvbtn.izb { border-color: var(--orange); color: var(--orange); }
+  .rvbtn.izb.on { background: var(--orange); color: #fff; }
+  .izoh-box { display: none; margin: 0 0 14px; max-width: 980px; }
+  .izoh-box.show { display: block; }
+  .izoh-box textarea { width: 100%; min-height: 84px; box-sizing: border-box; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.5; padding: 10px 12px; border-radius: 12px; border: 2px solid var(--orange); background: var(--bg); color: var(--ink); resize: vertical; }
+  .izoh-box .row { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
+  .izoh-show { max-width: 980px; margin: 0 0 14px; padding: 10px 14px; border-radius: 12px; background: rgba(255,140,40,0.10); border: 1px solid rgba(255,140,40,0.35); font-size: 15px; color: var(--ink-soft); white-space: pre-wrap; }
+  #toast { position: fixed; left: 50%; top: 18px; transform: translate(-50%, -30px); opacity: 0; background: var(--ink); color: var(--bg); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; padding: 9px 16px; border-radius: 999px; z-index: 90; transition: all 0.3s var(--ease); pointer-events: none; }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  /* taqdimotchi (noutbuk ekrani) */
+  #pres { display: none; }
+  body.pres #hud, body.pres #drawer { display: none !important; }
+  body.pres #pres { display: block; position: fixed; inset: 0; z-index: 15; pointer-events: none; font-family: 'Inter', sans-serif; }
+  body.pres #pres > * { pointer-events: auto; }
+  body.pres #stageWrap { left: 14px; top: 62px; width: 60vw; height: 50vh; right: auto; bottom: auto; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.18); outline: 3px solid var(--blue); }
+  body.pres { background: var(--bg); }
+  .ptop { position: absolute; left: 0; right: 0; top: 0; height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 14px; border-bottom: 1px solid var(--card-line); background: var(--bg2); font-size: 14px; color: var(--muted); }
+  .ptop .ttl { color: var(--ink); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 32vw; }
+  .ptop .sp { flex: 1; }
+  .ptop .num { font-size: 18px; font-weight: 800; color: var(--ink); }
+  .ptop .timer { font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 800; color: var(--ink); cursor: pointer; user-select: none; padding: 2px 10px; border-radius: 10px; }
+  .ptop .timer.paused { color: var(--orange); }
+  .ptop .clock { font-variant-numeric: tabular-nums; font-weight: 700; }
+  .ptop .pace { font-weight: 800; padding: 3px 10px; border-radius: 999px; font-size: 13px; }
+  .pace.g { background: rgba(40,170,110,0.16); color: var(--green); }
+  .pace.o { background: rgba(255,140,40,0.18); color: var(--orange); }
+  .pace.r { background: rgba(230,60,70,0.16); color: var(--red); }
+  .pnext { position: absolute; top: 62px; left: calc(60vw + 28px); right: 14px; height: 50vh; display: flex; flex-direction: column; gap: 10px; }
+  .pnext .box { flex: 1; border: 1px dashed var(--card-line); border-radius: 14px; padding: 14px 16px; background: var(--bg2); overflow: hidden; }
+  .pnext .lbl { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
+  .pnext .nk { margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--blue); }
+  .pnext .nh { margin-top: 4px; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; line-height: 1.25; color: var(--ink); }
+  .pnext .ns { margin-top: 12px; font-family: 'Literata', serif; font-size: 16px; line-height: 1.5; color: var(--ink-soft); font-style: italic; }
+  .pnext .nav { display: flex; gap: 10px; }
+  .pnext .nav button { flex: 1; font-size: 26px; font-weight: 800; padding: 14px 0; border-radius: 14px; border: 1px solid var(--card-line); background: var(--bg2); color: var(--ink); cursor: pointer; }
+  .pnext .nav button.fw { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .pnext .meta { font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+  .pscript { position: absolute; left: 14px; right: 14px; top: calc(62px + 50vh + 12px); bottom: 12px; overflow-y: auto; background: var(--bg2); border: 1px solid var(--card-line); border-radius: 14px; padding: 16px 22px 40px; }
+  .pscript .sk { --skfs: var(--pfs, 24px); max-width: none; }
+  .pscript .sk p { margin-bottom: 0.6em; }
+
+  /* doska (proyektor) oynasi — faqat slayd */
+  body.board #hud, body.board #drawer, body.board #pres { display: none !important; }
+  body.board.idle, body.board.idle * { cursor: none !important; }
+  #boardGate { position: fixed; inset: 0; z-index: 70; display: none; place-items: center; background: rgba(18,23,42,0.86); color: #fff; font-family: 'Inter', sans-serif; text-align: center; padding: 40px; cursor: pointer; }
+  #boardGate.show { display: grid; }
+  #boardGate .big { font-size: 34px; font-weight: 800; margin-bottom: 14px; }
+  #boardGate .sm { font-size: 18px; opacity: 0.8; line-height: 1.6; }
+
   @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 </style>
 </head>
@@ -821,8 +903,52 @@
   <div class="tl"><a href="/admin" id="backLink">← Panel</a><span id="hudTitle"></span></div>
   <div class="tr" id="hudCount"></div>
   <div class="bar" id="hudBar"></div>
-  <div class="keys"><b>→</b> keyingi &nbsp; <b>←</b> oldingi &nbsp; <b>F</b> to'liq ekran &nbsp; <b>T</b> rang &nbsp; <b>?</b> yordam</div>
+  <div class="keys"><b>→</b> keyingi &nbsp; <b>←</b> oldingi &nbsp; <b>F</b> to'liq ekran &nbsp; <b>N</b> skript &nbsp; <b>P</b> taqdimot &nbsp; <b>?</b> yordam</div>
+  <div id="tools"><button type="button" id="btnScript" hidden>📝 Skript</button><button type="button" id="btnPres">🖥 Taqdimot rejimi</button></div>
 </div>
+
+<div id="drawer">
+  <div class="dh">
+    <b id="dNum">—</b><span id="dTime"></span><span class="rv-chip" id="dChip">ko'rilmagan</span>
+    <button type="button" class="rvbtn okb" id="dOk">✓ Ma'qul</button>
+    <button type="button" class="rvbtn izb" id="dIz">✎ Izoh</button>
+    <span class="sp"></span>
+    <span id="dStat"></span>
+    <a class="pbtn" id="dAll" href="#" target="_blank" rel="noopener">Butun matn ↗</a>
+    <button type="button" class="pbtn" id="dClose">✕</button>
+  </div>
+  <div class="db" id="dBody">
+    <div class="izoh-show" id="dIzShow" hidden></div>
+    <div class="izoh-box" id="dIzBox">
+      <textarea id="dIzText" placeholder="Nimani o'zgartirish kerak? Masalan: «2-abzatsni qisqartiring», «bu yerga o'z misolimni aytaman», «Rothschild qismini olib tashlang»…"></textarea>
+      <div class="row"><button type="button" class="rvbtn izb on" id="dIzSave">Izohni saqlash</button><button type="button" class="rvbtn" id="dIzCancel">Bekor</button><span class="sp"></span><button type="button" class="rvbtn" id="dIzDel" hidden>Belgini o'chirish</button></div>
+    </div>
+    <div class="sk" id="dText"></div>
+  </div>
+</div>
+
+<div id="pres">
+  <div class="ptop">
+    <span class="ttl" id="pTitle"></span>
+    <span class="num" id="pNum"></span>
+    <span class="sp"></span>
+    <span class="pace" id="pPace"></span>
+    <span class="timer" id="pTimer" title="Bosing — pauza/davom; ikki marta bosing — nolga">00:00</span>
+    <span class="clock" id="pClock"></span>
+    <button type="button" class="pbtn" id="pSm">A−</button><button type="button" class="pbtn" id="pLg">A+</button>
+    <button type="button" class="pbtn" id="pBoard">🖥 Doska oynasi</button>
+    <button type="button" class="pbtn" id="pExit">✕ Chiqish</button>
+  </div>
+  <div class="pnext">
+    <div class="box"><div class="lbl" id="pNextLbl">Keyingi slayd</div><div class="nk" id="pNextK"></div><div class="nh" id="pNextH"></div><div class="ns" id="pNextS"></div></div>
+    <div class="meta" id="pMeta"></div>
+    <div class="nav"><button type="button" id="pPrev">◀</button><button type="button" class="fw" id="pFwd">▶</button></div>
+  </div>
+  <div class="pscript" id="pScript"><div class="sk" id="pText"></div></div>
+</div>
+
+<div id="boardGate"><div><div class="big">Doska oynasi tayyor</div><div class="sm">Bu oynani doska / proyektor ekraniga o'tkazing<br>(sichqoncha bilan sudrang yoki <b>Win + Shift + →</b>),<br>so'ng shu yerga bir marta bosing — to'liq ekran bo'ladi.</div></div></div>
+<div id="toast"></div>
 
 <div class="overlay" id="help">
   <div class="panel">
@@ -873,8 +999,10 @@
   try { revealAll = localStorage.getItem('jz_reveal_all') === '1'; } catch (e) {}
   try { if (localStorage.getItem('jz_theme') === 'dark') document.body.className = 'dark'; } catch (e) {}
 
+  const stageWrap = document.getElementById('stageWrap');
   function fit() {
-    const s = Math.min(window.innerWidth / W, window.innerHeight / H);
+    const r = stageWrap.getBoundingClientRect();
+    const s = Math.min((r.width || window.innerWidth) / W, (r.height || window.innerHeight) / H);
     stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
   }
   window.addEventListener('resize', fit);
@@ -1422,15 +1550,16 @@
     runPulley(s, dir === 'back');
     history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1));
     updateHud();
+    onChange();
   }
   function next() {
     const off = frags(cur).find(f => !f.classList.contains('on'));
-    if (off) { off.classList.add('on'); return; }
+    if (off) { off.classList.add('on'); onChange(); return; }
     if (cur < slides.length - 1) show(cur + 1, 'fwd');
   }
   function prev() {
     const on = frags(cur).filter(f => f.classList.contains('on'));
-    if (on.length) { on[on.length - 1].classList.remove('on'); return; }
+    if (on.length) { on[on.length - 1].classList.remove('on'); onChange(); return; }
     if (cur > 0) show(cur - 1, 'back');
   }
   function updateHud() {
@@ -1455,7 +1584,8 @@
   function rebuildKeep() { const keep = cur; build(); show(keep, 'fwd'); frags(cur).forEach(f => f.classList.add('on')); }
 
   document.addEventListener('keydown', (e) => {
-    if (e.target && e.target.tagName === 'INPUT') return;
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
     const k = e.key;
     if (help.classList.contains('show') || notes.classList.contains('show')) {
       if (k === 'Escape' || k === '?' || k === 'n' || k === 'N') { closeOverlays(); e.preventDefault(); }
@@ -1468,19 +1598,28 @@
     else if (k === 'End') { show(slides.length - 1, 'fwd'); }
     else if (k === 'f' || k === 'F') { toggleFs(); }
     else if (k === '?') { help.classList.add('show'); }
-    else if (k === 'n' || k === 'N') { showNotes(); }
+    else if (k === 'n' || k === 'N') { toggleDrawer(); }
+    else if (k === 'p' || k === 'P') { if (MODE !== 'board') togglePres(); }
+    else if ((k === 'm' || k === 'M') && document.body.classList.contains('drawer')) { markOk(); }
+    else if ((k === '+' || k === '=') && MODE === 'pres') { presFont(2); }
+    else if ((k === '-' || k === '_') && MODE === 'pres') { presFont(-2); }
     else if (k === 'H') { hudLocked = !hudLocked; hud.classList.toggle('hide', hudLocked); }
     else if (k === 't' || k === 'T') {
-      const dark = document.body.className !== 'dark';
-      document.body.className = dark ? 'dark' : 'light';
-      try { localStorage.setItem('jz_theme', dark ? 'dark' : 'light'); } catch (err) {}
+      const dark = !document.body.classList.contains('dark');
+      setTheme(dark);
+      post({ type: 'theme', dark });
     }
     else if (k === 'a' || k === 'A') {
       revealAll = !revealAll;
       try { localStorage.setItem('jz_reveal_all', revealAll ? '1' : '0'); } catch (err) {}
       rebuildKeep();
     }
-    else if (k === 'Escape') { if (document.fullscreenElement) document.exitFullscreen(); else location.href = '/admin'; }
+    else if (k === 'Escape') {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (MODE === 'pres') togglePres();
+      else if (document.body.classList.contains('drawer')) toggleDrawer();
+      else if (MODE !== 'board') location.href = '/admin';
+    }
     wakeHud();
   });
 
@@ -1501,15 +1640,16 @@
   document.addEventListener('touchstart', (e) => { const t = e.touches[0]; tx = t.clientX; ty = t.clientY; tt = Date.now(); }, { passive: true });
   document.addEventListener('touchend', (e) => {
     if (help.classList.contains('show') || notes.classList.contains('show')) { closeOverlays(); return; }
-    if (e.target && e.target.closest && e.target.closest('a, button, input')) return;
+    if (e.target && e.target.closest && e.target.closest('a, button, input, textarea, #drawer, #pres, #boardGate')) return;
     const t = e.changedTouches[0];
     const dx = t.clientX - tx, dy = t.clientY - ty;
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { dx < 0 ? next() : prev(); return; }
     if (Math.abs(dx) < 12 && Math.abs(dy) < 12 && Date.now() - tt < 400) { t.clientX > window.innerWidth / 2 ? next() : prev(); }
   });
-  document.getElementById('stageWrap').addEventListener('click', (e) => {
+  stageWrap.addEventListener('click', (e) => {
     if (window.matchMedia('(pointer: coarse)').matches) return;
-    e.clientX > window.innerWidth / 2 ? next() : prev();
+    const r = stageWrap.getBoundingClientRect();
+    e.clientX > r.left + r.width / 2 ? next() : prev();
     wakeHud();
   });
 
@@ -1550,14 +1690,312 @@
       showMsg(t); return;
     }
     deck = await r.json();
+    SCRIPT = Array.isArray(deck.script) ? deck.script : null;
+    REVIEW = deck.review || {};
     msg.classList.remove('show');
     if (!deck.slides || !deck.slides.length) { showMsg('Bu dars uchun slaydlar hali tayyorlanmagan.'); return; }
     document.title = deck.lesson.title + ' — ' + deck.program.title;
     document.getElementById('hudTitle').textContent = deck.program.title + ' · ' + deck.lesson.n + '-dars · ' + deck.lesson.title;
     build();
+    initSkript();
     const h = parseInt((location.hash || '').replace('#', ''), 10);
+    /* doska oynasi o'z boshlang'ich holatini yubormaydi — taqdimotchidan kutadi */
+    applying = MODE === 'board';
     show(h > 0 && h <= slides.length ? h - 1 : 0, 'fwd');
+    applying = false;
     wakeHud();
+    afterLoad();
+  }
+
+  /* =====================================================================
+     SKRIPT · KO'RIB CHIQISH · TAQDIMOTCHI · DOSKA
+     ?rejim=taqdimot — noutbuk: slayd + skript + taymer;  ?rejim=doska — faqat slayd.
+     Ikkala oyna BroadcastChannel orqali sinxron (bitta brauzer, bitta kompyuter).
+     ===================================================================== */
+  let SCRIPT = null, REVIEW = {}, PLAN = [], DUR = [];
+  const rejim = params.get('rejim') || '';
+  let MODE = rejim === 'doska' ? 'board' : rejim === 'taqdimot' ? 'pres' : 'normal';
+  const $ = (id) => document.getElementById(id);
+  const chan = ('BroadcastChannel' in window) ? new BroadcastChannel('jz-slayd:' + progId + ':' + lessonN) : null;
+  let applying = false;
+
+  function setTheme(dark) {
+    document.body.classList.toggle('dark', dark);
+    document.body.classList.toggle('light', !dark);
+    try { localStorage.setItem('jz_theme', dark ? 'dark' : 'light'); } catch (err) {}
+  }
+
+  function post(m) { if (chan && !applying) { try { chan.postMessage(m); } catch (e) {} } }
+  function fragOn() { return cur >= 0 ? frags(cur).filter(f => f.classList.contains('on')).length : 0; }
+  function applyState(i, f) {
+    if (!slides.length || i < 0 || i >= slides.length) return;
+    applying = true;
+    try {
+      if (i !== cur) show(i, i < cur ? 'back' : 'fwd');
+      frags(cur).forEach((x, k) => x.classList.toggle('on', k < f));
+      renderAll();
+    } finally { applying = false; }
+  }
+  if (chan) chan.onmessage = (e) => {
+    const m = e.data || {};
+    if (m.type === 'state') applyState(m.i, m.f);
+    else if (m.type === 'hello' && MODE !== 'board' && slides.length) post({ type: 'state', i: cur, f: fragOn() });
+    else if (m.type === 'theme') { applying = true; setTheme(!!m.dark); applying = false; }
+  };
+
+  function onChange() {
+    renderAll();
+    post({ type: 'state', i: cur, f: fragOn() });
+  }
+  function renderAll() {
+    if (!SCRIPT) return;
+    if (document.body.classList.contains('drawer')) renderDrawer();
+    if (MODE === 'pres') renderPres();
+  }
+
+  /* ---------- skript matnini HTML ga ---------- */
+  function paraHtml(p, clickIdx, fOn) {
+    let cls = '', lead = '', rest = p;
+    const m = p.match(/^\[([^\]]+)\]\s*/);
+    if (m) {
+      const tag = m[1].trim(); rest = p.slice(m[0].length);
+      const low = tag.toLowerCase();
+      if (/^→\s*bosing/.test(low)) { clickIdx.n++; lead = '<span class="cue click' + (clickIdx.n <= fOn ? ' done' : '') + '">→ bosing ' + clickIdx.n + '</span>'; }
+      else if (/^savol/.test(low)) { cls = 'ask'; lead = '<span class="cue ask">❓ Savol</span>'; }
+      else if (/^pauza/.test(low)) { lead = '<span class="cue pause">⏸ Pauza</span>'; }
+      else if (/^mashq/.test(low)) { cls = 'task'; lead = '<span class="cue task">✍ ' + esc(tag) + '</span>'; }
+      else if (/^doskaga/.test(low)) { lead = '<span class="cue board">🖊 ' + esc(tag) + '</span>'; }
+      else if (/^shaxsiy misol/.test(low)) { cls = 'own'; lead = '<span class="cue own">👤 ' + esc(tag) + '</span>'; }
+      else lead = '<span class="cue">' + esc(tag) + '</span>';
+    }
+    return '<p' + (cls ? ' class="' + cls + '"' : '') + '>' + lead + esc(rest).replace(/\n/g, '<br>') + '</p>';
+  }
+  function scriptHtml(i, fOn) {
+    const t = SCRIPT && SCRIPT[i];
+    if (!t) return '<p class="empty">Bu slayd uchun skript yo\'q.</p>';
+    const idx = { n: 0 };
+    return t.split(/\n\s*\n/).map(p => paraHtml(p.trim(), idx, fOn)).join('');
+  }
+
+  /* ---------- vaqt rejasi: so'z/115 + mashq + savol ---------- */
+  function computePlan() {
+    PLAN = []; DUR = [];
+    let acc = 0;
+    (SCRIPT || []).forEach((t, i) => {
+      const words = String(t || '').split(/\s+/).filter(Boolean).length;
+      let min = words / 115;
+      const mq = String(t).match(/\[Mashq[^\]]*?(\d+)\s*daqiqa/i); if (mq) min += Number(mq[1]);
+      min += (String(t).match(/\[Savol\]/g) || []).length * 0.75;
+      PLAN[i] = acc; DUR[i] = min; acc += min;
+    });
+    PLAN.total = acc;
+  }
+  function mmss(min) { const s = Math.max(0, Math.round(min * 60)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+  function soat(min) { const m = Math.round(min); return m >= 60 ? Math.floor(m / 60) + ' soat ' + (m % 60) + ' daq' : m + ' daq'; }
+  function daq(min) { return (Math.round(min * 10) / 10).toString().replace('.', ',') + ' daq'; }
+
+  /* ---------- pastki panel (ko'rib chiqish) ---------- */
+  function setDH() {
+    let dh;
+    if (window.innerHeight > window.innerWidth) dh = Math.max(220, window.innerHeight - window.innerWidth * 9 / 16 - 10);
+    else dh = Math.max(240, Math.round(window.innerHeight * 0.42));
+    document.documentElement.style.setProperty('--dh', dh + 'px');
+  }
+  function toggleDrawer(force) {
+    if (!SCRIPT || MODE !== 'normal') return;
+    const on = force != null ? force : !document.body.classList.contains('drawer');
+    document.body.classList.toggle('drawer', on);
+    try { localStorage.setItem('jz_drawer', on ? '1' : '0'); } catch (e) {}
+    setDH(); fit();
+    if (on) { renderDrawer(); hudLocked = false; }
+  }
+  function reviewOf(i) { return REVIEW[String(i + 1)] || null; }
+  function renderDrawer() {
+    if (cur < 0) return;
+    $('dNum').textContent = 'Slayd ' + (cur + 1) + ' / ' + slides.length;
+    $('dTime').textContent = SCRIPT[cur] ? '≈ ' + daq(DUR[cur]) + ' · reja bo\'yicha ' + mmss(PLAN[cur]) + ' da boshlanadi' : '';
+    const rv = reviewOf(cur);
+    const chip = $('dChip');
+    chip.className = 'rv-chip' + (rv ? ' ' + rv.s : '');
+    chip.textContent = !rv ? 'ko\'rilmagan' : rv.s === 'ok' ? '✓ ma\'qul' : '✎ izoh bor';
+    $('dOk').classList.toggle('on', !!rv && rv.s === 'ok');
+    $('dIz').classList.toggle('on', !!rv && rv.s === 'izoh');
+    const sh = $('dIzShow');
+    if (rv && rv.c) { sh.hidden = false; sh.textContent = '✎ Izohingiz: ' + rv.c; } else sh.hidden = true;
+    $('dIzBox').classList.remove('show');
+    $('dIzDel').hidden = !rv;
+    const vals = Object.values(REVIEW);
+    $('dStat').textContent = '✓ ' + vals.filter(v => v.s === 'ok').length + ' / ' + SCRIPT.length + ' ma\'qul · ✎ ' + vals.filter(v => v.s === 'izoh').length + ' izoh';
+    $('dText').innerHTML = scriptHtml(cur, fragOn());
+  }
+  function toast(t) { const e = $('toast'); e.textContent = t; e.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(() => e.classList.remove('show'), 1800); }
+  async function saveReview(i, s, c) {
+    const pin = getPin();
+    try {
+      const r = await fetch('/api/dastur', { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-admin-pin': pin }, body: JSON.stringify({ d: progId, n: lessonN, i: i + 1, s, c }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) { toast('Saqlanmadi: ' + (j.error || r.status)); return false; }
+      REVIEW = j.review || REVIEW;
+      return true;
+    } catch (e) { toast('Tarmoq xatosi — saqlanmadi'); return false; }
+  }
+  async function markOk() {
+    const i = cur, rv = reviewOf(i);
+    const off = rv && rv.s === 'ok';
+    if (await saveReview(i, off ? '' : 'ok', off ? '' : (rv && rv.c) || '')) {
+      toast(off ? 'Belgi olib tashlandi' : '✓ ' + (i + 1) + '-slayd ma\'qul');
+      if (i === cur) renderDrawer();
+    }
+  }
+  $('dOk').addEventListener('click', markOk);
+  $('dIz').addEventListener('click', () => {
+    const rv = reviewOf(cur);
+    $('dIzText').value = (rv && rv.c) || '';
+    $('dIzBox').classList.add('show'); $('dIzShow').hidden = true;
+    setTimeout(() => $('dIzText').focus(), 30);
+  });
+  $('dIzCancel').addEventListener('click', () => renderDrawer());
+  $('dIzSave').addEventListener('click', async () => {
+    const c = $('dIzText').value.trim();
+    if (!c) { toast('Izoh bo\'sh'); return; }
+    const i = cur;
+    if (await saveReview(i, 'izoh', c)) { toast('✎ Izoh saqlandi — ' + (i + 1) + '-slayd'); if (i === cur) renderDrawer(); }
+  });
+  $('dIzDel').addEventListener('click', async () => { const i = cur; if (await saveReview(i, '', '')) { toast('Belgi o\'chirildi'); if (i === cur) renderDrawer(); } });
+  $('dClose').addEventListener('click', () => toggleDrawer(false));
+  $('btnScript').addEventListener('click', () => toggleDrawer());
+  $('btnPres').addEventListener('click', () => togglePres());
+
+  /* ---------- taqdimotchi rejimi ---------- */
+  let boardWin = null;
+  const TK = 'jz_timer:' + progId + ':' + lessonN;
+  function tRead() { try { return JSON.parse(localStorage.getItem(TK) || 'null'); } catch (e) { return null; } }
+  function tWrite(o) { try { localStorage.setItem(TK, JSON.stringify(o)); } catch (e) {} }
+  function tElapsed() { const t = tRead(); if (!t) return 0; return ((t.paused || Date.now()) - t.start) / 60000; }
+  function tStart() { const t = tRead(); if (!t || Date.now() - t.start > 4 * 3600 * 1000) tWrite({ start: Date.now(), paused: 0 }); }
+  $('pTimer').addEventListener('click', () => {
+    const t = tRead(); if (!t) { tStart(); return; }
+    if (t.paused) { t.start += Date.now() - t.paused; t.paused = 0; } else t.paused = Date.now();
+    tWrite(t); tick();
+  });
+  $('pTimer').addEventListener('dblclick', () => { tWrite({ start: Date.now(), paused: Date.now() }); tick(); toast('Taymer nolga qaytdi (bosing — boshlanadi)'); });
+  function tick() {
+    if (MODE !== 'pres') return;
+    const el = tElapsed(), t = tRead();
+    $('pTimer').textContent = mmss(el);
+    $('pTimer').classList.toggle('paused', !!(t && t.paused));
+    const d = new Date(); $('pClock').textContent = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    const pace = $('pPace');
+    if (SCRIPT && cur >= 0 && PLAN.length) {
+      const diff = el - PLAN[cur];
+      const a = Math.abs(diff);
+      pace.className = 'pace ' + (a < 2 ? 'g' : a < 6 ? 'o' : 'r');
+      pace.textContent = 'reja ' + mmss(PLAN[cur]) + ' · ' + (a < 0.5 ? 'o\'z vaqtida' : diff > 0 ? mmss(a) + ' orqada' : mmss(a) + ' oldinda');
+    } else pace.textContent = '';
+  }
+  setInterval(tick, 1000);
+  function presFont(d) {
+    let v = 24; try { v = Number(localStorage.getItem('jz_pfs')) || 24; } catch (e) {}
+    v = Math.min(44, Math.max(15, v + d));
+    try { localStorage.setItem('jz_pfs', String(v)); } catch (e) {}
+    document.documentElement.style.setProperty('--pfs', v + 'px');
+  }
+  presFont(0);
+  $('pSm').addEventListener('click', () => presFont(-2));
+  $('pLg').addEventListener('click', () => presFont(2));
+  $('pPrev').addEventListener('click', () => prev());
+  $('pFwd').addEventListener('click', () => next());
+  $('pExit').addEventListener('click', () => togglePres());
+  $('pBoard').addEventListener('click', () => openBoard());
+  function plain(t) { return String(t || '').replace(/\*/g, ''); }
+  function renderPres() {
+    if (cur < 0) return;
+    $('pTitle').textContent = deck.program.title + ' · ' + deck.lesson.n + '-dars · ' + deck.lesson.title;
+    $('pNum').textContent = (cur + 1) + ' / ' + slides.length;
+    const nx = deck.slides[cur + 1];
+    const nFr = frags(cur).length, fOn = fragOn();
+    if (nFr && fOn < nFr) { $('pNextLbl').textContent = 'Keyingi bosish'; $('pNextK').textContent = 'Shu slaydda yana ' + (nFr - fOn) + ' ta band ochiladi'; $('pNextH').textContent = ''; }
+    else if (nx) { $('pNextLbl').textContent = 'Keyingi slayd · ' + (cur + 2); $('pNextK').textContent = plain(nx.k || ''); $('pNextH').textContent = plain(nx.h || nx.title || nx.name || (nx.t === 'end' ? 'Yakun' : '')); }
+    else { $('pNextLbl').textContent = 'Oxirgi slayd'; $('pNextK').textContent = ''; $('pNextH').textContent = 'Dars tugadi'; }
+    $('pMeta').textContent = SCRIPT ? '≈ ' + daq(DUR[cur] || 0) + ' shu slaydga · butun dars ≈ ' + soat(PLAN.total || 0) : '';
+    const ns = SCRIPT && SCRIPT[cur + 1] && !(nFr && fOn < nFr) ? String(SCRIPT[cur + 1]).replace(/\[[^\]]*\]\s*/g, '').split(/\n\s*\n/)[0] : '';
+    $('pNextS').textContent = ns ? '«' + (ns.length > 170 ? ns.slice(0, 170).replace(/\s+\S*$/, '') + '…' : ns) + '»' : '';
+    const box = $('pScript'), sameSlide = renderPres._last === cur;
+    $('pText').innerHTML = scriptHtml(cur, fOn);
+    if (!sameSlide) box.scrollTop = 0;
+    else {
+      const cues = box.querySelectorAll('.cue.click.done');
+      const last = cues[cues.length - 1];
+      if (last) box.scrollTop = Math.max(0, last.parentElement.offsetTop - 20);
+    }
+    renderPres._last = cur;
+    tick();
+  }
+  function togglePres() {
+    if (MODE === 'board') return;
+    if (MODE === 'pres') {
+      MODE = 'normal'; document.body.classList.remove('pres');
+      if (/rejim=/.test(location.search)) history.replaceState(null, '', location.pathname + '?d=' + encodeURIComponent(progId) + '&n=' + encodeURIComponent(lessonN) + '#' + (cur + 1));
+      fit(); return;
+    }
+    if (!SCRIPT) toast('Bu darsda hali skript yo\'q — faqat slayd va taymer');
+    MODE = 'pres';
+    document.body.classList.remove('drawer');
+    document.body.classList.add('pres');
+    fit(); tStart(); renderPres();
+    openBoard();
+  }
+  function openBoard() {
+    const url = location.pathname + '?d=' + encodeURIComponent(progId) + '&n=' + encodeURIComponent(lessonN) + '&rejim=doska#' + (cur + 1);
+    try {
+      if (boardWin && !boardWin.closed) { boardWin.focus(); return; }
+    } catch (e) {}
+    boardWin = window.open(url, 'jz-doska', 'popup=yes,width=1280,height=720,left=80,top=80');
+    if (!boardWin) { toast('Brauzer yangi oynani to\'sdi — manzil satridagi «popup» belgisidan ruxsat bering'); return; }
+    /* ikkinchi ekran bo'lsa — oynani o'sha yerga surib qo'yamiz (Chrome, ruxsat so'raladi) */
+    if ('getScreenDetails' in window) {
+      window.getScreenDetails().then(sd => {
+        const other = sd.screens.find(x => x !== sd.currentScreen) || null;
+        if (other && boardWin && !boardWin.closed) {
+          try { boardWin.moveTo(other.availLeft, other.availTop); boardWin.resizeTo(other.availWidth, other.availHeight); } catch (e) {}
+        }
+      }).catch(() => {});
+    }
+  }
+  window.addEventListener('beforeunload', () => { try { if (boardWin && !boardWin.closed && MODE === 'pres') boardWin.close(); } catch (e) {} });
+
+  /* ---------- doska rejimi ---------- */
+  let idleT = null;
+  function boardIdle() { document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add('idle'), 2000); }
+  $('boardGate').addEventListener('click', () => {
+    const d = document.documentElement;
+    try { (d.requestFullscreen || d.webkitRequestFullscreen || function () {}).call(d); } catch (e) {}
+    $('boardGate').classList.remove('show');
+    setTimeout(fit, 300);
+  });
+
+  function initSkript() {
+    if (SCRIPT && SCRIPT.length !== deck.slides.length) console.warn('skript va slaydlar soni mos emas', SCRIPT.length, deck.slides.length);
+    computePlan();
+    $('btnScript').hidden = !SCRIPT;
+    $('dAll').href = '/skript?d=' + encodeURIComponent(progId) + '&n=' + encodeURIComponent(lessonN);
+    window.addEventListener('resize', () => { if (document.body.classList.contains('drawer')) { setDH(); } fit(); });
+    document.addEventListener('fullscreenchange', () => setTimeout(fit, 120));
+  }
+  function afterLoad() {
+    if (MODE === 'board') {
+      document.body.classList.add('board');
+      hudLocked = true; hud.classList.add('hide');
+      $('boardGate').classList.add('show');
+      document.addEventListener('mousemove', boardIdle); boardIdle();
+      post({ type: 'hello' });
+      document.title = 'Doska — ' + document.title;
+    } else if (MODE === 'pres') {
+      MODE = 'normal'; togglePres();
+    } else {
+      let d = false; try { d = localStorage.getItem('jz_drawer') === '1'; } catch (e) {}
+      if (SCRIPT && d) toggleDrawer(true);
+    }
   }
 
   load();

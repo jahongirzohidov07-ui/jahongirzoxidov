@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/(admin|slayd)",
+      "source": "/(admin|slayd|skript)",
       "headers": [
         {
           "key": "X-Robots-Tag",

@@ -221,7 +221,7 @@ module.exports = {
     { t: 'profile', color: 'green', k: 'Misol · Alex Hormozi', img: '/assets/hormozi.jpg', name: 'Alex Hormozi', role: '«$100M Money Models» muallifi', h: 'Bir kunda *2 700 000* kitob', s: 'Narxi 20–30 $. Bir kunlik savdo — 54–81 million dollar.', items: [
       'Kitob chiqishidan oldin auditoriya tayyor edi — millionlab obunachi.',
       'Bitta mahsulot × katta auditoriya = *bir kunda imperiya daromadi.*',
-      'Auditoriya bo\'lmasa — o\'sha kitob 2 700 emas, 27 ta sotilardi.'
+      'Auditoriya bo\'lmasa — eng yaxshi kitob ham javonda qoladi.'
     ] },
 
     /* ---- 7-richak: Sherik ---- */

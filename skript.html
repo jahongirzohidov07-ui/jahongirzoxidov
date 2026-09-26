@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Skript — Jahongir Zoxidov</title>
+<meta name="theme-color" content="#EDE7D9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%233B4A6B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='%23EDE7D9' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Literata:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #EDE7D9; --ink: #262019; --ink-soft: #55503F; --indigo: #3B4A6B; --clay-gold: #9C7A3C;
+    --rule: #C9BFA8; --surface: #F8F4EA; --good: #3F7A50; --warn: #B8672A; --bad: #A3513F; --blue: #2F5BD3; --violet: #6B4FC4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--parchment); color: var(--ink); font-family: 'Literata', Georgia, serif; }
+  a { color: inherit; }
+  button { font-family: 'Inter', sans-serif; cursor: pointer; }
+  .shell { max-width: 860px; margin: 0 auto; padding: 28px 16px 90px; }
+  .top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-family: 'Inter', sans-serif; font-size: 13px; margin-bottom: 18px; }
+  .top .sp { flex: 1; }
+  .btn { border: 1px solid var(--rule); background: var(--surface); color: var(--ink-soft); padding: 8px 13px; border-radius: 999px; font-size: 13px; font-weight: 600; text-decoration: none; }
+  .btn:hover { border-color: var(--indigo); color: var(--indigo); }
+  .btn.primary { background: var(--indigo); color: var(--parchment); border-color: var(--indigo); }
+  h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 34px; line-height: 1.15; margin: 6px 0 6px; letter-spacing: -0.01em; }
+  .kick { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--clay-gold); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0 14px; }
+  .st { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 12px 14px; }
+  .st .v { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; color: var(--indigo); line-height: 1; }
+  .st .l { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-top: 6px; }
+  .prog { height: 8px; border-radius: 99px; background: rgba(201,191,168,0.5); overflow: hidden; display: flex; margin-bottom: 10px; }
+  .prog i { display: block; height: 100%; }
+  .legend { font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 16px; }
+  .legend .cue { margin-right: 4px; }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; font-family: 'Inter', sans-serif; position: sticky; top: 0; background: var(--parchment); padding: 10px 0; z-index: 5; border-bottom: 1px solid var(--rule); }
+  .filters button { border: 1px solid var(--rule); background: var(--surface); color: var(--ink-soft); padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+  .filters button.on { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+  .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 18px 20px 12px; margin: 16px 0; scroll-margin-top: 64px; }
+  .card.ok { border-left: 6px solid var(--good); }
+  .card.izoh { border-left: 6px solid var(--warn); }
+  .ch { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; font-family: 'Inter', sans-serif; }
+  .ch .no { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--clay-gold); }
+  .ch .kk { font-size: 12px; font-weight: 700; color: var(--indigo); letter-spacing: 0.04em; }
+  .ch .tm { font-size: 12px; color: var(--ink-soft); margin-left: auto; white-space: nowrap; }
+  .hh { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; margin: 4px 0 12px; line-height: 1.3; }
+  .sk { font-size: 17.5px; line-height: 1.68; }
+  .sk p { margin: 0 0 0.8em; }
+  .cue { display: inline-block; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; margin-right: 8px; vertical-align: 2px; background: rgba(201,191,168,0.55); color: var(--ink-soft); }
+  .cue.click { background: rgba(47,91,211,0.14); color: var(--blue); }
+  .cue.ask { background: rgba(184,103,42,0.16); color: var(--warn); }
+  .cue.task { background: rgba(63,122,80,0.16); color: var(--good); }
+  .cue.board { background: rgba(107,79,196,0.14); color: var(--violet); }
+  .cue.own { background: rgba(163,81,63,0.12); color: var(--bad); text-transform: none; letter-spacing: 0; font-size: 12.5px; white-space: normal; }
+  .sk p.ask { border-left: 3px solid var(--warn); padding-left: 12px; }
+  .sk p.task { border-left: 3px solid var(--good); padding-left: 12px; }
+  .sk p.own { border-left: 3px dashed var(--bad); padding-left: 12px; font-style: italic; color: var(--ink-soft); }
+  .acts { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border-top: 1px dashed var(--rule); padding-top: 10px; margin-top: 4px; font-family: 'Inter', sans-serif; }
+  .acts .sp { flex: 1; }
+  .rb { border: 1px solid var(--rule); background: #fff; color: var(--ink-soft); padding: 7px 12px; border-radius: 10px; font-size: 13px; font-weight: 800; }
+  .rb.okb { border-color: var(--good); color: var(--good); }
+  .rb.okb.on { background: var(--good); color: #fff; }
+  .rb.izb { border-color: var(--warn); color: var(--warn); }
+  .rb.izb.on { background: var(--warn); color: #fff; }
+  .acts a { font-size: 13px; font-weight: 600; color: var(--indigo); text-decoration: none; }
+  .izs { margin: 8px 0 4px; padding: 10px 12px; border-radius: 10px; background: rgba(184,103,42,0.10); border: 1px solid rgba(184,103,42,0.35); font-family: 'Inter', sans-serif; font-size: 14px; white-space: pre-wrap; color: var(--ink-soft); }
+  .ize { display: none; margin-top: 10px; }
+  .ize.show { display: block; }
+  .ize textarea { width: 100%; min-height: 90px; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.5; padding: 10px 12px; border-radius: 10px; border: 2px solid var(--warn); background: #fff; color: var(--ink); resize: vertical; }
+  .ize .row { display: flex; gap: 8px; margin-top: 8px; }
+  #gate { position: fixed; inset: 0; background: var(--parchment); display: none; place-items: center; z-index: 50; }
+  #gate.show { display: grid; }
+  #gate form { width: 320px; text-align: center; font-family: 'Inter', sans-serif; }
+  #gate input { width: 100%; font-size: 26px; letter-spacing: 0.4em; text-align: center; padding: 12px; border-radius: 12px; border: 2px solid var(--rule); background: var(--surface); }
+  #gate button { margin-top: 12px; width: 100%; padding: 12px; border-radius: 12px; border: 0; background: var(--indigo); color: var(--parchment); font-weight: 700; font-size: 15px; }
+  #gate .err { color: var(--bad); font-size: 13px; margin-top: 10px; min-height: 16px; }
+  #msg { font-family: 'Inter', sans-serif; color: var(--ink-soft); padding: 40px 0; text-align: center; }
+  #toast { position: fixed; left: 50%; bottom: 20px; transform: translate(-50%, 20px); opacity: 0; background: var(--ink); color: var(--parchment); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; padding: 10px 16px; border-radius: 999px; transition: all .25s; pointer-events: none; z-index: 60; }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+  @media (max-width: 640px) { .stats { grid-template-columns: 1fr 1fr; } h1 { font-size: 27px; } .sk { font-size: 16.5px; } .card { padding: 14px 14px 10px; } }
+  @media print {
+    body { background: #fff; } .top, .filters, .acts, .ize, #toast, .legend { display: none !important; }
+    .card { break-inside: avoid-page; border: 0; border-top: 1px solid #ccc; border-radius: 0; background: #fff; padding: 12px 0; margin: 0; }
+    .card.ok, .card.izoh { border-left: 0; }
+    .sk { font-size: 12pt; } .stats { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top">
+    <a class="btn" href="/admin">← Panel</a>
+    <span class="sp"></span>
+    <a class="btn" id="openSlides" href="#">Slaydlarni ochish</a>
+    <a class="btn primary" id="openPres" href="#">🖥 Taqdimot rejimi</a>
+    <button class="btn" id="printBtn" type="button">Chop etish</button>
+  </div>
+  <div class="kick" id="kick"></div>
+  <h1 id="title">Skript</h1>
+  <div class="stats" id="stats"></div>
+  <div class="prog" id="prog"></div>
+  <div class="legend">
+    Belgilar: <span class="cue click">→ bosing</span> slayd ichida keyingi band ·
+    <span class="cue ask">❓ Savol</span> auditoriyaga savol ·
+    <span class="cue">⏸ Pauza</span> 2–3 soniya ·
+    <span class="cue task">✍ Mashq</span> daftarda topshiriq ·
+    <span class="cue own">👤 Shaxsiy misol</span> — shu joyga o'z hikoyangizni qo'shasiz.
+    Har bir slayd tagida <b>✓ Ma'qul</b> yoki <b>✎ Izoh</b> bosing — izohlaringiz saqlanadi va Claude ularni o'qib tuzatadi.
+  </div>
+  <div class="filters" id="filters">
+    <button type="button" data-f="all" class="on">Hammasi</button>
+    <button type="button" data-f="new">Ko'rilmagan</button>
+    <button type="button" data-f="izoh">Izohli</button>
+    <button type="button" data-f="ok">Ma'qul</button>
+  </div>
+  <div id="list"><div id="msg">Yuklanmoqda…</div></div>
+</div>
+<div id="gate"><form id="gateForm"><div style="font-family:Fraunces,serif;font-size:26px;font-weight:600;margin-bottom:14px">PIN kiriting</div><input type="password" id="gatePin" inputmode="numeric" autocomplete="off"><button type="submit">Kirish</button><div class="err" id="gateErr"></div></form></div>
+<div id="toast"></div>
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  const d = params.get('d') || '', n = params.get('n') || '';
+  const $ = (id) => document.getElementById(id);
+  let DATA = null, REVIEW = {}, FILTER = 'all', PLAN = [], DUR = [];
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+  function plain(s) { return String(s || '').replace(/\*/g, ''); }
+  function getPin() { try { return localStorage.getItem('jz_pin') || ''; } catch (e) { return ''; } }
+  function toast(t) { const e = $('toast'); e.textContent = t; e.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(() => e.classList.remove('show'), 1800); }
+  function mmss(min) { const s = Math.max(0, Math.round(min * 60)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+  function daq(min) { return (Math.round(min * 10) / 10).toString().replace('.', ',') + ' daq'; }
+
+  function paraHtml(p, idx) {
+    let cls = '', lead = '', rest = p;
+    const m = p.match(/^\[([^\]]+)\]\s*/);
+    if (m) {
+      const tag = m[1].trim(), low = tag.toLowerCase(); rest = p.slice(m[0].length);
+      if (/^→\s*bosing/.test(low)) { idx.n++; lead = '<span class="cue click">→ bosing ' + idx.n + '</span>'; }
+      else if (/^savol/.test(low)) { cls = 'ask'; lead = '<span class="cue ask">❓ Savol</span>'; }
+      else if (/^pauza/.test(low)) lead = '<span class="cue">⏸ Pauza</span>';
+      else if (/^mashq/.test(low)) { cls = 'task'; lead = '<span class="cue task">✍ ' + esc(tag) + '</span>'; }
+      else if (/^doskaga/.test(low)) lead = '<span class="cue board">🖊 ' + esc(tag) + '</span>';
+      else if (/^shaxsiy misol/.test(low)) { cls = 'own'; lead = '<span class="cue own">👤 ' + esc(tag) + '</span>'; }
+      else lead = '<span class="cue">' + esc(tag) + '</span>';
+    }
+    return '<p' + (cls ? ' class="' + cls + '"' : '') + '>' + lead + esc(rest).replace(/\n/g, '<br>') + '</p>';
+  }
+  function scriptHtml(t) { const idx = { n: 0 }; return String(t || '').split(/\n\s*\n/).map(p => paraHtml(p.trim(), idx)).join(''); }
+
+  function computePlan(S) {
+    let acc = 0;
+    S.forEach((t, i) => {
+      const w = String(t || '').split(/\s+/).filter(Boolean).length;
+      let min = w / 115;
+      const mq = String(t).match(/\[Mashq[^\]]*?(\d+)\s*daqiqa/i); if (mq) min += Number(mq[1]);
+      min += (String(t).match(/\[Savol\]/g) || []).length * 0.75;
+      PLAN[i] = acc; DUR[i] = min; acc += min;
+    });
+    PLAN.total = acc;
+  }
+
+  function renderStats() {
+    const S = DATA.script, vals = Object.values(REVIEW);
+    const ok = vals.filter(v => v.s === 'ok').length, iz = vals.filter(v => v.s === 'izoh').length;
+    const words = S.reduce((a, t) => a + String(t).split(/\s+/).filter(Boolean).length, 0);
+    $('stats').innerHTML = [
+      [S.length, 'slayd'], [words.toLocaleString('ru-RU'), 'so\'z'], ['≈ ' + Math.round(PLAN.total) + ' daq', 'reja (savol, mashq bilan)'], [ok + ' / ' + S.length, 'ma\'qul' + (iz ? ' · ✎ ' + iz : '')]
+    ].map(([v, l]) => '<div class="st"><div class="v">' + v + '</div><div class="l">' + l + '</div></div>').join('');
+    const pOk = ok / S.length * 100, pIz = iz / S.length * 100;
+    $('prog').innerHTML = '<i style="width:' + pOk + '%;background:var(--good)"></i><i style="width:' + pIz + '%;background:var(--warn)"></i>';
+  }
+
+  function cardHtml(i) {
+    const s = DATA.slides[i] || {}, rv = REVIEW[String(i + 1)] || null;
+    const st = rv ? rv.s : 'new';
+    if (FILTER !== 'all' && FILTER !== st) return '';
+    const head = plain(s.h || s.title || s.name || (s.t === 'end' ? 'Yakun' : s.t === 'cover' ? 'Muqova' : ''));
+    return '<div class="card ' + (rv ? rv.s : '') + '" id="s' + (i + 1) + '">' +
+      '<div class="ch"><span class="no">' + (i + 1) + '</span><span class="kk">' + esc(plain(s.k || (s.t === 'cover' ? 'Muqova' : s.t === 'end' ? 'Yakun' : ''))) + '</span><span class="tm">' + mmss(PLAN[i]) + ' · ≈ ' + daq(DUR[i]) + '</span></div>' +
+      (head ? '<div class="hh">' + esc(head) + '</div>' : '') +
+      '<div class="sk">' + scriptHtml(DATA.script[i]) + '</div>' +
+      (rv && rv.c ? '<div class="izs">✎ ' + esc(rv.c) + '</div>' : '') +
+      '<div class="ize" id="ize' + i + '"><textarea placeholder="Nimani o\'zgartiramiz?">' + esc((rv && rv.c) || '') + '</textarea><div class="row"><button type="button" class="rb izb on" data-a="save" data-i="' + i + '">Saqlash</button><button type="button" class="rb" data-a="cancel" data-i="' + i + '">Bekor</button></div></div>' +
+      '<div class="acts"><button type="button" class="rb okb' + (st === 'ok' ? ' on' : '') + '" data-a="ok" data-i="' + i + '">✓ Ma\'qul</button><button type="button" class="rb izb' + (st === 'izoh' ? ' on' : '') + '" data-a="iz" data-i="' + i + '">✎ Izoh</button>' +
+      (rv ? '<button type="button" class="rb" data-a="del" data-i="' + i + '">Belgini olib tashlash</button>' : '') +
+      '<span class="sp"></span><a href="/slayd?d=' + encodeURIComponent(d) + '&n=' + encodeURIComponent(n) + '#' + (i + 1) + '" target="_blank" rel="noopener">Slaydni ko\'rish ↗</a></div>' +
+      '</div>';
+  }
+  function renderList() {
+    const html = DATA.script.map((_, i) => cardHtml(i)).join('');
+    $('list').innerHTML = html || '<div id="msg">Bu filtrda slayd yo\'q.</div>';
+  }
+  function renderOne(i) {
+    const el = $('s' + (i + 1)); const h = cardHtml(i);
+    if (!el) return;
+    if (!h) { el.remove(); return; }
+    const tmp = document.createElement('div'); tmp.innerHTML = h; el.replaceWith(tmp.firstChild);
+  }
+
+  async function save(i, s, c) {
+    try {
+      const r = await fetch('/api/dastur', { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-admin-pin': getPin() }, body: JSON.stringify({ d, n, i: i + 1, s, c }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) { toast('Saqlanmadi: ' + (j.error || r.status)); return false; }
+      REVIEW = j.review || REVIEW; renderStats(); renderOne(i); return true;
+    } catch (e) { toast('Tarmoq xatosi'); return false; }
+  }
+  $('list').addEventListener('click', async (e) => {
+    const b = e.target.closest('button[data-a]'); if (!b) return;
+    const i = Number(b.dataset.i), a = b.dataset.a, rv = REVIEW[String(i + 1)];
+    if (a === 'ok') { const off = rv && rv.s === 'ok'; if (await save(i, off ? '' : 'ok', off ? '' : (rv && rv.c) || '')) toast(off ? 'Belgi olib tashlandi' : '✓ ' + (i + 1) + '-slayd ma\'qul'); }
+    else if (a === 'iz') { const box = $('ize' + i); box.classList.add('show'); box.querySelector('textarea').focus(); }
+    else if (a === 'cancel') $('ize' + i).classList.remove('show');
+    else if (a === 'save') { const c = $('ize' + i).querySelector('textarea').value.trim(); if (!c) { toast('Izoh bo\'sh'); return; } if (await save(i, 'izoh', c)) toast('✎ Izoh saqlandi'); }
+    else if (a === 'del') { if (await save(i, '', '')) toast('Belgi o\'chirildi'); }
+  });
+  $('filters').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-f]'); if (!b) return;
+    FILTER = b.dataset.f;
+    document.querySelectorAll('#filters button').forEach(x => x.classList.toggle('on', x === b));
+    renderList();
+  });
+  $('printBtn').addEventListener('click', () => window.print());
+  $('openSlides').href = '/slayd?d=' + encodeURIComponent(d) + '&n=' + encodeURIComponent(n);
+  $('openPres').href = '/slayd?d=' + encodeURIComponent(d) + '&n=' + encodeURIComponent(n) + '&rejim=taqdimot';
+
+  $('gateForm').addEventListener('submit', (e) => {
+    e.preventDefault(); const v = $('gatePin').value.trim(); if (!v) return;
+    try { localStorage.setItem('jz_pin', v); } catch (err) {}
+    $('gate').classList.remove('show'); load();
+  });
+
+  async function load() {
+    if (!d || !n) { $('list').innerHTML = '<div id="msg">Dars tanlanmagan. <a href="/admin">Panelga qayting</a>.</div>'; return; }
+    if (!getPin()) { $('gate').classList.add('show'); $('gatePin').focus(); return; }
+    let r;
+    try { r = await fetch('/api/dastur?d=' + encodeURIComponent(d) + '&n=' + encodeURIComponent(n), { headers: { 'x-admin-pin': getPin() } }); }
+    catch (e) { $('list').innerHTML = '<div id="msg">Tarmoq xatosi.</div>'; return; }
+    if (r.status === 401) { $('gateErr').textContent = 'PIN noto\'g\'ri'; $('gate').classList.add('show'); return; }
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) { $('list').innerHTML = '<div id="msg">' + esc(j.error || ('Xatolik ' + r.status)) + '</div>'; return; }
+    if (!j.script) { $('list').innerHTML = '<div id="msg">Bu dars uchun skript hali tayyorlanmagan.</div>'; return; }
+    DATA = j; REVIEW = j.review || {};
+    document.title = 'Skript · ' + j.lesson.n + '-dars — ' + j.lesson.title;
+    $('kick').textContent = j.program.title + ' · ' + j.lesson.n + '-dars · to\'liq skript';
+    $('title').textContent = j.lesson.title;
+    computePlan(j.script);
+    renderStats(); renderList();
+    if (location.hash) { const el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
+  }
+  load();
+})();
+</script>
+</body>
+</html>
