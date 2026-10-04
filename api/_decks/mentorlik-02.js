@@ -1,5 +1,5 @@
 'use strict';
-/* Mentorlik · 2-dars: Shaxsiyat. Amaliy mashqlar bilan. */
+/* Mentorlik · 2-dars. Muallifning qat’iy ohangi va amaliy mashqlar. */
 module.exports = {
   "slides": [
     {
@@ -21,7 +21,7 @@ module.exports = {
       "focus": "center",
       "k": "Ikkinchi dars",
       "h": "What is *Personality?*",
-      "s": "Bugun: 3 ta qadriyat, 1 ta prinsip va 7 kunlik bitta odat tanlaymiz.",
+      "s": "Bugun o‘zingizga hisob berasiz: 3 ta qadriyat, 1 ta prinsip, 7 kunlik aniq amal.",
       "credit": "Foto: Unsplash"
     },
     {
@@ -36,17 +36,17 @@ module.exports = {
         "Ular siz uchun nima muhimligini ko‘rsatadi?",
         "Gaplaringiz bilan amallaringiz qayerda mos kelmayapti?"
       ],
-      "note": "Javobni ulashish ixtiyoriy. Sifat emas, aniq vaziyat yozing."
+      "note": "Umumiy gap yozmang. Uchta aniq harakat va dalil yozing."
     },
     {
       "t": "roots",
       "color": "green",
       "k": "Eslatma · 1-darsdan",
       "h": "Shaxsiyat — daraxtning *ildizi*",
-      "s": "Daraxt — tushuntirish uchun o‘xshatish: shaxsiyat tanlovlarimizga va natijalarimizga ta’sir qiladi.",
+      "s": "Richaklar — tana, natija — meva. Mevalaringiz (amal va muvaffaqiyatlaringiz) qanday bo'lishi aynan shu ildizga — shaxsiyatingizga bog'liq.",
       "items": [
         "Ildiz ko'rinmaydi, lekin daraxtni ushlab turadi.",
-        "O‘zini anglash qiyinchilikda yo‘l tanlashga yordam beradi.",
+        "Ildiz chuqur bo'lsa — bo'ron ham yiqita olmaydi.",
         "Shuning uchun 2-dars — o'zimiz haqimizda."
       ]
     },
@@ -126,12 +126,11 @@ module.exports = {
       "color": "blue",
       "img": "/assets/d2-sokrat.jpg",
       "focus": "center",
-      "k": "O‘zini anglash",
-      "h": "*O‘zingni tani*",
+      "k": "Sokrat",
+      "h": "«Know thyself» — *o'zingni tani*",
       "items": [
-        "Men uchun nima muhim?",
-        "Qaysi vaziyatda qanday yo‘l tutaman?",
-        "Nimani o‘zgartirishni xohlayman?"
+        "O'zini tanish — donolikning boshlanishi.",
+        "O'zini tanimagan — dunyoni hech qachon anglay olmaydi."
       ],
       "all": true,
       "credit": "Foto: Unsplash"
@@ -142,9 +141,9 @@ module.exports = {
       "color": "green",
       "img": "/assets/d2-kol.jpg",
       "focus": "center",
-      "k": "Tafakkur",
-      "h": "O‘zingizni *kuzating*, boshqalarni *tinglang*",
-      "s": "Tushunishga shoshilmang: savol bering, dalil izlang, xulosangizni tekshiring.",
+      "k": "Lao Tszi",
+      "h": "Boshqalarni bilish — *aqllilik*. O'zingni bilish — *haqiqiy donolik*.",
+      "s": "«Knowing others is wisdom, knowing yourself is enlightenment.»",
       "credit": "Foto: Unsplash"
     },
     {
@@ -154,8 +153,8 @@ module.exports = {
       "img": "/assets/d2-kema.jpg",
       "focus": "center 40%",
       "k": "O'xshatish",
-      "h": "O‘zini anglash — *yo‘nalish tanlash*",
-      "s": "Ichki kompas: meni nima harakatga keltiryapti va men qayerga bormoqchiman?",
+      "h": "O'zini tanimagan odam — *boshqarilmaydigan kema*",
+      "s": "Qayerga urilishi noma'lum. Shamol qayoqqa essa — o'sha yoqqa suzadi.",
       "credit": "Foto: Unsplash"
     },
     {
@@ -164,9 +163,9 @@ module.exports = {
       "color": "red",
       "img": "/assets/d2-tuman.jpg",
       "focus": "center",
-      "k": "Ongli tanlov",
-      "h": "Qarorimni *nima boshqaryapti?*",
-      "s": "O‘zini yaxshi tanimagan odam qaroriga nima ta’sir qilayotganini sezmay qolishi mumkin.",
+      "k": "Xavf",
+      "h": "Eng xavfli odam — *o'zini tanimagan* odam",
+      "s": "Chunki o'zi nima xohlashi, nima qilishini bilmaydi.",
       "credit": "Foto: Unsplash"
     },
     {
@@ -174,44 +173,44 @@ module.exports = {
       "color": "orange",
       "icon": "🪞",
       "k": "Why · nega muhim?",
-      "h": "O‘zini anglash *nimaga yordam beradi?*",
+      "h": "O'zini tanimagan odam nimalardan *mahrum*?",
       "cols": 2,
       "items": [
         {
           "icon": "💪",
-          "h": "Kuchli tomon",
-          "p": "Qaysi ishlarni yaxshi bajarishingizni amaliy misollarda ko‘rish."
+          "h": "Kuchidan foydalana olmaydi",
+          "p": "O'z kuchini bilmagan odam kuchidan foydalana olmaydi."
         },
         {
-          "icon": "🧭",
-          "h": "Rivojlanish nuqtasi",
-          "p": "Qayerda qiynalayotganingizni aniqlash va yordam so‘rash."
+          "icon": "🕳️",
+          "h": "Zaifliklarining qurboni bo'ladi",
+          "p": "O'z zaifliklarini bilmagan odam har bir to'siqda yiqiladi."
         },
         {
           "icon": "🎯",
-          "h": "Yo‘nalish",
-          "p": "Vaqt va e’tiborni muhim ishga ajratish."
+          "h": "Hayotini sovuradi",
+          "p": "O'z maqsadini bilmagan odam umrini bekorga o'tkazadi."
         },
         {
           "icon": "🤝",
-          "h": "Muloqot",
-          "p": "O‘z hislaringizni tushunib, boshqani tinglashga ochiq bo‘lish."
+          "h": "Boshqalarni tushunmaydi",
+          "p": "O'zini tanigan odam boshqalarni ham to'g'ri tushunadi: rahm, sabr, idrok bilan qaraydi."
         }
       ],
-      "note": "O‘zingizga yorliq qo‘ymang — aniq vaziyat va harakatni kuzating."
+      "note": "«O'z qalbini ko'ra olmagan — *boshqa qalbning nolasini eshitolmaydi.*»"
     },
     {
       "t": "grid",
       "color": "red",
       "icon": "⚠️",
-      "k": "O‘zini kuzatish",
-      "h": "Qaysi holatlarda *qiynalaman?*",
+      "k": "Zaif nuqtalar",
+      "h": "Har bir insonda *zaif nuqtalar* bor",
       "cols": 4,
       "items": [
         {
           "icon": "😡",
           "h": "G'azab",
-          "p": "Javob berishdan oldin tanaffus qiling."
+          "p": "Jahl paytida qaror qilmang."
         },
         {
           "icon": "🍽️",
@@ -225,11 +224,11 @@ module.exports = {
         },
         {
           "icon": "🛌",
-          "h": "Kechiktirish",
-          "p": "Nima to‘sqinlik qilyapti? Eng kichik qadamni tanlang."
+          "h": "Dangasalik",
+          "p": "Ertaga — hech qachon kelmaydigan kun."
         }
       ],
-      "note": "Bir holat butun shaxsiyatingizni belgilamaydi. Uni payqash — o‘zgarishning boshlanishi."
+      "note": "O'zini tanimagan — bu zaifliklarni bilmaydi va *har bir to'siqda yiqiladi.* O'zini tanigan — ularni oldindan ko'radi."
     },
     {
       "t": "big",
@@ -237,7 +236,7 @@ module.exports = {
       "icon": "👑",
       "k": "Hikmat",
       "h": "O'z ustidan *hokim* bo'lgan kishi — shohdan ham buyukroqdir.",
-      "s": "O‘z javobingiz uchun mas’uliyat oling. Zarur bo‘lsa, yordam so‘rang."
+      "s": "Birinchi davlat — o'zingiz. Uni boshqarishni o'rgangan odam qolganini ham boshqaradi."
     },
     {
       "t": "circles",
@@ -256,13 +255,13 @@ module.exports = {
           "label": "BOSHQARISH",
           "short": "🎛️",
           "h": "O'zini boshqarish",
-          "p": "Hisni tan olaman, qanday javob berishni tanlayman."
+          "p": "His-tuyg'u — men emas. Men uni boshqaraman."
         },
         {
           "label": "BOSHQALAR",
           "short": "🤝",
           "h": "Boshqalarni tushunish",
-          "p": "Tinglayman, taxminimni savol bilan aniqlashtiraman."
+          "p": "Odamlarning his-tuyg'usini o'qish va munosabat qurish."
         }
       ]
     },
@@ -279,7 +278,7 @@ module.exports = {
         "Javob berishdan oldin qanday tanaffus qilasiz?",
         "Hurmatni saqlagan holda aytadigan bitta jumlangizni yozing."
       ],
-      "note": "Hisni yashirish shart emas. Javobni ongli tanlang."
+      "note": "Jahl — va’dani buzish yoki birovni haqorat qilish uchun bahona emas."
     },
     {
       "t": "section",
@@ -293,13 +292,13 @@ module.exports = {
       "t": "gallery",
       "color": "green",
       "k": "How · shaxsiyat qanday shakllanadi?",
-      "h": "Shaxsiyatga ta’sir qiladigan *omillar*",
+      "h": "Shaxsiyatni *4 ta kuch* shakllantiradi",
       "items": [
         {
           "img": "/assets/d2-oila.jpg",
           "icon": "🏠",
           "h": "Oila muhiti",
-          "p": "Bolalik tajribalari, tarbiya, e’tibor va mehr ta’sir qiladi. Ular kelajakni qat’iy belgilamaydi."
+          "p": "Bolalik tajribalari, tarbiya uslubi, e'tibor va mehr miqdori. Kam gaplashilgan, ko'p tergalgan bola mehrsiz bo'lib qoladi."
         },
         {
           "img": "/assets/d2-maktab.jpg",
@@ -317,7 +316,7 @@ module.exports = {
           "img": "/assets/d2-sinov.jpg",
           "icon": "🌧️",
           "h": "Hayotiy sinovlar",
-          "p": "Qiyinchilikka munosabat, yordam va tajribadan olingan xulosalar muhim."
+          "p": "Stress, muammo va qarorlar. Qiyinchilikka qanday munosabatda bo'lish — shaxsiyatni o'yadi."
         }
       ]
     },
@@ -332,10 +331,10 @@ module.exports = {
       "k": "Misol",
       "h": "Oila → Maktab → *Kitob va tajriba*",
       "items": [
-        "Bola kattalarning muomalasidan namuna olishi mumkin.",
-        "Nasihat bilan birga kattalarning amali ham ta’sir qiladi.",
-        "Maktabda turli qarashlar va muomala usullarini ko‘ramiz.",
-        "Tajriba ustida fikrlash va yordam olish o‘sishga xizmat qiladi."
+        "Otasi jahli chiqqanda so'kingan bola — shaxsiyat shu yerdan shakllana boshlaydi.",
+        "«Ichma, chekma» deb yoshlikdan tinmay uqtirilgan tarbiya — qadriyat bo'lib qoladi.",
+        "Maktabga chiqdi, muloqotga kirishdi — oilaviy muhitlar to'qnashadi.",
+        "Yoshligida qiyinchilik ko'rgan sinfdoshlar tez ulg'ayadi — qiyinchilikni tushunadi."
       ],
       "all": true
     },
@@ -344,14 +343,14 @@ module.exports = {
       "color": "green",
       "k": "Savol",
       "h": "O'zimiz qanday shaxsiyatni rivojlantirishimiz mumkin?",
-      "s": "Maqsad, qadriyat, prinsip, xarakter va odatni bir-biriga bog‘laymiz."
+      "s": "Bu — 5 ta qavatdan iborat bino."
     },
     {
       "t": "circles",
       "color": "orange",
-      "k": "Darsning ishchi modeli",
+      "k": "Shaxsiyat qavatlari",
       "h": "Ichkaridan *tashqariga*",
-      "s": "Bu — fikrlashga yordam beradigan model. Qadriyatlar harakatga, takroriy harakatlar odatga ulanadi.",
+      "s": "Oliy maqsad — markaz. Undan qadriyat, prinsip, xarakter va odat o'sib chiqadi.",
       "rings": [
         {
           "label": "MAQSAD",
@@ -434,7 +433,7 @@ module.exports = {
         "Har biri uchun oxirgi haftadan bitta amaliy dalil yozing.",
         "Qaysi birini ko‘proq amalda ko‘rsatmoqchisiz?"
       ],
-      "note": "Dalil topilmasa, o‘zingizni ayblamang: bu rivojlanish yo‘nalishi."
+      "note": "Har bir qadriyatning yoniga dalil yozing. Dalil yo‘q bo‘lsa, bajaradigan amalingizni belgilang."
     },
     {
       "t": "photo",
@@ -449,8 +448,8 @@ module.exports = {
       "items": [
         "Qadriyatlar asosida qabul qilingan aniq qoidalar va chiziqlar.",
         "Qanday qaror qabul qilaman, qaysi vaziyatda qanday yo'l tutaman.",
-        "Prinsipga amal qilish ba’zan hurmat bilan *yo‘q deyishni* talab qiladi.",
-        "Ilm qadriyati → tushunmagan narsamni tushungandek ko‘rsatmayman."
+        "Haqiqiy prinsiplarni *«yo'q»lar* ochib beradi, «ha»lar emas. «Yo'q» deyishni bilmasangiz — prinsipingiz yo'q.",
+        "Evos boshqa fastfoodlardan prinsipga sodiqligi bilan farq qiladi. Kitob: Ray Dalio — *Principles*."
       ],
       "all": true
     },
@@ -458,7 +457,7 @@ module.exports = {
       "t": "checklist",
       "color": "blue",
       "icon": "📏",
-      "k": "Prinsiplar · mosini ongli tanlang",
+      "k": "Misol · mening prinsiplarim",
       "h": "Prinsip — qadriyatni hayotga tatbiq etadigan qadam",
       "items": [
         {
@@ -484,7 +483,7 @@ module.exports = {
         },
         {
           "n": "6",
-          "h": "Yordamni hurmat bilan so‘rayman, boshqaning chegarasini hurmat qilaman"
+          "h": "Allohdan boshqasidan bir narsani ikki marta so'ramayman, yalinmayman"
         },
         {
           "n": "7",
@@ -497,7 +496,7 @@ module.exports = {
         },
         {
           "n": "9",
-          "h": "Muammoni aytaman va qo‘limdan keladigan chorani ko‘raman"
+          "h": "Hech qachon hech narsadan nolimayman"
         },
         {
           "n": "10",
@@ -522,7 +521,7 @@ module.exports = {
         "Vaziyat: do‘stingiz tayyor uy vazifasini ko‘chirishni taklif qildi.",
         "Prinsipingizga mos qaror va hurmatli javob yozing."
       ],
-      "note": "Misol: “Ko‘chirmayman. Keling, tushunmagan joyimizni birga o‘rganamiz.”"
+      "note": "Qoidangiz qiyin vaziyatda ham ishlasin. Qulay paytdagi gap bilan cheklanmang."
     },
     {
       "t": "photo",
@@ -546,7 +545,7 @@ module.exports = {
       "color": "orange",
       "icon": "💬",
       "k": "Xarakter haqida",
-      "h": "Xarakter *amallarda ko‘rinadi*",
+      "h": "Beshta *hikmat*",
       "cols": 3,
       "items": [
         {
@@ -557,51 +556,40 @@ module.exports = {
         {
           "icon": "⏳",
           "h": "Vaqt",
-          "p": "Bir martalik taassurotdan ko‘ra, vaqt davomidagi amallar muhim."
+          "p": "Vaqt — yuzdagi niqoblarni yechib, xarakterni ochadi."
         },
         {
           "icon": "🧱",
           "h": "Qiyinchilik",
-          "p": "Qiyinchilikda yordam olish va xulosa chiqarish ham kuchdir."
+          "p": "Qiyinchiliklar xarakterni quradi, zaiflik uni yemiradi."
         },
         {
           "icon": "🪞",
           "h": "Javob",
-          "p": "Yomonlikka javobda chegarani saqlash va yordam so‘rash mumkin."
+          "p": "Senga qilingan yomonlik emas, sening unga javobing xarakteringni ko'rsatadi."
         },
         {
           "icon": "🌤️",
           "h": "Axloq",
-          "p": "Yaxshi axloqni bugungi aniq tanlovda namoyon qiling."
+          "p": "Yaxshi axloq yomon qismatni o'zgartiradi."
         }
       ]
     },
     {
-      "t": "table",
+      "t": "roots",
       "color": "green",
-      "k": "Bir misolda to‘rtta tushuncha",
-      "h": "Qadriyat *amalga aylanganda*",
-      "head": [
-        "Tushuncha",
-        "Shogird hayotida"
+      "k": "Bitta daraxt",
+      "h": "Qadriyat — ildiz, prinsip — shox, xarakter — *butun daraxt*",
+      "s": "Qadriyat ildiz bo'lsa, prinsip uning shoxi, xarakter esa butun daraxtdir.",
+      "tags": [
+        "Qadriyat",
+        "Prinsip",
+        "Xarakter"
       ],
-      "rows": [
-        [
-          "Qadriyat",
-          "O‘sish va ilm"
-        ],
-        [
-          "Prinsip",
-          "Tushunmaganimni yashirmayman"
-        ],
-        [
-          "Odat",
-          "Har darsdan keyin bitta savolimni yozaman va so‘rayman"
-        ],
-        [
-          "Xarakter",
-          "Bilmaganini tan oladigan, o‘rganishga ochiq inson"
-        ]
+      "items": [
+        "Ildizsiz shox yo'q, shoxsiz meva yo'q.",
+        "Qadriyatlarini bilmagan odamning prinsipi ham bo'lmaydi.",
+        "Prinsipsiz odamning xarakteri — shamolga qarab o'zgaradi."
       ]
     },
     {
@@ -617,7 +605,7 @@ module.exports = {
         "Prinsipni ko‘rsatadigan takroriy harakatni yozing.",
         "Bu harakat qaysi fazilatni rivojlantiradi?"
       ],
-      "note": "Qadriyat → prinsip → odat → xarakterda namoyon bo‘lish."
+      "note": "Yozganingizni tekshiring: boshqa odam bu harakatni ko‘rib, bajarganingizni bila oladimi?"
     },
     {
       "t": "photo",
@@ -630,10 +618,10 @@ module.exports = {
       "k": "5 · Odat — «Har kuni qanday yashayman?»",
       "h": "Odat — *takror* takror takror",
       "items": [
-        "Takrorlangan harakat vaqt o‘tishi bilan kamroq ongli e’tibor talab qilishi mumkin.",
-        "Odatni aniq vaziyatga bog‘lang: qachon va qayerda?",
-        "Kichik, bajarish oson bo‘lgan harakatdan boshlang.",
-        "Bir kun bajarilmasa, keyingi imkoniyatda davom eting."
+        "Qayta-qayta takrorlangan harakat yoki qaror — oxir-oqibat ongli harakatsiz bajariladigan bo'lib qoladi.",
+        "«Avvalo biz odatlarni yaratamiz, so'ng odatlar bizni yaratadi.» — *Aristotel*",
+        "Biz — qayta-qayta qiladigan narsamizmiz. Mukammallik — harakat emas, odatdir.",
+        "Inson — bir martalik g'alabasi emas, *har kungi odatlari jamlanmasi.*"
       ],
       "all": true
     },
@@ -641,66 +629,94 @@ module.exports = {
       "t": "flow",
       "color": "green",
       "icon": "🔗",
-      "k": "Amaliy bog‘lanish",
-      "h": "Niyatdan *muntazam amalga*",
+      "k": "Stiven Kovi",
+      "h": "Fikrdan *taqdirgacha*",
       "all": true,
       "items": [
-        "Qadriyat",
-        "Prinsip",
-        "Kichik harakat",
-        "Takrorlash",
-        "Odat"
+        "Fikr",
+        "Harakat",
+        "Odat",
+        "Xarakter",
+        "Taqdir"
       ],
-      "note": "Natijani kuzating va usulingizni moslashtiring."
+      "note": "«Sen maqsadlaring darajasiga ko'tarilmaysan. Sen o'z *odat va tizimlaring* darajasiga tushasan.» — James Clear"
     },
     {
-      "t": "steps",
+      "t": "stats",
       "color": "orange",
-      "icon": "🥊",
+      "icon": "📈",
       "k": "Bokschi misoli",
-      "h": "O‘sish — *mashq va tahlil*",
-      "all": true,
+      "h": "Har kuni *1%* — yilda *37 barobar*",
       "items": [
         {
-          "h": "Mashq",
-          "p": "Ustoz bilan aniq ko‘nikmani mashq qilish."
+          "v": "1%",
+          "l": "har kuni sal yaxshiroq"
         },
         {
-          "h": "Tiklanish",
-          "p": "Dam olishni ham rejaning bir qismi qilish."
+          "v": "365",
+          "l": "kun — har kuni ring, har kuni mashq"
         },
         {
-          "h": "Tuzatish",
-          "p": "Xatoni ko‘rib, keyingi mashqni moslashtirish."
+          "v": "37×",
+          "l": "bir yildan keyin"
         }
       ],
-      "note": "Bu — o‘xshatish. O‘sish har kuni bir xil foizda bo‘lishi kafolatlanmaydi."
+      "note": "Bokschi bir kunda chempion bo'lmaydi — har kuni bir xil mashqni takrorlaydi. *Inson odatlardan tashkil topgan.*"
     },
     {
       "t": "grid",
       "color": "blue",
-      "icon": "🌱",
-      "k": "Odat tanlash",
-      "h": "Hozircha *bittasini tanlang*",
+      "icon": "🌅",
+      "k": "Amaliyot · shu darsning odatlari",
+      "h": "Bugundan boshlaymiz",
       "cols": 3,
       "items": [
         {
-          "icon": "📓",
+          "icon": "🧘",
           "h": "Tafakkur",
-          "p": "Kechki ovqatdan keyin 2 daqiqa kunni yozish."
+          "p": "O'zini taftish qilish — har kuni 5 daqiqa."
+        },
+        {
+          "icon": "📓",
+          "h": "Sinbook",
+          "p": "Xatolar va gunohlarni yozish."
+        },
+        {
+          "icon": "📒",
+          "h": "Logbook",
+          "p": "Kun qaydlari, atomic notes."
+        },
+        {
+          "icon": "🚶",
+          "h": "10 000 qadam",
+          "p": "Har kuni, ertalab."
+        },
+        {
+          "icon": "🤸",
+          "h": "5 daqiqa badantarbiya",
+          "p": "Yengil, lekin har kuni."
         },
         {
           "icon": "📖",
-          "h": "Mutolaa",
-          "p": "Belgilangan vaqtda 2 bet kitob o‘qish."
+          "h": "20 daqiqa kitob",
+          "p": "Kamida 5 bet."
         },
         {
-          "icon": "❓",
-          "h": "Savol",
-          "p": "Har darsdan keyin bitta savolni yozish."
+          "icon": "📿",
+          "h": "Salovat, istig'for, zikr",
+          "p": "Ruhiy intizom."
+        },
+        {
+          "icon": "⭐",
+          "h": "O'ziga baho",
+          "p": "Har kuni o'zini o'ziga baholash."
+        },
+        {
+          "icon": "✍️",
+          "h": "Yozish",
+          "p": "Fikrni qog'ozga tushirish."
         }
-      ],
-      "note": "O‘zingizga mos boshqa odatni ham tanlashingiz mumkin. Muhimi — aniq va bajariladigan bo‘lsin."
+      ]
     },
     {
       "t": "bullets",
@@ -715,7 +731,7 @@ module.exports = {
         "Bajarganimni qayerga belgilayman?",
         "Bir kun qolib ketsa, keyingi imkoniyatda qanday qaytaman?"
       ],
-      "note": "Namuna: kechki ovqatdan keyin stolimda 2 daqiqa yozaman va daftarga belgi qo‘yaman."
+      "note": "Aniq ish. Aniq vaqt. Har kuni hisob. Bir kun qolsa — keyingi kuni qayting."
     },
     {
       "t": "photo",
@@ -723,38 +739,40 @@ module.exports = {
       "color": "red",
       "img": "/assets/d2-sinbook.jpg",
       "focus": "center",
-      "k": "Uyga vazifa · shaxsiy daftar",
+      "k": "Uyga vazifa",
       "h": "*Sinbook* yozishni boshlaymiz",
       "items": [
-        "Bugun qadriyatimga mos nima qildim?",
-        "Qaysi vaziyatda qiynaldim va qanday yo‘l tutdim?",
-        "Ertaga bitta nimani boshqacha qilaman?",
-        "Shaxsiy qaydlarni boshqalarga o‘qish yoki topshirish majburiy emas."
+        "Xatolar va gunohlar daftari — har kuni kechqurun.",
+        "Nima xato qildim? Nega? Ertaga qanday qilaman?",
+        "Bu — o'zini tanishning eng halol usuli: *o'zingga o'zing hisob berasan.*"
       ],
       "all": true
     },
     {
       "t": "steps",
       "color": "green",
-      "icon": "✅",
-      "k": "Yakun · 1 daqiqa",
-      "h": "Bugun o‘zingiz bilan *nima olib ketasiz?*",
+      "icon": "🎯",
+      "k": "Yillik maqsadlar",
+      "h": "Maqsadni *odatga* bo'lib chiqing",
       "all": true,
       "items": [
         {
-          "h": "3 ta qadriyat",
-          "p": "Men uchun nima muhim?"
+          "n": "1",
+          "h": "Yillik maqsad qo'ying",
+          "p": "Aniq, o'lchanadigan, muddatli."
         },
         {
-          "h": "1 ta prinsip",
-          "p": "Qaysi vaziyatda qanday yo‘l tutaman?"
+          "n": "2",
+          "h": "Odatlarga bo'ling",
+          "p": "Katta maqsad — har kungi kichik odatlar yig'indisi."
         },
         {
-          "h": "1 ta odat",
-          "p": "Keyingi 7 kun nima qilaman?"
+          "n": "3",
+          "h": "Sabablarini yozib oling",
+          "p": "Nima uchun? Motivatsiya tushganda shu sabablarni eslaysiz."
         }
       ],
-      "note": "Keyingi darsda tanlagan odatingiz va olingan xulosani muhokama qilamiz."
+      "note": "Kitoblar: *Atomic Habits* (James Clear), *The Power of Habit* (Charles Duhigg), *Principles* (Ray Dalio)."
     },
     {
       "t": "end",
