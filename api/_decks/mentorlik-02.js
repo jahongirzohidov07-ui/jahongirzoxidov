@@ -724,7 +724,7 @@ module.exports = {
       "img": "/assets/d2-sinbook.jpg",
       "focus": "center",
       "k": "Uyga vazifa · shaxsiy daftar",
-      "h": "*O‘zini kuzatish* daftari",
+      "h": "*Sinbook* yozishni boshlaymiz",
       "items": [
         "Bugun qadriyatimga mos nima qildim?",
         "Qaysi vaziyatda qiynaldim va qanday yo‘l tutdim?",
