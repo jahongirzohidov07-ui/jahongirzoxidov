@@ -811,7 +811,13 @@
   #msg.show { display: grid; }
 
   /* ============ Skript: pastki panel, taqdimotchi va doska rejimlari ============ */
-  #tools { position: absolute; left: 22px; bottom: 14px; display: flex; gap: 8px; pointer-events: auto; }
+  #tools { position: absolute; left: 22px; bottom: 14px; display: flex; gap: 8px; flex-wrap: wrap; max-width: calc(100vw - 44px); pointer-events: auto; }
+  #tools button:disabled { opacity: .5; cursor: wait; }
+  #exportPanel { position: fixed; z-index: 100; left: 50%; top: 50%; transform: translate(-50%,-50%); width: min(440px,90vw); padding: 26px; background: var(--bg2); color: var(--ink); border: 1px solid var(--card-line); border-radius: 20px; box-shadow: 0 12px 80px #0005; font: 15px/1.6 Inter,sans-serif; }
+  #exportPanel[hidden] { display: none; }
+  #exportStatus { font-weight: 700; }
+  #exportPanel p { color: var(--ink-soft); }
+  #exportCancel { padding: 8px 16px; }
   #tools button, .pbtn { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink-soft); background: var(--bg2); border: 1px solid var(--card-line); border-radius: 999px; padding: 6px 12px; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
   #tools button:hover, .pbtn:hover { border-color: var(--blue); color: var(--blue); }
   #tools button[hidden] { display: none; }
@@ -904,9 +910,10 @@
   <div class="tr" id="hudCount"></div>
   <div class="bar" id="hudBar"></div>
   <div class="keys"><b>→</b> keyingi &nbsp; <b>←</b> oldingi &nbsp; <b>F</b> to'liq ekran &nbsp; <b>N</b> skript &nbsp; <b>P</b> taqdimot &nbsp; <b>?</b> yordam</div>
-  <div id="tools"><button type="button" id="btnScript" hidden>📝 Skript</button><button type="button" id="btnPres">🖥 Taqdimot rejimi</button></div>
+  <div id="tools"><button type="button" id="btnScript" hidden>📝 Skript</button><button type="button" id="btnPres">🖥 Taqdimot rejimi</button><button type="button" id="exportPdf" hidden>↓ PDF</button><button type="button" id="exportPptx" hidden>↓ PPTX</button></div>
 </div>
 
+<div id="exportPanel" role="dialog" aria-label="Slaydlarni yuklab olish" hidden><div id="exportStatus" role="status" aria-live="polite"></div><p>Faqat slaydlar. Skript kiritilmaydi. Ko‘rinish saqlanadi; animatsiyalar va alohida matnlarni tahrirlash eksportda mavjud emas.</p><button type="button" id="exportCancel">Bekor qilish</button></div>
 <div id="drawer">
   <div class="dh">
     <b id="dNum">—</b><span id="dTime"></span><span class="rv-chip" id="dChip">ko'rilmagan</span>
@@ -982,6 +989,7 @@
 
 <div id="msg"></div>
 
+<script src="/assets/slide-export.js"></script>
 <script>
 (function () {
   const W = 1600, H = 900;
@@ -1698,6 +1706,8 @@
     document.getElementById('hudTitle').textContent = deck.program.title + ' · ' + deck.lesson.n + '-dars · ' + deck.lesson.title;
     build();
     initSkript();
+    document.getElementById('exportPdf').hidden = false;
+    document.getElementById('exportPptx').hidden = false;
     const h = parseInt((location.hash || '').replace('#', ''), 10);
     /* doska oynasi o'z boshlang'ich holatini yubormaydi — taqdimotchidan kutadi */
     applying = MODE === 'board';
@@ -1998,6 +2008,7 @@
     }
   }
 
+  window.installSlideExport(() => deck, slide => runPulley(slide, true));
   load();
 })();
 </script>
