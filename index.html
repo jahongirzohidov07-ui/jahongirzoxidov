@@ -223,6 +223,19 @@
     gap: 4px 10px;
   }
 
+  .draft-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #8A5A12;
+    background: rgba(156, 122, 60, 0.14);
+    border: 1px dashed rgba(156, 122, 60, 0.6);
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
   .essay-date {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
@@ -800,6 +813,32 @@
     }));
     renderList();
     route();
+    loadDrafts();
+  }
+
+  /* Qoralama insholar: faqat muallif (PIN saqlangan brauzer) ko'radi. ?qoralama — PIN so'raydi. */
+  function loadDrafts() {
+    if (location.protocol === 'file:') return;
+    let pin = '';
+    try { pin = localStorage.getItem('jz_pin') || ''; } catch (err) {}
+    if (!pin && /[?&]qoralama\b/.test(location.search)) {
+      pin = (window.prompt('Qoralamani ko\'rish uchun PIN kiriting:') || '').trim();
+      if (pin) { try { localStorage.setItem('jz_pin', pin); } catch (err) {} }
+    }
+    if (!pin) return;
+    fetch('/api/insho', { headers: { 'x-admin-pin': pin } })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d || !Array.isArray(d.drafts) || !d.drafts.length) return;
+        d.drafts.forEach(e => {
+          const folio = String(e.folio);
+          if (essays.some(x => x.folio === folio)) return;
+          essays.push({ id: 'insho-' + folio, folio, title: e.title, date: e.date || '', body: e.body || '', draft: true });
+        });
+        renderList(searchInput.value);
+        route();
+      })
+      .catch(() => {});
   }
 
   function readMinutes(body) {
@@ -816,7 +855,7 @@
 
   function renderList(filter) {
     const q = (filter || '').trim().toLowerCase();
-    const sorted = sortedEssays();
+    const sorted = sortedEssays().reverse(); /* eng oxirgi yozilgan insho — eng tepada */
     const filtered = q
       ? sorted.filter(e => (e.title + ' ' + e.body).toLowerCase().includes(q))
       : sorted;
@@ -834,6 +873,7 @@
         <div class="essay-head">
           <h3 class="essay-title">${escapeHtml(essay.title)}</h3>
           ${essay.date ? '<span class="essay-date">' + escapeHtml(essay.date) + '</span>' : ''}
+          ${essay.draft ? '<span class="draft-badge">Qoralama · faqat sizga ko\'rinadi</span>' : ''}
         </div>
       `;
       li.addEventListener('click', () => { location.hash = 'insho-' + essay.folio; });
@@ -936,7 +976,11 @@
     document.getElementById('readerDate').textContent = essay.date || '';
     document.getElementById('readerViews').textContent = (essay.date ? ' · ' : '') + readMinutes(essay.body) + ' daqiqa o\'qish';
     renderBody(document.getElementById('readerBody'), essay.body);
-    trackView(essay);
+    if (essay.draft) {
+      if (viewTimer) { clearTimeout(viewTimer); viewTimer = null; }
+      readsEl.textContent = ''; readsEl.classList.remove('show');
+      document.getElementById('readerViews').textContent += ' · QORALAMA — hozircha faqat sizga ko\'rinadi';
+    } else trackView(essay);
 
     const prevEssay = idx > 0 ? list[idx - 1] : null;
     const nextEssay = idx < list.length - 1 ? list[idx + 1] : null;
