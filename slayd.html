@@ -835,11 +835,11 @@
   .sk .cue.click.done { background: var(--blue); color: #fff; }
   .sk .cue.ask { background: rgba(255,140,40,0.16); color: var(--orange); }
   .sk .cue.pause { background: rgba(120,120,140,0.14); }
-  .sk .cue.task { background: rgba(40,170,110,0.16); color: var(--green); }
+  .sk .cue.task { background: rgba(120,80,220,0.14); color: #7a52d6; }
   .sk .cue.board { background: rgba(120,80,220,0.14); color: #7a52d6; }
   .sk .cue.own { background: rgba(230,60,70,0.12); color: var(--red); text-transform: none; letter-spacing: 0; font-size: 0.8em; white-space: normal; }
   .sk p.ask { border-left: 4px solid var(--orange); padding-left: 12px; }
-  .sk p.task { border-left: 4px solid var(--green); padding-left: 12px; }
+  .sk p.task { border-left: 4px solid #7a52d6; padding-left: 12px; }
   .sk p.own { border-left: 4px dashed var(--red); padding-left: 12px; font-style: italic; color: var(--ink-soft); }
   .sk .empty { color: var(--muted); font-style: italic; }
   .rv-chip { font-weight: 800; font-size: 12px; padding: 4px 10px; border-radius: 999px; background: var(--card-line); color: var(--muted); }
@@ -857,6 +857,25 @@
   .izoh-show { max-width: 980px; margin: 0 0 14px; padding: 10px 14px; border-radius: 12px; background: rgba(255,140,40,0.10); border: 1px solid rgba(255,140,40,0.35); font-size: 15px; color: var(--ink-soft); white-space: pre-wrap; }
   #toast { position: fixed; left: 50%; top: 18px; transform: translate(-50%, -30px); opacity: 0; background: var(--ink); color: var(--bg); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; padding: 9px 16px; border-radius: 999px; z-index: 90; transition: all 0.3s var(--ease); pointer-events: none; }
   #toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  /* savol pardasi: doskada avval faqat savol, bosilganda javob (slayd) ochiladi */
+  .slide .qcover.frag { position: absolute; inset: 0; z-index: 40; display: flex; flex-direction: column; justify-content: center; padding: 0 170px 0 150px; color: #fff; opacity: 1; transform: none; visibility: visible; transition: opacity 0.55s var(--ease), visibility 0s linear 0s; background: radial-gradient(circle at 82% 28%, rgba(255,255,255,0.16), transparent 42%), linear-gradient(135deg, var(--qa, #1D4ED8), var(--qb, #2563EB)); }
+  .slide .qcover.frag.on { opacity: 0; visibility: hidden; transition: opacity 0.55s var(--ease), visibility 0s linear 0.55s; }
+  .slide.c-green .qcover { --qa: #166534; --qb: #16A34A; }
+  .slide.c-orange .qcover { --qa: #C2410C; --qb: #EA580C; }
+  .slide.c-red .qcover { --qa: #9F1239; --qb: #E11D48; }
+  .qcover .qmark { position: absolute; right: 110px; top: 50%; transform: translateY(-50%); font-family: 'Fraunces', serif; font-weight: 700; font-size: 560px; line-height: 1; opacity: 0.13; animation: qfloat 5s ease-in-out infinite; }
+  @keyframes qfloat { 0%, 100% { transform: translateY(-52%) rotate(-4deg); } 50% { transform: translateY(-46%) rotate(4deg); } }
+  .qcover .qk { align-self: flex-start; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.2em; text-transform: uppercase; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); padding: 10px 20px; border-radius: 999px; margin-bottom: 36px; }
+  .qcover .qt { position: relative; font-family: 'Fraunces', serif; font-weight: 700; font-size: 78px; line-height: 1.12; letter-spacing: -0.01em; max-width: 1180px; }
+  .qcover .qt.long { font-size: 64px; }
+  .qcover .qh { position: relative; margin-top: 44px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 24px; opacity: 0.78; }
+  .slide.active .qcover .qk, .slide.active .qcover .qt, .slide.active .qcover .qh { animation: rise 0.7s var(--ease) both; }
+  .slide.active .qcover .qt { animation-delay: 0.12s; }
+  .slide.active .qcover .qh { animation-delay: 0.6s; }
+  .sk .cue.ans { background: rgba(40,170,110,0.18); color: var(--green); }
+  .sk p.ans { border-left: 4px solid var(--green); padding-left: 12px; }
+  .sk .qline { font-family: 'Inter', sans-serif; font-size: 0.78em; font-weight: 700; color: var(--blue); background: rgba(58,110,255,0.08); border: 1px dashed rgba(58,110,255,0.4); border-radius: 12px; padding: 8px 12px; margin: 0 0 0.8em; }
 
   /* taqdimotchi (noutbuk ekrani) */
   #pres { display: none; }
@@ -1471,7 +1490,8 @@
       const r = R[type] || R.bullets;
       let html = '';
       try { html = r(s, i); } catch (e) { html = '<h1>Slayd xatosi</h1><div class="sub">' + esc(e.message) + '</div>'; }
-      d.innerHTML = ((type === 'cover' || type === 'photo' || type === 'topic') ? '' : deco(i, s)) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
+      const qc = s.q && !revealAll ? '<div class="qcover frag" data-frag="1"><div class="qmark">?</div><div class="qk">❓ Savol</div><div class="qt' + (String(s.q).length > 64 ? ' long' : '') + '">' + fmt(s.q) + '</div><div class="qh">O\'ylab ko\'ring…</div></div>' : '';
+      d.innerHTML = qc + ((type === 'cover' || type === 'photo' || type === 'topic') ? '' : deco(i, s)) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
       d.dataset.notes = s.notes || '';
       stage.appendChild(d);
       return d;
@@ -1554,21 +1574,34 @@
     const s = slides[i];
     s.classList.add('active', dir === 'back' ? 'back' : 'in');
     frags(i).forEach(f => f.classList.toggle('on', dir === 'back'));
-    if (dir !== 'back') countUp(s);
-    runPulley(s, dir === 'back');
+    const covered = dir !== 'back' && !!s.querySelector('.qcover');
+    if (dir !== 'back' && !covered) countUp(s);
+    if (!covered) runPulley(s, dir === 'back');
     history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1));
     updateHud();
     onChange();
   }
   function next() {
     const off = frags(cur).find(f => !f.classList.contains('on'));
-    if (off) { off.classList.add('on'); onChange(); return; }
+    if (off) { off.classList.add('on'); if (off.classList.contains('qcover')) replay(slides[cur]); onChange(); return; }
     if (cur < slides.length - 1) show(cur + 1, 'fwd');
   }
   function prev() {
     const on = frags(cur).filter(f => f.classList.contains('on'));
     if (on.length) { on[on.length - 1].classList.remove('on'); onChange(); return; }
     if (cur > 0) show(cur - 1, 'back');
+  }
+  /* parda ko'tarilganda slayd animatsiyalarini boshidan o'ynatish */
+  function replay(s) {
+    try {
+      s.getAnimations({ subtree: true }).forEach(a => {
+        const t = a.effect && a.effect.target;
+        if (!a.animationName || (t && t.closest && t.closest('.qcover'))) return;
+        a.currentTime = 0; a.play();
+      });
+    } catch (e) {}
+    countUp(s);
+    runPulley(s, false);
   }
   function updateHud() {
     document.getElementById('hudCount').textContent = (cur + 1) + ' / ' + slides.length;
@@ -1742,7 +1775,9 @@
     applying = true;
     try {
       if (i !== cur) show(i, i < cur ? 'back' : 'fwd');
+      const cov = slides[cur].querySelector('.qcover'), was = !!(cov && cov.classList.contains('on'));
       frags(cur).forEach((x, k) => x.classList.toggle('on', k < f));
+      if (cov && !was && cov.classList.contains('on')) replay(slides[cur]);
       renderAll();
     } finally { applying = false; }
   }
@@ -1772,6 +1807,7 @@
       const low = tag.toLowerCase();
       if (/^→\s*bosing/.test(low)) { clickIdx.n++; lead = '<span class="cue click' + (clickIdx.n <= fOn ? ' done' : '') + '">→ bosing ' + clickIdx.n + '</span>'; }
       else if (/^savol/.test(low)) { cls = 'ask'; lead = '<span class="cue ask">❓ Savol</span>'; }
+      else if (/^javob/.test(low)) { cls = 'ans'; lead = '<span class="cue ans">💡 Javob</span>'; }
       else if (/^pauza/.test(low)) { lead = '<span class="cue pause">⏸ Pauza</span>'; }
       else if (/^mashq/.test(low)) { cls = 'task'; lead = '<span class="cue task">✍ ' + esc(tag) + '</span>'; }
       else if (/^doskaga/.test(low)) { lead = '<span class="cue board">🖊 ' + esc(tag) + '</span>'; }
@@ -1784,7 +1820,9 @@
     const t = SCRIPT && SCRIPT[i];
     if (!t) return '<p class="empty">Bu slayd uchun skript yo\'q.</p>';
     const idx = { n: 0 };
-    return t.split(/\n\s*\n/).map(p => paraHtml(p.trim(), idx, fOn)).join('');
+    const q = deck && deck.slides[i] && deck.slides[i].q;
+    const ql = q && !revealAll ? '<div class="qline">❓ Doskada avval savol turadi: «' + esc(String(q).replace(/\*/g, '')) + '» — 1-bosishda javob ochiladi</div>' : '';
+    return ql + t.split(/\n\s*\n/).map(p => paraHtml(p.trim(), idx, fOn)).join('');
   }
 
   /* ---------- vaqt rejasi: so'z/115 + mashq + savol ---------- */
@@ -1795,7 +1833,7 @@
       const words = String(t || '').split(/\s+/).filter(Boolean).length;
       let min = words / 115;
       const mq = String(t).match(/\[Mashq[^\]]*?(\d+)\s*daqiqa/i); if (mq) min += Number(mq[1]);
-      min += (String(t).match(/\[Savol\]/g) || []).length * 0.75;
+      min += (String(t).match(/\[Savol\]/g) || []).length * 0.5;
       PLAN[i] = acc; DUR[i] = min; acc += min;
     });
     PLAN.total = acc;
@@ -1924,7 +1962,10 @@
     $('pNum').textContent = (cur + 1) + ' / ' + slides.length;
     const nx = deck.slides[cur + 1];
     const nFr = frags(cur).length, fOn = fragOn();
-    if (nFr && fOn < nFr) { $('pNextLbl').textContent = 'Keyingi bosish'; $('pNextK').textContent = 'Shu slaydda yana ' + (nFr - fOn) + ' ta band ochiladi'; $('pNextH').textContent = ''; }
+    const nextIsCover = nFr && fOn < nFr && frags(cur)[fOn].classList.contains('qcover');
+    if (nextIsCover) { $('pNextLbl').textContent = 'Keyingi bosish'; $('pNextK').textContent = '💡 Parda ko\'tariladi — javob chiqadi'; $('pNextH').textContent = nFr - 1 > 0 ? 'Undan keyin yana ' + (nFr - 1) + ' ta band' : ''; }
+    else if (nFr && fOn < nFr) { $('pNextLbl').textContent = 'Keyingi bosish'; $('pNextK').textContent = 'Shu slaydda yana ' + (nFr - fOn) + ' ta band ochiladi'; $('pNextH').textContent = ''; }
+    else if (nx && nx.q && !revealAll) { $('pNextLbl').textContent = 'Keyingi slayd · ' + (cur + 2) + ' · savol pardasi'; $('pNextK').textContent = '❓ Doskada:'; $('pNextH').textContent = plain(nx.q); }
     else if (nx) { $('pNextLbl').textContent = 'Keyingi slayd · ' + (cur + 2); $('pNextK').textContent = plain(nx.k || ''); $('pNextH').textContent = plain(nx.h || nx.title || nx.name || (nx.t === 'end' ? 'Yakun' : '')); }
     else { $('pNextLbl').textContent = 'Oxirgi slayd'; $('pNextK').textContent = ''; $('pNextH').textContent = 'Dars tugadi'; }
     $('pMeta').textContent = SCRIPT ? '≈ ' + daq(DUR[cur] || 0) + ' shu slaydga · butun dars ≈ ' + soat(PLAN.total || 0) : '';

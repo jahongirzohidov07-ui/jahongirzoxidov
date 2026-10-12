@@ -51,11 +51,14 @@
   .cue { display: inline-block; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; margin-right: 8px; vertical-align: 2px; background: rgba(201,191,168,0.55); color: var(--ink-soft); }
   .cue.click { background: rgba(47,91,211,0.14); color: var(--blue); }
   .cue.ask { background: rgba(184,103,42,0.16); color: var(--warn); }
-  .cue.task { background: rgba(63,122,80,0.16); color: var(--good); }
+  .cue.task { background: rgba(107,79,196,0.14); color: var(--violet); }
+  .cue.ans { background: rgba(63,122,80,0.18); color: var(--good); }
+  .sk p.ans { border-left: 3px solid var(--good); padding-left: 12px; }
+  .qline { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: var(--blue); background: rgba(47,91,211,0.07); border: 1px dashed rgba(47,91,211,0.4); border-radius: 10px; padding: 8px 12px; margin: 0 0 12px; }
   .cue.board { background: rgba(107,79,196,0.14); color: var(--violet); }
   .cue.own { background: rgba(163,81,63,0.12); color: var(--bad); text-transform: none; letter-spacing: 0; font-size: 12.5px; white-space: normal; }
   .sk p.ask { border-left: 3px solid var(--warn); padding-left: 12px; }
-  .sk p.task { border-left: 3px solid var(--good); padding-left: 12px; }
+  .sk p.task { border-left: 3px solid var(--violet); padding-left: 12px; }
   .sk p.own { border-left: 3px dashed var(--bad); padding-left: 12px; font-style: italic; color: var(--ink-soft); }
   .acts { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border-top: 1px dashed var(--rule); padding-top: 10px; margin-top: 4px; font-family: 'Inter', sans-serif; }
   .acts .sp { flex: 1; }
@@ -104,6 +107,7 @@
   <div class="legend">
     Belgilar: <span class="cue click">→ bosing</span> slayd ichida keyingi band ·
     <span class="cue ask">❓ Savol</span> auditoriyaga savol ·
+    <span class="cue ans">💡 Javob</span> siz javobni ochasiz ·
     <span class="cue">⏸ Pauza</span> 2–3 soniya ·
     <span class="cue task">✍ Mashq</span> daftarda topshiriq ·
     <span class="cue own">👤 Shaxsiy misol</span> — shu joyga o'z hikoyangizni qo'shasiz.
@@ -139,6 +143,7 @@
       const tag = m[1].trim(), low = tag.toLowerCase(); rest = p.slice(m[0].length);
       if (/^→\s*bosing/.test(low)) { idx.n++; lead = '<span class="cue click">→ bosing ' + idx.n + '</span>'; }
       else if (/^savol/.test(low)) { cls = 'ask'; lead = '<span class="cue ask">❓ Savol</span>'; }
+      else if (/^javob/.test(low)) { cls = 'ans'; lead = '<span class="cue ans">💡 Javob</span>'; }
       else if (/^pauza/.test(low)) lead = '<span class="cue">⏸ Pauza</span>';
       else if (/^mashq/.test(low)) { cls = 'task'; lead = '<span class="cue task">✍ ' + esc(tag) + '</span>'; }
       else if (/^doskaga/.test(low)) lead = '<span class="cue board">🖊 ' + esc(tag) + '</span>';
@@ -155,7 +160,7 @@
       const w = String(t || '').split(/\s+/).filter(Boolean).length;
       let min = w / 115;
       const mq = String(t).match(/\[Mashq[^\]]*?(\d+)\s*daqiqa/i); if (mq) min += Number(mq[1]);
-      min += (String(t).match(/\[Savol\]/g) || []).length * 0.75;
+      min += (String(t).match(/\[Savol\]/g) || []).length * 0.5;
       PLAN[i] = acc; DUR[i] = min; acc += min;
     });
     PLAN.total = acc;
@@ -180,6 +185,7 @@
     return '<div class="card ' + (rv ? rv.s : '') + '" id="s' + (i + 1) + '">' +
       '<div class="ch"><span class="no">' + (i + 1) + '</span><span class="kk">' + esc(plain(s.k || (s.t === 'cover' ? 'Muqova' : s.t === 'end' ? 'Yakun' : ''))) + '</span><span class="tm">' + mmss(PLAN[i]) + ' · ≈ ' + daq(DUR[i]) + '</span></div>' +
       (head ? '<div class="hh">' + esc(head) + '</div>' : '') +
+      (s.q ? '<div class="qline">❓ Doskada avval savol pardasi: «' + esc(plain(s.q)) + '» — 1-bosishda javob ochiladi</div>' : '') +
       '<div class="sk">' + scriptHtml(DATA.script[i]) + '</div>' +
       (rv && rv.c ? '<div class="izs">✎ ' + esc(rv.c) + '</div>' : '') +
       '<div class="ize" id="ize' + i + '"><textarea placeholder="Nimani o\'zgartiramiz?">' + esc((rv && rv.c) || '') + '</textarea><div class="row"><button type="button" class="rb izb on" data-a="save" data-i="' + i + '">Saqlash</button><button type="button" class="rb" data-a="cancel" data-i="' + i + '">Bekor</button></div></div>' +
