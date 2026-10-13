@@ -617,6 +617,190 @@
     transform: translateX(-50%) translateY(0);
   }
 
+  /* ---------- Izohlar ---------- */
+  .izohlar {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .izohlar[hidden] { display: none; }
+  .izoh-head {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 18px;
+  }
+  .izoh-count {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-left: 4px;
+  }
+  .izoh-list {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .izoh-list:empty { display: none; }
+  .izoh {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 16px 18px;
+  }
+  .izoh.kutish {
+    border: 1px dashed rgba(156, 122, 60, 0.7);
+    background: #F7EFDC;
+  }
+  .izoh-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin-bottom: 6px;
+  }
+  .izoh-name {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+  .izoh-text {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.65;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+  .izoh-flag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #8A5A12;
+    background: rgba(156, 122, 60, 0.16);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .izoh-javob {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-left: 3px solid var(--clay-gold);
+    background: rgba(156, 122, 60, 0.08);
+    border-radius: 0 4px 4px 0;
+  }
+  .izoh-javob .izoh-name { color: #7A5A1E; }
+  .izoh-tools {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .izoh-tools button {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 7px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--parchment);
+    color: var(--ink);
+  }
+  .izoh-tools button:hover { border-color: var(--clay-gold); }
+  .izoh-tools .t-ok { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+  .izoh-tools .t-del { color: #9B2C2C; }
+  .izoh-tools .t-del.confirm { background: #9B2C2C; border-color: #9B2C2C; color: #fff; }
+  .izoh-tools button:disabled { opacity: 0.55; cursor: default; }
+  .izoh-reply-box {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .izoh-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .izoh-label {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 600;
+  }
+  .izoh-form textarea,
+  .izoh-form input[type="text"],
+  .izoh-reply-box textarea {
+    width: 100%;
+    font-family: 'Literata', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 12px 14px;
+    resize: vertical;
+  }
+  .izoh-form textarea:focus,
+  .izoh-form input[type="text"]:focus,
+  .izoh-reply-box textarea:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+  .izoh-row {
+    display: flex;
+    gap: 10px;
+  }
+  .izoh-row input { flex: 1; min-width: 0; }
+  .izoh-send {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 0 24px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .izoh-send:hover { background: #3a3226; }
+  .izoh-send:disabled { opacity: 0.6; cursor: default; }
+  .izoh-note {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .izoh-note.ok { color: #2F6B3A; font-weight: 600; }
+  .izoh-note.err { color: #9B2C2C; font-weight: 600; }
+  .izoh-hp {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+  .izoh-new {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--indigo);
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  @media (max-width: 560px) {
+    .izoh-row { flex-direction: column; }
+    .izoh-send { padding: 13px; }
+  }
+
   @media (max-width: 560px) {
     .reader-title { font-size: 27px; }
     .reader-body { font-size: 16.5px; }
@@ -659,6 +843,20 @@
       <div class="reader-date"><span id="readerDate"></span><span id="readerViews" class="reader-views"></span></div>
     </div>
     <div class="reader-body" id="readerBody"></div>
+    <section class="izohlar" id="izohlar" aria-labelledby="izohLabel">
+      <h2 class="izoh-head" id="izohHead" hidden>Izohlar <span class="izoh-count" id="izohCount"></span></h2>
+      <ol class="izoh-list" id="izohList"></ol>
+      <form class="izoh-form" id="izohForm" novalidate>
+        <label class="izoh-label" id="izohLabel" for="izohText">Fikringizni yozing</label>
+        <textarea id="izohText" rows="4" maxlength="1500" placeholder="Insho sizda qanday fikr uyg'otdi?"></textarea>
+        <div class="izoh-row">
+          <input type="text" id="izohName" maxlength="40" placeholder="Ismingiz" autocomplete="name" aria-label="Ismingiz">
+          <button type="submit" class="izoh-send" id="izohSend">Yuborish</button>
+        </div>
+        <input type="text" id="izohHp" class="izoh-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="izoh-note" id="izohNote" role="status">Izohingiz muallif ko'rib chiqqach saytda chiqadi.</p>
+      </form>
+    </section>
     <div class="reader-nav">
       <button class="nav-btn" id="prevBtn">
         <span class="nav-arrow">&larr;</span>
@@ -836,6 +1034,7 @@
     renderList();
     route();
     loadDrafts();
+    loadPendingIzoh();
   }
 
   /* Qoralama insholar: faqat muallif (PIN saqlangan brauzer) ko'radi. ?qoralama — PIN so'raydi. */
@@ -896,6 +1095,7 @@
           <h3 class="essay-title">${escapeHtml(essay.title)}</h3>
           ${essay.date ? '<span class="essay-date">' + escapeHtml(essay.date) + '</span>' : ''}
           ${essay.draft ? '<span class="draft-badge">Qoralama · faqat sizga ko\'rinadi</span>' : ''}
+          ${pendingIzoh[essay.folio] ? '<span class="izoh-new">' + Number(pendingIzoh[essay.folio]) + ' yangi izoh</span>' : ''}
         </div>
       `;
       li.addEventListener('click', () => { location.hash = 'insho-' + essay.folio; });
@@ -1006,6 +1206,7 @@
       readsEl.textContent = ''; readsEl.classList.remove('show');
       document.getElementById('readerViews').textContent += ' · QORALAMA — hozircha faqat sizga ko\'rinadi';
     } else trackView(essay);
+    loadIzoh(essay);
 
     const prevEssay = idx > 0 ? list[idx - 1] : null;
     const nextEssay = idx < list.length - 1 ? list[idx + 1] : null;
@@ -1037,6 +1238,191 @@
     document.title = essay.title + ' — Jahongir Zoxidov';
     return true;
   }
+
+  /* ---------- Izohlar (/api/izoh) ----------
+     O'quvchi izohi muallif ma'qullaguncha yashirin. PIN saqlangan brauzerda (muallif)
+     kutayotgan izohlar ham ko'rinadi: Chiqarish / Javob / O'chirish. */
+  let pendingIzoh = {};
+  const izohSection = document.getElementById('izohlar');
+  const izohHead = document.getElementById('izohHead');
+  const izohCount = document.getElementById('izohCount');
+  const izohList = document.getElementById('izohList');
+  const izohForm = document.getElementById('izohForm');
+  const izohText = document.getElementById('izohText');
+  const izohName = document.getElementById('izohName');
+  const izohSend = document.getElementById('izohSend');
+  const izohNote = document.getElementById('izohNote');
+  const izohHp = document.getElementById('izohHp');
+  const IZOH_NOTE = izohNote.textContent;
+  let izohEssay = null;
+
+  function authorPin() {
+    try { return localStorage.getItem('jz_pin') || ''; } catch (err) { return ''; }
+  }
+
+  function izohDate(ms) {
+    const d = new Date(Number(ms) + 5 * 3600 * 1000); /* Toshkent vaqti */
+    const p = n => String(n).padStart(2, '0');
+    return p(d.getUTCDate()) + '.' + p(d.getUTCMonth() + 1) + '.' + d.getUTCFullYear();
+  }
+
+  function el(tag, cls, text) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function loadPendingIzoh() {
+    const pin = authorPin();
+    if (!pin || location.protocol === 'file:') return;
+    fetch('/api/izoh?kutish=1', { headers: { 'x-admin-pin': pin } })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d || !d.counts) return;
+        pendingIzoh = d.counts;
+        renderList(searchInput.value);
+      })
+      .catch(() => {});
+  }
+
+  function renderIzoh(items, author) {
+    izohList.innerHTML = '';
+    const shown = items.filter(c => author || c.ok !== false);
+    const okCount = items.filter(c => c.ok !== false).length;
+    izohHead.hidden = shown.length === 0;
+    izohCount.textContent = okCount ? '· ' + okCount : '';
+    izohForm.querySelector('.izoh-label').textContent = shown.length ? 'Siz ham fikringizni yozing' : 'Fikringizni yozing';
+
+    shown.forEach(c => {
+      const li = el('li', 'izoh' + (c.ok === false ? ' kutish' : ''));
+      const meta = el('div', 'izoh-meta');
+      meta.appendChild(el('span', 'izoh-name', c.name));
+      meta.appendChild(el('span', '', izohDate(c.at)));
+      if (c.ok === false) meta.appendChild(el('span', 'izoh-flag', 'Kutmoqda · faqat sizga ko\'rinadi'));
+      li.appendChild(meta);
+      li.appendChild(el('p', 'izoh-text', c.text));
+
+      if (c.reply) {
+        const box = el('div', 'izoh-javob');
+        const m = el('div', 'izoh-meta');
+        m.appendChild(el('span', 'izoh-name', 'Jahongir Zoxidov'));
+        m.appendChild(el('span', '', 'muallif javobi'));
+        box.appendChild(m);
+        box.appendChild(el('p', 'izoh-text', c.reply));
+        li.appendChild(box);
+      }
+
+      if (author) li.appendChild(izohTools(c));
+      izohList.appendChild(li);
+    });
+  }
+
+  function izohTools(c) {
+    const tools = el('div', 'izoh-tools');
+    if (c.ok === false) {
+      const ok = el('button', 't-ok', 'Chiqarish');
+      ok.type = 'button';
+      ok.onclick = () => izohAction({ a: 'ok', id: c.id }, ok);
+      tools.appendChild(ok);
+    }
+    const rep = el('button', '', c.reply ? 'Javobni tahrirlash' : 'Javob yozish');
+    rep.type = 'button';
+    rep.onclick = () => {
+      if (tools.nextSibling && tools.nextSibling.className === 'izoh-reply-box') { tools.nextSibling.remove(); return; }
+      const box = el('div', 'izoh-reply-box');
+      const ta = el('textarea');
+      ta.rows = 3; ta.maxLength = 1500; ta.value = c.reply || '';
+      ta.placeholder = 'Javobingiz (bo\'sh qoldirsangiz — javob o\'chadi)';
+      const row = el('div', 'izoh-tools');
+      const save = el('button', 't-ok', 'Javobni saqlash');
+      save.type = 'button';
+      save.onclick = () => izohAction({ a: 'javob', id: c.id, text: ta.value }, save);
+      row.appendChild(save);
+      box.appendChild(ta); box.appendChild(row);
+      tools.after(box);
+      ta.focus();
+    };
+    tools.appendChild(rep);
+    const del = el('button', 't-del', 'O\'chirish');
+    del.type = 'button';
+    let armed = null;
+    del.onclick = () => {
+      if (!armed) {
+        del.classList.add('confirm'); del.textContent = 'Rostdan o\'chirilsinmi?';
+        armed = setTimeout(() => { armed = null; del.classList.remove('confirm'); del.textContent = 'O\'chirish'; }, 3500);
+        return;
+      }
+      clearTimeout(armed);
+      izohAction({ a: 'del', id: c.id }, del);
+    };
+    tools.appendChild(del);
+    return tools;
+  }
+
+  function izohAction(body, btn) {
+    const essay = izohEssay;
+    if (!essay) return;
+    btn.disabled = true;
+    fetch('/api/izoh', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-admin-pin': authorPin() },
+      body: JSON.stringify(Object.assign({ f: essay.folio }, body))
+    })
+      .then(r => r.json().catch(() => ({})).then(d => ({ ok: r.ok, d })))
+      .then(({ ok, d }) => {
+        if (!ok) { btn.disabled = false; showToast(d.error || 'Xatolik'); return; }
+        if (izohEssay === essay) renderIzoh(d.items || [], true);
+        showToast(body.a === 'ok' ? 'Izoh saytga chiqarildi' : body.a === 'del' ? 'Izoh o\'chirildi' : 'Javob saqlandi');
+        loadPendingIzoh();
+      })
+      .catch(() => { btn.disabled = false; showToast('Internet bilan bog\'lanib bo\'lmadi'); });
+  }
+
+  function loadIzoh(essay) {
+    izohEssay = essay;
+    izohList.innerHTML = '';
+    izohHead.hidden = true;
+    izohNote.textContent = IZOH_NOTE;
+    izohNote.className = 'izoh-note';
+    izohSection.hidden = !!essay.draft || location.protocol === 'file:';
+    if (izohSection.hidden) return;
+    try { if (!izohName.value) izohName.value = localStorage.getItem('jz_name') || ''; } catch (err) {}
+    const pin = authorPin();
+    fetch('/api/izoh?f=' + encodeURIComponent(essay.folio), pin ? { headers: { 'x-admin-pin': pin } } : undefined)
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (d && izohEssay === essay) renderIzoh(d.items || [], !!d.author); })
+      .catch(() => {});
+  }
+
+  izohForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const essay = izohEssay;
+    if (!essay) return;
+    const text = izohText.value.trim();
+    const name = izohName.value.trim();
+    const fail = (msg, field) => { izohNote.textContent = msg; izohNote.className = 'izoh-note err'; if (field) field.focus(); };
+    if (text.length < 3) return fail('Izoh matnini yozing.', izohText);
+    if (name.length < 2) return fail('Ismingizni yozing.', izohName);
+    izohSend.disabled = true;
+    izohSend.textContent = 'Yuborilmoqda…';
+    fetch('/api/izoh', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ f: essay.folio, name, text, title: essay.title, website: izohHp.value })
+    })
+      .then(r => r.json().catch(() => ({})).then(d => ({ ok: r.ok, d })))
+      .then(({ ok, d }) => {
+        if (!ok) return fail(d.error ? d.error + '.' : 'Yuborib bo\'lmadi. Qayta urinib ko\'ring.');
+        try { localStorage.setItem('jz_name', name); } catch (err) {}
+        izohText.value = '';
+        izohNote.textContent = 'Rahmat! Izohingiz qabul qilindi — muallif ko\'rib chiqqach saytda chiqadi.';
+        izohNote.className = 'izoh-note ok';
+        if (authorPin()) { loadIzoh(essay); loadPendingIzoh(); }
+      })
+      .catch(() => fail('Internet bilan bog\'lanib bo\'lmadi. Qayta urinib ko\'ring.'))
+      .finally(() => { izohSend.disabled = false; izohSend.textContent = 'Yuborish'; });
+  });
 
   /* ---------- O'qilganlar hisobi (/api/view) ---------- */
   const readsEl = document.getElementById('readerReads');
@@ -1197,9 +1583,14 @@
     showToast("Insho matnini nusxalab bo'lmaydi. Havolani ulashing.");
   });
 
+  function isTyping(node) {
+    return !!(node && node.closest && node.closest('input, textarea'));
+  }
+
   document.addEventListener('keydown', (e) => {
     const combo = e.ctrlKey || e.metaKey;
     if (!combo) return;
+    if (isTyping(e.target)) return;
     const k = (e.key || '').toLowerCase();
     if (k !== 'c' && k !== 'x' && k !== 'a') return;
     if (!readerView.classList.contains('active')) return;
@@ -1217,6 +1608,7 @@
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      if (isTyping(e.target)) return;
       if (readerView.classList.contains('active') || aboutView.classList.contains('active')) goHome();
     }
   });

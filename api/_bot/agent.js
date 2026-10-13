@@ -6,6 +6,7 @@ const S = require('./store');
 const tg = require('./tg');
 const llm = require('./llm');
 const { ODATLAR, DARSLAR, BILIM } = require('./bilim');
+const IZ = require('../_lib/izoh');
 
 /* ---------- vaqt (Toshkent, UTC+5) ---------- */
 const TZ = 5 * 3600 * 1000;
@@ -417,6 +418,17 @@ async function handleCallback(cq) {
   const mid = cq.message && cq.message.message_id;
   const data = String(cq.data || '');
   const [kind, a, b] = data.split(':');
+  if (kind === 'iz' && a && b) {
+    /* insho izohi: iz:ok:<folio>:<id> | iz:del:<folio>:<id> */
+    const id = data.split(':')[3] || '';
+    let c = null; let note = '';
+    if (a === 'ok') { c = await IZ.approve(b, id); note = '✅ Saytga chiqarildi'; }
+    else if (a === 'del') { c = await IZ.remove(b, id); note = '🗑 O\'chirildi'; }
+    if (!c) note = 'Izoh topilmadi (allaqachon o\'chirilgan bo\'lishi mumkin)';
+    const orig = (cq.message && cq.message.text) || '';
+    await tg.editText(chatId, mid, orig + '\n\n' + note);
+    return tg.answerCallback(cq.id, note);
+  }
   if (kind === 'h' && a && b) {
     const o = ODATLAR.find(x => x.id === a);
     if (!o) return tg.answerCallback(cq.id);
@@ -479,6 +491,16 @@ async function handleUpdate(update) {
   if (fromId !== String(own)) return tg.send(chatId, 'Bu shaxsiy bot.');
 
   if (!text) return tg.send(chatId, 'Hozircha faqat matn tushunaman — yozib yuboring.');
+
+  /* insho izohi haqidagi xabarga reply — muallif javobi sifatida saytga qo'yiladi */
+  if (msg.reply_to_message && msg.reply_to_message.message_id) {
+    const ref = await S.get('izmsg:' + msg.reply_to_message.message_id);
+    if (ref) {
+      const [f, id] = String(ref).split(':');
+      const c = await IZ.reply(f, id, text.slice(0, 1500));
+      return tg.send(chatId, c ? '💬 Javobingiz saytga qo\'yildi, izoh ham chiqarildi.' : 'Izoh topilmadi (o\'chirilgan bo\'lishi mumkin).');
+    }
+  }
 
   const cm = text.match(/^\/([a-zA-Z_]+)(?:@\w+)?\s*([\s\S]*)$/);
   if (cm) {
