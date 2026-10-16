@@ -452,6 +452,32 @@
   .s-bars .callout b { font-family: 'Fraunces', serif; font-weight: 700; font-size: 110px; line-height: 1; color: var(--a); letter-spacing: -0.03em; }
   .s-bars .callout span { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1.3; max-width: 640px; }
   .s-bars .callout span em { font-style: normal; color: var(--a); }
+
+  /* ---- ustunli diagramma (cols): ustunlar pastdan o'sadi, yuqorida qiymat chiqadi ---- */
+  .s-cols .cwrap { display: flex; gap: 56px; align-items: stretch; flex: 1; min-height: 0; margin-top: 8px; }
+  .s-cols .chart { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .s-cols .plot { flex: 1; display: flex; align-items: stretch; gap: 30px; padding: 58px 6px 0; border-bottom: 4px solid var(--rule); min-height: 0; }
+  .s-cols .grp { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .s-cols .bw { flex: 1; display: flex; align-items: flex-end; justify-content: center; }
+  .s-cols .cbar { position: relative; width: min(150px, 78%); height: var(--h); display: flex; flex-direction: column-reverse; transform-origin: bottom; transform: scaleY(0); }
+  .slide.active.s-cols .cbar { animation: growY 1.1s var(--ease) both; animation-delay: var(--d); }
+  .s-cols .seg { width: 100%; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 6px; color: #fff; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; line-height: 1.15; box-shadow: inset 0 -5px 0 rgba(0,0,0,0.12); overflow: hidden; }
+  .s-cols .seg.b { border-radius: 0 0 8px 8px; }
+  .s-cols .seg.t { border-radius: 16px 16px 0 0; }
+  .s-cols .seg.b.t { border-radius: 16px 16px 8px 8px; }
+  .s-cols .top { position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 27px; color: var(--ink); white-space: nowrap; opacity: 0; }
+  .slide.active.s-cols .top { animation: fadeIn1 0.45s ease both; animation-delay: calc(var(--d) + 0.9s); }
+  .s-cols .grp.hl .top { color: var(--a); font-size: 32px; }
+  .s-cols .grp.dim .cbar { opacity: 0.55; }
+  .s-cols .gx { margin-top: 14px; text-align: center; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 20px; color: var(--ink); line-height: 1.2; }
+  .s-cols .gx small { display: block; font-weight: 500; font-size: 15px; color: var(--ink-soft); margin-top: 4px; }
+  .s-cols .lgd { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 18px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; color: var(--ink-soft); }
+  .s-cols .lgd i { display: inline-block; width: 18px; height: 18px; border-radius: 5px; margin-right: 9px; vertical-align: -3px; }
+  .s-cols .side { width: 390px; flex: none; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+  .s-cols .side b { font-family: 'Fraunces', serif; font-weight: 700; font-size: 92px; line-height: 1; color: var(--a); letter-spacing: -0.03em; }
+  .s-cols .side span { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 23px; line-height: 1.38; color: var(--ink); }
+  .s-cols .side span em { font-style: normal; color: var(--a); }
+  .s-cols .note { margin-top: 18px; }
   .s-brain .chain.plain .arr { display: none; }
 
   /* ============ Duel: ikki raqib, bitta mukofot ============ */
@@ -1261,6 +1287,24 @@
       <div class="track"><div class="fill" style="--w:${esc(r.w)};--d:${0.5 + j * 0.5}s;${r.color ? '--bc:var(--' + esc(r.color) + ')' : ''}">${r.ticks ? '<div class="ticks">' + '<i></i>'.repeat(r.ticks) + '</div>' : ''}<span class="val">${fmt(r.v || '')}</span></div></div></div>`).join('');
     return `${heroIcon(s)}${kicker(s.k)}<h1 class="h rv" style="--i:1">${fmt(s.h)}</h1><div class="rows">${rows}</div>
       ${s.big ? '<div class="callout rv" style="--i:6"><b>' + esc(s.big) + '</b><span>' + fmt(s.bigText || '') + '</span></div>' : ''}${note(s.note)}`;
+  };
+
+  /* ustunli diagramma: groups [{ x, sub, v | segs:[{v, c, l}], top, hl, dim }], max, legend [{c, l}], side {big, text} */
+  function colorVar(c) { return /^(blue|green|red|orange)$/.test(c || '') ? 'var(--' + c + ')' : (c || 'var(--a)'); }
+  R.cols = (s) => {
+    const G = s.groups || [];
+    const tot = g => (g.segs || [{ v: g.v }]).reduce((a, b) => a + (Number(b.v) || 0), 0);
+    const max = s.max || Math.max(1, ...G.map(tot)) * 1.04;
+    const step = s.step || 0.45;
+    const grp = (g, j) => {
+      const segs = g.segs || [{ v: g.v, c: g.c }], T = tot(g);
+      const inner = segs.map((sg, k) => '<div class="seg' + (k === 0 ? ' b' : '') + (k === segs.length - 1 ? ' t' : '') + '" style="height:' + (T ? (sg.v / T * 100).toFixed(2) : 0) + '%;background:' + colorVar(sg.c) + '">' + (sg.l && sg.v / max > 0.11 ? fmt(sg.l) : '') + '</div>').join('');
+      return '<div class="grp' + (g.hl ? ' hl' : '') + (g.dim ? ' dim' : '') + '"><div class="bw"><div class="cbar" style="--h:' + (T / max * 100).toFixed(2) + '%;--d:' + (0.5 + j * step).toFixed(2) + 's">' + inner + '<div class="top">' + fmt(g.top != null ? g.top : String(T)) + '</div></div></div><div class="gx">' + fmt(g.x || '') + (g.sub ? '<small>' + fmt(g.sub) + '</small>' : '') + '</div></div>';
+    };
+    const lgd = s.legend ? '<div class="lgd rv" style="--i:3">' + s.legend.map(l => '<span><i style="background:' + colorVar(l.c) + '"></i>' + fmt(l.l) + '</span>').join('') + '</div>' : '';
+    const side = s.side ? '<div class="side rv" style="--i:' + (4 + G.length) + '">' + (s.side.big ? '<b>' + esc(s.side.big) + '</b>' : '') + (s.side.text ? '<span>' + fmt(s.side.text) + '</span>' : '') + '</div>' : '';
+    return `${heroIcon(s)}${kicker(s.k)}<h1 class="h ${s.smallH ? 'small' : ''} rv" style="--i:1">${fmt(s.h)}</h1>
+      <div class="cwrap"><div class="chart rv" style="--i:2"><div class="plot">${G.map(grp).join('')}</div>${lgd}</div>${side}</div>${note(s.note)}`;
   };
 
   R.duel = (s) => {
