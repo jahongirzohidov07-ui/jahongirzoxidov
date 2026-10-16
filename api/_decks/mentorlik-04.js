@@ -3,8 +3,9 @@
    Manba: 4-dars.pptx + muallifning Notion qaydlari (7 bo'lim: qaramlik va erkinlik, nisbat qoidasi,
    status poygasi, qarz va nasiya, jamg'arma bosqichlari, daromad o'sishi, boylikni yashirish).
    Savol pardalari skript faylida: api/_scripts/mentorlik-04.js (S.q).
-   Raqamlar manbasi: Markaziy bank nasiya tahlili (kun.uz, 2025-06), Statistika qo'mitasi (2026 I chorak),
-   Markaziy bank (2026-iyun inflyatsiya 5,5%, yil oxiri prognozi ~6,5%), XVF/YTTB (2026 o'sish ~6,5–7,5%). */
+   Qoida: muallif qaydlaridagi fikr, raqam va iqtiboslar o'zgartirilmaydi (Aristotel, 47–270%, 5–10 barobar,
+   95%, 15–17%, Taleb va Baffet) — qo'shimcha misollar faqat ularni to'ldiradi.
+   Qo'shimcha misollar manbasi: Markaziy bank nasiya tahlili (kun.uz, 2025-06), Statistika qo'mitasi (2026 I chorak). */
 module.exports = {
   slides: [
     /* 1 */ { t: 'cover', variant: 'a', photo: '/assets/jahongir-2.jpg', badge: 'Xush kelibsiz!', h: 'Mentorship program', s: 'Shogirdlik dasturi', lesson: '*4-dars* · Moliya', name: 'Jahongir Zoxidov', role: 'Mentor' },
@@ -118,7 +119,7 @@ module.exports = {
     /* ===== 4. Qarz va nasiya ===== */
     /* 30 */ { t: 'section', color: 'red', icon: '⛓️', n: '4', h: 'Qarz va nasiya tuzog\'i', s: 'Bo\'lib to\'lashning yashirin narxi' },
 
-    /* 31 */ { t: 'quote', color: 'red', k: 'Qadimgi hikmat', q: 'Qarz — erkin odamning qulligi.', by: 'Publiliy Sir · Qadimgi Rim, mil. avv. I asr' },
+    /* 31 */ { t: 'quote', color: 'red', k: 'Qarz — zamonaviy qullik', q: 'Qarz insonni qullikka yetaklaydi.', by: 'Aristotel' },
 
     /* 32 */ { t: 'vs', color: 'orange', icon: '📱', k: 'Qarz nimaga olinadi?', h: 'Ilgari — *omon qolish* uchun. Bugun — *xohish* uchun', all: true, a: { icon: '🌾', h: 'Ilgari', tone: 'neutral', items: ['Ovqatga — ochlikdan', 'Soliqqa', 'Urug\'lik, ekin uchun'] }, b: { icon: '📱', h: 'Bugun', tone: 'bad', items: ['Telefon, mashina', 'To\'y, ko\'rinish', 'O\'tkinchi xohishlar'] } },
 
@@ -129,11 +130,11 @@ module.exports = {
       { x: 'O\'sha to\'lovlar', sub: 'depozitda, 2 yil', segs: [{ v: 27, c: 'blue', l: 'to\'lovlar' }, { v: 7.6, c: 'green', l: 'foiz' }], top: '≈35 mln', hl: true }
     ], legend: [{ c: 'blue', l: 'Sizning pulingiz' }, { c: 'red', l: 'Ustama' }, { c: 'green', l: 'Depozit foizi' }], side: { big: '9 vs 35', text: 'Bir yo\'lda qo\'lingizda *eskirgan telefon*. Ikkinchisida — *35 mln so\'m*.' }, note: 'Misol: iPhone, 2024-yil dekabr narxlari (Markaziy bank tahlili); depozit — yillik ~17%; b/u narxi taxminiy.' },
 
-    /* 34 */ { t: 'stats', color: 'red', icon: '🧾', k: 'Markaziy bank tahlili · 12 oylik nasiya', h: 'Nasiyaning *yashirin* narxi', items: [
-      { v: '40%', l: 'O\'rtacha ustama', s: '27% dan 44% gacha' },
-      { v: '67%', l: 'Bank foiziga o\'girsak', s: 'yiliga 47–74%' },
-      { v: '52%', l: '«Ustamasiz» nasiyada ham', s: 'narx bozordagidan shuncha qimmat bo\'lgan' }
-    ], note: '«0% ustama» — ko\'pincha ustama *narxning ichiga* yashiringan bo\'ladi.' },
+    /* 34 */ { t: 'stats', color: 'red', icon: '🧾', k: 'Muddatli to\'lov va kredit kartalari', h: 'Nasiyaning *yashirin* narxi', items: [
+      { v: '47%', l: 'Yashirin xizmat haqi', s: 'eng kami' },
+      { v: '270%', l: 'Eng yuqorisi', s: 'ba\'zi takliflarda' },
+      { v: '40%', l: 'iPhone misolida', s: 'o\'rtacha ustama, 12 oy (Markaziy bank tahlili)' }
+    ], note: 'Bunday takliflar insonni *doimiy to\'lov zanjiriga* bog\'lab qo\'yadi.' },
 
     /* 35 */ { t: 'domino', color: 'red', k: 'To\'lov zanjiri', h: 'Bitta nasiya qanday qilib *zanjirga* aylanadi', items: [
       { tag: '1', h: 'Birinchi nasiya', p: '«Oyiga atigi 2 mln»' },
@@ -143,7 +144,7 @@ module.exports = {
       { tag: '5', h: 'Qaramlik', p: 'Ish — tanlov emas, majburiyat' }
     ] },
 
-    /* 36 */ { t: 'stop', color: 'red', icon: '✋', h: 'Narxi *tushadigan* narsani qarzga olmang', s: 'Telefon, mashina, kiyim — har yili arzonlashadi. Qarz esa har oy o\'sadi. Bu — yillar davomida kambag\'allashish formulasi.' },
+    /* 36 */ { t: 'stop', color: 'red', icon: '✋', h: 'Narxi *tushadigan* narsani qarzga olmang', s: 'iPhone, qimmat avtomobil — narxi yildan-yilga tushadi. Ularni bo\'lib to\'lashga olish — boyish o\'rniga yillar davomida *5–10 barobar* kambag\'allashish formulasi.' },
 
     /* 37 */ { t: 'steps', color: 'orange', icon: '🧐', k: 'Qarz olishdan oldin', h: 'O\'zingizga *4 ta savol* bering', all: true, cols: 4, items: [
       { n: '1', h: 'Bu narsa pul keltiradimi?', p: 'Asbob, biznes, bilim — ha. Telefon, kiyim — yo\'q.' },
@@ -155,12 +156,10 @@ module.exports = {
     /* ===== 5. Jamg'arma va sarmoya ===== */
     /* 38 */ { t: 'section', color: 'green', icon: '🌱', n: '5', h: 'Jamg\'arma va sarmoya', s: 'Bosqichma-bosqich' },
 
-    /* 39 */ { t: 'pyramid', color: 'green', k: 'Moliyaviy erkinlik zinasi', h: 'Pastdan *yuqoriga* — tartib bilan', s: 'Bitta pog\'onani tashlab o\'tgan odam — pastga qulaydi.', levels: [
-      { icon: '📒', label: 'Budjet', h: 'raqamlarni bilish', p: 'Pul qayerga ketayotganini aniq bilasiz.' },
-      { icon: '🛟', label: '6 oylik zaxira', h: 'tegilmaydigan pul', p: 'Ish yo\'qolsa ham xotirjamsiz.' },
-      { icon: '✂️', label: 'Qarzsiz hayot', h: 'nasiyadan chiqish', p: 'Iste\'mol qarzlari yopiladi.' },
-      { icon: '🎯', label: 'Ilk $100K', h: 'eng og\'ir bosqich', p: 'Pul yoki aktiv shaklida.' },
-      { icon: '🌳', label: 'Sarmoya', h: 'pul siz uchun ishlaydi', p: 'Biznes, ulush, ko\'chmas mulk.' }
+    /* 39 */ { t: 'pyramid', color: 'green', k: 'Moliyaviy erkinlik zinasi', h: 'Pastdan *yuqoriga* — bosqichma-bosqich', s: 'Bitta pog\'onani tashlab o\'tgan odam — pastga qulaydi.', levels: [
+      { icon: '🛟', label: '6 oylik zaxira', h: '1-bosqich', p: '6 oylik yashash xarajatiga yetadigan daxlsiz, «yoqilmaydigan» zaxira.' },
+      { icon: '🎯', label: 'Ilk $100K', h: '2-bosqich · yo\'lning 95%', p: 'Pul yoki aktivlar shaklida.' },
+      { icon: '🌳', label: 'Sarmoya', h: 'murakkab foiz', p: 'Bilim, ko\'nikma, biznes, sarmoya — 5–10 yilda holat keskin oshadi.' }
     ] },
 
     /* 40 */ { t: 'bars', color: 'orange', icon: '🛟', k: 'Emergency fund · 1-bosqich', h: '*6 oylik* xavfsizlik yostiqchasi', rows: [
@@ -176,7 +175,7 @@ module.exports = {
       'Avval zaxira — keyin sarmoya.'
     ] },
 
-    /* 42 */ { t: 'quote', color: 'blue', k: '2-bosqich · Ilk $100 000', q: 'Birinchi 100 000 dollar — eng og\'iri. Uni qanday bo\'lmasin yig\'ish kerak.', by: 'Charli Manger · Uorren Baffetning sherigi' },
+    /* 42 */ { t: 'quote', color: 'blue', k: '2-bosqich · Moliyaviy mustaqillik yo\'lining 95% qismi', q: 'Birinchi $100 000 ni qanday bo\'lmasin yig\'ish kerak.', by: 'Charli Manger' },
 
     /* 43 */ { t: 'cols', color: 'green', k: 'Murakkab foiz · yillik 12% (ehtiyotkor hisob)', h: 'Oyiga *1 mln so\'m* — 20 yilda qancha bo\'ladi?', smallH: true, max: 1000, groups: [
       { x: '5 yil', segs: [{ v: 60, c: 'blue' }, { v: 22, c: 'green' }], top: '82 mln' },
@@ -207,20 +206,20 @@ module.exports = {
       { v: '25–40', l: 'Mln so\'m — oyiga mo\'ljal', s: 'uy, oila, zaxira, o\'qish' }
     ], note: 'Bu bosqichda daromadni *imkon qadar tez* oshirish kerak — keyin tezlik emas, barqarorlik muhim bo\'ladi.' },
 
-    /* 48 */ { t: 'cols', color: 'orange', k: 'Oylik oshdi — boyidingizmi?', h: 'Oylik *har yili* oshyapti. Lekin yetarlimi?', smallH: true, max: 20, step: 0.35, groups: [
+    /* 48 */ { t: 'cols', color: 'orange', k: 'Oylik oshdi — boyidingizmi?', h: 'Oylik *har yili* oshyapti. Lekin yetarlimi?', smallH: true, max: 22, step: 0.35, groups: [
       { x: 'Bugun', v: 10, c: 'blue', top: '10 mln' },
       { x: '3 yil', sub: '+8% / yil', v: 12.6, c: 'orange', top: '12,6' },
-      { x: '3 yil', sub: '+13% / yil', v: 14.4, c: 'green', top: '14,4' },
+      { x: '3 yil', sub: '+15% / yil', v: 15.2, c: 'green', top: '15,2' },
       { x: '5 yil', sub: '+8% / yil', v: 14.7, c: 'orange', top: '14,7' },
-      { x: '5 yil', sub: '+13% / yil', v: 18.4, c: 'green', top: '18,4', hl: true }
-    ], legend: [{ c: 'orange', l: 'Oylik +8% / yil' }, { c: 'green', l: 'Kerakli o\'sish: +13% / yil' }], side: { big: '−3,7 mln', text: '5 yildan keyin har oy shuncha *orqada* qolasiz — oyligingiz oshgan bo\'lsa ham.' } },
+      { x: '5 yil', sub: '+15% / yil', v: 20.1, c: 'green', top: '20,1', hl: true }
+    ], legend: [{ c: 'orange', l: 'Oylik +8% / yil' }, { c: 'green', l: 'Kerakli o\'sish: kamida +15–17% / yil' }], side: { big: '−5,4 mln', text: '5 yildan keyin har oy shuncha *orqada* qolasiz — oyligingiz oshgan bo\'lsa ham.' } },
 
-    /* 49 */ { t: 'big', color: 'green', icon: '📊', k: 'O\'lchov chegarasi', h: 'Daromad o\'sishi ≥ *inflyatsiya + iqtisodiy o\'sish*', s: 'Bugun: ~6% + ~7% ≈ yiliga 13%. Undan sekin o\'ssangiz — raqam oshsa ham, real o\'lchovda kambag\'allashasiz.' },
+    /* 49 */ { t: 'big', color: 'green', icon: '📊', k: 'O\'lchov chegarasi', h: 'Daromad o\'sishi ≥ *inflyatsiya + iqtisodiy o\'sish*', s: 'Yig\'indisi ~15–17% yiliga. Undan sekin o\'ssangiz — nominal daromadingiz oshsa ham, real o\'lchovda kambag\'allashib borasiz.' },
 
     /* ===== 7. Yashirish va bilim ===== */
     /* 50 */ { t: 'section', color: 'orange', icon: '🤫', n: '7', h: 'Boylikni yashirish va eskirmas bilim', s: 'Ko\'rinmaydigan boylik' },
 
-    /* 51 */ { t: 'quote', color: 'orange', k: 'Pul psixologiyasi', q: 'Boylik — ko\'rinmaydigan narsa: sotib olinmagan mashina, taqilmagan soat, sarflanmagan pul.', by: 'Morgan Xauzel · «Pul psixologiyasi»' },
+    /* 51 */ { t: 'quote', color: 'orange', k: 'Boylikni yashirish', q: 'Pul va daromadni yashirish lozim.', by: 'Nassim Taleb va Uorren Baffet' },
 
     /* 52 */ { t: 'grid', color: 'red', icon: '🙊', k: 'Daromadni ko\'rsatish narxi', h: 'Pulingizni ko\'rsatsangiz — *nima* o\'zgaradi?', cols: 2, items: [
       { icon: '👥', h: 'Do\'stlar kamayadi', p: 'Munosabat pul atrofida aylana boshlaydi.' },
@@ -244,8 +243,8 @@ module.exports = {
       { n: '2', h: 'Daromad oshsa — xarajat *sekinroq* oshsin' },
       { n: '3', h: 'Boy ko\'rinish — boy bo\'lishga *to\'siq*' },
       { n: '4', h: 'Narxi tushadigan narsani *qarzga olmang*' },
-      { n: '5', h: 'Avval *zaxira*, keyin qarzsiz hayot, keyin sarmoya' },
-      { n: '6', h: 'Daromad yiliga kamida *~13%* o\'ssin' },
+      { n: '5', h: 'Avval *6 oylik zaxira*, keyin ilk $100 000, keyin sarmoya' },
+      { n: '6', h: 'Daromad yiliga kamida *~15–17%* o\'ssin' },
       { n: '7', h: 'Boylikni *yashiring*, eskirmas bilimni o\'rganing' }
     ] },
 

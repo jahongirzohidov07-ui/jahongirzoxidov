@@ -99,12 +99,13 @@ module.exports = async (req, res) => {
   const { p, l } = f;
   if (!l.deck || !l.deck.slides || !l.deck.slides.length) return send(res, 404, { error: 'Bu dars uchun slaydlar hali tayyorlanmagan' });
 
-  /* savol pardalari skript faylida saqlanadi (script.q[i]) va slaydga qo'shib beriladi */
+  /* savol pardalari skript faylida saqlanadi (script.q[i]) va slaydga «cq» maydoni bo'lib qo'shiladi
+     (q emas — quote slaydlarida q iqtibos matni) */
   const Q = l.script && Array.isArray(l.script.q) ? l.script.q : null;
   const out = {
     program: { id: p.id, title: p.title },
     lesson: { n: l.n, title: l.title },
-    slides: Q ? l.deck.slides.map((s, i) => (Q[i] ? Object.assign({}, s, { q: Q[i] }) : s)) : l.deck.slides
+    slides: Q ? l.deck.slides.map((s, i) => (Q[i] ? Object.assign({}, s, { cq: Q[i] }) : s)) : l.deck.slides
   };
   if (l.script) {
     out.script = l.script;

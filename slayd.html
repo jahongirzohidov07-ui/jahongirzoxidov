@@ -634,6 +634,7 @@
   @keyframes stopIn { from { transform: scale(0.3) rotate(-20deg); opacity: 0; } to { transform: none; opacity: 1; } }
   .s-stop h1 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 128px; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; margin-bottom: 20px; line-height: 1; }
   .s-stop .sub { color: #fff; opacity: 0.95; font-size: 38px; text-align: center; }
+  .s-stop em.hl { color: #FFD166; font-style: normal; } /* qizil fonda ajratilgan so'z ko'rinsin */
 
   /* ============ Bo'lim slaydi (to'liq rangli) ============ */
   .s-section { justify-content: center; background: var(--a, var(--blue)); color: #fff; }
@@ -1534,7 +1535,7 @@
       const r = R[type] || R.bullets;
       let html = '';
       try { html = r(s, i); } catch (e) { html = '<h1>Slayd xatosi</h1><div class="sub">' + esc(e.message) + '</div>'; }
-      const qc = s.q && !revealAll ? '<div class="qcover frag" data-frag="1"><div class="qmark">?</div><div class="qk">❓ Savol</div><div class="qt' + (String(s.q).length > 64 ? ' long' : '') + '">' + fmt(s.q) + '</div><div class="qh">O\'ylab ko\'ring…</div></div>' : '';
+      const qc = s.cq && !revealAll ? '<div class="qcover frag" data-frag="1"><div class="qmark">?</div><div class="qk">❓ Savol</div><div class="qt' + (String(s.cq).length > 64 ? ' long' : '') + '">' + fmt(s.cq) + '</div><div class="qh">O\'ylab ko\'ring…</div></div>' : '';
       d.innerHTML = qc + ((type === 'cover' || type === 'photo' || type === 'topic') ? '' : deco(i, s)) + '<div class="toprule"></div>' + html + '<div class="folio-bg">' + (i + 1) + '</div>';
       d.dataset.notes = s.notes || '';
       stage.appendChild(d);
@@ -1864,7 +1865,7 @@
     const t = SCRIPT && SCRIPT[i];
     if (!t) return '<p class="empty">Bu slayd uchun skript yo\'q.</p>';
     const idx = { n: 0 };
-    const q = deck && deck.slides[i] && deck.slides[i].q;
+    const q = deck && deck.slides[i] && deck.slides[i].cq;
     const ql = q && !revealAll ? '<div class="qline">❓ Doskada avval savol turadi: «' + esc(String(q).replace(/\*/g, '')) + '» — 1-bosishda javob ochiladi</div>' : '';
     return ql + t.split(/\n\s*\n/).map(p => paraHtml(p.trim(), idx, fOn)).join('');
   }
@@ -2009,7 +2010,7 @@
     const nextIsCover = nFr && fOn < nFr && frags(cur)[fOn].classList.contains('qcover');
     if (nextIsCover) { $('pNextLbl').textContent = 'Keyingi bosish'; $('pNextK').textContent = '💡 Parda ko\'tariladi — javob chiqadi'; $('pNextH').textContent = nFr - 1 > 0 ? 'Undan keyin yana ' + (nFr - 1) + ' ta band' : ''; }
     else if (nFr && fOn < nFr) { $('pNextLbl').textContent = 'Keyingi bosish'; $('pNextK').textContent = 'Shu slaydda yana ' + (nFr - fOn) + ' ta band ochiladi'; $('pNextH').textContent = ''; }
-    else if (nx && nx.q && !revealAll) { $('pNextLbl').textContent = 'Keyingi slayd · ' + (cur + 2) + ' · savol pardasi'; $('pNextK').textContent = '❓ Doskada:'; $('pNextH').textContent = plain(nx.q); }
+    else if (nx && nx.cq && !revealAll) { $('pNextLbl').textContent = 'Keyingi slayd · ' + (cur + 2) + ' · savol pardasi'; $('pNextK').textContent = '❓ Doskada:'; $('pNextH').textContent = plain(nx.cq); }
     else if (nx) { $('pNextLbl').textContent = 'Keyingi slayd · ' + (cur + 2); $('pNextK').textContent = plain(nx.k || ''); $('pNextH').textContent = plain(nx.h || nx.title || nx.name || (nx.t === 'end' ? 'Yakun' : '')); }
     else { $('pNextLbl').textContent = 'Oxirgi slayd'; $('pNextK').textContent = ''; $('pNextH').textContent = 'Dars tugadi'; }
     $('pMeta').textContent = SCRIPT ? '≈ ' + daq(DUR[cur] || 0) + ' shu slaydga · butun dars ≈ ' + soat(PLAN.total || 0) : '';

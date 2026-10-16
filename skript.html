@@ -185,7 +185,7 @@
     return '<div class="card ' + (rv ? rv.s : '') + '" id="s' + (i + 1) + '">' +
       '<div class="ch"><span class="no">' + (i + 1) + '</span><span class="kk">' + esc(plain(s.k || (s.t === 'cover' ? 'Muqova' : s.t === 'end' ? 'Yakun' : ''))) + '</span><span class="tm">' + mmss(PLAN[i]) + ' · ≈ ' + daq(DUR[i]) + '</span></div>' +
       (head ? '<div class="hh">' + esc(head) + '</div>' : '') +
-      (s.q ? '<div class="qline">❓ Doskada avval savol pardasi: «' + esc(plain(s.q)) + '» — 1-bosishda javob ochiladi</div>' : '') +
+      (s.cq ? '<div class="qline">❓ Doskada avval savol pardasi: «' + esc(plain(s.cq)) + '» — 1-bosishda javob ochiladi</div>' : '') +
       '<div class="sk">' + scriptHtml(DATA.script[i]) + '</div>' +
       (rv && rv.c ? '<div class="izs">✎ ' + esc(rv.c) + '</div>' : '') +
       '<div class="ize" id="ize' + i + '"><textarea placeholder="Nimani o\'zgartiramiz?">' + esc((rv && rv.c) || '') + '</textarea><div class="row"><button type="button" class="rb izb on" data-a="save" data-i="' + i + '">Saqlash</button><button type="button" class="rb" data-a="cancel" data-i="' + i + '">Bekor</button></div></div>' +
