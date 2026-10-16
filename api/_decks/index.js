@@ -11,7 +11,7 @@ const programs = [
       { n: 2, title: 'Shaxsiyat (Personality)', deck: require('./mentorlik-02'), script: require('../_scripts/mentorlik-02') },
       { n: 3, title: 'Karyera', deck: require('./mentorlik-03') },
       { n: 4, title: 'Moliya', deck: require('./mentorlik-04'), script: require('../_scripts/mentorlik-04') },
-      { n: 5, title: 'Munosabatlar', deck: require('./mentorlik-05') },
+      { n: 5, title: 'Munosabatlar', deck: require('./mentorlik-05'), script: require('../_scripts/mentorlik-05') },
       { n: 6, title: 'Sog\'liq', deck: require('./mentorlik-06') },
       { n: 7, title: 'Ilm', deck: require('./mentorlik-07') },
       { n: 8, title: 'Fikrlash', deck: require('./mentorlik-08') },
