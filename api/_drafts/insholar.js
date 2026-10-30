@@ -2,6 +2,47 @@
 /* QORALAMA INSHOLAR — saytda faqat PIN bilan kirgan muallifga ko'rinadi (/api/insho).
    Muallif ma'qullagach, insho shu yerdan olib tashlanadi va essays.js ga ko'chiriladi —
    shundan keyin hammaga ko'rinadi. Format essays.js bilan bir xil.
-   Chizma: "![izoh](/assets/insho/fayl.svg)" — alohida xatboshida. Qalin: "**gap**". */
+   Chizma: "![izoh](/assets/insho/fayl.svg)" — alohida xatboshida. Qalin: "**gap**", kursiv: "*gap*". */
 
-module.exports = [];
+const PARA = '\n\n';
+
+module.exports = [
+  {
+    folio: '9',
+    title: 'Yurtni muhandislar qutqaradi',
+    date: '30.10.2026',
+    body: [
+      "Maktabni bitiryapsiz-u, qaysi yo'nalishga borishni bilmayapsizmi? Unda men sizga bitta yo'lni tavsiya qilaman: **muhandis bo'ling.**",
+      "Bilaman, bu gap ko'pchilikka yoqmaydi. Chunki muhandis bo'lish uchun matematika, fizika va kimyoni o'qish kerak. Ko'pchilik esa bu fanlarni zerikarli deb biladi va ularning o'rniga «qiziqroq», yengilroq, natijasi tezroq ko'rinadigan sohalarni tanlaydi. Lekin shu inshoni oxirigacha o'qisangiz, nega aynan shu «zerikarli» fanlar yurtimizning taqdirini hal qilishini tushunasiz.",
+      "## Yer ostidagi boylik kimniki?",
+      "O'zbekiston boy yurt. Navoiy viloyatidagi Muruntov koni 2025 yilda 83 tonnadan ortiq oltin berib, dunyodagi eng yirik oltin konlari [ro'yxatida](https://kun.uz/en/news/2026/07/16/uzbekistans-muruntau-ranks-second-among-worlds-largest-gold-mines-c3e783) ikkinchi o'rinni egalladi. Yerimiz ostida gaz, mis, uran va yana ko'plab boyliklar yotibdi.",
+      "Endi boshqa bir haqiqatga qarang. Gazga boy mamlakatimiz 2023 yilning oktyabridan boshlab Rossiyadan gaz [sotib olmoqda](https://www.kun.uz/en/news/2025/04/24/gas-rich-uzbekistan-may-increase-russian-gas-imports-via-kazakhstan). 2026 yilning birinchi choragida o'zimizda gaz qazib olish o'tgan yilning shu davriga nisbatan 15 foizga [kamaydi](https://timesca.com/russian-gas-exports-to-uzbekistan-rise-as-domestic-production-continues-to-fall/). Gaz konlarimizdagi eng yirik loyihalardan birini esa Rossiyaning «Lukoyl» kompaniyasi olib boradi va u o'zini mamlakatimizdagi eng yirik xorijiy investor deb [ataydi](https://www.lukoil.com/PressCenter/Pressreleases/Pressrelease/lukoil-produces-40-billion-cubic-meters-of).",
+      "Savol tug'iladi: **boylik bizda bo'lsa-yu, uni qazib olish va ishlatish uchun bilim boshqalarda bo'lsa, bu boylik aslida kimniki?**",
+      "Yer ostidagi oltin o'zi chiqib kelmaydi. Gaz quvurga o'zi kirmaydi. Mis o'zi simga aylanmaydi. Bularning hammasi uchun bitta odam kerak: muhandis. **Muhandisi yo'q yurt boyligini xom ashyo qilib arzonga sotadi, keyin undan yasalgan tayyor mahsulotni qimmatga sotib oladi.**",
+      "![Muhandis yo'q bo'lsa, boylik xom ashyo bo'lib chetga ketadi va tayyor mahsulot bo'lib qimmatga qaytadi. Muhandis bor bo'lsa, boylik o'z yurtida mahsulotga, ish o'rniga va daromadga aylanadi.](/assets/insho/9-boylik.svg)",
+      "Bu haqda o'ylasam, yuragim og'riydi. Yerimizdan chiqqan boylik boshqa yurtda mahsulotga aylanib, boshqa yurtning yoshlariga ish o'rni, boshqa xalqqa daromad bo'lyapti. Shu og'riq sizning ham yuragingizga kirishini istayman. Chunki **yurt dardi bilan yonadigan yoshlardan muhandislar chiqadi.**",
+      "## Muhandislar qurgan davlatlar",
+      "Tarixga qarang. Bugun biz havas qiladigan davlatlarning ko'pchiligi bir paytlar og'ir ahvolda bo'lgan. Ularni qutqargan kuchlardan eng asosiysi muhandislar edi.",
+      "**Germaniya.** 1887 yilda Angliya Germaniyadan keladigan mollarga «Made in Germany» deb yozishni [majburiy qildi](https://en.wikipedia.org/wiki/Made_in_Germany). Maqsad xaridorni ogohlantirish edi: bu sifatsiz nemis moli, ehtiyot bo'ling. Nemislar xafa bo'lib o'tirmadi. Avtomobilni Karl Bens, dizel dvigatelini Rudolf Dizel yaratgan, elektr sanoatini Verner fon Simens qurgan bu yurtning muhandislari sifat ustida ishlashdi. Natijada sharmandalik belgisi bo'lishi kerak bo'lgan «Made in Germany» yozuvi dunyodagi eng ishonchli sifat belgisiga aylandi.",
+      "**Yaponiya.** 1945 yilda Xirosima va Nagasakiga atom bombasi tashlandi. Mamlakat urushda yengildi, shaharlari vayron bo'ldi. Bir yil o'tib, 1946 yilda muhandis Masaru Ibuka va uning hamkori Akio Morita Tokioda kichik bir korxona [ochdi](https://en.wikipedia.org/wiki/History_of_Sony). Bu korxona keyinchalik Sony bo'ldi. Bomba tushganidan atigi 19 yil o'tib, 1964 yilda esa Yaponiya dunyodagi birinchi tezyurar temir yo'l, Shinkansenni ishga tushirdi. Vayronalardan dunyoning eng zo'r texnikasini yaratgan yurtni muhandislar qurdi.",
+      "**Janubiy Koreya.** 1960 yilda bu mamlakatda aholi jon boshiga yalpi ichki mahsulot bor-yo'g'i 158 dollar edi. Bu dunyodagi eng qashshoq davlatlar darajasi. 2025 yilga kelib bu ko'rsatkich 36 ming dollardan [oshdi](https://fred.stlouisfed.org/series/PCAGDPKRA646NWDB): 65 yilda 200 barobardan ko'proq o'sish. Samsung, Hyundai, LG qurgan zavodlar, kemalar va mikrochiplar ortida minglab muhandislar turibdi.",
+      "**Xitoy.** Yarim asr oldin Xitoy dunyodagi eng qashshoq mamlakatlardan biri edi. Bugun u dunyoning zavodiga aylangan. Xitoy har yili 1,3 million atrofida muhandis tayyorlaydi, AQShda esa bu raqam 130 ming atrofida, ya'ni o'n barobar [kam](https://fortune.com/2026/01/14/china-graduates-1-3-million-engineers-per-year-us-shortage-ai-tools/). Birgina BYD kompaniyasining o'zida 110 mingga yaqin muhandis [ishlaydi](https://carnewschina.com/2024/12/30/byd-has-the-most-rd-personnel-as-an-automaker-and-nearly-110000-engineers-ceo-says/). Bitta kompaniyada 110 ming muhandis! Shuning uchun ham BYD bugun dunyodagi eng yirik elektromobil ishlab chiqaruvchilardan biri.",
+      "![To'rt davlat, bitta yo'l: og'ir ahvoldan chiqishda ularning hammasi muhandislarga tayangan.](/assets/insho/9-davlatlar.svg)",
+      "Endi tasavvur qiling: bu davlatlar muhandislikni emas, oson yo'lni tanlaganida nima bo'lardi? Yaponiya hali ham vayronalarni tozalab yurgan bo'larmidi? Koreya 158 dollarlik qashshoqlikda qolarmidi? Nemis moli hali ham «ehtiyot bo'ling» degan yorliq bilan sotilarmidi? **Ular qiyin yo'lni tanladi va aynan shu qiyin yo'l ularni qutqardi.**",
+      "## Nega aynan matematika, fizika va kimyo?",
+      "Muhandislik uchta ustunga tayanadi: matematika, fizika va kimyo. Ko'prik qancha yuk ko'tarishini matematika hisoblaydi. Elektr qanday oqishini, dvigatel qanday ishlashini fizika tushuntiradi. Oltinni rudadan qanday ajratishni, gazdan qanday mahsulot olishni kimyo o'rgatadi. **Bu uch fanni bilmagan odam muhandis bo'la olmaydi,** xuddi poydevorsiz bino qurib bo'lmaganidek.",
+      "![Muhandislik uch ustunga tayanadi. Ustunlardan biri bo'sh bo'lsa, ustidagi ko'prik ham, zavod ham, poyezd ham turmaydi.](/assets/insho/9-ustunlar.svg)",
+      "Bu fanlar boshida zerikarli tuyuladi. Bu tabiiy: hali kam bilganingiz uchun ulardagi go'zallikni ko'rmaysiz. Lekin formulalar ortida ko'priklar, poyezdlar, telefonlar va butun bir mamlakatning kelajagi yotganini tushunganingizda, ular boshqacha ko'rina boshlaydi. *Har bir tenglama, aslida, qurilishini kutib turgan bir zavod.*",
+      "Ko'pchilik «qiziq» fanlarni tanlaydi, chunki ular oson ko'rinadi. Lekin oson yo'lga hamma boradi. U yerda raqobat ko'p, yurtga kerakli odam esa kam. **Qiyin yo'lda joy ko'p, chunki u yerga kam odam jur'at qiladi.**",
+      "## Barqaror ish, yaxshi maosh",
+      "Muhandislik faqat yurt uchun emas, o'zingiz uchun ham foydali. AQSh Mehnat statistikasi byurosi [ma'lumotlariga](https://www.bls.gov/ooh/Architecture-and-Engineering) ko'ra, 2025 yilning may oyida muhandislik va arxitektura kasblarida o'rtacha yillik maosh 99 520 dollar bo'lgan. Barcha kasblar bo'yicha esa bu ko'rsatkich 50 980 dollar. **Ya'ni muhandis o'rtacha deyarli ikki barobar ko'p topadi.**",
+      "![AQShda o'rtacha yillik maosh (mediana), 2025 yil may. Muhandislik va arxitektura kasblari barcha kasblardan deyarli ikki barobar yuqori.](/assets/insho/9-maosh.svg)",
+      "Moda o'zgaradi. Bugun mashhur bo'lgan kasb ertaga kerak bo'lmay qolishi mumkin. Lekin zavod, kon, elektr stansiya, ko'prik, yo'l, suv quvuri har doim kerak. Ular bor joyda muhandis ham har doim kerak. **Muhandislik modaga emas, hayotning o'ziga xizmat qiladi.** Shuning uchun u eng barqaror kasblardan biri.",
+      "## Iqtidorlarni ko'mib yubormaylik",
+      "Bizning eng katta xatolarimizdan biri shu: iqtidorli yoshlarimiz oson sohalarga kirib ketyapti. Matematikadan qobiliyati bor bola fizikani «zerikarli» deb undan qochadi, kimyoni «kerak emas» deb tashlaydi va oxir-oqibat qobiliyatiga mos kelmaydigan ishda umrini o'tkazadi. **Har bir shunday bola yurtimiz bitta muhandisini yo'qotdi degani.** Yerimiz ostidagi boylikni ishlata olmaganimiz kabi, yoshlarimizdagi iqtidorni ham ko'mib yuboryapmiz.",
+      "Germaniyani ham, Yaponiyani ham, Koreyani ham, Xitoyni ham muhandislar qurdi. O'zbekistonni ham kimdir qurishi kerak. **Nega o'sha odam siz bo'lmasligingiz kerak?**",
+      "Agar bu insho yuragingizda kichik bir uchqun yoqqan bo'lsa, uni o'chirmang. Ertaga matematika darsiga boshqacha ko'z bilan kiring. Fizikadagi har bir masalani, kimyodagi har bir reaksiyani bir kun yurtingizga xizmat qiladigan mashinaning bir bo'lagi deb biling.",
+      "> **Yerimiz ostida oltin bor, gaz bor. Lekin ularni boylikka aylantiradigan narsa yer emas, muhandisning bilimi.** Muhandisi yo'q millat boyligini boshqalarga beradi. Muhandisi bor millat esa o'z taqdirini o'zi yozadi."
+    ].join(PARA)
+  }
+];
