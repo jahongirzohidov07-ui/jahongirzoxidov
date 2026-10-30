@@ -556,6 +556,14 @@
     user-select: none;
     -webkit-touch-callout: none;
   }
+  /* Muallif (to'g'ri PIN bilan kirgan) uchun nusxalash ochiq */
+  html.muallif #readerBody {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: default;
+  }
 
   .reader-foot {
     margin-top: 24px;
@@ -1103,6 +1111,7 @@
     fetch('/api/insho', { headers: { 'x-admin-pin': pin } })
       .then(r => r.ok ? r.json() : null)
       .then(d => {
+        if (d && Array.isArray(d.drafts)) document.documentElement.classList.add('muallif');
         if (!d || !Array.isArray(d.drafts) || !d.drafts.length) return;
         d.drafts.forEach(e => {
           const folio = String(e.folio);
@@ -1686,15 +1695,22 @@
     return !!(node && guardedBody && guardedBody.contains(node));
   }
 
+  /* PIN to'g'ri bo'lsa (loadDrafts tasdiqlaydi) muallifga himoya qo'llanmaydi */
+  function isAuthor() {
+    return document.documentElement.classList.contains('muallif');
+  }
+
   guardedBody.addEventListener('copy', (e) => {
+    if (isAuthor()) return;
     e.preventDefault();
     showToast("Insho matnini nusxalab bo'lmaydi. Havolani ulashing.");
   });
 
-  guardedBody.addEventListener('cut', (e) => { e.preventDefault(); });
-  guardedBody.addEventListener('dragstart', (e) => { e.preventDefault(); });
+  guardedBody.addEventListener('cut', (e) => { if (!isAuthor()) e.preventDefault(); });
+  guardedBody.addEventListener('dragstart', (e) => { if (!isAuthor()) e.preventDefault(); });
 
   guardedBody.addEventListener('contextmenu', (e) => {
+    if (isAuthor()) return;
     e.preventDefault();
     showToast("Insho matnini nusxalab bo'lmaydi. Havolani ulashing.");
   });
@@ -1706,7 +1722,7 @@
   document.addEventListener('keydown', (e) => {
     const combo = e.ctrlKey || e.metaKey;
     if (!combo) return;
-    if (isTyping(e.target)) return;
+    if (isTyping(e.target) || isAuthor()) return;
     const k = (e.key || '').toLowerCase();
     if (k !== 'c' && k !== 'x' && k !== 'a') return;
     if (!readerView.classList.contains('active')) return;
