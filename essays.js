@@ -4,7 +4,8 @@
    Yangi insho qo'shish uchun ro'yxat oxiriga shunday blok qo'shing:
 
      {
-       folio: '3',                  // tartib raqami — ro'yxat shu bo'yicha saralanadi
+       folio: '3',                  // doimiy raqam: havola (#insho-3), o'qishlar soni va izohlar shunga bog'langan
+       raqam: '3',                  // ixtiyoriy: ro'yxatdagi tartib raqami (yo'q bo'lsa folio olinadi)
        title: 'Insho sarlavhasi',
        date:  '25.07.2026',         // kun.oy.yil
        body: [
@@ -58,6 +59,7 @@ window.ESSAYS = [
     },
     {
       folio: '2',
+      raqam: '4',          // ro'yxatda ko'rinadigan tartib raqami
       title: "Bitta barg bilan butun daraxt haqida xulosa chiqarilmaydi",
       date: '21.07.2026',
       body: [
@@ -86,6 +88,7 @@ window.ESSAYS = [
     },
     {
       folio: '3',
+      raqam: '2',          // ro'yxatda ko'rinadigan tartib raqami
       title: '28 Yoshimda anglaganlarim',
       date: '11.03.2025',
       body: [
@@ -178,6 +181,7 @@ window.ESSAYS = [
     },
     {
       folio: '4',
+      raqam: '3',          // ro'yxatda ko'rinadigan tartib raqami
       title: "Suhbatdoshni tinglashni o'rganing",
       date: '29.10.2025',
       body: [

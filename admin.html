@@ -182,7 +182,7 @@
 (function () {
   const gate = document.getElementById('gate');
   const app = document.getElementById('app');
-  const essays = (window.ESSAYS || []).map(e => ({ folio: String(e.folio), title: e.title, date: e.date || '' }));
+  const essays = (window.ESSAYS || []).map(e => ({ folio: String(e.folio), raqam: String(e.raqam || e.folio), title: e.title, date: e.date || '' }));
   let stats = null;
   let sortKey = 'folio', sortDir = 1;
 
@@ -250,7 +250,7 @@
     const parseDate = (s) => { const p = s.split('.'); return p.length === 3 ? new Date(p[2], p[1] - 1, p[0]).getTime() : 0; };
     rows.sort((a, b) => {
       let x, y;
-      if (sortKey === 'folio') { x = parseInt(a.folio, 10) || 0; y = parseInt(b.folio, 10) || 0; }
+      if (sortKey === 'folio') { x = parseInt(a.raqam, 10) || 0; y = parseInt(b.raqam, 10) || 0; }
       else if (sortKey === 'views') { x = a.views; y = b.views; }
       else if (sortKey === 'date') { x = parseDate(a.date); y = parseDate(b.date); }
       else { x = a.title.toLowerCase(); y = b.title.toLowerCase(); return x < y ? -sortDir : x > y ? sortDir : 0; }
@@ -259,7 +259,7 @@
     const max = Math.max(1, ...rows.map(r => r.views));
     document.getElementById('essayBody').innerHTML = rows.map(r => `
       <tr>
-        <td class="folio">${r.folio}</td>
+        <td class="folio">${r.raqam}</td>
         <td class="title"><a href="/#insho-${encodeURIComponent(r.folio)}" target="_blank" rel="noopener">${esc(r.title)}</a></td>
         <td class="date">${esc(r.date)}</td>
         <td class="views r">${r.views}</td>

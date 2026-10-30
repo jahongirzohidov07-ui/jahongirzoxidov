@@ -1092,6 +1092,7 @@
     essays = ESSAYS.map(e => ({
       id: 'insho-' + e.folio,
       folio: String(e.folio),
+      raqam: String(e.raqam || e.folio),   /* ko'rinadigan tartib raqami; folio — doimiy kalit (havola, o'qishlar, izohlar) */
       title: e.title,
       date: e.date || '',
       body: e.body || ''
@@ -1120,7 +1121,7 @@
         d.drafts.forEach(e => {
           const folio = String(e.folio);
           if (essays.some(x => x.folio === folio)) return;
-          essays.push({ id: 'insho-' + folio, folio, title: e.title, date: e.date || '', body: e.body || '', draft: true });
+          essays.push({ id: 'insho-' + folio, folio, raqam: String(e.raqam || folio), title: e.title, date: e.date || '', body: e.body || '', draft: true });
         });
         renderList(searchInput.value);
         route();
@@ -1156,7 +1157,7 @@
       li.setAttribute('tabindex', '0');
       li.setAttribute('role', 'button');
       li.innerHTML = `
-        <div class="folio">${escapeHtml(essay.folio || '')}</div>
+        <div class="folio">${escapeHtml(essay.raqam || essay.folio || '')}</div>
         <div class="essay-head">
           <h3 class="essay-title">${escapeHtml(essay.title)}</h3>
           ${essay.date ? '<span class="essay-date">' + escapeHtml(essay.date) + '</span>' : ''}
@@ -1171,7 +1172,7 @@
   }
 
   function sortedEssays() {
-    return [...essays].sort((a, b) => (parseInt(a.folio,10) || 0) - (parseInt(b.folio,10) || 0));
+    return [...essays].sort((a, b) => (parseInt(a.raqam,10) || 0) - (parseInt(b.raqam,10) || 0));
   }
 
   /* Matn ichidagi havolalarni bosiladigan qiladi, qolgani oddiy matn.
@@ -1339,8 +1340,8 @@
     if (!essay) return false;
     activeId = id;
 
-    document.getElementById('readerFolio').textContent = '№ ' + (essay.folio || '');
-    document.getElementById('readerFolioFoot').textContent = 'Jahongir Zoxidov · № ' + (essay.folio || '');
+    document.getElementById('readerFolio').textContent = '№ ' + (essay.raqam || essay.folio || '');
+    document.getElementById('readerFolioFoot').textContent = 'Jahongir Zoxidov · № ' + (essay.raqam || essay.folio || '');
     document.getElementById('readerTitle').textContent = essay.title;
     document.getElementById('readerDate').textContent = essay.date || '';
     document.getElementById('readerViews').textContent = (essay.date ? ' · ' : '') + readMinutes(essay.body) + ' daqiqa o\'qish';
