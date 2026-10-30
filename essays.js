@@ -26,6 +26,7 @@
      https://...          -> matn ichidagi havola avtomatik bosiladigan bo'ladi
      [Nom](https://...)   -> rangli, bosiladigan nom (havola manzili ko'rinmaydi)
      **muhim gap**        -> qalin (qora) harf bilan ajratiladi
+     *gap*                -> kursiv (qiya) harf
      ![izoh](/assets/insho/fayl.svg) -> chizma (alohida xatboshida), ostida izohi bilan
    Boshqa hamma xatboshi oddiy matn (p) bo'lib chiqadi.
    Diqqat: har bir inshoning BIRINCHI xatboshisi oddiy matn bo'lsin —
@@ -330,6 +331,54 @@ window.ESSAYS = [
         "## Telegram: shovqinsiz fikr maydoni",
         "Telegram shovqin-surondan holi, matn ustida mulohaza yuritish uchun eng qulay maydon. U yerda saralangan va o'qishga arziydigan manbalar:",
         "- [@azizrakhimov_blog](https://t.me/azizrakhimov_blog) — ta'lim, shaxsiy boshqaruv va amaliy kuzatuvlar burchagi.\n- [@mashrabov_aa](https://t.me/mashrabov_aa) — professional tajriba va xolis tahlillar maydoni.\n- [@aqlli_ikkichi](https://t.me/aqlli_ikkichi) — standart qoliplardan tashqarida fikrlash va noan'anaviy yondashuvlar.\n- [@boshqaruvchiga](https://t.me/boshqaruvchiga) — rahbarlik, jamoa qurish va tizim yaratishning amaliy qoidalari.\n- [@xodimga](https://t.me/xodimga) — mehnat bozori, kasbiy etika va o'z ustida ishlash tamoyillari.\n- [@AlisherIsaev_blogi](https://t.me/AlisherIsaev_blogi) — biznes jarayonlari va boshqaruv sirlari haqida ochiq mulohazalar.\n- [@DrBekOlimjon](https://t.me/DrBekOlimjon) — ilm-fan, sog'liq va fikriy intizom tahlili.\n- [@shahadolimov](https://t.me/shahadolimov) — shaxsiy taraqqiyot va zamonaviy ko'nikmalar bo'yicha foydali kuzatuvlar."
+      ].join(PARA)
+    },
+    {
+      folio: '8',
+      title: 'Nega hech narsaga qiziqmayman?',
+      date: '30.10.2026',
+      body: [
+        "Ko'p o'quvchidan bir gapni eshitaman: «*Ustoz, men hech narsaga qiziqmayman*». Ota-onalardan esa boshqacha shaklda: «*Bolam hech narsaga qiziqmaydi. Na kitobga, na sportga, na biror kasbga. Faqat telefon*».",
+        "Agar siz ham o'zingiz haqingizda shunday deb o'ylasangiz, avval bir yaxshi xabar: **bu tug'ma kamchilik emas. Siz dangasa yoki qobiliyatsiz bo'lib tug'ilmagansiz.** Sabab boshqa joyda. Uni tushunib olsangiz, vaziyatni o'zingiz o'zgartirish ham mumkin bo'ladi.",
+        "Sabab oddiy: siz hali yetarlicha narsani bilmaysiz. **Qiziqish esa bilimdan tug'iladi.**",
+        "Ko'pincha bu teskaridek tuyuladi. Odatda «avval qiziqish, keyin o'qish» deb o'ylaymiz. Lekin aslida buning aksi: **avval ozgina bilim, keyin qiziqish.**",
+        "## Yig'ilmagan jumboqda bo'shliq ko'rinmaydi",
+        "Jumboq (pazl) yig'ib ko'rganmisiz? Jumboq hali yig'ilmaganda qaysi bo'lak yetishmayotganini bilmaysiz. Hammasi yetishmaydi, demak hech biri ko'zga tashlanmaydi. Lekin rasmning ko'p qismi yig'ilib, bitta bo'lak qolganda, o'sha bo'shliq ko'zingizga tikilib turadi. Uni to'ldirmaguncha tinchimaysiz.",
+        "![Ikki bo'lak bilan na rasm, na bo'shliq ko'rinadi. Rasm deyarli yig'ilganda esa yetishmayotgan bo'lak darrov ko'zga tashlanadi: uyning o'rtasi yo'q!](/assets/insho/8-jumboq.svg)",
+        "Karnegi Mellon universiteti psixologi Jorj Louenstayn 1994 yilda e'lon qilgan [tadqiqotida](https://doi.org/10.1037/0033-2909.116.1.75) qiziqishni aynan shunday tushuntiradi. *Qiziqish odam bilgan narsasi bilan bilmoqchi bo'lgan narsasi orasidagi bo'shliqni sezganda paydo bo'ladi.* E'tibor bering: bo'shliqni sezish uchun uning atrofida biror narsani bilish kerak. **Hech narsa bilmagan odam bu bo'shliqni ko'rmaydi.** Unga hamma joy bir xil bo'sh.",
+        "Futbolni oling. Qoidalarni bilmagan odam uchun 90 daqiqa shunchaki yigirma ikki kishining bitta to'p ortidan yugurishi. Zerikarli. Futbolni biladigan odam uchun esa har bir harakat savol: nega murabbiy aynan shu o'yinchini almashtirdi? Nega himoyachi oldinga chiqib ketdi? Bu natija turnir jadvalini qanday o'zgartiradi? **O'yin bir xil. Farq tomoshabinning boshida.**",
+        "## Bilim neyronlar kabi ulanadi",
+        "Miyamiz bilimni alohida-alohida qutilarda saqlamaydi. Har bir yangi ma'lumot avval bilgan narsamizga ulanadi. Kanadalik olim Donald Xebb 1949 yilgi [tadqiqotida](https://en.wikipedia.org/wiki/Hebbian_theory) buni shunday ta'riflagan: birga faollashadigan neyronlar o'zaro bog'lanadi. Ya'ni **bilim ip kabi emas, to'r kabi o'sadi.**",
+        "Bu to'rning bir ajoyib xususiyati bor: **ikki bilgan narsangiz ulangan joyda yangi savol tug'iladi.** Masalan, bola dinozavrlar millionlab yil oldin yashaganini biladi. Keyin toshlarda suyak izlari topilishini bilib oladi. Ikkalasi ulanadi va savol paydo bo'ladi: «Toshning yoshini qanday bilishadi?» Bu savol uni yer qatlamlariga, undan kimyoga, undan fizikaga olib boradi. Har bir ulanish keyingi bilmaydigan narsani ko'rsatib beradi.",
+        "![Bilim kam bo'lsa, nuqtalar orasida ip yo'q, savol ham yo'q. Bilim ko'paygan sari nuqtalar ulanadi va to'rning har bir chetida yangi «nega?» osilib turadi.](/assets/insho/8-tarmoq.svg)",
+        "Amerikalik olimlar Donna Rext va Loren Lesli 1988 yilda bir [tadqiqot](https://doi.org/10.1037/0022-0663.80.1.16) o'tkazishgan. O'quvchilarga beysbol o'yini haqida matn berib, qanchalik tushunganini tekshirishgan. Natija kutilmagan bo'lgan: o'qishda zaif, lekin beysbolni yaxshi biladigan bolalar o'qishda kuchli, lekin beysbolni bilmaydigan bolalardan yaxshiroq tushungan. Demak, **yangi narsani tushunishda o'qish mahoratidan ham ko'ra oldingi bilim ko'proq yordam beradi.**",
+        "## Ko'p bilgan sari savol ham ko'payadi",
+        "Bilimni doira deb tasavvur qiling. Doira ichida bilganlaringiz, tashqarisida bilmaganlaringiz. **Doiraning chegarasi esa savollar tug'iladigan joy**, chunki aynan shu yerda bilgan narsangiz bilmagan narsangizga tegib turadi.",
+        "![Orol kichik bo'lsa, uning okeanga tegib turgan sohili ham qisqa. Orol kattalashgan sari sohil uzayadi va savollar ko'payadi.](/assets/insho/8-doira.svg)",
+        "Buni orolga ham o'xshatish mumkin. Amerikalik fizik Jon Uilerga nisbat beriladigan bir gap bor: «Biz bilmaslik dengizi bilan o'ralgan orolda yashaymiz. Bilim orolimiz kattalashgan sari bilmasligimiz sohili ham uzayadi». Ya'ni bilganlaringiz orol, bilmaganlaringiz esa uning sohili. Orol qanchalik katta bo'lsa, sohili ham shuncha uzun bo'ladi va okeanga qarab turgan savollar ko'payadi.",
+        "Shuning uchun haqiqiy olimlar ko'p bilgan sari «men hech narsani bilmas ekanman» deydi. Qadimgi yunon faylasufi Sokratga ham shunday gap nisbat beriladi: «Men faqat bir narsani bilaman: hech narsani bilmayman». Hech narsa bilmagan odam esa ko'pincha o'zini hammasini biladigandek his qiladi. Chunki uning savoli yo'q.",
+        "Mana shu sababli **qiziqish bir tekis emas, qor ko'chkisi kabi o'sadi.** Psixolog Keyt Stanovich 1986 yilgi [tadqiqotida](https://doi.org/10.1598/RRQ.21.4.1) o'qishdagi bu hodisani «Matto effekti» deb atagan: *erta o'qishni yaxshi o'rgangan bola ko'proq o'qiydi, ko'proq o'qigani uchun ko'proq biladi, ko'proq bilgani uchun o'qish unga yanada oson va qiziqarli bo'ladi. O'qimagan bola esa yildan yilga orqada qolaveradi. Ikkalasi orasidagi farq yillar o'tib kamaymaydi, aksincha kattalashadi.*",
+        "## Unda telefon nega qiziq?",
+        "Endi haqli savol tug'iladi: agar qiziqish uchun bilim kerak bo'lsa, unda nega telefon hamma bolaga birdek qiziq?",
+        "Chunki **rils hech qanday oldingi bilim talab qilmaydigan qilib yasalgan.** Uni tushunish uchun to'r ham, ilgak ham kerak emas. Har bir video o'zi bilan tayyor qiziqishni olib keladi: tez kadr, kutilmagan oxir, kulgi.",
+        "Buni ovqatdagi glutamatga o'xshatish mumkin. Chips, lapsha, kolbasa kabi tez tayyorlanadigan ovqatlarga natriy glutamat qo'shiladi. U tilga tegishi bilanoq, chaynamasdan turib, miyaga kuchli lazzat signalini beradi. Tabiiy go'shtda ham shu ta'm bor, lekin uni his qilish uchun go'shtni uzoq chaynash kerak. Glutamatga o'rgangan til keyin uyda pishgan oddiy ovqatni bemaza deb biladi. Rils ham xuddi shunday: chaynamasdan olinadigan tayyor qiziqish. Unga o'rgangan miya keyin chaynash kerak bo'lgan qiziqishni, ya'ni kitobni, masalani, kasbni bemaza deb biladi.",
+        "Rilsdan keyin savol qoladimi? Odatda yo'q. Keyingi video, yana keyingisi. Yaxshi kitobdan keyin esa savol qoladi. Farq shunda: biri bilimsiz qiziqish, ikkinchisi bilimdan tug'ilgan qiziqish. **Birinchisi sizdan oladi, ikkinchisi sizga qo'shadi.**",
+        "Sun'iy intellekt ham har qanday savolga bir zumda javob beradi. Lekin savolni o'zi bermaydi. **Savolni faqat bilim beradi.**",
+        "## Qiziqishni kutib o'tirmang",
+        "Endi eng muhim gapga keldik. Agar qiziqish bilimdan tug'ilsa, unda boshida, bilim hali yo'q paytda, qiziqish ham bo'lmaydi. Demak, **birinchi qadamni qiziqish emas, sabr va qunt bosadi.**",
+        "Ingliz tilini o'rganishni boshlagan har bir o'quvchi buni biladi. Birinchi oylar zerikarli: harflar, so'zlar, qoidalar. Hech narsa tushunarli emas, hech narsa qiziq emas. Til o'qituvchilari bejiz «birinchi ming so'zni yodlab olmaguningizcha tilda deyarli hech narsani tushunmaysiz» demaydi. Ming so'zni yodlamay yillab yursangiz ham, tilni tushunmay yuraverasiz. Lekin bir kuni ming so'z yig'iladi. Shunda sevimli qo'shig'ingizdagi bir jumlani tushunib qolasiz. Filmdagi hazilni tarjimasiz ilg'aysiz. Va birdan qiziqish paydo bo'ladi: «Qolganida nima deyilyapti ekan?» Endi sizni hech kim majburlamaydi. Sizni bilimning o'zi tortadi.",
+        "![Boshida qiziqish deyarli yo'q, uni majburlash va rag'bat ko'tarib turadi. Ma'lum nuqtadan keyin chiziqlar kesishadi va qiziqish yukni o'z zimmasiga oladi.](/assets/insho/8-grafik.svg)",
+        "Grafikning chap tomoni eng og'ir bosqich. Ko'pchilik aynan shu yerda to'xtaydi va «menga qiziq emas ekan» degan xulosaga keladi. Aslida u hali qiziqish paydo bo'ladigan joyga yetib bormagan bo'ladi. U bekatga yetmasdan avtobusdan tushib, «bu yo'l hech qayerga olib bormas ekan» degan yo'lovchiga o'xshaydi.",
+        "Ota-onalar ham ko'pincha shu xatoga yo'l qo'yadi: «Bolam qiziqmasa, majburlamayman. O'zi qiziqib qolsa o'qiydi». Niyat ezgu, lekin xulosa xato. **Hech narsa bilmagan bola o'z-o'zidan biror narsaga qiziqib qolmaydi.** Qiziqish uchun bo'shliq kerak, bo'shliqni ko'rish uchun esa atrofida bilim kerak. Bolani shu boshlang'ich bilimga olib kelish, ya'ni birinchi «majburlash» bosqichidan o'tkazish kattalarning vazifasi.",
+        "Albatta, majburlash deganda faqat qattiqqo'llikni nazarda tutmayapman. Gap bitta maqsad haqida: bola nima qilib bo'lsa ham birinchi bosqichdan o'tib olishi kerak. Buning yo'li har xil bo'lishi mumkin. Kitobni o'qib tugatsa, kichik sovg'a va'da qilish. Har kuni yodlagan so'zlari uchun ball yig'dirib, hafta oxirida mukofot berish. Yonida o'tirib birga o'qish, o'rganganini so'rab maqtash. Do'sti bilan musobaqa qildirish. Bu mukofotlar qiziqishning o'rnini bosmaydi, faqat bolani qiziqish paydo bo'ladigan nuqtagacha olib boradi. U yerga yetgach mukofot kerak bo'lmay qoladi: bolani bilimning o'zi tortadi.",
+        "Bobolarimiz bekorga «Ilm igna bilan quduq qazigandek» demagan. Birinchi ignalar hech narsa qazimagandek tuyuladi. Lekin har qanday quduq aynan shulardan boshlanadi.",
+        "## Ikki halqa",
+        "Endi hammasini birlashtiramiz. Hayotda ikki halqa bor.",
+        "![Johillik halqasi joyida aylanadi. Bilim halqasi esa har aylanishda kattalashib, cheksiz davom etadi.](/assets/insho/8-halqa.svg)",
+        "Birinchisi, bilim halqasi: bilasiz, savol tug'iladi, savol qiziqish uyg'otadi, qiziqish o'qitadi, o'qish yangi bilim beradi. Bu halqa har aylanganda kengayadi. Ikkinchisi, johillik halqasi: bilmaysiz, savol tug'ilmaydi, qiziqmaysiz, o'qimaysiz va yana bilmaysiz. Bu halqa ham aylanadi, lekin joyida. Yillar o'tadi, odam o'sha nuqtada qolaveradi.",
+        "Bir halqadan ikkinchisiga o'tishning yagona yo'li bor: **qiziqish hali yo'q paytda ham biror narsani o'rganishni boshlash.** Bitta soha tanlang. Uning eng oddiy asoslarini o'zingizni majburlab bo'lsa ham o'rganing. Har kuni kechqurun o'zingizdan so'rang: «Bugun menda qanday yangi savol tug'ildi?» Savollar paydo bo'la boshlasa, demak to'r to'qilyapti.",
+        "**Qiziqishni kutib o'tirmang, uni bilim bilan quring.** Chunki kutib o'tirgan odam johillik halqasidan chiqa olmaydi.",
+        "> **Demak, hech narsani bilmagan bolada hech qanday savol tug'ilmaydi.** Savol tug'ilmagach, u hech narsaga qiziqmaydi. Qiziqmagach, o'rganmaydi. Va shu tarzda hech narsani bilmay, bilimsiz, johil bo'lib qolib ketaveradi."
       ].join(PARA)
     }
 ];
