@@ -25,6 +25,8 @@
      "- Ro'yxat bandi"    -> belgili ro'yxat; ketma-ket kelganlari bitta ro'yxatga birlashadi
      https://...          -> matn ichidagi havola avtomatik bosiladigan bo'ladi
      [Nom](https://...)   -> rangli, bosiladigan nom (havola manzili ko'rinmaydi)
+     **muhim gap**        -> qalin (qora) harf bilan ajratiladi
+     ![izoh](/assets/insho/fayl.svg) -> chizma (alohida xatboshida), ostida izohi bilan
    Boshqa hamma xatboshi oddiy matn (p) bo'lib chiqadi.
    Diqqat: har bir inshoning BIRINCHI xatboshisi oddiy matn bo'lsin —
    bosh harf (drop cap) shunda to'g'ri ishlaydi.

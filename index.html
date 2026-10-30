@@ -361,6 +361,12 @@
     margin: 0;
   }
 
+  /* Muhim gap: "**...**" */
+  .reader-body strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
   /* Insho ichidagi chizma: "![izoh](/assets/insho/x.svg)" */
   .reader-body figure.insho-rasm {
     margin: 8px 0 30px;
@@ -1157,7 +1163,23 @@
 
   /* Matn ichidagi havolalarni bosiladigan qiladi, qolgani oddiy matn.
      [Nom](https://...) — nom rangli havola bo'lib chiqadi; oddiy https://... — o'zicha havola. */
+  /* "**muhim gap**" -> qalin (strong); ichida havola bo'lsa ham ishlaydi */
   function fillText(el, text) {
+    const parts = String(text).split(/(\*\*[^*]+?\*\*)/);
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i];
+      if (!part) continue;
+      if (i % 2 === 1) {
+        const b = document.createElement('strong');
+        fillLinks(b, part.slice(2, -2));
+        el.appendChild(b);
+      } else {
+        fillLinks(el, part);
+      }
+    }
+  }
+
+  function fillLinks(el, text) {
     const parts = String(text).split(/(\[[^\]]+\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s]+)/);
     for (let i = 0; i < parts.length; i++) {
       const part = parts[i];
