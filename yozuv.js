@@ -247,7 +247,7 @@
     if (!enPromise) {
       enPromise = new Promise((resolve, reject) => {
         const s = document.createElement('script');
-        s.src = 'essays-en.js?v=1';
+        s.src = 'essays-en.js?v=2';
         s.onload = () => resolve();
         s.onerror = () => { enPromise = null; reject(new Error('essays-en.js')); };
         document.head.appendChild(s);
