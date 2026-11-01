@@ -100,7 +100,7 @@
   .about-link:hover { color: var(--indigo); border-color: var(--indigo); }
 
   .brand {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-weight: 600;
     font-size: 28px;
     letter-spacing: -0.01em;
@@ -178,7 +178,7 @@
   .essay-row:hover .essay-title { color: var(--indigo); }
 
   .folio {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-variant-numeric: oldstyle-nums;
     font-size: 17px;
     color: var(--ink-soft);
@@ -192,7 +192,7 @@
   }
 
   .essay-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-size: 19px;
     font-weight: 500;
     line-height: 1.35;
@@ -279,7 +279,7 @@
   }
 
   .reader-folio {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-variant-numeric: oldstyle-nums;
     font-size: 15px;
     color: var(--clay-gold);
@@ -288,12 +288,50 @@
   }
 
   .reader-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-weight: 600;
     font-size: 34px;
     line-height: 1.22;
     letter-spacing: -0.01em;
     margin: 0 0 14px;
+  }
+
+  /* ---------- Yozuv almashtirgich ---------- */
+  .head-tools { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .yozuv {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 3px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+  }
+  .yozuv button {
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 7px 11px;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .yozuv button:hover { color: var(--indigo); }
+  .yozuv button[aria-pressed="true"] { background: var(--indigo); color: #fff; }
+  .yozuv button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .yozuv-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 18px; }
+  .yozuv-lead { font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink-soft); }
+  .yozuv-izoh { display: none; width: 100%; margin: 0; font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink-soft); }
+  .yozuv-izoh b { color: var(--ink); font-weight: 600; }
+  html[data-yozuv="yangi"] .yozuv-izoh { display: block; }
+  .shell:has(#readerView.active) .site-head .yozuv { display: none; }
+  html.yz-wait .shell { visibility: hidden; }
+  @media (max-width: 420px) {
+    .yozuv button { padding: 7px 8px; font-size: 12px; }
   }
 
   .reader-date {
@@ -324,7 +362,7 @@
   }
 
   .reader-body h2 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-size: 21px;
     font-weight: 600;
     line-height: 1.3;
@@ -534,7 +572,7 @@
   }
 
   #readerBody > p:first-of-type::first-letter {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-size: 54px;
     font-weight: 600;
     float: left;
@@ -620,7 +658,7 @@
   }
 
   .nav-arrow {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-size: 20px;
     color: var(--clay-gold);
     flex-shrink: 0;
@@ -643,7 +681,7 @@
   }
 
   .nav-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-size: 15px;
     font-weight: 500;
     color: var(--ink);
@@ -694,7 +732,7 @@
   }
   .izohlar[hidden] { display: none; }
   .izoh-head {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-size: 22px;
     font-weight: 600;
     margin: 0 0 18px;
@@ -798,7 +836,7 @@
     gap: 10px;
   }
   .izoh-label {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
     font-size: 19px;
     font-weight: 600;
   }
@@ -889,7 +927,15 @@
       </div>
       <div class="site-tagline">Tajribadan, ilmdan kelib chiqqan insholar</div>
     </div>
-    <span class="about-link" id="aboutLink">Men haqimda</span>
+    <div class="head-tools">
+      <div class="yozuv" data-notr role="group" aria-label="Yozuv · Ёзув · Script">
+        <button type="button" data-yz="lotin" aria-pressed="true" title="Lotin yozuvi">Lotin</button>
+        <button type="button" data-yz="kirill" aria-pressed="false" title="Кирилл ёзувида ўқиш">Кирилл</button>
+        <button type="button" data-yz="yangi" aria-pressed="false" title="Yangilangan lotin alifbosi (2027-yil 22-apreldan)">Yangi alifbo</button>
+        <button type="button" data-yz="en" aria-pressed="false" title="Read in English">English</button>
+      </div>
+      <span class="about-link" id="aboutLink">Men haqimda</span>
+    </div>
   </header>
 
   <div id="listView" class="list-view">
@@ -910,6 +956,16 @@
       <div class="reader-folio" id="readerFolio"></div>
       <h1 class="reader-title" id="readerTitle"></h1>
       <div class="reader-date"><span id="readerDate"></span><span id="readerViews" class="reader-views"></span></div>
+      <div class="yozuv-row">
+        <span class="yozuv-lead">Yozuv:</span>
+        <div class="yozuv" data-notr role="group" aria-label="Yozuv · Ёзув · Script">
+          <button type="button" data-yz="lotin" aria-pressed="true" title="Lotin yozuvi">Lotin</button>
+          <button type="button" data-yz="kirill" aria-pressed="false" title="Кирилл ёзувида ўқиш">Кирилл</button>
+          <button type="button" data-yz="yangi" aria-pressed="false" title="Yangilangan lotin alifbosi (2027-yil 22-apreldan)">Yangi alifbo</button>
+          <button type="button" data-yz="en" aria-pressed="false" title="Read in English">English</button>
+        </div>
+        <p class="yozuv-izoh"><span>Yangilangan lotin alifbosi:</span> <b data-notr>Sh → Ş · Ch → Ç · Oʻ → Ö · Gʻ → Ğ</b>. <span>Qonun 2027-yil 22-apreldan kuchga kiradi.</span></p>
+      </div>
     </div>
     <div class="reader-body" id="readerBody"></div>
     <section class="izohlar" id="izohlar" aria-labelledby="izohLabel">
@@ -1071,6 +1127,7 @@
 <div class="toast" id="toast"></div>
 
 <script src="essays.js"></script>
+<script src="yozuv.js?v=1"></script>
 <script>
 (function () {
   let essays = [];
@@ -1133,10 +1190,31 @@
       .catch(() => {});
   }
 
-  function readMinutes(body) {
+  function readMinutes(body, en) {
     const clean = (body || '').replace(/^(##|>|-)\s+/gm, '');
     const words = clean.trim().split(/\s+/).filter(Boolean).length;
-    return Math.max(1, Math.round(words / 150));
+    return Math.max(1, Math.round(words / (en ? 200 : 150)));
+  }
+
+  /* Yozuv almashtirgich (yozuv.js): kirill va yangi alifbo sahifada avtomatik o'giriladi,
+     English uchun esa essays-en.js dagi tarjima olinadi (bo'lmasa o'zbekcha qoladi). */
+  function enOf(essay) {
+    return (window.ESSAYS_EN && window.ESSAYS_EN[essay.folio]) || null;
+  }
+  function view(essay) {
+    return (window.Yozuv && window.Yozuv.mode === 'en' && enOf(essay)) || essay;
+  }
+  /* Qidiruv: lotin, kirill, yangi alifbo va inglizcha matn bo'yicha */
+  function searchText(essay) {
+    const en = enOf(essay);
+    const key = en ? 'en' : 'uz';
+    if (!essay._hay || essay._hayKey !== key) {
+      const lat = essay.title + ' ' + essay.body;
+      const Y = window.Yozuv;
+      essay._hay = [lat, Y ? Y.toCyr(lat) : '', Y ? Y.toYangi(lat) : '', en ? en.title + ' ' + en.body : ''].join('\n').toLowerCase();
+      essay._hayKey = key;
+    }
+    return essay._hay;
   }
 
   function escapeHtml(str) {
@@ -1149,7 +1227,7 @@
     const q = (filter || '').trim().toLowerCase();
     const sorted = sortedEssays().reverse(); /* eng oxirgi yozilgan insho — eng tepada */
     const filtered = q
-      ? sorted.filter(e => (e.title + ' ' + e.body).toLowerCase().includes(q))
+      ? sorted.filter(e => searchText(e).includes(q))
       : sorted;
 
     essayListEl.innerHTML = '';
@@ -1163,7 +1241,7 @@
       li.innerHTML = `
         <div class="folio">${escapeHtml(essay.raqam || essay.folio || '')}</div>
         <div class="essay-head">
-          <h3 class="essay-title">${escapeHtml(essay.title)}</h3>
+          <h3 class="essay-title">${escapeHtml(view(essay).title)}</h3>
           ${essay.date ? '<span class="essay-date">' + escapeHtml(essay.date) + '</span>' : ''}
           ${essay.draft ? '<span class="draft-badge">Qoralama · faqat sizga ko\'rinadi</span>' : ''}
           ${pendingIzoh[essay.folio] ? '<span class="izoh-new">' + Number(pendingIzoh[essay.folio]) + ' yangi izoh</span>' : ''}
@@ -1344,25 +1422,28 @@
     }
   }
 
-  function showEssay(id) {
+  function showEssay(id, soft) {
     const list = sortedEssays();
     const idx = list.findIndex(e => e.id === id);
     const essay = list[idx];
     if (!essay) return false;
     activeId = id;
+    const v = view(essay);
+    const isEn = v !== essay;
 
     document.getElementById('readerFolio').textContent = '№ ' + (essay.raqam || essay.folio || '');
     document.getElementById('readerFolioFoot').textContent = 'Jahongir Zoxidov · № ' + (essay.raqam || essay.folio || '');
-    document.getElementById('readerTitle').textContent = essay.title;
+    document.getElementById('readerTitle').textContent = v.title;
     document.getElementById('readerDate').textContent = essay.date || '';
-    document.getElementById('readerViews').textContent = (essay.date ? ' · ' : '') + readMinutes(essay.body) + ' daqiqa o\'qish';
-    renderBody(document.getElementById('readerBody'), essay.body);
+    document.getElementById('readerViews').textContent = (essay.date ? ' · ' : '') + readMinutes(v.body, isEn) + ' daqiqa o\'qish';
+    if (!isEn && window.Yozuv && window.Yozuv.mode === 'en') document.getElementById('readerViews').textContent += ' · English version coming soon';
+    renderBody(document.getElementById('readerBody'), v.body);
     if (essay.draft) {
       if (viewTimer) { clearTimeout(viewTimer); viewTimer = null; }
       readsEl.textContent = ''; readsEl.classList.remove('show');
       document.getElementById('readerViews').textContent += ' · QORALAMA — hozircha faqat sizga ko\'rinadi';
-    } else trackView(essay);
-    loadIzoh(essay);
+    } else if (!soft) trackView(essay);
+    if (!soft) loadIzoh(essay);
 
     const prevEssay = idx > 0 ? list[idx - 1] : null;
     const nextEssay = idx < list.length - 1 ? list[idx + 1] : null;
@@ -1371,7 +1452,7 @@
 
     if (prevEssay) {
       prevBtn.disabled = false;
-      document.getElementById('prevTitle').textContent = prevEssay.title;
+      document.getElementById('prevTitle').textContent = view(prevEssay).title;
       prevBtn.onclick = () => { location.hash = 'insho-' + prevEssay.folio; };
     } else {
       prevBtn.disabled = true;
@@ -1380,7 +1461,7 @@
 
     if (nextEssay) {
       nextBtn.disabled = false;
-      document.getElementById('nextTitle').textContent = nextEssay.title;
+      document.getElementById('nextTitle').textContent = view(nextEssay).title;
       nextBtn.onclick = () => { location.hash = 'insho-' + nextEssay.folio; };
     } else {
       nextBtn.disabled = true;
@@ -1390,8 +1471,8 @@
     listView.classList.add('hidden');
     aboutView.classList.remove('active');
     readerView.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'auto' });
-    document.title = essay.title + ' — Jahongir Zoxidov';
+    if (!soft) window.scrollTo({ top: 0, behavior: 'auto' });
+    document.title = v.title + ' — Jahongir Zoxidov';
     return true;
   }
 
@@ -1649,6 +1730,25 @@
     window.scrollTo({ top: 0, behavior: 'auto' });
     document.title = "Men haqimda — Jahongir Zoxidov";
   }
+
+  /* English tanlanganda "Men haqimda" matni ham inglizchaga almashadi */
+  const aboutBody = aboutView.querySelector('.reader-body');
+  let aboutUz = null;
+  function syncAbout() {
+    const en = window.Yozuv && window.Yozuv.mode === 'en' && window.ABOUT_EN;
+    if (en) {
+      if (aboutUz === null) aboutUz = aboutBody.innerHTML;
+      aboutBody.innerHTML = window.ABOUT_EN;
+    } else if (aboutUz !== null && aboutBody.innerHTML !== aboutUz) {
+      aboutBody.innerHTML = aboutUz;
+    }
+  }
+  function rerender() {
+    renderList(searchInput.value);
+    if (activeId) showEssay(activeId, true);
+    syncAbout();
+  }
+  if (window.Yozuv) window.Yozuv.onChange(rerender);
 
   /* Har bir insho o'z havolasiga ega: /#insho-2 — Telegramga tashlash uchun */
   function route() {

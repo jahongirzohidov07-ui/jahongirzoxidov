@@ -30,6 +30,11 @@
      *gap*                -> kursiv (qiya) harf
      ![izoh](/assets/insho/fayl.svg) -> chizma (alohida xatboshida), ostida izohi bilan
    Boshqa hamma xatboshi oddiy matn (p) bo'lib chiqadi.
+
+   Yozuvlar: saytda Lotin · Кирилл · Yangi alifbo · English tugmalari bor.
+   Kirill va yangi alifbo avtomatik o'giriladi (yozuv.js) — alohida yozish shart emas.
+   Inglizcha tarjima essays-en.js faylida, shu folio raqami bilan qo'shiladi;
+   tarjimasi yo'q insho English tanlanganda o'zbekcha ko'rinadi.
    Diqqat: har bir inshoning BIRINCHI xatboshisi oddiy matn bo'lsin —
    bosh harf (drop cap) shunda to'g'ri ishlaydi.
    ===================================================================== */
