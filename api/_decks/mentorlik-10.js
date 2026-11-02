@@ -1,89 +1,98 @@
 'use strict';
 /* Mentorlik (Shogirdlik) dasturi · 10-dars: Blog
-   Manba: Notion "10-Dars - Blog" */
+   Manba: Notion "10-Dars - Blog" (muallif qaydlari — o'zgartirilmagan)
+   + Aziz Rahimovning «Blog yuritish haqida» (8.10.2026) va «Yozish haqida» (30.04.2026) insholari
+   + Jahongir Zoxidov insholari: «28 yoshimda anglaganlarim», «Shakl va mohiyat»,
+   «Endi siz atrofingizdagi besh odamning o'rtachasi emassiz»; 8-dars (aqliy hassa).
+   Savol pardalari skript faylida: api/_scripts/mentorlik-10.js (S.q). */
 module.exports = {
   slides: [
-    { t: 'cover', variant: 'a', photo: '/assets/jahongir-2.jpg', badge: 'Xush kelibsiz!', h: 'Mentorship program', s: 'Shogirdlik dasturi', lesson: '*10-dars* · Blog', name: 'Jahongir Zoxidov', role: 'Mentor' },
+    /* 1 */ {"t":"cover","variant":"a","photo":"/assets/jahongir-2.jpg","badge":"Xush kelibsiz!","h":"Mentorship program","s":"Shogirdlik dasturi","lesson":"*10-dars* · Blog","name":"Jahongir Zoxidov","role":"Mentor"},
 
-    { t: 'photo', layout: 'full', color: 'blue', img: '/assets/d10-mashinka.jpg', focus: 'center', k: 'Dars mavzusi', h: '*Yozish*ga fokus', s: 'Blog — sizning auditoriyangiz, obro\'yingiz va ikkinchi miyangiz.' },
+    /* 2 */ {"t":"ask","icon":"✍️","k":"Boshlanish uchun savol","h":"Siz yozgan qaysi matn *10 yildan keyin* ham o'qilishga arziydi?","s":"Post, xat, insho — birortasi bormi? Yo'q bo'lsa, bugun shu yerdan boshlaymiz."},
 
-    { t: 'grid', color: 'blue', icon: '✍️', k: 'Nima uchun yozish?', h: 'Yozishning *9 foydasi*', cols: 3, items: [
-      { icon: '🧠', h: 'Fikr aniqligi', p: 'Yoza olmagan narsangizni tushunmagansiz.' },
-      { icon: '🔓', h: 'Ruxsatsiz', p: 'Hech kimdan ruxsat kerak emas — bugun boshlaysiz.' },
-      { icon: '📈', h: 'Ko\'payadi (compound)', p: 'Bir marta yozasiz — yillar davomida o\'qiladi.' },
-      { icon: '⚡', h: 'Tezkor', p: 'Yozdingiz — bir daqiqada dunyoda.' },
-      { icon: '🧱', h: 'Boshqa kontentga asos', p: 'Matn → video, podkast, kitob, dars.' },
-      { icon: '🎯', h: 'Yuqori zichlik', p: 'O\'quvchi vaqtini tejaydi: 1 daqiqada 1 soatlik fikr.' },
-      { icon: '⏳', h: 'Vaqtdan tashqari', p: 'Yaxshi matn 10 yildan keyin ham ishlaydi.' },
-      { icon: '👥', h: 'Tanlangan auditoriya', p: 'Matn o\'qiydigan odam — saviyali odam.' },
-      { icon: '🏢', h: 'Ishda ham', p: 'Xodim, sherik, investorga — yozma xat.' }
-    ] },
+    /* 3 */ {"t":"photo","layout":"full","color":"blue","img":"/assets/d10-mashinka.jpg","focus":"center","k":"Dars mavzusi","h":"*Yozish*ga fokus","s":"Blog — sizning auditoriyangiz, obro'yingiz va ikkinchi miyangiz."},
 
-    { t: 'bars', color: 'green', icon: '⏱️', k: 'Zichlik', h: '30–60 daqiqa yozish → *1 daqiqa* o\'qish', rows: [
-      { h: 'Yozish', p: 'Muallif — bir marta', w: '100%', v: '60 daqiqa', color: 'orange' },
-      { h: 'O\'qish', p: 'O\'quvchi — minglab marta', w: '3%', v: '1 daqiqa', color: 'green' }
-    ], big: '60×', bigText: 'Siz bir marta 60 daqiqa sarflaysiz — minglab odam har biri *1 daqiqada* oladi. Bu — richak.' },
+    /* 4 */ {"t":"big","color":"blue","icon":"📝","k":"Aziz Rahimov · «Blog yuritish haqida» inshosidan","h":"Ikki so'zlik maslahat: *Blog boshlang*","s":"Boshlagan bo'lsangiz — yuriting."},
 
-    { t: 'vs', color: 'orange', icon: '📱', k: 'Chuqurlik vs ko\'rish', h: '1 kishi bilan *2 soat* > 10 sekundlik ko\'rish', a: { icon: '📱', h: 'Instagram', tone: 'bad', items: ['Oyiga 60–100 video kerak', '10 sekundlik ko\'rish', 'Ertaga unutiladi', 'Auditoriya — tasodifiy'] }, b: { icon: '📝', h: 'Matn (va YouTube)', tone: 'good', items: ['YouTube: oyiga 6 video yetadi', 'Matn — 1 kishi bilan 2 soat', 'Bookmark qilinadi, qayta o\'qiladi', 'Auditoriya — saviyali'] }, all: true, note: 'Savol: *podpischik* ko\'pmi yoki *foyda* ko\'pmi? Bookmark qilinadigan matn yozing.' },
+    /* 5 */ {"t":"section","color":"blue","icon":"🧠","n":"1","h":"Nega yozish?","s":"Yozish fikrga, ishga va hayotga nima beradi"},
 
-    { t: 'grid', color: 'red', icon: '🌟', k: 'Namunalar', h: 'Yozish orqali *dunyoga* chiqqanlar', cols: 4, items: [
-      { icon: '🚀', h: 'Elon Musk', p: 'Twitter — qisqa matn.' },
-      { icon: '💻', h: 'Paul Graham', p: 'Esselar — startap dunyosi.' },
-      { icon: '🎲', h: 'Nassim Taleb', p: '«Incerto» seriyasi.' },
-      { icon: '📣', h: 'Seth Godin', p: 'Har kuni bitta post — 20 yil.' },
-      { icon: '🧠', h: 'Shane Parrish', p: 'Farnam Street.' },
-      { icon: '💰', h: 'Morgan Housel', p: '«Pul psixologiyasi».' },
-      { icon: '🔁', h: 'James Clear', p: '«Atomic Habits».' },
-      { icon: '🧭', h: 'Naval', p: 'Tvitlar — falsafa.' },
-      { icon: '🎸', h: 'Derek Sivers', p: 'Qisqa, aniq esselar.' },
-      { icon: '🇺🇿', h: 'Xushnudbek', p: 'O\'zbek blogosferasi.' },
-      { icon: '🇺🇿', h: 'Bekzod Hashimov', p: 'Iqtisod, tahlil.' },
-      { icon: '📚', h: 'Medvedev', p: 'Uzun matn, chuqur tahlil.' }
-    ] },
+    /* 6 */ {"t":"grid","color":"blue","icon":"✍️","k":"Nima uchun yozish?","h":"Yozishning *9 foydasi*","cols":3,"items":[{"icon":"🧠","h":"Fikr aniqligi","p":"Yoza olmagan narsangizni tushunmagansiz."},{"icon":"🔓","h":"Ruxsatsiz","p":"Hech kimdan ruxsat kerak emas — bugun boshlaysiz."},{"icon":"📈","h":"Ko'payadi (compound)","p":"Bir marta yozasiz — yillar davomida o'qiladi."},{"icon":"⚡","h":"Tezkor","p":"Yozdingiz — bir daqiqada dunyoda."},{"icon":"🧱","h":"Boshqa kontentga asos","p":"Matn → video, podkast, kitob, dars."},{"icon":"🎯","h":"Yuqori zichlik","p":"O'quvchi vaqtini tejaydi: 1 daqiqada 1 soatlik fikr."},{"icon":"⏳","h":"Vaqtdan tashqari","p":"Yaxshi matn 10 yildan keyin ham ishlaydi."},{"icon":"👥","h":"Tanlangan auditoriya","p":"Matn o'qiydigan odam — saviyali odam."},{"icon":"🏢","h":"Ishda ham","p":"Xodim, sherik, investorga — yozma xat."}]},
 
-    { t: 'big', color: 'green', icon: '📨', k: 'Ishdagi kommunikatsiya', h: 'Ishdagi muloqot — *matnda*', s: 'Og\'zaki aytilgan — unutiladi. Yozilgan — qoladi, tekshiriladi, tarqatiladi. Xodimlar, sheriklar va investorlarga xat yozing.' },
+    /* 7 */ {"t":"bars","color":"green","icon":"⏱️","k":"Zichlik","h":"30–60 daqiqa yozish → *1 daqiqa* o'qish","rows":[{"h":"Yozish","p":"Muallif — bir marta","w":"100%","v":"60 daqiqa","color":"orange"},{"h":"O'qish","p":"O'quvchi — minglab marta","w":"3%","v":"1 daqiqa","color":"green"}],"big":"60×","bigText":"Siz bir marta 60 daqiqa sarflaysiz — minglab odam har biri *1 daqiqada* oladi. Bu — richak."},
 
-    /* ---- Qanday boshlash? ---- */
-    { t: 'section', color: 'orange', icon: '🚀', n: 'How', h: 'Qanday boshlash?', s: 'Taqlid → g\'oya → sarlavha → tahrir' },
+    /* 8 */ {"t":"quote","color":"blue","k":"«28 yoshimda anglaganlarim» inshosidan","q":"Yozishni juda yaxshi ko'raman. Shu sababdan ham ko'p yozdim, blogimda yozaman. Fikrim tiniqlashadi. O'zimni o'zim tushunib qolaman.","by":"Jahongir Zoxidov"},
 
-    { t: 'steps', color: 'orange', icon: '🚀', k: 'How to start', h: 'Uch *qadam*', all: true, items: [
-      { n: '1', h: 'Imitate — taqlid qiling', p: 'Yoqqan muallifning uslubini ko\'chiring. Avval taqlid — keyin o\'z ovozingiz.' },
-      { n: '2', h: 'Get ideas — g\'oya toping', p: 'Uzoq analogiyalar, kuzatish, hayrat. *Hayratlantira olmasangiz — yozmang.*' },
-      { n: '3', h: 'Nvidia CEO misoli', p: 'Jensen Huang idish yuvgan davrini aytib beradi — oddiy tajriba ham kuchli hikoya.' }
-    ] },
+    /* 9 */ {"t":"grid","color":"green","icon":"🧘","k":"«28 yoshimda anglaganlarim» inshosidan","h":"Yozish *miyaga* nima beradi?","cols":4,"items":[{"icon":"💡","h":"Fikr tiniqlashadi","p":"Yozgan narsam to'g'rimi, fikrim to'g'rimi — yozib turib tekshiraman."},{"icon":"🫧","h":"Stress kamayadi","p":"Miyani band qilgan turli xayol va fikrlar qog'ozga chiqadi, miya bo'shaydi."},{"icon":"🎯","h":"Diqqat o'sadi","p":"Yozish davomida ko'p diqqat qilaman. Hozirgi eng muhim ko'nikma — diqqat."},{"icon":"🖼️","h":"Tasavvur boyiydi","p":"Matn o'qigan odamning tasavvur qilish qobiliyati oshadi."}],"note":"Yozishni boshlash uchun *Obsidian* ilovasini tavsiya qilaman."},
 
-    { t: 'vs', color: 'blue', icon: '🧩', k: 'Frameworks', h: 'Ikki *ramka*: SPA va PAS', a: { icon: '📖', h: 'SPA', tone: 'gold', q: 'Story · Platitude · Advice', items: ['Story — bo\'lgan voqea', 'Platitude — umumiy haqiqat', 'Advice — aniq maslahat'] }, b: { icon: '🧩', h: 'PAS', tone: 'good', q: 'Problem · Augmentation · Solution', items: ['Problem — o\'qituvchi almashdi', 'Augmentation — ota-onalar norozi, talaba ketyapti', 'Solution — almashtirish tartibi, ota-onaga xabar, kuzatuv'] }, all: true },
+    /* 10 */ {"t":"stats","color":"orange","icon":"🐌","k":"Aziz Rahimov · «Yozish haqida»","h":"Yozish — *qog'ozda* o'ylash","items":[{"v":"4000","l":"So'z / daqiqa","s":"xayol tezligi"},{"v":"200","l":"So'z / daqiqa","s":"yozish tezligi"},{"v":"20×","l":"Sekinroq","s":"fikr qog'ozda to'xtab qoladi"}],"note":"Loyli yo'l 120 km/soat mashinani sekinlashtirganidek, yozish fikrni sekinlashtiradi. Shunda *mantiqiy xatolarimiz* ko'rinadi."},
 
-    { t: 'grid', color: 'red', icon: '🎯', k: 'Sarlavha va dalil', h: 'Sarlavha — *50%*', cols: 3, items: [
-      { icon: '🪝', h: 'Headline = 50%', p: 'Qiziqtiradigan sarlavha, to\'g\'ridan-to\'g\'ri boshlanish. Kirish so\'zsiz — birinchi gapdan mohiyat.' },
-      { icon: '⚖️', h: 'Ritorika', p: 'Dalil uch xil: statistika, hikoya, shaxsiy tajriba. Uchtasini aralashtiring.' },
-      { icon: '💼', h: 'Yozib sotishni o\'rganing', p: 'Sotish — ishontirish. Yozish — ishontirishning mashqi.' }
-    ], note: 'Statistika manbalari: *stats.uz, imrs.uz, statista.com,* GPT (tekshirib).' },
+    /* 11 */ {"t":"big","color":"blue","icon":"✒️","k":"Aziz Rahimov · «Yozish haqida»","h":"Sekin o'ylash + oxirini bilmaslik = *ijodiy tafakkur*","s":"Yangi fikr sinaps tezligida emas, siyoh tezligida keladi — xato bo'lish ehtimoli ancha kam. O'zimiz yozganimiz uchun eslab qolamiz, eslaganimiz uchun amal qilish osonroq."},
 
-    { t: 'photo', layout: 'split', color: 'green', img: '/assets/d10-yozuv.jpg', focus: 'center', k: 'Edit, edit, edit', h: 'Yozish — *tahrir*', items: [
-      'Ovoz chiqarib o\'qing — qoqilgan joy noto\'g\'ri joy.',
-      'Og\'zaki so\'zlar bilan yozing — gapirgandek.',
-      'Yuk tashimaydigan so\'zni olib tashlang: «juda», «lekin», «aslida».',
-      'Qisqartiring. Yana qisqartiring.'
-    ], all: true },
+    /* 12 */ {"t":"vs","color":"orange","icon":"📱","k":"Chuqurlik vs ko'rish","h":"1 kishi bilan *2 soat* > 10 sekundlik ko'rish","a":{"icon":"📱","h":"Instagram","tone":"bad","items":["Oyiga 60–100 video kerak","10 sekundlik ko'rish","Ertaga unutiladi","Auditoriya — tasodifiy"]},"b":{"icon":"📝","h":"Matn (va YouTube)","tone":"good","items":["YouTube: oyiga 6 video yetadi","Matn — 1 kishi bilan 2 soat","Bookmark qilinadi, qayta o'qiladi","Auditoriya — saviyali"]},"all":true,"note":"Savol: *podpischik* ko'pmi yoki *foyda* ko'pmi? Bookmark qilinadigan matn yozing."},
 
-    { t: 'stack', color: 'orange', k: 'Kitoblar', h: 'Yozuvchining *javoni*', s: 'Pastdan yuqoriga: avval o\'g\'irlang, keyin ko\'rsating, keyin yozib o\'rganing, keyin jumlani sayqallang.', axis: 'Mahorat', books: ['Steal Like an Artist', 'Show Your Work', 'Writing to Learn', 'Several Short Sentences', 'Ilyahov · Pishi, sokrashchay'], top: 'Yozuvchi' },
+    /* 13 */ {"t":"grid","color":"red","icon":"🌟","k":"Namunalar","h":"Yozish orqali *dunyoga* chiqqanlar","cols":4,"items":[{"icon":"🚀","h":"Elon Musk","p":"Twitter — qisqa matn."},{"icon":"💻","h":"Paul Graham","p":"Esselar — startap dunyosi."},{"icon":"🎲","h":"Nassim Taleb","p":"«Incerto» seriyasi."},{"icon":"📣","h":"Seth Godin","p":"Har kuni bitta post — 20 yil."},{"icon":"🧠","h":"Shane Parrish","p":"Farnam Street."},{"icon":"💰","h":"Morgan Housel","p":"«Pul psixologiyasi»."},{"icon":"🔁","h":"James Clear","p":"«Atomic Habits»."},{"icon":"🧭","h":"Naval","p":"Tvitlar — falsafa."},{"icon":"🎸","h":"Derek Sivers","p":"Qisqa, aniq esselar."},{"icon":"🇺🇿","h":"Xushnudbek","p":"O'zbek blogosferasi."},{"icon":"🇺🇿","h":"Bekzod Hashimov","p":"Iqtisod, tahlil."},{"icon":"📚","h":"Medvedev","p":"Uzun matn, chuqur tahlil."}]},
 
-    { t: 'grid', color: 'blue', icon: '📏', k: 'Shaxsiy blog qoidalari', h: 'Yozma blogning *qoidalari*', cols: 3, items: [
-      { icon: '📅', h: 'Muntazam', p: 'Haftada kamida 1 post. Kayfiyatga qarab emas — jadval bo\'yicha.' },
-      { icon: '🔖', h: 'Bookmark qilinadigan', p: 'Podpischik emas — foyda. O\'quvchi saqlab qo\'yadimi?' },
-      { icon: '🫵', h: 'O\'z tajribangiz', p: 'Internetdan emas — hayotingizdan. Faqat siz yoza oladigan narsa.' },
-      { icon: '✂️', h: 'Qisqa', p: 'Aytish mumkin bo\'lgan eng kam so\'z.' },
-      { icon: '🪝', h: 'Sarlavha', p: 'Har postga 10 ta sarlavha — bittasini tanlang.' },
-      { icon: '🗣️', h: 'Ovoz chiqarib', p: 'Chop etishdan oldin ovoz chiqarib o\'qing.' }
-    ] },
+    /* 14 */ {"t":"big","color":"green","icon":"📨","k":"Ishdagi kommunikatsiya","h":"Ishdagi muloqot — *matnda*","s":"Og'zaki aytilgan — unutiladi. Yozilgan — qoladi, tekshiriladi, tarqatiladi. Xodimlar, sheriklar va investorlarga xat yozing."},
 
-    { t: 'steps', color: 'green', icon: '📝', k: 'Uyga vazifa', h: 'Birinchi *post*', all: true, items: [
-      { n: '1', h: 'SPA post', p: 'O\'z tajribangizdan bitta hikoya — Story, Platitude, Advice ramkasida. 300–500 so\'z.' },
-      { n: '2', h: '10 ta sarlavha', p: 'Shu postga 10 ta sarlavha yozing, eng kuchlisini tanlang.' },
-      { n: '3', h: 'Tahrir va chop', p: 'Ovoz chiqarib o\'qing, 20% so\'zni o\'chiring — va chop eting. Havolani yuboring.' }
-    ] },
+    /* 15 */ {"t":"section","color":"green","icon":"🏕️","n":"2","h":"Qanday blog?","s":"Ellik yil yuritishga tayyor fikr blogi"},
 
-    { t: 'end', icon: '🙌', h: 'Rahmat', s: 'Shogirdlik dasturi yakunlandi · 10 dars · 9 richak · bitta yo\'l' }
+    /* 16 */ {"t":"vs","color":"orange","icon":"🪞","k":"Aziz Rahimov · «Blog yuritish haqida»","h":"Shaxsiy hayot blogi *vs* fikr blogi","a":{"icon":"📸","h":"Storis — shaxsiy hayot","tone":"bad","q":"Shaxsiy brend qurish usuli","items":["Faqat odatdan tashqari hayot kuzatuvchi yig'adi","Asta-sekin maqtanishga o'tib ketadi","Matoh uchun kelganlar matohsiz qolsangiz ketadi","Joy, suhbatdosh, kiyimni kamera uchun tanlay boshlaysiz"]},"b":{"icon":"💭","h":"Fikr blogi","tone":"good","q":"Ijod maydoni","items":["Ongimizni band qilgan fikr va kuzatuvlar","O'rgangan narsalarimizni bo'lishish","Faqat o'zimizga bo'ysunadi","Kasbimiz bilan cheklanmagan"]},"note":"Mutaxassislik blogi ham foydali. Lekin bu yerda gap *ellik yil yuritishga tayyor* fikr blogi haqida."},
+
+    /* 17 */ {"t":"stats","color":"blue","icon":"🗓️","k":"Ellik yillik reja · Aziz Rahimov hisobi","h":"Har kuni *post* shart emas","items":[{"v":"50","l":"Yil","s":"blog yuritish muddati"},{"v":"1000","l":"Post","s":"yiliga 20 tadan, 50 yilda"},{"v":"6000","l":"Odam","s":"haftasiga 4 tadan, 30 yilda"}],"note":"Vaqt bo'lsa — ko'paytiramiz. Yetmasa — bo'sh turib turadi. *To'xtamasak bo'lgani.*"},
+
+    /* 18 */ {"t":"grid","color":"red","icon":"⏳","k":"Aziz Rahimov · «Blog yuritish haqida»","h":"O'n yillab yozayotganlar","cols":3,"items":[{"icon":"📣","h":"Set Godin","p":"Adashmasam, 27 yildan beri kunlik blog."},{"icon":"🔭","h":"Kevin Kelli","p":"Yigirma yildan beri."},{"icon":"✏️","h":"Skot Adams","p":"O'n besh yilcha yuritgan."},{"icon":"🎲","h":"Nassim Taleb","p":"Yigirma yilcha. Keyin Twitter va Substack."},{"icon":"🎨","h":"Artemiy Lebedev","p":"Internet chiqqanidan beri."},{"icon":"🎙️","h":"Goblin","p":"Internet chiqqanidan beri."}],"note":"Ellik yil — imkonsiz emas. *Vaqtinchalik ishni boshlamang.*"},
+
+    /* 19 */ {"t":"big","color":"green","icon":"🏕️","k":"Aziz Rahimov · «Blog yuritish haqida»","h":"Blog — fikrdosh *qabilangiz*","s":"Oldinlari odamlar davlatning emas, qabilaning bo'lgan: muammo chiqsa, qabila yordamga kelgan. Blogda biz matohimizni emas, fikrimizni bo'lishamiz."},
+
+    /* 20 */ {"t":"grid","color":"orange","icon":"🎁","k":"Aziz Rahimov tajribasidan","h":"Blog *kutilmagan joyda* foyda beradi","cols":4,"items":[{"icon":"💼","h":"Ish taklifi","p":"Muallif bloglarni o'qib, kamida uch kishiga ish taklif qilgan."},{"icon":"💞","h":"Muhabbat","p":"Blogi orqali muhabbatini topganlar bor."},{"icon":"🏗️","h":"Katta loyiha","p":"Birinchi katta loyihasini blogi ortidan olganlar bor."},{"icon":"🤝","h":"Oson sotuv","p":"Kichkina blogi orqali xizmatini oson sotadiganlar bor."}],"note":"Uzoqdan aksar mutaxassislar bir xil. *Blogi bori ajralib turadi.*"},
+
+    /* 21 */ {"t":"vs","color":"blue","icon":"🌱","k":"«Shakl va mohiyat» + «Blog yuritish haqida»","h":"Layk *vs* dekada","a":{"icon":"❤️","h":"Laykni quvish — shakl","tone":"bad","items":["Har postdan keyin layk va izoh kutish","Hayratlantirish uchun yasama gap","Kamera va obunachi uchun yozish","Izoh kelmasa — to'xtab qolish"]},"b":{"icon":"🌳","h":"Dekada — mohiyat","tone":"good","items":["O'nlab postga «g'ing» degan izoh yo'q — bu tabiiy","Ta'sir o'n yillar o'tib seziladi","O'rtog'ingizga aytadigan samimiy gap","Asosiysi — to'xtamaslik"]},"note":"Ta'sirimiz bor. Bo'lmaganida blogda faqat ikki kishi qolardi: *o'zimiz va onamiz.*"},
+
+    /* 22 */ {"t":"big","color":"red","icon":"🖐️","k":"«Endi siz atrofingizdagi besh odamning o'rtachasi emassiz» inshosidan","h":"Endi siz ham kimningdir *5 ta blogidan biri* bo'lasiz","s":"Biz kuzatadigan besh blogning o'rtachasimiz. Blog ochganingizda esa o'zingiz kimningdir besh blogidan biriga aylanasiz. Uning o'rtachasini ko'tarasizmi?"},
+
+    /* 23 */ {"t":"section","color":"orange","icon":"🚀","n":"How","h":"Qanday boshlash?","s":"Taqlid → g'oya → sarlavha → tahrir"},
+
+    /* 24 */ {"t":"stop","color":"orange","icon":"☕","h":"Tanishingizga *nima aytib berardingiz*?","s":"Anchadan beri ko'rishmagan tanishingizga aytadigan qiziq gapni yozing. Qaysi birini birinchi aytardingiz — o'shandan boshlang."},
+
+    /* 25 */ {"t":"grid","color":"green","icon":"🚪","k":"Nimadan boshlash mumkin?","h":"Birinchi postlar uchun *4 ta eshik*","cols":4,"items":[{"icon":"☕","h":"Tanishga aytadigan gap","p":"Shaxsiy hayotni emas — qiziq fikr va kuzatuvni."},{"icon":"🌐","h":"Tarjima va iqtibos","p":"O'qiganingizdan yoqqan parchalarni yig'ib boring."},{"icon":"😮","h":"Hayrat","p":"Sizni hayratlantirgan narsani bo'lishing. Do'stlik ham shundan boshlanishi mumkin."},{"icon":"🔁","h":"Qalbga o'tirgan postlar","p":"Oila guruhlariga forvard qilgandan ko'ra — blogingizga qo'ying."}]},
+
+    /* 26 */ {"t":"vs","color":"green","icon":"🥱","k":"Ilhom qayerdan keladi? · «Yozish haqida»","h":"Zerikish *vs* zerikish o'g'rilari","a":{"icon":"📱","h":"Zerikish o'g'rilari","tone":"bad","items":["Qisqa va uzun videolar","Yozishmalar, gif va memlar","G'iybat va seriallar","Videoo'yinlar, yangiliklar, ijtimoiy tarmoqlar"]},"b":{"icon":"💡","h":"Zerikish — ilhom manbai","tone":"good","items":["Zerikkanda atrofni kuzatamiz","Kuzatuvdan savollar tug'iladi","Qoniqarsiz javob — ilhomga aylanadi","Ilhom — yangi matn"]},"note":"Muallif fikricha, dunyodagi eng yirik 15 kompaniyadan 7 tasi bizni *zeriktirmaslik* biznesida."},
+
+    /* 27 */ {"t":"steps","color":"orange","icon":"🎈","k":"Uzun yoki qisqa? · «Yozish haqida»","h":"Shardagi havo tugaguncha *yozing*","all":true,"items":[{"n":"1","h":"Faqat qiziq mavzuda","p":"Chindan qiziqtirgan mavzuda yozsangiz, ilhom uzoqroq yetadi."},{"n":"2","h":"Telefonga moratoriy","p":"«Antennali matohlar»ni xonadan surgun qiling."},{"n":"3","h":"Avval o'ylang","p":"Ovqatdan oldin masalliqni ko'zdan kechirgandek, yozishdan oldin mavzu haqida o'ylang."}]},
+
+    /* 28 */ {"t":"grid","color":"red","icon":"🧱","k":"Har kuni yozish kerakmi? · «Yozish haqida»","h":"Nega yozish *eng qiyin* aqliy mehnat?","cols":4,"items":[{"icon":"❓","h":"Oxiri noma'lum","p":"Matn qayerda tugashini oldindan bilmaymiz."},{"icon":"👕","h":"Ilhomsiz qiyin","p":"Ilhomsiz yozish — ikki yoshli boladan toza kiyim kutishdek."},{"icon":"❄️","h":"Baholab bo'lmaydi","p":"Matnni xolis baholab bo'lmaydi: ikki qor parchasi bir xil emas."},{"icon":"🎙️","h":"O'z gapimiz g'alati","p":"O'z ovozimizni eshitgandek. Aslida yoqmagani — ortidagi sayozlik."}],"note":"Yagona yo'l — *odat*: har kuni yozish. Bir kun dam olgan yovvoyi ot yanada o'jarlashadi."},
+
+    /* 29 */ {"t":"quote","color":"blue","k":"Qaysi mavzuda yozmaslik kerak? · «Yozish haqida»","q":"Tushunishning cho'qqisi fikringga berilgan e'tirozlarning asosiylariga javob bera olishdir.","by":"Lixtenberg"},
+
+    /* 30 */ {"t":"steps","color":"orange","icon":"🚀","k":"How to start","h":"Uch *qadam*","all":true,"items":[{"n":"1","h":"Imitate — taqlid qiling","p":"Yoqqan muallifning uslubini ko'chiring. Avval taqlid — keyin o'z ovozingiz."},{"n":"2","h":"Get ideas — g'oya toping","p":"Uzoq analogiyalar, kuzatish, hayrat. *Hayratlantira olmasangiz — yozmang.*"},{"n":"3","h":"Nvidia CEO misoli","p":"Jensen Huang idish yuvgan davrini aytib beradi — oddiy tajriba ham kuchli hikoya."}]},
+
+    /* 31 */ {"t":"vs","color":"blue","icon":"🧩","k":"Frameworks","h":"Ikki *ramka*: SPA va PAS","a":{"icon":"📖","h":"SPA","tone":"gold","q":"Story · Platitude · Advice","items":["Story — bo'lgan voqea","Platitude — umumiy haqiqat","Advice — aniq maslahat"]},"b":{"icon":"🧩","h":"PAS","tone":"good","q":"Problem · Augmentation · Solution","items":["Problem — o'qituvchi almashdi","Augmentation — ota-onalar norozi, talaba ketyapti","Solution — almashtirish tartibi, ota-onaga xabar, kuzatuv"]},"all":true},
+
+    /* 32 */ {"t":"grid","color":"red","icon":"🎯","k":"Sarlavha va dalil","h":"Sarlavha — *50%*","cols":3,"items":[{"icon":"🪝","h":"Headline = 50%","p":"Qiziqtiradigan sarlavha, to'g'ridan-to'g'ri boshlanish. Kirish so'zsiz — birinchi gapdan mohiyat."},{"icon":"⚖️","h":"Ritorika","p":"Dalil uch xil: statistika, hikoya, shaxsiy tajriba. Uchtasini aralashtiring."},{"icon":"💼","h":"Yozib sotishni o'rganing","p":"Sotish — ishontirish. Yozish — ishontirishning mashqi."}],"note":"Statistika manbalari: *stats.uz, imrs.uz, statista.com,* GPT (tekshirib)."},
+
+    /* 33 */ {"t":"photo","layout":"split","color":"green","img":"/assets/d10-yozuv.jpg","focus":"center","k":"Edit, edit, edit","h":"Yozish — *tahrir*","items":["Ovoz chiqarib o'qing — qoqilgan joy noto'g'ri joy.","Og'zaki so'zlar bilan yozing — gapirgandek.","Yuk tashimaydigan so'zni olib tashlang: «juda», «lekin», «aslida».","Qisqartiring. Yana qisqartiring."],"all":true},
+
+    /* 34 */ {"t":"flow","color":"green","icon":"👂","k":"Tushunarli yozish · «Yozish haqida»","h":"Ko'zga emas, *quloqqa* yoqsin","items":["💬 Misol","🖼️ Tasavvur","⚡ Ta'sir","🌱 O'zgarish"],"all":true,"note":"Ovoz chiqarib o'qing va qoqilgan joyni kesing. Gapirganda ishlatmaydigan so'zni yozmang. Va *misol* keltiring."},
+
+    /* 35 */ {"t":"vs","color":"red","icon":"🤖","k":"8-dars eslatmasi · aqliy hassa","h":"Blogni *SIga yozdirmang*","a":{"icon":"🤖","h":"SI yozadi","tone":"bad","items":["Matn tez tayyor bo'ladi","Lekin fikr sizniki emas","O'quvchi sezadi va ishonmay qo'yadi","Fikrlash mushagi o'smaydi"]},"b":{"icon":"✍️","h":"Siz yozasiz, SI tekshiradi","tone":"good","items":["Qoralamani o'zingiz yozasiz","SIdan tanqid so'raysiz: mantiq qayerda zaif?","Fakt va raqamlarni tekshirtirasiz","Ovoz va fikr — sizniki"]},"note":"Yangi bloglarni tekshirish kerak: balki so'zlarini *GPT janoblari* yozib berayotgandir. — Aziz Rahimov"},
+
+    /* 36 */ {"t":"stack","color":"orange","k":"Kitoblar","h":"Yozuvchining *javoni*","s":"Pastdan yuqoriga: avval o'g'irlang, keyin ko'rsating, keyin yozib o'rganing, keyin jumlani sayqallang.","axis":"Mahorat","books":["Steal Like an Artist","Show Your Work","Writing to Learn","Several Short Sentences","Ilyahov · Pishi, sokrashchay"],"top":"Yozuvchi"},
+
+    /* 37 */ {"t":"grid","color":"blue","icon":"📏","k":"Shaxsiy blog qoidalari","h":"Yozma blogning *qoidalari*","cols":3,"items":[{"icon":"📅","h":"Muntazam","p":"Haftada kamida 1 post. Kayfiyatga qarab emas — jadval bo'yicha."},{"icon":"🔖","h":"Bookmark qilinadigan","p":"Podpischik emas — foyda. O'quvchi saqlab qo'yadimi?"},{"icon":"🫵","h":"O'z tajribangiz","p":"Internetdan emas — hayotingizdan. Faqat siz yoza oladigan narsa."},{"icon":"✂️","h":"Qisqa","p":"Aytish mumkin bo'lgan eng kam so'z."},{"icon":"🪝","h":"Sarlavha","p":"Har postga 10 ta sarlavha — bittasini tanlang."},{"icon":"🗣️","h":"Ovoz chiqarib","p":"Chop etishdan oldin ovoz chiqarib o'qing."}]},
+
+    /* 38 */ {"t":"grid","color":"blue","icon":"🔥","k":"Aziz Rahimov · «Blog yuritish haqida»","h":"Nom va *targ'ibot*","cols":3,"items":[{"icon":"🪪","h":"Nomda — ism-sharif","p":"Bugun bir ish, ertaga boshqa ish qilasiz. «O'qituvchi falonchi» nomi yillar o'tib to'g'ri kelmay qoladi."},{"icon":"📢","h":"Targ'ibot — tabiiy tavsiya bo'lsa","p":"Odam o'zi qo'shila boshlagan bo'lsa — e'lon xabar ovozini ko'taradi. Bo'lmasa — o'tmayotgan narsani o'tkazish."},{"icon":"🔢","h":"5–10 ming obunachigacha","p":"Targ'ibot shuncha bo'lsa yetadi. Qolganini mohir ijodkor o'zi ko'paytiradi."}],"note":"*Kabob ustasiga cho'g'ning o'zi kifoya.*"},
+
+    /* 39 */ {"t":"steps","color":"green","icon":"🧭","k":"Mening tartibim","h":"Inshodan *postgacha*","all":true,"items":[{"n":"1","h":"Qoralama","p":"Fikrni avval qoralamaga yozaman. Hech kimga ko'rsatmayman."},{"n":"2","h":"O'zim ko'rib chiqaman","p":"Tahrir qilaman, rasm va havolalar qo'shaman. Ma'qul bo'lgandagina chiqaraman."},{"n":"3","h":"Saytda — to'liq versiya","p":"Insho jahongirzoxidov.uz saytida to'liq turadi."},{"n":"4","h":"Telegramda — qisqa versiya","p":"Asl mohiyati qolgan qisqa versiya va oxirida to'liq inshoga havola."}]},
+
+    /* 40 */ {"t":"checklist","color":"blue","icon":"✅","k":"Chop etishdan oldin","h":"Post *checklisti*","items":[{"n":"1","h":"Fikr — *meniki*, SI yozib bermadi"},{"n":"2","h":"Tanishimga aytadigan *samimiy* gap"},{"n":"3","h":"Shaxsiy hayot va *maqtanish* yo'q"},{"n":"4","h":"10 ta sarlavhadan *eng kuchlisi* tanlandi"},{"n":"5","h":"Ovoz chiqarib o'qidim"},{"n":"6","h":"Yuk tashimaydigan so'zlarni *o'chirdim*"},{"n":"7","h":"*10 yildan keyin* ham o'qilishga arziydi"},{"n":"8","h":"Ellik yil yozishga *tayyorman*","star":true}]},
+
+    /* 41 */ {"t":"steps","color":"green","icon":"📝","k":"Uyga vazifa","h":"Birinchi *post*","all":true,"items":[{"n":"1","h":"SPA post","p":"O'z tajribangizdan bitta hikoya — Story, Platitude, Advice ramkasida. 300–500 so'z."},{"n":"2","h":"10 ta sarlavha","p":"Shu postga 10 ta sarlavha yozing, eng kuchlisini tanlang."},{"n":"3","h":"Tahrir va chop","p":"Ovoz chiqarib o'qing, 20% so'zni o'chiring — va chop eting. Havolani yuboring."},{"n":"4","h":"Ism-sharifli blog","p":"Telegramda yoki boshqa joyda o'z ism-sharifingiz bilan blog oching. Birinchi postni «anchadan beri ko'rishmagan tanishga nima aytardim?» savolidan boshlang."},{"n":"5","h":"Ellik yillik reja","p":"Bir varaqqa yozing: yiliga nechta post yozasiz va qaysi kuni? Yiliga *20 ta* ham yetadi — muhimi to'xtamaslik."}]},
+
+    /* 42 */ {"t":"section","color":"orange","icon":"🎓","n":"","h":"Shogirdlik dasturi yakuni","s":"10 dars — bitta yo'l"},
+
+    /* 43 */ {"t":"table","color":"orange","icon":"🧭","k":"10 dars bir qarashda","h":"Esda qoladigan *10 ta gap*","head":["Dars","Mavzu","Esda qoladigan gap"],"rows":[["1","Richaglar","Kuchni ko'paytiradigan 9 ta richakni quring"],["2","Shaxsiyat","Shaxsiyat — barcha richaglarning ildizi"],["3","Karyera","Kasb o'zgaradi, ko'nikma qoladi. Avval pol, keyin potolok"],["4","Moliya","Erkinlik har bir «olaymi?» savoliga javobda quriladi"],["5","Munosabatlar","Munosabat har kuni bitta g'isht bilan quriladi"],["6","Sog'liq","Sog'liq har kungi kichik tanlovlardan quriladi"],["7","Ilm","Qiziqish bilimdan tug'iladi"],["8","Fikrlash","Miya — mushak. SI — aspirant, xo'jayin emas"],["9","Vaqt","Vaqtni emas — o'zingizni boshqaring"],["10","Blog","Blog boshlang. Boshlagan bo'lsangiz — yuriting"]]},
+
+    /* 44 */ {"t":"end","icon":"🙌","h":"Rahmat","s":"Shogirdlik dasturi yakunlandi · 10 dars · 9 richak · bitta yo'l"}
   ]
 };

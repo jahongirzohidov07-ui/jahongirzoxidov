@@ -15,8 +15,8 @@ const programs = [
       { n: 6, title: 'Sog\'liq', deck: require('./mentorlik-06'), script: require('../_scripts/mentorlik-06') },
       { n: 7, title: 'Ilm', deck: require('./mentorlik-07'), script: require('../_scripts/mentorlik-07') },
       { n: 8, title: 'Fikrlash', deck: require('./mentorlik-08'), script: require('../_scripts/mentorlik-08') },
-      { n: 9, title: 'Vaqt', deck: require('./mentorlik-09') },
-      { n: 10, title: 'Blog', deck: require('./mentorlik-10') }
+      { n: 9, title: 'Vaqt', deck: require('./mentorlik-09'), script: require('../_scripts/mentorlik-09') },
+      { n: 10, title: 'Blog', deck: require('./mentorlik-10'), script: require('../_scripts/mentorlik-10') }
     ]
   },
   {
