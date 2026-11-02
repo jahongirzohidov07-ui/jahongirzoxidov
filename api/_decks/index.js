@@ -9,7 +9,7 @@ const programs = [
     lessons: [
       { n: 1, title: 'Leverages — richaglar', deck: require('./mentorlik-01'), script: require('../_scripts/mentorlik-01') },
       { n: 2, title: 'Shaxsiyat (Personality)', deck: require('./mentorlik-02'), script: require('../_scripts/mentorlik-02') },
-      { n: 3, title: 'Karyera', deck: require('./mentorlik-03') },
+      { n: 3, title: 'Karyera', deck: require('./mentorlik-03'), script: require('../_scripts/mentorlik-03') },
       { n: 4, title: 'Moliya', deck: require('./mentorlik-04'), script: require('../_scripts/mentorlik-04') },
       { n: 5, title: 'Munosabatlar', deck: require('./mentorlik-05'), script: require('../_scripts/mentorlik-05') },
       { n: 6, title: 'Sog\'liq', deck: require('./mentorlik-06'), script: require('../_scripts/mentorlik-06') },
