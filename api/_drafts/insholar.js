@@ -115,7 +115,7 @@ module.exports = [
       "## Tabloga emas, o'yinga qarang",
       "Endi eng muhim gapni aytay. **«Ingliz tilini qancha vaqtda o'rganib bo'laman?» degan savolning o'zi xato. O'rganish tugamaydi.** Bu savolni o'ylab yurgan odam esa uni hech qachon tugata olmaydi ham.",
       "Hisobni bir marta, boshida qiling: qaysi mashinada ketayotganingizni biling. Keyin bu savolni o'ylashga ketadigan vaqtni so'z yodlashga, grammatika o'rganishga, reading va listening qilishga sarflang. Shunchaki ingliz tilini o'rganishdan mazza qiling, natija o'zi kelaveradi.",
-      "Futbolni eslang. Tabloga qarab «qachon hisob 1:0 bo'lar ekan» deb turaversangiz, hisob ochilmaydi. Lekin mazza qilib o'ynasangiz, keyin hisob ochilishi mumkin. Men ham 6.5 olganimda to'xtamadim. 8.0 ga tabloga qarab emas, dars berib yetib keldim.",
+      "Futbolni eslang. Tabloga qarab «qachon hisob 1:0 bo'lar ekan» deb turaversangiz, hech qachon gol bo'lmaydi. Lekin mazza qilib o'ynasangiz, keyin hisob ochilishi mumkin. Men ham 6.5 olganimda to'xtamadim. 8.0 ga tabloga qarab emas, dars berib yetib keldim.",
       "> **Tabloga emas, o'yinga qarang.** Sekin yurganing muhim emas, to'xtamasang bo'ldi."
     ].join(PARA)
   }
