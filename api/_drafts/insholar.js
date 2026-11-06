@@ -59,7 +59,6 @@ module.exports = [
     title: "Ingliz tilini qancha vaqtda o'rganib bo'laman?",
     date: "06.11.2026",
     body: [
-      "> «Sekin yurganing muhim emas, to'xtamasang bo'ldi.» *Bu gap Konfutsiyga nisbat beriladi.*",
       "«Ingliz tilini qancha vaqtda o'rganib bo'laman?» Bu savol ko'pchilikni juda qiynaydi. Ba'zilar 1 yil, ba'zilar 2 yil, ba'zilar 5 yil deydi. Ayrimlar esa «ko'p narsa o'quvchining o'ziga bog'liq» deydi.",
       "Aslida bu savol juda umumiy. U xuddi «qancha vaqtda yetib boraman?» deganga o'xshaydi. Qayerda turganingizni va manzilingiz qayerligini aytmasangiz, hech kim javob bera olmaydi. Savolni «0 dan IELTS 7.0 ni qancha vaqtda ola olaman?» deb berish kerak. Bu xuddi «Zafardan Toshkentga qancha vaqtda yetib boraman?» deganday aniq bo'ladi. Lekin bitta narsa hali qoldi: **piyoda ketyapsizmi yoki mashinadami? Mashinada bo'lsa, qanaqa mashinada?** Ya'ni kuniga qancha vaqt dars qila olasiz?",
       "## Yillar emas, soatlar",
@@ -117,7 +116,7 @@ module.exports = [
       "Hisobni bir marta, boshida qiling: qaysi mashinada ketayotganingizni biling. Keyin bu savolni o'ylashga ketadigan vaqtni so'z yodlashga, grammatika o'rganishga, reading va listening qilishga sarflang. Shunchaki ingliz tilini o'rganishdan mazza qiling, natija o'zi kelaveradi.",
       "Futbolni eslang. Tabloga qarab «qachon hisob 1:0 bo'lar ekan» deb turaversangiz, hech qachon gol bo'lmaydi. Lekin mazza qilib o'ynasangiz, gol ham urasiz, g'alaba ham qilasiz.",
       "Men 6.5 olgan paytimda ham necha ball olishni o'ylamaganman. Shunchaki ingliz tilini o'rganishdan mazza qilganman, ayniqsa lug'at yodlashdan. Readinglarni esa mavzulari qiziq bo'lgani uchun qilaverardim. Majburlikdan emas, mazza qilganimdan o'qiganman. **Agar faqat «sertifikat olaman» deb o'ylayversangiz, hech qachon mazza qilmaysiz, hammasini majburlikdan qilaverasiz.**",
-      "> **Tabloga emas, o'yinga qarang.** Sekin yurganing muhim emas, to'xtamasang bo'ldi."
+      "> **Tabloga emas, o'yinga qarang.**"
     ].join(PARA)
   }
 ];
