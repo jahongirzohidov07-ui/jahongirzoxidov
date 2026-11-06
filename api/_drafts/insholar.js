@@ -79,7 +79,7 @@ module.exports = [
       "## Qaysi mashinada ketyapsiz?",
       "Endi masofa ham, unga nimalar kirishi ham ma'lum. Qolgani mashina, ya'ni kuniga qancha vaqt ajrata olishingiz. Noldan IELTS 7.0 gacha taxminan 1400 soat. Shu yo'lni har kuni bosib o'tsangiz:",
       "- Piyoda, kuniga 30 daqiqa: 7,5 yildan ortiq.\n- Oddiy mashinada, kuniga 1 soat: qariyb 4 yil.\n- Yaxshi mashinada, kuniga 2 soat: qariyb 2 yil.\n- Poyga mashinasida, kuniga 4 soat: taxminan 11-12 oy.",
-      "![Masofa hamma uchun bir xil: noldan IELTS 7.0 gacha taxminan 1400 soat. Qancha vaqtda yetib borishingizni mashinangiz hal qiladi.](/assets/insho/11-mashina.svg)",
+      "![Masofa hamma uchun bir xil: noldan IELTS 7.0 gacha taxminan 1400 soat. Farq esa mashinada, ya'ni kuniga qancha vaqt sarflashingizda.](/assets/insho/11-mashina.svg)",
       "Shuning uchun «kimdir 1 yilda IELTS 6.0-6.5 oldi» degani siz ham 1 yilda olasiz degani emas. Chunki siz undan kamroq vaqt sarflashingiz mumkin. Yoki aksincha, undan ham ko'p vaqt sarflab, IELTS 7.0+ olishingiz ham mumkin.",
       "Mashinangizni o'lchashning oddiy usuli bor. Dars qilayotgan paytingizda telefonda sekundomer qo'ying va qancha vaqt dars qilayotganingizni yozib boring. Chalg'isangiz, sekundomerni to'xtating, dars qilishni yana boshlaganingizda yana yoqing. **Shunda kuniga haqiqatda qancha dars qilayotganingizni ko'rasiz.**",
       "## Nega ba'zilar tezroq yetib boradi?",
