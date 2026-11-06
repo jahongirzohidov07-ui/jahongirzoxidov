@@ -116,7 +116,7 @@ module.exports = [
       "Maqsadni bir marta, boshida qo'ying: qayerga borayotganingizni aniq biling. Keyin bu savolni o'ylashga ketadigan vaqtni so'z yodlashga, grammatika o'rganishga, reading va listening qilishga sarflang. Shunchaki ingliz tilini o'rganishdan mazza qiling, natija o'zi kelaveradi.",
       "Futbolni eslang. Tabloga qarab «qachon hisob 1:0 bo'lar ekan» deb turaversangiz, hech qachon gol bo'lmaydi. Lekin mazza qilib o'ynasangiz, gol ham urasiz, g'alaba ham qilasiz.",
       "Men ham boshida bir marta «6.0 olaman» deb maqsad qo'yganman. Keyin esa necha ball olishni o'ylamaganman. Shunchaki ingliz tilini o'rganishdan mazza qilganman, ayniqsa lug'at yodlashdan. Readinglarni esa mavzulari qiziq bo'lgani uchun qilaverardim. Majburlikdan emas, mazza qilganimdan o'qiganman. Natijada maqsadimdan ham yuqori, 6.5 oldim. **Agar faqat «sertifikat olaman» deb o'ylayversangiz, hech qachon mazza qilmaysiz, hammasini majburlikdan qilaverasiz.**",
-      "> **Tabloga emas, o'yinga qarang.**"
+      "> **Ingliz tilini qancha vaqtda o'rganaman deb o'ylayvermasdan, o'rganishni boshlang.** O'rganishdan mazza qiling. Natijani o'ylamang, natija o'zi keladi."
     ].join(PARA)
   }
 ];
