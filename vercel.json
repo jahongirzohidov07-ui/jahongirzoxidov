@@ -40,6 +40,9 @@
     },
     "api/sitemap.js": {
       "includeFiles": "essays.js"
+    },
+    "api/indexnow.js": {
+      "includeFiles": "essays.js"
     }
   },
   "crons": [

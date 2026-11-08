@@ -22,8 +22,8 @@ function iso(d) {
   return m ? m[3] + '-' + m[2] + '-' + m[1] : '';
 }
 
-module.exports = (req, res) => {
-  const urls = [
+function urls() {
+  const list = [
     { loc: SITE + '/', pri: '1.0' },
     { loc: SITE + '/kitoblar', pri: '0.7' },
     { loc: SITE + '/yozgan-kitoblarim', pri: '0.6' },
@@ -32,7 +32,12 @@ module.exports = (req, res) => {
     { loc: SITE + '/men-haqimda', pri: '0.6' },
     { loc: SITE + '/murojaat', pri: '0.4' }
   ];
-  essays().forEach(e => urls.push({ loc: SITE + '/insho/' + encodeURIComponent(String(e.folio)), pri: '0.8', mod: iso(e.date) }));
+  essays().forEach(e => list.push({ loc: SITE + '/insho/' + encodeURIComponent(String(e.folio)), pri: '0.8', mod: iso(e.date) }));
+  return list;
+}
+
+module.exports = (req, res) => {
+  const urls = module.exports.urls();
   const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map(u => '  <url><loc>' + u.loc + '</loc>' + (u.mod ? '<lastmod>' + u.mod + '</lastmod>' : '') + '<priority>' + u.pri + '</priority></url>').join('\n') +
     '\n</urlset>\n';
@@ -41,3 +46,5 @@ module.exports = (req, res) => {
   res.setHeader('Cache-Control', 'public, s-maxage=3600');
   res.end(xml);
 };
+
+module.exports.urls = urls;
