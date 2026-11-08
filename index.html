@@ -1699,7 +1699,7 @@
 
       <p>Ingliz tilidagi yo'lim sekin-asta kechdi: IELTS 6.5 (2016), 7.5 (2021), 8.0 (2024). Oxirgi natijada Listening va Reading — 9.0 ball. 2022-yilda Davlat Test Markazining C1 sertifikatini ham oldim. Sakkiz yilda bir yarim ball o'sish tez emas. Lekin shogirdimga "o'zim chiqmagan cho'qqiga sizni chiqaraman" demaslik uchun bu yo'lni o'zim bosib o'tishim kerak edi.</p>
 
-      <p>2010-yildan hozirgacha 200 ga yaqin kitob o'qidim. O'qishni kayfiyatga tashlab qo'ymaslikka harakat qilaman, lekin ba'zida bo'lmaydi. Reja va doimiylik bo'lmasa, kitob javonda qolib ketadi.</p>
+      <p>2010-yildan hozirgacha <span class="about-kitob-soni">133</span> ta kitob o'qidim. Ro'yxati, har biriga qo'ygan bahom va taqrizlarim <a href="/kitoblar">«O'qigan kitoblarim»</a> bo'limida. O'qishni kayfiyatga tashlab qo'ymaslikka harakat qilaman, lekin ba'zida bo'lmaydi. Reja va doimiylik bo'lmasa, kitob javonda qolib ketadi.</p>
 
       <p>Kurslarda o'quvchi bo'lib o'tirishdan ham tortinmayman. Shu kungacha tugatgan kurslarim:</p>
 
@@ -1781,7 +1781,7 @@
 
 <script src="/essays.js"></script>
 <script src="/kitoblar.js?v=3"></script>
-<script src="/yozuv.js?v=8"></script>
+<script src="/yozuv.js?v=9"></script>
 <script>
 (function () {
   let essays = [];
@@ -2440,6 +2440,9 @@
   const kitobJami = KITOB.reduce((n, y) => n + y.kitoblar.length, 0);
   document.getElementById('booksCardMeta').textContent = '2010-yildan beri ' + kitobJami + ' ta kitob';
   document.getElementById('booksTotal').textContent = kitobJami;
+  /* "Men haqimda"dagi son ham ro'yxatdan olinadi, kitob qo'shilganda o'zi yangilanadi */
+  function aboutKitobSoni() { document.querySelectorAll('.about-kitob-soni').forEach(el => { el.textContent = kitobJami; }); }
+  aboutKitobSoni();
   const TG = 'https://t.me/JahongirZoxidov/';
   function tgLink(p, matn) {
     const a = document.createElement('a');
@@ -2644,6 +2647,7 @@
     if (en) {
       if (aboutUz === null) aboutUz = aboutBody.innerHTML;
       aboutBody.innerHTML = window.ABOUT_EN;
+      aboutKitobSoni();
     } else if (aboutUz !== null && aboutBody.innerHTML !== aboutUz) {
       aboutBody.innerHTML = aboutUz;
     }
