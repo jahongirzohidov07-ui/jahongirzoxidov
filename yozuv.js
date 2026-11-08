@@ -133,7 +133,11 @@
     "Men haqimda — Jahongir Zoxidov": "About me — Jahongir Zoxidov",
     "O'qigan kitoblarim": "Books I've read",
     "O'qigan kitoblarim — Jahongir Zoxidov": "Books I've read — Jahongir Zoxidov",
-    "2010-yildan beri o'qigan kitoblarim, yillar bo'yicha. Har bir kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada.": "The books I have read since 2010, by year. The number next to each book is my own rating, out of 10."
+    "Ro'yxat yillar bo'yicha. Kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada. Ko'p kitoblar tagida o'qib bo'lgach Telegram kanalimda yozgan taqrizim bor.": "The list is arranged by year. The number next to each book is my own rating, out of 10. Under many of them you'll find the review I wrote on my Telegram channel after finishing the book (in Uzbek).",
+    "ta kitob o'qiganman": "books read",
+    "2010-yildan beri": "since 2010",
+    "Taqriz": "Review",
+    "Telegramda o'qish ↗": "Read on Telegram ↗"
   };
   const EN_RE = [
     [/(\d+) daqiqa o'qish/, '$1 min read'],

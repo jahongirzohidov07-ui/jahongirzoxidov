@@ -288,6 +288,85 @@
     font-size: 14px !important;
     color: var(--ink-soft);
   }
+  .kitob-jami {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 18px;
+    padding: 18px 22px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+  }
+  .kitob-jami-son {
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
+    font-size: 54px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--indigo);
+  }
+  .kitob-jami-matn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .kitob-jami-matn small {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--clay-gold);
+    letter-spacing: 0.02em;
+  }
+  .kitob-qisqa {
+    display: block;
+    margin-top: 5px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .kitob-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 2px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--indigo);
+    border: 1px solid rgba(59, 74, 107, 0.35);
+    border-radius: 999px;
+    background: transparent;
+  }
+  .kitob-btn:hover { background: rgba(59, 74, 107, 0.08); }
+  .kitob-sharh {
+    display: none;
+    margin: 10px 0 4px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-left: 3px solid var(--clay-gold);
+    border-radius: 0 8px 8px 0;
+  }
+  .kitob-sharh.ochiq { display: block; }
+  .reader-body .kitob-sharh p {
+    margin: 0 0 10px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    white-space: pre-line;
+  }
+  .kitob-sharh a.kitob-tg, .kitob-qisqa a.kitob-tg {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--clay-gold);
+    border-bottom: 1px solid rgba(156, 122, 60, 0.4);
+  }
+  .kitob-sharh a.kitob-url { color: var(--indigo); border-bottom: 1px solid rgba(59, 74, 107, 0.35); word-break: break-all; }
+
   .kitob-yil h2 .kitob-soni {
     font-family: 'Inter', sans-serif;
     font-size: 12.5px;
@@ -1100,7 +1179,11 @@
       <h1 class="reader-title">O'qigan kitoblarim</h1>
     </div>
     <div class="reader-body">
-      <p class="kitob-lead">2010-yildan beri o'qigan kitoblarim, yillar bo'yicha. Har bir kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada.</p>
+      <div class="kitob-jami">
+        <span class="kitob-jami-son" id="booksTotal" data-notr></span>
+        <span class="kitob-jami-matn"><span>ta kitob o'qiganman</span><small>2010-yildan beri</small></span>
+      </div>
+      <p class="kitob-lead">Ro'yxat yillar bo'yicha. Kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada. Ko'p kitoblar tagida o'qib bo'lgach Telegram kanalimda yozgan taqrizim bor.</p>
       <div id="booksBody"></div>
     </div>
   </div>
@@ -1228,8 +1311,8 @@
 <div class="toast" id="toast"></div>
 
 <script src="essays.js"></script>
-<script src="kitoblar.js?v=1"></script>
-<script src="yozuv.js?v=5"></script>
+<script src="kitoblar.js?v=2"></script>
+<script src="yozuv.js?v=6"></script>
 <script>
 (function () {
   let essays = [];
@@ -1841,6 +1924,33 @@
   const KITOB = window.KITOBLAR || [];
   const kitobJami = KITOB.reduce((n, y) => n + y.kitoblar.length, 0);
   document.getElementById('booksCardMeta').textContent = '2010-yildan beri ' + kitobJami + ' ta kitob';
+  document.getElementById('booksTotal').textContent = kitobJami;
+  const TG = 'https://t.me/JahongirZoxidov/';
+  function tgLink(p, matn) {
+    const a = document.createElement('a');
+    a.className = 'kitob-tg';
+    a.href = TG + p;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = matn;
+    return a;
+  }
+  /* Taqriz matni: xatboshilar va havolalar (http...) bosiladigan bo'ladi */
+  function sharhP(text) {
+    const frag = document.createDocumentFragment();
+    text.split(/\n{2,}/).forEach(par => {
+      const p = document.createElement('p');
+      par.split(/(https?:\/\/\S+)/).forEach((bo, j) => {
+        if (j % 2) {
+          const a = document.createElement('a');
+          a.className = 'kitob-url'; a.href = bo; a.target = '_blank'; a.rel = 'noopener noreferrer';
+          a.textContent = bo; p.appendChild(a);
+        } else if (bo) p.appendChild(document.createTextNode(bo));
+      });
+      frag.appendChild(p);
+    });
+    return frag;
+  }
   let booksDone = false;
   function renderBooks() {
     if (booksDone) return;
@@ -1877,6 +1987,32 @@
           main.appendChild(m);
         }
         if (k.en) main.setAttribute('data-notr', '');
+        if (k.r && k.q) {
+          const q = document.createElement('span');
+          q.className = 'kitob-qisqa';
+          q.appendChild(document.createTextNode(k.r + ' '));
+          q.appendChild(tgLink(k.p, 'Telegram ↗'));
+          main.appendChild(q);
+        } else if (k.r) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'kitob-btn';
+          btn.textContent = 'Taqriz';
+          btn.setAttribute('aria-expanded', 'false');
+          const box = document.createElement('div');
+          box.className = 'kitob-sharh';
+          if (k.re) box.setAttribute('data-notr', '');
+          box.appendChild(sharhP(k.r));
+          box.appendChild(tgLink(k.p, "Telegramda o'qish ↗"));
+          btn.addEventListener('click', () => {
+            const ochiq = box.classList.toggle('ochiq');
+            btn.setAttribute('aria-expanded', ochiq ? 'true' : 'false');
+          });
+          const wrap = document.createElement('div');
+          wrap.appendChild(btn);
+          wrap.appendChild(box);
+          main.appendChild(wrap);
+        }
         const b = document.createElement('span');
         b.className = 'kitob-baho' + (k.b >= 10 ? ' b10' : k.b >= 8 ? ' b8' : '');
         b.textContent = k.b;
