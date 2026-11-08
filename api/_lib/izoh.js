@@ -109,7 +109,7 @@ async function notify(c, title) {
   const tg = require('../_bot/tg');
   const head = '💬 <b>Yangi izoh</b> — №' + esc(c.f) + (title ? ' «' + esc(String(title).slice(0, 90)) + '»' : '');
   const body = '<b>' + esc(c.name) + ':</b>\n' + esc(String(c.text).slice(0, 1200));
-  const foot = '<i>Javob yozish uchun shu xabarga reply qiling.</i>\n' + SITE + '/#insho-' + esc(c.f);
+  const foot = '<i>Javob yozish uchun shu xabarga reply qiling.</i>\n' + SITE + '/insho/' + esc(c.f);
   const m = await tg.send(owner, head + '\n\n' + body + '\n\n' + foot, {
     parse_mode: 'HTML',
     reply_markup: { inline_keyboard: [[

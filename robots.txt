@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin
+Disallow: /slayd
+Disallow: /skript
+Disallow: /api/
+
+Sitemap: https://www.jahongirzoxidov.uz/sitemap.xml

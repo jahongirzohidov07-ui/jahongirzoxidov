@@ -34,6 +34,12 @@
     },
     "api/mgr-evening.js": {
       "maxDuration": 60
+    },
+    "api/sahifa.js": {
+      "includeFiles": "{index.html,essays.js,kitoblar.js,assets/og/*.png}"
+    },
+    "api/sitemap.js": {
+      "includeFiles": "essays.js"
     }
   },
   "crons": [
@@ -44,6 +50,20 @@
     {
       "path": "/api/mgr-evening",
       "schedule": "0 16 * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/insho/:folio",
+      "destination": "/api/sahifa?insho=:folio"
+    },
+    {
+      "source": "/:s(kitoblar|yozgan-kitoblarim|dasturlar|murojaat|men-haqimda)",
+      "destination": "/api/sahifa?s=:s"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
     }
   ]
 }

@@ -133,7 +133,68 @@
     "Men haqimda — Jahongir Zoxidov": "About me — Jahongir Zoxidov",
     "O'qigan kitoblarim": "Books I've read",
     "O'qigan kitoblarim — Jahongir Zoxidov": "Books I've read — Jahongir Zoxidov",
-    "Ro'yxat yillar bo'yicha. Kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada. Ko'p kitoblar tagida o'qib bo'lgach Telegram kanalimda yozgan taqrizim bor.": "The list is arranged by year. The number next to each book is my own rating, out of 10. Under many of them you'll find the review I wrote on my Telegram channel after finishing the book (in Uzbek).",
+    "Ro'yxat yillar bo'yicha. Kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada. Ko'p kitoblar tagida o'qib bo'lgach Telegram kanalimda yozgan taqrizim bor. \"O'qishi shart\" deb belgilaganlarim har kim o'qishi kerak deb hisoblagan kitoblarim.": "The list is arranged by year. The number next to each book is my own rating, out of 10. Under many of them you'll find the review I wrote on my Telegram channel after finishing the book (in Uzbek). Books marked \"Must-read\" are the ones I believe everyone should read.",
+    "Hammasi": "All",
+    "O'qishi shart": "Must-read",
+    "Yozgan kitoblarim": "Books I've written",
+    "Yozgan kitoblarim — Jahongir Zoxidov": "Books I've written — Jahongir Zoxidov",
+    "Dasturlar": "Programs",
+    "Dasturlar — Jahongir Zoxidov": "Programs — Jahongir Zoxidov",
+    "Murojaat": "Contact",
+    "Murojaat — Jahongir Zoxidov": "Contact — Jahongir Zoxidov",
+    "Bo'limlar": "Sections",
+    "Saralash": "Filter",
+    "Obuna": "Subscribe",
+    "Yangi insholar birinchi bo'lib Telegram kanalimda chiqadi.": "New essays appear first on my Telegram channel.",
+    "Obuna bo'ling, keyingi inshoni o'tkazib yubormaysiz.": "Subscribe and you won't miss the next one.",
+    "Kanalga obuna bo'lish": "Subscribe to the channel",
+    "Ingliz tilini o'rganish va IELTS'ga tayyorlanish bo'yicha yozgan kitoblarim. Hozircha ular Jony Academy o'quvchilari uchun chiqarilgan.": "Books I have written on learning English and preparing for IELTS. For now they are published for Jony Academy students.",
+    "Ingliz tili": "English",
+    "Grammatika": "Grammar",
+    "IELTS 1.0–7.0 intensiv seriyasi": "IELTS 1.0–7.0 intensive series",
+    "Kitob olish yoki o'quv markazingiz uchun buyurtma berish bo'yicha murojaat qoldiring.": "To get a book, or to order copies for your learning centre, leave a request.",
+    "Murojaat qoldirish": "Leave a request",
+    "O'zim o'rgangan va hayotda sinab ko'rgan bilimlarimni ikki dastur orqali ulashaman.": "I share what I have learned and tested in my own life through two programs.",
+    "Yigitlar uchun": "For young men",
+    "Shogirdlik dasturi": "Apprenticeship program",
+    "10 darslik dastur. Har bir darsda hayotda kerak bo'ladigan bitta muhim ko'nikma yoki odat ustida ishlaymiz.": "A 10-lesson program. Each lesson works on one important skill or habit you need in life.",
+    "O'z ta'limimga 20 000$ ga yaqin mablag' sarflaganman: universitet, biznes va mentorlik kurslari, o'quv markazni tizimlashtirish va pedagogik mahorat kurslari. Ulardan olgan eng kerakli bilimlarimni saralab, shu dasturga jamladim.": "I have spent close to $20,000 on my own education: university, business and mentorship courses, and courses on systematizing a learning centre and on teaching skills. I picked the most useful lessons from all of them and gathered them into this program.",
+    "Faqat yigitlar qabul qilinadi, suhbat asosida.": "Only young men are accepted, based on an interview.",
+    "Darslar Zafarda, Jony Academy filialida bo'ladi.": "Lessons take place in Zafar, at the Jony Academy branch.",
+    "Hozir hech qayerda ishlamayotgan, o'z yo'lini qidirayotganlar ham qatnashishi mumkin.": "People who are not working anywhere yet and are still looking for their path are welcome too.",
+    "O'zini ko'rsatgan shogirdlar uchun Jony jamoasiga qo'shilish imkoniyati bor.": "Apprentices who prove themselves have a chance to join the Jony team.",
+    "Hozircha 2 ta guruh bitirgan.": "Two cohorts have graduated so far.",
+    "Narx va keyingi guruh sanasi ariza qoldirganlarga aytiladi.": "The price and the next cohort's start date are shared with applicants.",
+    "Ariza qoldirish": "Apply",
+    "Ustozlar uchun": "For teachers",
+    "TTP: Ustozlik Psixologiyasi": "TTP: The Psychology of Mentorship",
+    "O'qituvchilikdan ustozlikka o'tish uchun maxsus kurs. Qisqa treninglarda ustozlarga bilganlarimni to'liq o'rgata olmasdim, ko'pchilik buni kurs qilib o'tishni so'radi. O'z mahoratimni kuchli ustozda oshirib kelganimdan keyin, o'rgangan barcha ustozlik mahoratlarini bitta kursga jamladim.": "A course for moving from being a teacher to being a mentor. In short trainings I could never pass on everything I know, and many teachers asked me to turn it into a course. After sharpening my own skills with a strong mentor, I gathered every mentoring skill I had learned into one course.",
+    "Kursni o'zim olib boraman.": "I teach the course myself.",
+    "Shu yo'nalishdagi yozganlarim \"Ustozlik ilmi\" Telegram kanalida chiqadi.": "My writing on this topic appears on the \"Ustozlik ilmi\" Telegram channel.",
+    "Kurs haqida batafsil ↗": "More about the course ↗",
+    "\"Ustozlik ilmi\" kanali ↗": "\"Ustozlik ilmi\" channel ↗",
+    "\"Ustozlik ilmi\" kanali": "\"Ustozlik ilmi\" channel",
+    "Dasturlarga ariza, kitob buyurtmasi, hamkorlik yoki ma'ruzaga taklif uchun shu yerdan yozing. Murojaatingiz to'g'ridan-to'g'ri menga yetib keladi.": "Write here to apply for a program, order books, propose a partnership or invite me to speak. Your message comes straight to me.",
+    "Murojaat turi": "Type of request",
+    "Kitob buyurtmasi": "Book order",
+    "Hamkorlik yoki ma'ruzaga taklif": "Partnership or speaking invitation",
+    "Boshqa": "Other",
+    "Shogirdlik dasturiga faqat yigitlar qabul qilinadi.": "Only young men are accepted into the apprenticeship program.",
+    "Telefon yoki Telegram": "Phone or Telegram",
+    "Yoshingiz": "Your age",
+    "Shahar yoki tuman": "City or district",
+    "Xabar": "Message",
+    "O'zingiz haqingizda qisqacha va nima uchun murojaat qilayotganingizni yozing": "Tell me briefly about yourself and why you are writing",
+    "Ma'lumotlaringiz faqat menga yetib boradi va boshqa maqsadda ishlatilmaydi.": "Your details reach only me and are not used for anything else.",
+    "Yuborilmoqda...": "Sending...",
+    "Rahmat! Murojaatingiz menga yetib keldi. Tez orada siz bilan bog'lanaman.": "Thank you! Your message has reached me. I'll get back to you soon.",
+    "Telefon raqamingiz yoki Telegram manzilingizni yozing.": "Please enter your phone number or Telegram username.",
+    "Internet bilan bog'lanib bo'lmadi. Birozdan keyin qayta urinib ko'ring.": "No internet connection. Please try again in a moment.",
+    "Insholar": "Essays",
+    "Sayt": "Site",
+    "Kanallar": "Channels",
+    "Telegram kanalim": "My Telegram channel",
+    "Pedagog, tadbirkor, mentor va muallif": "Educator, entrepreneur, mentor and author",
     "ta kitob o'qiganman": "books read",
     "2010-yildan beri": "since 2010",
     "Taqriz": "Review",
@@ -178,7 +239,7 @@
 
   /* ---------- Sahifaga qo'llash ---------- */
   const ORIG = new WeakMap(), SHOWN = new WeakMap();
-  const SKIP = /^(SCRIPT|STYLE|TEXTAREA|INPUT|SELECT|CODE|PRE|NOSCRIPT)$/;
+  const SKIP = /^(SCRIPT|STYLE|TEXTAREA|INPUT|CODE|PRE|NOSCRIPT)$/;
   const ATTRS = ['placeholder', 'title', 'aria-label', 'alt'];
 
   function skipped(el) {
@@ -261,7 +322,7 @@
     if (!enPromise) {
       enPromise = new Promise((resolve, reject) => {
         const s = document.createElement('script');
-        s.src = 'essays-en.js?v=4';
+        s.src = '/essays-en.js?v=4';
         s.onload = () => resolve();
         s.onerror = () => { enPromise = null; reject(new Error('essays-en.js')); };
         document.head.appendChild(s);

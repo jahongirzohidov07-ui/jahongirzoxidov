@@ -114,6 +114,18 @@
     td.date { display: none; } th.date { display: none; }
     .tile .v { font-size: 32px; }
   }
+  /* Murojaatlar (saytdagi /murojaat shaklidan) */
+  .mur-filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: -4px 0 14px; }
+  .mur-filtr .btn[aria-pressed="true"] { background: var(--indigo); color: var(--parchment); border-color: var(--indigo); }
+  .mur-list { display: grid; gap: 12px; }
+  .mur { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 16px 18px; }
+  .mur-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; font-family: 'Inter', sans-serif; font-size: 13px; }
+  .mur-h b { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; }
+  .mur-tur { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--clay-gold); border: 1px solid rgba(156, 122, 60, 0.4); border-radius: 999px; padding: 2px 8px; }
+  .mur-vaqt { color: var(--ink-soft); margin-left: auto; }
+  .mur-meta { margin-top: 6px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-soft); }
+  .mur-meta a { color: var(--indigo); border-bottom: 1px solid rgba(59, 74, 107, 0.35); }
+  .mur-x { margin: 10px 0 0; font-size: 15px; line-height: 1.6; white-space: pre-line; }
 </style>
 </head>
 <body>
@@ -153,6 +165,12 @@
         <div class="lbl"><span id="chartFrom"></span><span>kunlik o'qilganlar, oxirgi 30 kun</span><span id="chartTo"></span></div>
       </div>
       <div class="err" id="statsErr" style="display:none;margin-top:14px"></div>
+    </section>
+
+    <section>
+      <h2>Murojaatlar <small id="murCount"></small></h2>
+      <div class="mur-filtr" id="murFiltr"></div>
+      <div id="murList"><div class="empty">Yuklanmoqda…</div></div>
     </section>
 
     <section>
@@ -260,7 +278,7 @@
     document.getElementById('essayBody').innerHTML = rows.map(r => `
       <tr>
         <td class="folio">${r.raqam}</td>
-        <td class="title"><a href="/#insho-${encodeURIComponent(r.folio)}" target="_blank" rel="noopener">${esc(r.title)}</a></td>
+        <td class="title"><a href="/insho/${encodeURIComponent(r.folio)}" target="_blank" rel="noopener">${esc(r.title)}</a></td>
         <td class="date">${esc(r.date)}</td>
         <td class="views r">${r.views}</td>
         <td class="bar"><div class="barline"><i style="width:${(r.views / max * 100).toFixed(1)}%"></i></div></td>
@@ -296,6 +314,45 @@
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 
+  /* ---------- murojaatlar ---------- */
+  let mur = { items: [], turlar: {} }, murTuri = '';
+  function aloqaLink(a) {
+    const t = String(a || '').trim();
+    const u = t.match(/^@?([A-Za-z][A-Za-z0-9_]{4,31})$/) || t.match(/t\.me\/([A-Za-z0-9_]{5,32})/i);
+    if (u) return '<a href="https://t.me/' + esc(u[1]) + '" target="_blank" rel="noopener">' + esc(t) + '</a>';
+    const d = t.replace(/[^\d+]/g, '');
+    if (d.replace(/\D/g, '').length >= 7) return '<a href="tel:' + esc(d) + '">' + esc(t) + '</a>';
+    return esc(t);
+  }
+  function vaqt(iso) {
+    const d = new Date(new Date(iso).getTime() + 5 * 3600 * 1000);
+    if (isNaN(d)) return '';
+    const p = n => String(n).padStart(2, '0');
+    return p(d.getUTCDate()) + '.' + p(d.getUTCMonth() + 1) + '.' + d.getUTCFullYear() + ' ' + p(d.getUTCHours()) + ':' + p(d.getUTCMinutes());
+  }
+  function renderMur() {
+    const box = document.getElementById('murList');
+    const all = mur.items || [];
+    document.getElementById('murCount').textContent = all.length + ' ta';
+    const f = document.getElementById('murFiltr');
+    const turlar = Object.keys(mur.turlar || {}).filter(k => all.some(m => m.turi === k));
+    f.innerHTML = turlar.length > 1 ? ['', ...turlar].map(k => '<button class="btn" type="button" data-t="' + k + '" aria-pressed="' + (k === murTuri) + '">' + (k ? esc(mur.turlar[k]) + ' · ' + all.filter(m => m.turi === k).length : 'Hammasi · ' + all.length) + '</button>').join('') : '';
+    f.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { murTuri = b.dataset.t; renderMur(); }));
+    const rows = all.filter(m => !murTuri || m.turi === murTuri);
+    if (!rows.length) { box.innerHTML = '<div class="empty">Hozircha murojaat yo\'q. Saytdagi /murojaat shaklidan kelganlari shu yerda chiqadi.</div>'; return; }
+    box.innerHTML = '<div class="mur-list">' + rows.map(m => `
+      <div class="mur">
+        <div class="mur-h"><b>${esc(m.ism)}</b><span class="mur-tur">${esc((mur.turlar || {})[m.turi] || m.turi)}</span><span class="mur-vaqt">${vaqt(m.at)}</span></div>
+        <div class="mur-meta">${aloqaLink(m.aloqa)}${m.yosh ? ' · ' + esc(m.yosh) + ' yosh' : ''}${m.shahar ? ' · ' + esc(m.shahar) : ''}</div>
+        ${m.xabar ? '<p class="mur-x">' + esc(m.xabar) + '</p>' : ''}
+      </div>`).join('') + '</div>';
+  }
+  function loadMur() {
+    api('/api/murojaat')
+      .then(d => { mur = d || { items: [] }; renderMur(); })
+      .catch(e => { document.getElementById('murList').innerHTML = '<div class="empty">Murojaatlar olinmadi: ' + esc(e.message) + '</div>'; });
+  }
+
   /* ---------- boshlash ---------- */
   async function boot() {
     if (!getPin()) { showGate(''); return; }
@@ -310,6 +367,7 @@
       renderStats();
       renderEssays();
       renderPrograms(p);
+      loadMur();
     } catch (e) {
       if (e.auth) { setPin(''); showGate(e.message === 'PIN' ? 'PIN noto\'g\'ri' : e.message); return; }
       statsErr.textContent = e.message; statsErr.style.display = 'block';

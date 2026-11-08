@@ -133,6 +133,7 @@ window.KITOBLAR = [
     "n": "Qo'rqma",
     "m": "Javlon Jovliyev",
     "b": 10,
+    "t": 1,
     "r": "Bu yil uchun 18-kitob. Qo'rqma. Javlon Jovliyev\n\nHamma O'zbeklar uchun majburiy kitob ekan. Buni o'qimasangiz bo'lmaydigan kitob ekan.\n\nBuni mutolada audio shaklda tingladim. Ovoz beruvchilar juda ajoyib ovoz beribdi. Mazza qildim.\n\nKitobning yozilish uslubini shu paytgacha ko'rmagan edim.\n\nAyniqsa ustozlar, o'quvchilar, universitetda o'qiyotganlar hozir qolgan hamma ishlarni yig'ishtirib o'qishni boshlang.\n\nKITOB - ANCHADAN BERI MEN QIDIRIB YURGAN, MENING QALBIMDAGI DARDNI QANDAY QILIB YOSHLARGA KO'CHIRISHNI MUMKINLIGINI KO'RSATGAN KITOB EKAN.\n\nSHU KITOB MAKTABIMIZ O'QUVCHILARI UCHUN BOSH KITOB BO'LADI. BITIRUVCHILARIMIZ UCHUN ESA QALBIDAGI ENG ASOSIY KITOBI BO'LADI.",
     "p": 1744
    },
@@ -197,6 +198,7 @@ window.KITOBLAR = [
     "n": "Yulduzli tunlar",
     "m": "Pirimqul Qodirov",
     "b": 10,
+    "t": 1,
     "r": "27-kitob. Yulduzli Tunlar. Pirimqul Qodirov\n\nAsarni hozirgina tugattim. 560 betlik kitobni 3 kunda o'qib tugatganim uning ichiga bir o'qishdayoq kirib ketganimdan\n\nAgar kitobni shunday ajoyibligini bilganimda har qanaqa o'qiyotgan kitobimni to'xtatib shuni o'qigan bo'lar edim.\n\nAsarda Boburning yoshligidan boshlab to o'limigacha bo'lgan davrlarni to'liq qamrab olgan.\n\nBobur haqida biz hech narsa bilmas ekanmiz. Faqat quruq faktlar, lekin inson sifatida kim qanaqa, nima ishlar qilgan, qanday hislarni boshdan kechirgan, hayoti shoxlardek oson bo'lganmi?\n\nBoburni hayoti bilan birga yashadim go'yo, uning yonida yurdim, u his qilgan narsalar his qildim. Uni yozgan yozuvchi mahorati qoyil qoldim.\n\nBoburning hayotini o'zimga o'xshattim, uni hayotidagi duch kelgan qiyinchiliklar, majburlikdan qilingan o'ziga yoqmagan qarorlar, ishonganlarining hiyonati, hamma unga ta'sir o'tkazmoqchi bo'lishi, o'z fikrini o'tkazmoqchi bo'lishi, birinchi ayolining noshukurligi, faqat o'z manfaatlarini o'ylaydigan ayonlari, beklari\n\nBARCHA O'ZBEKMAN DEGAN INSON O'QISHI SHART BO'LGAN KITOB EKAN",
     "p": 1865
    },
@@ -217,6 +219,7 @@ window.KITOBLAR = [
     "m": "James Clear",
     "b": 10,
     "en": 1,
+    "t": 1,
     "r": "30-kitob. Bu yil uchun. Atomic Habits\n\nOxirgi marta kitob tugatganim iyunda ekan. Shundan beri kitob o'qish odatim, ancha sustlashdi. Bahonalarim esa tayyor, maktab ochishdagi muammolar, shaxsiy hayot va boshqa boshqa.\n\nLekin bu shunchaki o'zimni ovutish edi, 1 betdan kuniga o'qiy olardim. Va shu oydan o'zim uchun 1 betdan bo'lsa ham boshladim\n\nBu kitobni 3-marta o'qishim va har safar ko'proq foyda olaveraman.\n\nBiror kitob 2-marta o'qishga arzimasa demak umuman o'qishga arzimaydi deb aytishadiku. Menimcha Atomic habits kitobni yana kamida 2-3 marta o'qisam kerak.\n\nChunki bundagi foydali ma'lumotlar va amaliy yo'llar doim menga foydali bo'laveradi.",
     "p": 2131
    }
@@ -229,6 +232,7 @@ window.KITOBLAR = [
     "n": "Chunki sen Allohsan. 1-qism",
     "m": "Ali Jobir Fayfiy",
     "b": 10,
+    "t": 1,
     "r": "Bu yil hisobidan 1-kitobni eshitib tugatdim. Bir xodimimiz tavsiya qilgan edi. 2 kunda tugadi.\n\nAllohning ismlari chiroyli tarzda ta'riflanib, misollar bilan tushuntirilib, real voqealar asosida ta'riflab berilgan.\n\nTavsiya qilaman - hamma o'qishi shart bo'lgan kitob ekan. Audiosini shu kanaldan topsangiz bo'ladi.",
     "p": 885
    },
@@ -251,6 +255,7 @@ window.KITOBLAR = [
     "n": "Chunki sen Allohsan. 2-qism",
     "m": "Ali Jobir Fayfiy",
     "b": 10,
+    "t": 1,
     "r": "Bu yil uchun 4-kitob - Chunki Sen allohsan 2-juz\n\nBu kitobning birinchi qismi menga juda ham maqul bo'lganidan, ikkinchi qismi borligini bilishim bilanoq, ikkinchi qismini topib, eshitib chiqdim. Kitob judayam ajoyib tarzda kitobxon bilan gaplashishga o'xshab yozilgan. Tavsiya qilaman",
     "p": 901
    },
@@ -258,6 +263,7 @@ window.KITOBLAR = [
     "n": "Payg'ambarlar tarixi. 1-qism",
     "m": "Tantoviy",
     "b": 9,
+    "t": 1,
     "r": "Bu yil uchun 5-kitob - Payg'ambarlar tarixi 1-juz\n\nOdam alayhisalomdan boshlanib Lut alayhisalomgacha bo'lgan Payg'ambarlarni qamrab olgan bu kitob menda ancha katta dunyoqarashim o'sishiga hissa qo'shdi.\n\nNega oldin yoshligimda, ayni kitob o'qishga qiziqqan paytlarimda menga faqat o'zbek xalq ertaklari yoki boshqa ertak kitoblar kelgan ekan, shunday kitoblar o'sha paytda qo'limga tushganda o'zimni tezroq anglab olgan bo'lardim deb o'ylab qolaman. Balki, taqdirim shudir, shukrki, bunday kitoblarni o'qimasdan vafot etganlardan bo'lmadim. Alhamdulillah!",
     "p": 904
    },
@@ -265,6 +271,7 @@ window.KITOBLAR = [
     "n": "Payg'ambarlar tarixi. 2-qism",
     "m": "Tantoviy",
     "b": 9,
+    "t": 1,
     "r": "Bu yil uchun 6-kitob - Payg'ambarlar tarixi 2-juz\n\nYusuf alayhissalom va Muso alayhissalomning go'zal qissalari. Hikoyalardan juda ham ta'sirli ibrat olish mumkin ekan. Ulardan ming yillar davomida insonning tabiati o'zgarmaganligini ko'rishimiz mumkin. Hamma o'qishi shart bo'lgan kitob qaysi? Albatta, Payg'ambarlar tarixi kitobi!",
     "p": 908
    },
@@ -272,6 +279,7 @@ window.KITOBLAR = [
     "n": "Payg'ambarlar tarixi. 3-qism",
     "m": "Tantoviy",
     "b": 9,
+    "t": 1,
     "r": "Payg'ambarlar tarixi 3-juz\n\nBu yil uchun 7-kitob. Bu kitob o'qishdan boshqa ishingiz yo'qmi deydiganlar uchun. Albatta bor. Bu kitobni tugatish uchun 4-5 soat vaqt ketadi, har kungi telegram yoki instagram ishlatishingiz ham shunga teng.\n\nTelegramga bir kirganda 4-5 soat kirmaysiz, balkim 5-10 minut kirib-kirib yig'ilib shunday bo'ladi. Men ham bir kunlik vaqtimda shunday 5-10 minutlik vaqtlardan unumli foydalanib qolib kitobni tugatishga muvaffaq bo'ldim\n\nKitob Muso payg'ambarimizdan tortib Iso payg'ambargacha bo'lgan payg'ambarlar qissalari haqida yozilgan",
     "p": 909
    },
@@ -279,6 +287,7 @@ window.KITOBLAR = [
     "n": "Payg'ambarlar tarixi. 4-qism",
     "m": "Tantoviy",
     "b": 9,
+    "t": 1,
     "r": "Payg'ambarlar tarixi 4-juz\n\nBu yil uchun 8-kitob. Shunchalik qiziqib ketganimdan, qanday tugab qolayotganini bilmay qolyapman. Fikrimcha, \"Saodat asri qissalari\" dan oldin bu kitob o'qilsa, buning mantiqiy davomi bo'lar ekan. Bu kitoblarni o'qimagan kishi o'zini musulmonman, deyishga uyalishi kerak, menimcha. Yanayam kim bilsin...",
     "p": 911
    },
@@ -293,6 +302,7 @@ window.KITOBLAR = [
     "n": "Bugun bomdodni o'qidingizmi?",
     "m": "Sirjoniy",
     "b": 10,
+    "t": 1,
     "r": "Bugun bomdodni o'qidingizmi?\n\nFevral oyining 2-kitobi, yil uchun 10-kitob.\n\nBomdod namozining 10 ta fazilati haqida hayotiy hikoyalar, hadislardan isbotlar bilan ajoyib tarzda yoritib berilgan. Mazza qlib audio shaklda tingladim. 10/10",
     "p": 931
    },
@@ -314,6 +324,7 @@ window.KITOBLAR = [
     "n": "Saodat asri qissalari: Abu Bakr Siddiq",
     "m": "Ahmad Lutfi Qozonchi",
     "b": 10,
+    "t": 1,
     "r": "Bu yil uchun 13-kitob. Saodat asri qissalari 5-kitobi - Hazrati Abu Bakr Siddiq haqida ekan.\n\nAslida, men bu ulug' inson haqida juda ham oz bilar ekanman.\n\nUmmatning eng sodiq kishisi, imoniga hech qanday shubha aralashmagan buyuk inson. Payg‘ambarimiz (sollallohu alayhi va sallam) uni \"Siddiq\" deb ataganlar, ya’ni haqiqatni tasdiqlovchi va yolg‘ondan uzoq bo‘lgan zot.\n\nU g‘amxo‘r do‘st, fidoyi himoyachi va eng yaqin safdosh edi. Rasululloh (sollallohu alayhi va sallam) shunday deganlar:\n\n\"Agar men Allohdan o‘zga bir do‘st tanlaydigan bo‘lsam, bu Abu Bakr bo‘lardi.\" (Buxoriy, Muslim)\n\nShuningdek, Payg‘ambarimiz (sollallohu alayhi vasallam) dedilar:\n\n\"Dunyoda va oxiratda menga eng mehribon inson – Abu Bakr.\"\n\nU ham moli, ham jonini Islom uchun fido qilgan eng saxovatli va taqvodor insonlardan biri edi.Rasululloh (sollallohu alayhi va sallam) Hazrati Abu Bakr Siddiq (roziyallohu anhu) haqida jannatning barcha eshiklaridan chaqiriladigan zot ekanligini aytganlar.",
     "p": 971
    },
@@ -321,6 +332,7 @@ window.KITOBLAR = [
     "n": "Saodat asri qissalari: Umar ibn Xattob",
     "m": "Ahmad Lutfi Qozonchi",
     "b": 10,
+    "t": 1,
     "r": "Bu yil uchun 14-Kitob. Saodat Asri Qissalari - Umar Ibn Xattob\n\nBu buyuk shaxs menga ko'p tomonlama yoqdi. Balkim uning hayotidagi voqealar mening hayotimga o'xshashligidir . Qandaydur o'zim bilan bog'liqliklarni sezdim.\n\nMasalan, Jabala Ibn Ayqam voliy o'laroq oddiy bir mo'minga, nojoiz musht tushiradi. Keyin  Umar ham bu mo'min ham unga musht tushirib haqini olish  qaroridan norozi bo'lib, jazodan qochib Rum o'lkalariga ketib u yerda Nasroniylikni qabul qilib ketadi. Uning fikricha Umar adolat qilmagan edi.\n\nO'g'rilik bilan ushlangan bir xodimimiz ham bizning qilgan qarorimizdan norozi bo'lib, aybni o'zimizga yuklab jamoamizdan chiqqanda, u ham adolatli ish bo'lmadi deb o'ylagandur. Chunki biz adolatni bizning foydamizga ishlasagina adolat deb o'ylaymiz, bizga qarshi ishlasa adolatsizdek tuyuladi. Bu haqida yo'liq postda yozgan edim.\n\nXullas, Umar Ibr Xattobdek adolat peshvosi sifatida Rasululloh (s.a.v.) unga \"Al-Faruq\" laqabini berganlar va Alloh haqiqat bilan botil o‘rtasida ajratuvchini (Al-Faruq) Umar orqali yubordi deganlar .\n\nUning Halifalik hayotidagi voqealarda men uni haqiqattan his qildim. Juda o'g'ir qarorlar, ba'zilaridan o'zingiz ham hafa bo'lasiz, lekin qat'iyat bilan davlatni ushlamasa ertaga parokanda bo'lishi mumkinligi, ma'lum bir shaxsni emas xar doim xalqni, mo'minlarni manfaatini ko'zlashi uning ba'zi bir qarorlarga olib borganliklari mening ham ko'nglimdan o'tgan narsalarni eslatib yubordi.\n\nAlbatta, biz o'zimizcha adolat degan narsani qilamizu lekin haqiqiy adolat albatta Haq Taoloni oldida bo'lishini his qilgan holda, Umar bilan birga yashadim desa ham bo'ladi. Umardek bir inson, o'lmasidan oldin jannat mujdasi berilgan inson, ham ba'zida xatolar qilganliklari, biz ham inson o'laroq mukammal emasligimizni, balkim Umardek insondan ham anchagina ko'p xato qilishimizni eslab turishimiz kerak",
     "p": 979
    },
@@ -328,6 +340,7 @@ window.KITOBLAR = [
     "n": "Mo'minning me'roji",
     "m": "Shayx Muhammad Sodiq Muhammad Yusuf",
     "b": 10,
+    "t": 1,
     "r": "Bu yil uchun 15-kitob. Mo'minning Meroji\n\nNamoz haqida yozilgan to'liq va ixcham kitob ekan. Hamma savollarimga javob oldim. Endi amalimga to'liq o'tkiza olsam, mendan baxtli inson bo'lmasa kerak.\n\nHamma o'qishi shart kitoblar ro'yxatiga qo'shilishi aniq kitob ekan.",
     "p": 985
    },
@@ -350,6 +363,7 @@ window.KITOBLAR = [
     "n": "Saodat asri qissalari: Usmon",
     "m": "Ahmad Lutfi Qozonchi",
     "b": 10,
+    "t": 1,
     "r": "Bu yil uchun 18-kitob. Aprel uchun 3-kitob\n\nPayg'ambarimiz sollallohu alayhi va sallamdan keyingi 3-Halifa Xazrati Usmon rodiyallohu anhu haqida o'qib juda ham  xafa bo'ldim. Chunki Halifalikda turli xil nizolar, fitnalar chiqqan davrlar aynan shu davrga to'g'ri kelgan ekan. Qiziq jihati shuncha yillar o'tsa ham inson tabiati o'zgarmaganligini o'qib hayron bo'ldim.",
     "p": 1045
    },
@@ -380,6 +394,7 @@ window.KITOBLAR = [
     "m": "Robert Cialdini",
     "b": 10,
     "en": 1,
+    "t": 1,
     "r": "Influence\nBu yil hisobidan 22-kitob. Bu oy uchun birinchisi. Bu oyda birdan 3ta kitobni o'qiyotganligim uchun tugatish qiyinlashib ketdi.\n\nKitob eng top darajadagi kitob ekan. Inglizchasini IELTS reading 9.0 bor odam ham ancha qiynaldi tushunishga, o'zbekchasini bir martaga o'qib chiqmana degan niyat bor.\n\nKitob shu paytgacha o'qigan top 3ta kitoblarim ichiga kirdi. Hamma o'qishi shart bo'lgan kitob ekan. Har yil bir marta o'qish shart kitob.",
     "p": 1123
    },
@@ -394,6 +409,7 @@ window.KITOBLAR = [
     "n": "Saodat asri qissalari: Ali",
     "m": "Ahmad Lutfi Qozonchi",
     "b": 10,
+    "t": 1,
     "r": "Bu yil uchun 24-kitobni tugatdim.\n\nOxirigi oylar ko'p kitob o'qishga imkon topa olmayapman. Lekin bu kitobni 3 marta o'tirishda tugatdim desam ham bo'ladi. 500+ betlik kitobni o'qisangiz ichiga kirib ketib qolasiz.\n\nHazrati Usmon rodiyallohu anhu xalifalik paytida suiqasd qilingandan keyin Hazrati Ali rodiyallohu anhu xalifalikka tayinlanadi va qabul qilgandan keyin bu ishni samimiy, vijdonan bajaradi.\n\nLekin eng qiyin palla - musulmonlar bir-biri bilan urushadigan, ikki-uchga bo'linib ketadigan payt u zotning xalifaliklariga tog'ri keldi\n\nFitna-fasodga qarshi qo'ldan kelgancha kurashdilar, ammo oxirida shahid bo'ldilar. Mening bu davrdagi vaziyatlarga yig'lagim keldi. Nima qilishni bilmay qolgan holatlarim juda ham ko'p bo'ldi.\n\nHammaga o'qishni tavsiya qilaman.",
     "p": 1176
    },
@@ -415,6 +431,7 @@ window.KITOBLAR = [
     "n": "Mukoshafatul qulub",
     "m": "Imom G'azzoliy",
     "b": 10,
+    "t": 1,
     "r": "Bu yil uchun 28-kitobni o'qib tugatdim.\n\nBu kitobni Bekobod 1 filialidagi o'quvchilari\nsovg'a qilishgan edi.\n\nKitobni har bir gapini olib alohida kitob yozsa bo'ladigan kitobning 50 betini o'qiganimda qalbimda katta o'zgarishlar bo'lgan edi.\n\nOxirigacha o'qib shunaqangi ko'p narsalarni hali bilmasligimni, bilganlarimni tushunmasligimni, tushunganlarimni anglamasligimni sezib qoldim.\n\n10/10 hamma o'qishi shart bo'lgan kitoblar ro'yxatiga qo'shdim",
     "p": 1411
    },
@@ -488,6 +505,7 @@ window.KITOBLAR = [
     "n": "Do'st orttirish va odamlarga ta'sir qilish",
     "m": "Deyl Karnegi",
     "b": 8,
+    "t": 1,
     "r": "2024-yil hisobidan birinchi tugatgan kitobim: \"Do'st orttirish va odamlarga tasir qilish\" Deyl karnegining klassik asari, haqiqatdan hamma o'qishi kerak bo'lgan kitoblar ro'yxatiga kirgizish mumkin bo'lgan kitob ekan.",
     "p": 380
    },
@@ -495,6 +513,7 @@ window.KITOBLAR = [
     "n": "Saodat asri qissalari",
     "m": "Ahmad Lutfi Qozonchi",
     "b": 10,
+    "t": 1,
     "r": "SAODAT ASRI QISSALARI 1-qism\n\nAvgust 2-kitob, yil uchun 30-kitob, to'g'risi bu kitob haqida umuman tasavurim yo'q edi. Gapiraman desam butun tassurotlarimni yozishga so'z ham, menimg lug'at boyligim ham yetmaydi.\n\nO'zingiz o'qib ko'ring. Meni bir o'qishimda magnitday yopishtirib oldi bu kitob😊😊",
     "p": 729
    },
@@ -511,6 +530,7 @@ window.KITOBLAR = [
     "m": "Gary Keller",
     "b": 10,
     "en": 1,
+    "t": 1,
     "r": "Bu yil hisobidan 22-kitobni ham tugattim kerakli joylarini yozib oldim. Iyun oyi uchun 1-kitob bo'ldi bu. O'zgina ishlar ko'payib kitob o'qishga kamroq vaqt sarflashimga to'gri keldi.\n\nKitob samaradorlik haqida, noodatiy natijalarga erishishning ortida turgan eng oddiy haqiqatni juda chiroyli yoritib berilgan.\n\nMen buni hamma o'qishi kerak bo'lgan kitoblar ro'yxatiga qo'shdim. Chunki kim bo'lishidan qatiy nazar, menejermi, talabami, xodimmi, tadbirkormi hammasiga uchun samaradorlik juda muhim narsa.\n\nBa'zida kuni bilan juda band bo'lamiz, kun oxiriga kelganda esa qarsak deyarli hech narsa qilmagan bo'lamiz. Bu kitobda kunni qanday samarali o'tkazish haqida yozilgan. O'zbekchasi yo'q, inglizchada olib o'qisangiz foyda topasiz degan umiddaman",
     "p": 657
    },
@@ -539,6 +559,7 @@ window.KITOBLAR = [
     "n": "G'oliblik qonuniyatlari",
     "m": "Bodo Shefer",
     "b": 8,
+    "t": 1,
     "r": "G'oliblik Qonuniyatlari  oldin yo'lda bu kitobning audioshaklini yarmigacha eshitib ketgan edim, endi boshidan kitob shaklida o'qib chiqdim.  G'oliblarning 30ta qonunlarini yoritilib, yosh maktab o'quvchilar uchun, yoki kitobni qaysi kitobdan o'qishni dunyoqarash…",
     "p": 398
    },
@@ -546,6 +567,7 @@ window.KITOBLAR = [
     "n": "Pul alifbosi",
     "m": "Bodo Shefer",
     "b": 10,
+    "t": 1,
     "r": "Pulni boshqarish ilmi haqida boshlang'ich tushunchalarni bola tilida hikoya qilib bergan kitob.",
     "p": 869,
     "q": 1
@@ -554,6 +576,7 @@ window.KITOBLAR = [
     "n": "Alvido, Vatan",
     "m": "A'zam Xoshimiy",
     "b": 10,
+    "t": 1,
     "r": "Kecha umuman esdan chiqibdi, Fevral oyi hisobidan 2-kitobim tugadi. Yakshanba kuni, 4-5 soatlik taksidagi yo'lda bekor ketmay deb, Alvido Vatan nomli kitobni eshitib tugatdim. Aslida bu kitobni ozini o'qishni ham boshlagandim. Bu kitob O'rta Osiyoni chor Rossiyasi bosib olgan paytlar, Lenin endi taxtga o'tirgan paytlarda, qanday qilib O'rta Osiyodagi Ayniqsa O'zbekiston hududidagi din peshvolari, xalq qahramonlarini yo'q qilib, qiynab, haqiqiy islom dinini yo'q bolishi yo'lida qanday jirkanch ishlarni qilganliklarini yoritib beradi. Bu kitobni o'qib nega ko'pchilik xalqimiz dindan chiqb ketganliklarini tushundim chunki hozirgi xalqimizning bobolari yoki bobolarining otalari haqida manashu kitobda yoritilgan ekan. Albatta hozirda dinimizga berilgan erkinlik va ko'pchilikning dinni chuqur va mukammal o'rganishga intilayotganini ko'rib quvonmoqdaman",
     "p": 465
    },
@@ -568,6 +591,7 @@ window.KITOBLAR = [
     "n": "Ilm olish sirlari",
     "m": "Imom Zarnujiy",
     "b": 10,
+    "t": 1,
     "r": "Har kun yo'lda 30 daqiqa\n\nIshdan qaytishda piyoda qaytishni kunlar isishi bilan yana qaytardim. Albatta uyga qaytish tahminan 20-30daqiqani oladi agarda piyoda boriladigan bo'lsa.\n\nShu paytni ham behuda sarflamaslik uchun audiokitob eshitib ketmoqdaman. O'zi 5 soatdan sal oshiqroq kitob ekan. 10 kunda bitta kitobni eshitib tugatib qo'ysa bo'ladi ekan\n\nEshitayotgan kitob ilm olish sirlari haqida va bu kitobni o'qib nega hozirgi yoshlar o'qishga harakat qilsa ham ilm yuqmasligini tushunib bormoqdaman.\n\nIchidan bitta joyini keltiraman: Ilmni shunchalik hurmat qilish kerak ekanki, xatto siz bir ilmni 1000-marotaba eshitayotgan bo'lsangiz ham birinchi marotaba eshitayotgandek butun vujudingiz bilan eshitishingiz kerak, shunda ilm sizga yuqishi aniq.\n\nShu paytda tobora sabrsiz bo'lib borayotgan, ingliz tilidagi \"Present simple\" ni nominigina eshitib lekin to'gri gap tuza olmaydigan yoshlarga yana 2-marotaba shu mavzu haqida gapirsangiz, yuzi o'zgarib o'tganmizku, yana o'tamizmi, yangi mavzu o'tmaymizmi deb gapirishadi\n\nMen o'zim qiladigan juda ko'p xatolarni ham sezdim va bu kitobni qayta mutola qilib ko'p narsalarni yozib olishim kerakligi tushundim. O'qishni tavsiya qilaman. Tugatsam yana ulashaman\n\nBu xabarni o'sha sabrsiz ilm yuqmaydigan do'stingizga jo'natib qo'ying",
     "p": 502
    },
@@ -598,6 +622,7 @@ window.KITOBLAR = [
     "n": "Ulamolar nazdida vaqtning qadri",
     "m": "Abu G'udda",
     "b": 10,
+    "t": 1,
     "r": "Mart oyi uchun ikkinchi kitobni tugattim. Bu - Ulamolar nazdida vaqtning qadri\n\nBi kitiobni o'qib vaqtimizni behudaga sarflash bo'yicha expert bo'lib ketganimizni tushundim. Kitobda zikr qilingan ulamolar qanday vaqtni tejab 400jild kitob yozganlarini eshitib hayron qoldim\n\nMenimcha bu kitobni hamma o'quvchilar o'qishi shart bo'lgan kitob.",
     "p": 521
    },
@@ -637,6 +662,7 @@ window.KITOBLAR = [
     "m": "Eric Jorgenson",
     "b": 10,
     "en": 1,
+    "t": 1,
     "r": "Har bir qatorini markeri bilan belgilaydigan kitob\n\nThe Almanack of Naval Ravikant - kitobini Aziz Rahimov blogida 2 kunga qolmay o'qib qo'ydim, har safar shunaqa tez o'qib tashlayman, juda zo'r kitob qayta qayta o'qishga arziydigan kitob deb maqtardi\n\nO'zim ham bu kitobni olib kelib o'qishni boshladim, va obsidianga qayd qilaman, yoki markerda sariqqa olib qoyaman desam, bilasizmi nimani his qildim, yoki hammasini sariqqa olish kerak, hammasini obsidianga butun bir kitob bilan kirgizish kerak unaqa yaxshi joylari emas butun bir kitob sariq bilan boyaydigan darajada zo'r ekan\n\no'zim bilmay qolibman yarmiga kelib qolganimni, juda tez 2 kunda tugattim - lekin ingliz tilida tavsiya qilaman hammaga o'qishni tarjima qilingani yo'q\n\nKitob hayot haqida hayotda qanday yashash, o'rganish, kasb tanlash, boy bo'lish umuman hayotizga shunday olib ishlatib ketsa bo'ladigan tushunchalar",
     "p": 574
    },
@@ -645,6 +671,7 @@ window.KITOBLAR = [
     "m": "Jim Kwik",
     "b": 10,
     "en": 1,
+    "t": 1,
     "r": "Limitless - Chegarasiz\n\nAprel oyi uchun 3-kitobimni ham tamomladim. O'rganish haqida birinchi ilm olish sirlari, ikkinchi Limitless ni oqidim, endi The art of learning kitobini ham o'qib chiqmoqchiman\n\nNega chunki biz doim o'rganamiz va qilayotgan ishlarimizni qanday qilib to'gri qilishni bilishimiz kerak va uning ilmini olishimiz kerak, Bu ilmu hol deyiladi ya'ni holat ilmi\n\n1. Har kun uxlaysiz, qanday qilib to'gri uxlash haqida kitob o'qidingizmi? Why we sleep kitobi\n2. Har kun o'ylayisz, qanday qilib o'ylash haqida kitob o'qidingizmi? Thinking fast and slow\n3. Har kun diqqat qilib dars qilsangiz yaxshi natija olasiz, diqqat haqida kitob oqidingizmi? Diqqat (Deep Work) kitobi\n4. Har kun qaror qilasiz, qaror qilish haqida kitob o'qidingizmi? How we decide kitobi\n5. Har sekundda nafas olasiz, nafas olish haqida kitob oqidingizmi? How to breathe kitobi (Nafas tog'ri olmaslik orqasidan, tishlar qiyshayishi, yurak qon tomir kasalliklari kelib chiqishini bilarmidingiz\n\nKitob haqida aytadigan bo'lsam 10/10 baho beriladigan kitob, o'z sohasini experti yoshligidan miyasidan jarohat olib o'zlashtirishda orqada qolib ketgan bola hozirda miya va o'rganish bo'yicha expert bo'lgan va bor bilim va ko'nikmalarini yozib chiqqan faktlar bilan isbotlangan har bir argumenti. Youtubedagi sahidasi https://www.youtube.com/JimKwik - zo'r kontent beradi ingliz tili o'rganuvchilar ham o'rganish va miyani ishlashi haqida ham listening qilib podcastlarini eshitib listeningni ham oshirishga yordam beradi.\n\nKitob shunchaki daxshat, 100% tavsiya qilaman hammaga",
     "p": 589
    },
@@ -653,6 +680,7 @@ window.KITOBLAR = [
     "m": "Carol Dweck",
     "b": 10,
     "en": 1,
+    "t": 1,
     "r": "Bu yil hisobidan 36-kitobni ham o'qib tugatdim. Bu oy uchun birinchisi\n\nBu oyda ozgina o'zimning dangasaligimga qarshi kurashishda sustkashlikka yo'l qo'ydim.\n\nKitob juda ham menga maqul keldi. 10/10 qo'ydim va hamma o'qishi kerak bo'lgan kitoblar ro'yxatiga qo'shdim\n\nKitobning xulosasi:\nFixed mindset odamlar qobiliyat va aql odamga beriladi va u o'zgarmas deb o'ylaydi. Bu esa bunday odamlarnj o'zini aqlli ko'rsatishga urinishiga olib keladi. Shuning uchun bunday odamlar qiyinchiliklarda qochishadi chunki qila olmasa ahmoq ko'rinib qolishlari mumkinda. Shuningdek ular  ularga beriladigan to'g'ri foydali tanqidni qabul qilmay o'zini himoya qilishga tushib ketadi. Agar qobiliyating yetmasa harajatni foydasiz deb qarashadi shuning uchub ozgina harakat qilganda o'xshamasa tezda taslim bo'ladilar. Eng yomoni bundan odamlar boshqalarning muvaffaqiyatidan qo'rqadilar va ularga berilgan ''omad'' va ''qobiliyat''ga hasad qiladi. Shuning uchun ham ular tezda bir nuqtaga yetib o'sha yerda qotib qolishadi.\n\nGrowth mindset odamlar esa aql va qobiliyatni rivojlantirsa bo'ladi deb o'ylashadi. Bu esa o'rganishga bo'lgan kuchli ishtiyoqqa sabab bo'ladi va shuning uchun ular qiyinchiliklarni quchoq ochib kutib oladi. Qiyinchiliklarda faqatgina tinimsiz harakat sizni cho'qqiga olib chiqishini bilishadi. Shuningdek ular tanqidni o'sish uchun imkoniyat sifatida ko'radi. Boshqalarning muvaffaqiyatlaridan ruxlanadilar, havas qiladar va o'rganadilar. Shuning uchun ular o'z sohalarida eng yuqori cho'qqarga chiqadilar. Har bir sohaning eng kuchli insonlarining hammasi growth mindsetda bo'lishgan",
     "p": 800
    },
@@ -660,6 +688,7 @@ window.KITOBLAR = [
     "n": "Ijtimoiy odoblar",
     "m": "Shayx Muhammad Sodiq Muhammad Yusuf",
     "b": 10,
+    "t": 1,
     "r": "Mart oyi uchun 5-kitobni ham tugatishga erishdim. Shunga qodir qilganligi, vaqt berganligi uchun shukur\n\nAziz Rahimov bizga har kuni xatolaringizni sarhisob qilib boringlar, yozib boringlar degan edi, oxiri xatolarim minimum darajaga tushdi ya'ni o'zim bilganlarim albatta. Kuniga 1ta\n\nShunda nima qilish haqida so'raganimda diniy kitob o'qing deb maslahat berdi. Bu kitobni esa bir qarindoshim tavsiya qilgan edi\n\nEndi har kungi xato va gunohlarim ko'pligidan hayratda qoldim. Endi shu xatolarimni gunohlarimni yo'qotishga harakat qilyabman. bu kitob shunchaki menga oyna bo'ldi, har bir musulmon o'qishi kerak bo'lgan kitob ekan albatta",
     "p": 566
    },
@@ -667,6 +696,7 @@ window.KITOBLAR = [
     "n": "Men",
     "m": "",
     "b": 9,
+    "t": 1,
     "r": "Nafsingizni o'zingizga tanishtirib qo'yadigan kitob.",
     "p": 869,
     "q": 1
@@ -676,6 +706,7 @@ window.KITOBLAR = [
     "m": "Dana Suskind",
     "b": 10,
     "en": 1,
+    "t": 1,
     "r": "Kambag'al va boy oila tarbiyasidagi farqlar yaqqol namoyon qilib ko'rsatilgan, 20 yillik tadqiqotlarga asoslangan kitob.",
     "p": 869,
     "q": 1
@@ -707,6 +738,7 @@ window.KITOBLAR = [
     "n": "Halol luqma",
     "m": "Rauf Jilasun",
     "b": 10,
+    "t": 1,
     "r": "Halol Luqma\n\nIyul oyi uchun 3-kitob, bu yil uchun 28-kitobni ham tugattim.\n\nBu kitobni bir kunda o'qib tugatdim desam ishonasizmi?\n\nBugunning ichida shu kitobni boshlab tugattim. Judayam qiziqib kettim, tugatmasdan qo'ymaydigan kitob ekan.\n\nO'qish kerak ortiqcha tarif bermayman, o'qib ko'ringlar albatta",
     "p": 713
    },
@@ -743,6 +775,7 @@ window.KITOBLAR = [
     "n": "Atom odatlar",
     "m": "Jeyms Klir",
     "b": 10,
+    "t": 1,
     "r": "Atom odatlar\n\nBu yil hisobidan 38-kitobni ham tugatdim. Kitobni oldin ham o'qiganman. Menimcha, har yili o'qishga arziydigan kitob.\n\nOldin o'qiganimda katta o'zgarishga sabab bo'lgan edi. Bu safar kitobdagi tushunmagan joylarim ko'p ekanligini bildim (yoki esimdan chiqqan).\n\nInson odatlardan tashkil topganligini ko'p marotaba aytdik. Siz yoki erta turish odatini shakllantirasiz, yoki erta turmaslik odatini ham shakllantirishingiz mumkin.\n\nHar kuni sport bilan shug'ullanish ham odat, har kun shug'ullanmaslik ham odat. Qaysi odatni shakllantirish o'zingizga bog'liq, albatta.\n\nNima deb o'ylaysiz, bu yil 40ta kitobga yetkaza olamanmi?😁",
     "p": 836
    }
@@ -755,6 +788,7 @@ window.KITOBLAR = [
     "n": "Muvaffaqiyatli insonlarning 7 ko'nikmasi",
     "m": "Stiven Kovi",
     "b": 10,
+    "t": 1,
     "r": "Muvaffaqiyatli insonlaring 7 ko'nikmasi  13-kitob ham tugatildi, menda yana bir oy bor va bu oyni ham bitta kamida kitob bilan yakunlamoqchiman. Menda variantlar bor va ularni sizlarga yuboraman pastda tanlashga yordamlashib yuborasizlar. Hozir esa Sizlarga…",
     "p": 301
    },
@@ -763,6 +797,7 @@ window.KITOBLAR = [
     "m": "James Clear",
     "b": 10,
     "en": 1,
+    "t": 1,
     "r": "I have finished the Book called \"Atomic Habits\" (I could have finished it in 5 days)\n\nAtomic Habits by James Clear is a highly recommended book for anyone looking to improve their habits and achieve their goals. Clear's writing is clear, concise and easy to understand. He provides a number of practical strategies for building good habits and breaking bad ones, including the \"1% rule,\" which emphasizes the importance of making small, incremental changes in order to achieve big results over time.\n\nClear also delves into the science of habit formation, providing insights into how habits work and how they can be manipulated to work in our favor. He also discusses the importance of environment and identity in shaping our habits.\n\nOne of the book's strengths is its focus on the idea of \"atomic habits,\" or small, incremental changes that can be made to existing habits in order to achieve big results. Clear emphasizes the importance of focusing on the process rather than the outcome and the power of \"habit stacking,\" or using existing habits as a foundation for building new habits.\n\nOverall, Atomic Habits is a highly recommended read for anyone looking to improve their habits and achieve their goals. Clear's writing is engaging and his advice is both practical and actionable. The book provides a wealth of insights and strategies for building good habits and breaking bad ones, making it a valuable resource for anyone looking to make lasting changes in their life.",
     "p": 53,
     "re": 1
@@ -825,6 +860,7 @@ window.KITOBLAR = [
     "n": "Molxona",
     "m": "Jorj Oruell",
     "b": 10,
+    "t": 1,
     "r": "Siyosat uchun o'qilishi kerak bo'lgan birinchi kitob.",
     "p": 978,
     "q": 1
@@ -842,6 +878,7 @@ window.KITOBLAR = [
     "n": "SOS. Savol ortidagi savol",
     "m": "Lynn Clark",
     "b": 10,
+    "t": 1,
     "r": "Ma'suliyatli bo'lish sirlari.",
     "p": 978,
     "q": 1
@@ -850,6 +887,7 @@ window.KITOBLAR = [
     "n": "Savdogarlar ustozi",
     "m": "Axadquli Xolmuhammad",
     "b": 10,
+    "t": 1,
     "r": "Savdogarlar ustozi\n\nbu kitobni bir nafasda o'qiganday bo'ldim. Oxirida bir savol keldi nega shunday kitobni haligacha o'qimaganman? Nega odamlar bu kitobni o'qimagan?\n\nKitobda halollik, diyonatlik, ilm olish va boy bo'lish haqida juda ajoyib tomondan tushuntirilgan. Mana nima uchun musulmonlar dunyodagi eng boy odamlar emas, yevreylar nasroniylar ekanligi shu kitobda aniq bo'ldi, meni doim qiynaydigan savollarga javoblar topdim. Hamma o'qishi shart bo'lgan kitoblar ichida 1-raqamlisi mening uchun",
     "p": 308
    },
@@ -905,6 +943,7 @@ window.KITOBLAR = [
     "n": "Menkim, Sohibqiron Jahongir Temur",
     "m": "Marsel Brion",
     "b": 10,
+    "t": 1,
     "r": "Yaxshi kitoblar o'zi o'qiladi\n\nMaktab paytlari edi. Maktabdan qaytganimda uyimizda Marsel Brayon tomonidan yozilgan \"Men kim Sohibqiron\" nomli kitob turgan ekan. Kitobga bir ko'z tashlaychi dedim, shunda shunchalik kitobni ichiga kirib ketgan ekanmanki, shom payti ayamlar kelib: \"svetni yoqib o'qimaysanmi? Qorong'ida ham kitob o'qiysanmi? maktabdan kelib kiyimlaringni ham almashtirmabsan? obet qildingmi o'zi? degan gaplaridan allaqachon shom kelib qolganligini bildim.\n\nTahminan 4-5 soat kitob ichiga kirib ketgan ekanman. Ba'zi kitoblar shunday, o'zi o'qiladi. B'azi kitoblar siz uchun yozilgan bo'ladi. Ba'zi kitoblar zo'r yozilgan lekin sizning darajangiz hali unga yetmasligi mumkin.\n\nKitob o'qishni yoqtiraman, ayniqsa, yaxshi kitoblarni. Lekin muammo shundaki, kitobni olib, o'qib ko'rmaguncha, yaxshi yoki yomonligini bilolmaysiz. Agar kitob foydali bo'lsa, mayli, lekin befoyda kitob o'qigan bo'lsangiz, ketgan pul va vaqtingizga achinasiz.\n\nHozirda men bir yo'lni ishlataman.\n\n✔️O'qimoqchi bo'lgan kitobni taniqli insonlar tavsiya qilganmi yo'q shunga qarab sotib olaman.\n✔️O'qishdan avval youtubeda 10-20 minutlik kitobdan xulosani ko'rishim mumkin. Agar yaxshi kitobligiga ishonmayotgan bo'lsam\n✔️Kitob haqida Amazon yoki goodreaders saytlarida odamlarning izohlarini o'qib chiqaman. 5-10minut vaqt ketadi\n✔️Kitobni olib mundarijasini ko'rib chiqaman. Men izlagan mavzular bormi yo'q\n✔️Endi yozuvchi haqida ham qidirib ko'rishni boshlamoqchiman. Yozuvchi ham ko'p narsani anglatadi. Kitob o'qish xuddi yozuvchi bilan gaplashishga o'xshaydi\n\nKo'pchilik mendan kitob tavsiya qilishni aytishadi, lekin hammaning o'z kitobi bor. Meni o'zgartirgan kitob sizda zarracha ham taasurot qoldirmasligi mumkin. Lekin ilmning avzali ilmu hol. Yani hozirgi vaziyatingizga mos kitob o'qing.\n\nIlm olyabsizmi? - ilm olish sirlari\nOdatlarni shakllantirmoqchimisiz - atomic habits\nOdob va hulqingizni yaxshilamoqchimisiz - ijtimoiy odatlar\nTurmush qurish arafasidamisiz - Baxtiyor oila\n\nEng yaxshi yo'l esa, kitobni olib o'qib ko'ring, yaxshi kitob o'zi o'qiladi",
     "p": 636
    },
@@ -941,7 +980,8 @@ window.KITOBLAR = [
    {
     "n": "Boy ota, kambag'al ota",
     "m": "Robert Kiyosaki",
-    "b": 10
+    "b": 10,
+    "t": 1
    },
    {
     "n": "Sariq devni minib",

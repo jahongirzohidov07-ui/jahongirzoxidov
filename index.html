@@ -14,7 +14,11 @@
 <meta property="og:description" content="Ta'lim, oila, moliya, o'z-o'zini anglash va din haqida tajribadan kelib chiqqan uzun insholar.">
 <meta property="og:url" content="https://www.jahongirzoxidov.uz/">
 <meta property="og:locale" content="uz_UZ">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.jahongirzoxidov.uz/assets/og/sayt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.jahongirzoxidov.uz/assets/og/sayt.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%233B4A6B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='%23EDE7D9' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,7 +79,7 @@
   .shell {
     max-width: 760px;
     margin: 0 auto;
-    padding: 0 24px 120px;
+    padding: 0 24px 48px;
   }
 
   header.site-head {
@@ -1162,6 +1166,218 @@
     .brand { font-size: 23px; }
     .essay-row { grid-template-columns: 44px 1fr; gap: 14px; }
   }
+  /* ---------- Sarlavha bo'limlari ---------- */
+  .head-nav { display: flex; flex-wrap: wrap; gap: 2px 16px; }
+
+  /* ---------- Tugmalar ---------- */
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    background: var(--indigo);
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .cta-btn:hover { background: #2C3A57; }
+  .reader-body a.cta-btn, .reader-body a.cta-btn:hover, .reader-body a.cta-btn:focus-visible { color: #fff; border-bottom: 0; text-decoration: none; }
+  .reader-body a.cta-link { text-decoration: none; }
+  .head-nav a[aria-current="page"] { color: var(--indigo); border-color: var(--indigo); }
+  .cta-btn:disabled { opacity: 0.6; cursor: default; }
+  .cta-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: var(--indigo);
+    border-bottom: 1px solid rgba(59, 74, 107, 0.35);
+  }
+  .cta-link:hover { color: var(--clay-gold); border-color: var(--clay-gold); }
+  .cta-qator { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 6px; }
+  .cta-blok {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 20px;
+    margin-top: 40px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+  }
+  .reader-body .cta-blok p { flex: 1 1 260px; margin: 0; font-family: 'Inter', sans-serif; font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); }
+
+  /* Insho oxirida obuna */
+  .obuna {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 20px;
+    margin: 48px 0 8px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--clay-gold);
+    border-radius: 0 12px 12px 0;
+  }
+  .obuna-matn { flex: 1 1 280px; display: flex; flex-direction: column; gap: 4px; }
+  .obuna-matn strong { font-family: 'Fraunces', 'Literata', Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+  .obuna-matn span { font-family: 'Inter', sans-serif; font-size: 13.5px; color: var(--ink-soft); }
+
+  /* ---------- O'qigan kitoblarim: saralash va "O'qishi shart" ---------- */
+  .kitob-filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+  .kitob-filtr button {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    padding: 7px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--surface);
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .kitob-filtr button span { color: var(--ink-soft); font-weight: 400; margin-left: 4px; }
+  .kitob-filtr button:hover { border-color: var(--clay-gold); }
+  .kitob-filtr button[aria-pressed="true"] { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+  .kitob-filtr button[aria-pressed="true"] span { color: rgba(255, 255, 255, 0.75); }
+  .kitob-shart {
+    display: inline-block;
+    margin: 7px 10px 0 0;
+    padding: 2px 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: #8A3B22;
+    background: rgba(170, 80, 45, 0.08);
+    border: 1px solid rgba(170, 80, 45, 0.35);
+    border-radius: 999px;
+    vertical-align: middle;
+  }
+  .kitob[hidden], .kitob-yil[hidden], .kitob-yil-btn[hidden] { display: none !important; }
+
+  /* ---------- Yozgan kitoblarim ---------- */
+  .ykitob-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 30px 22px;
+    margin: 30px 0 8px;
+  }
+  .ykitob-muqova {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px 16px 16px 22px;
+    color: #fff;
+    border-radius: 3px 8px 8px 3px;
+    box-shadow: inset 6px 0 0 rgba(0, 0, 0, 0.16), inset 7px 0 0 rgba(255, 255, 255, 0.08), 0 14px 24px -14px rgba(38, 32, 25, 0.6);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  }
+  .ykitob-muqova::after {
+    content: '';
+    position: absolute;
+    left: 22px; right: 16px; top: 58%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.28);
+  }
+  .ykitob:hover .ykitob-muqova { transform: translateY(-3px); }
+  .ym-nom { font-family: 'Fraunces', 'Literata', Georgia, serif; font-size: 20px; font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; }
+  .ym-seriya { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; margin-top: auto; }
+  .ym-muallif { font-family: 'Inter', sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
+  .ykitob-muqova.m1 { background: linear-gradient(160deg, #3B4A6B, #26314B); }
+  .ykitob-muqova.m2 { background: linear-gradient(160deg, #A9833F, #775A24); }
+  .ykitob-muqova.m3 { background: linear-gradient(160deg, #6A4436, #432B22); }
+  .ykitob-muqova.m4 { background: linear-gradient(160deg, #335F58, #1F3D39); }
+  .ykitob-nom { margin-top: 14px; font-family: 'Fraunces', 'Literata', Georgia, serif; font-size: 16.5px; font-weight: 500; line-height: 1.3; color: var(--ink); }
+  .ykitob-tur { margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--clay-gold); }
+
+  /* ---------- Dasturlar ---------- */
+  .dastur {
+    margin: 28px 0 0;
+    padding: 26px 26px 24px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+  }
+  .dastur + .dastur { margin-top: 22px; }
+  .dastur-belgi {
+    display: inline-block;
+    margin-bottom: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--clay-gold);
+  }
+  .reader-body h2.dastur-nom { margin: 0 0 14px; padding-top: 0; border-top: none; font-size: 25px; }
+  .reader-body .dastur p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.75; }
+  .reader-body ul.dastur-list { margin: 0 0 18px; padding-left: 20px; font-size: 16px; line-height: 1.65; }
+  .reader-body ul.dastur-list li { margin-bottom: 6px; }
+  .reader-body .dastur p.dastur-izoh { font-family: 'Inter', sans-serif; font-size: 13.5px; font-style: italic; color: var(--ink-soft); }
+
+  /* ---------- Murojaat shakli ---------- */
+  .mform { position: relative; display: flex; flex-direction: column; gap: 16px; margin-top: 26px; }
+  .mform-qator { display: flex; flex-wrap: wrap; gap: 16px; }
+  .mform-qator .mform-l { flex: 1 1 220px; }
+  .mform-l { display: flex; flex-direction: column; gap: 6px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: var(--ink); }
+  .mform input[type="text"], .mform select, .mform textarea {
+    width: 100%;
+    font-family: 'Literata', Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 11px 13px;
+  }
+  .mform textarea { resize: vertical; }
+  .mform input[type="text"]:focus, .mform select:focus, .mform textarea:focus { outline: 2px solid var(--focus); outline-offset: 1px; border-color: transparent; }
+  .mform .izoh-hp { position: absolute; left: -10000px; width: 1px; }
+  .reader-body .mform-eslatma { margin: -6px 0 0; font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--clay-gold); }
+  .reader-body .mform-holat { margin: 0; min-height: 1.3em; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.5; }
+  .mform-holat.ok { color: #2F6B3A; font-weight: 600; }
+  .mform-holat.err { color: #9B2C2C; font-weight: 600; }
+  .reader-body .mform-maxfiy { margin: 0; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft); }
+
+  /* ---------- Sayt osti ---------- */
+  .sayt-oyoq { margin-top: 88px; padding-top: 32px; border-top: 1px solid var(--rule); font-family: 'Inter', sans-serif; }
+  .oyoq-ust { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 20px; }
+  .oyoq-nom { font-family: 'Fraunces', 'Literata', Georgia, serif; font-size: 21px; font-weight: 600; color: var(--ink); }
+  .oyoq-izoh { margin-top: 3px; font-size: 12.5px; color: var(--ink-soft); }
+  .oyoq-ustunlar { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; margin-top: 30px; }
+  .oyoq-ustun { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .oyoq-sarlavha { margin-bottom: 2px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clay-gold); }
+  .oyoq-ustun a { font-size: 13.5px; color: var(--ink-soft); border-bottom: 1px solid transparent; transition: color 0.15s ease, border-color 0.15s ease; }
+  .oyoq-ustun a:hover { color: var(--indigo); border-color: var(--indigo); }
+  .oyoq-past { margin-top: 30px; padding-top: 16px; border-top: 1px dashed var(--rule); font-size: 12px; color: var(--ink-soft); }
+
+  @media (max-width: 560px) {
+    .head-nav { gap: 0 14px; }
+    .ykitob-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+    .ym-nom { font-size: 17px; }
+    .dastur { padding: 20px 18px; }
+    .reader-body h2.dastur-nom { font-size: 22px; }
+    .obuna, .cta-blok { padding: 18px; }
+    .obuna .cta-btn, .cta-blok .cta-btn { width: 100%; }
+    .sayt-oyoq { margin-top: 64px; }
+  }
 </style>
 </head>
 <body>
@@ -1182,13 +1398,17 @@
         <button type="button" data-yz="yangi" aria-pressed="false" title="Yangilangan lotin alifbosi (2027-yil 22-apreldan)">Yangi alifbo</button>
         <button type="button" data-yz="en" aria-pressed="false" title="Read in English">English</button>
       </div>
-      <span class="about-link" id="booksLink">O'qigan kitoblarim</span>
-      <span class="about-link" id="aboutLink">Men haqimda</span>
+      <nav class="head-nav" aria-label="Bo'limlar">
+        <a class="about-link" href="/kitoblar" data-go>O'qigan kitoblarim</a>
+        <a class="about-link" href="/yozgan-kitoblarim" data-go>Yozgan kitoblarim</a>
+        <a class="about-link" href="/dasturlar" data-go>Dasturlar</a>
+        <a class="about-link" href="/men-haqimda" data-go>Men haqimda</a>
+      </nav>
     </div>
   </header>
 
   <div id="listView" class="list-view">
-    <a class="kitob-card" id="booksCard" href="#kitoblar">
+    <a class="kitob-card" id="booksCard" href="/kitoblar" data-go>
       <span class="kitob-card-k">O'qigan kitoblarim</span>
       <span class="kitob-card-v" id="booksCardMeta"></span>
       <span class="kitob-card-arrow" aria-hidden="true">&rarr;</span>
@@ -1205,7 +1425,7 @@
   </div>
 
   <div id="readerView" class="reader">
-    <span class="back-link" id="backLink">&larr; Insholar ro'yxatiga</span>
+    <a class="back-link" id="backLink" href="/" data-go>&larr; Insholar ro'yxatiga</a>
     <div class="reader-head">
       <div class="reader-folio" id="readerFolio"></div>
       <h1 class="reader-title" id="readerTitle"></h1>
@@ -1222,6 +1442,13 @@
       </div>
     </div>
     <div class="reader-body" id="readerBody"></div>
+    <aside class="obuna" aria-label="Obuna">
+      <div class="obuna-matn">
+        <strong>Yangi insholar birinchi bo'lib Telegram kanalimda chiqadi.</strong>
+        <span>Obuna bo'ling, keyingi inshoni o'tkazib yubormaysiz.</span>
+      </div>
+      <a class="cta-btn" href="https://t.me/JahongirZoxidov" target="_blank" rel="noopener noreferrer">Kanalga obuna bo'lish</a>
+    </aside>
     <section class="izohlar" id="izohlar" aria-labelledby="izohLabel">
       <h2 class="izoh-head" id="izohHead" hidden>Izohlar <span class="izoh-count" id="izohCount"></span></h2>
       <ol class="izoh-list" id="izohList"></ol>
@@ -1259,7 +1486,7 @@
   </div>
 
   <div id="booksView" class="reader">
-    <span class="back-link" id="booksBackLink">&larr; Insholar ro'yxatiga</span>
+    <a class="back-link" id="booksBackLink" href="/" data-go>&larr; Insholar ro'yxatiga</a>
     <div class="reader-head">
       <h1 class="reader-title">O'qigan kitoblarim</h1>
     </div>
@@ -1269,14 +1496,142 @@
         <span class="kitob-jami-matn"><span>ta kitob o'qiganman</span><small>2010-yildan beri</small></span>
         <div class="kitob-stat" id="booksStat"></div>
       </div>
+      <div class="kitob-filtr" id="booksFilter" role="group" aria-label="Saralash"></div>
       <nav class="kitob-yillar" id="booksYears" aria-label="Yillar"></nav>
-      <p class="kitob-lead">Ro'yxat yillar bo'yicha. Kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada. Ko'p kitoblar tagida o'qib bo'lgach Telegram kanalimda yozgan taqrizim bor.</p>
+      <p class="kitob-lead">Ro'yxat yillar bo'yicha. Kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada. Ko'p kitoblar tagida o'qib bo'lgach Telegram kanalimda yozgan taqrizim bor. "O'qishi shart" deb belgilaganlarim har kim o'qishi kerak deb hisoblagan kitoblarim.</p>
       <div id="booksBody"></div>
     </div>
   </div>
 
+  <div id="myBooksView" class="reader">
+    <a class="back-link" href="/" data-go>&larr; Insholar ro'yxatiga</a>
+    <div class="reader-head">
+      <h1 class="reader-title">Yozgan kitoblarim</h1>
+    </div>
+    <div class="reader-body">
+      <p class="kitob-lead">Ingliz tilini o'rganish va IELTS'ga tayyorlanish bo'yicha yozgan kitoblarim. Hozircha ular Jony Academy o'quvchilari uchun chiqarilgan.</p>
+      <div class="ykitob-grid">
+        <div class="ykitob">
+          <div class="ykitob-muqova m1" data-notr><span class="ym-nom">Ingliz tilini o'rganish sanati</span><span class="ym-muallif">Jahongir Zoxidov</span></div>
+          <div class="ykitob-nom">Ingliz tilini o'rganish sanati</div>
+          <div class="ykitob-tur">Ingliz tili</div>
+        </div>
+        <div class="ykitob">
+          <div class="ykitob-muqova m2" data-notr><span class="ym-nom">Wow Grammar</span><span class="ym-muallif">Jahongir Zoxidov</span></div>
+          <div class="ykitob-nom" data-notr>Wow Grammar</div>
+          <div class="ykitob-tur">Grammatika</div>
+        </div>
+        <div class="ykitob">
+          <div class="ykitob-muqova m3" data-notr><span class="ym-nom">Jony Essays</span><span class="ym-muallif">Jahongir Zoxidov</span></div>
+          <div class="ykitob-nom" data-notr>Jony Essays</div>
+          <div class="ykitob-tur">Ingliz tili</div>
+        </div>
+        <div class="ykitob">
+          <div class="ykitob-muqova m4" data-notr><span class="ym-nom">IELTS 1.0–7.0</span><span class="ym-seriya">7 kitob</span><span class="ym-muallif">Jahongir Zoxidov</span></div>
+          <div class="ykitob-nom">IELTS 1.0–7.0 intensiv seriyasi</div>
+          <div class="ykitob-tur">7 ta kitob</div>
+        </div>
+      </div>
+      <div class="cta-blok">
+        <p>Kitob olish yoki o'quv markazingiz uchun buyurtma berish bo'yicha murojaat qoldiring.</p>
+        <a class="cta-btn" href="/murojaat?turi=kitob" data-go>Murojaat qoldirish</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="programsView" class="reader">
+    <a class="back-link" href="/" data-go>&larr; Insholar ro'yxatiga</a>
+    <div class="reader-head">
+      <h1 class="reader-title">Dasturlar</h1>
+    </div>
+    <div class="reader-body">
+      <p class="kitob-lead">O'zim o'rgangan va hayotda sinab ko'rgan bilimlarimni ikki dastur orqali ulashaman.</p>
+
+      <section class="dastur">
+        <span class="dastur-belgi">Yigitlar uchun</span>
+        <h2 class="dastur-nom">Shogirdlik dasturi</h2>
+        <p>10 darslik dastur. Har bir darsda hayotda kerak bo'ladigan bitta muhim ko'nikma yoki odat ustida ishlaymiz.</p>
+        <p>O'z ta'limimga 20 000$ ga yaqin mablag' sarflaganman: universitet, biznes va mentorlik kurslari, o'quv markazni tizimlashtirish va pedagogik mahorat kurslari. Ulardan olgan eng kerakli bilimlarimni saralab, shu dasturga jamladim.</p>
+        <ul class="dastur-list">
+          <li>Faqat yigitlar qabul qilinadi, suhbat asosida.</li>
+          <li>Darslar Zafarda, Jony Academy filialida bo'ladi.</li>
+          <li>Hozir hech qayerda ishlamayotgan, o'z yo'lini qidirayotganlar ham qatnashishi mumkin.</li>
+          <li>O'zini ko'rsatgan shogirdlar uchun Jony jamoasiga qo'shilish imkoniyati bor.</li>
+          <li>Hozircha 2 ta guruh bitirgan.</li>
+        </ul>
+        <p class="dastur-izoh">Narx va keyingi guruh sanasi ariza qoldirganlarga aytiladi.</p>
+        <div class="cta-qator">
+          <a class="cta-btn" href="/murojaat?turi=shogirdlik" data-go>Ariza qoldirish</a>
+        </div>
+      </section>
+
+      <section class="dastur">
+        <span class="dastur-belgi">Ustozlar uchun</span>
+        <h2 class="dastur-nom">TTP: Ustozlik Psixologiyasi</h2>
+        <p>O'qituvchilikdan ustozlikka o'tish uchun maxsus kurs. Qisqa treninglarda ustozlarga bilganlarimni to'liq o'rgata olmasdim, ko'pchilik buni kurs qilib o'tishni so'radi. O'z mahoratimni kuchli ustozda oshirib kelganimdan keyin, o'rgangan barcha ustozlik mahoratlarini bitta kursga jamladim.</p>
+        <ul class="dastur-list">
+          <li>Kursni o'zim olib boraman.</li>
+          <li>Hozircha 2 ta guruh bitirgan.</li>
+          <li>Shu yo'nalishdagi yozganlarim "Ustozlik ilmi" Telegram kanalida chiqadi.</li>
+        </ul>
+        <div class="cta-qator">
+          <a class="cta-btn" href="/murojaat?turi=ttp" data-go>Ariza qoldirish</a>
+          <a class="cta-link" href="https://www.notion.so/TTP-Ustozlik-Psixologiyasi-31dc110c470f80458d72c4b534c3f24b" target="_blank" rel="noopener noreferrer">Kurs haqida batafsil ↗</a>
+          <a class="cta-link" href="https://t.me/ustozlikilmi" target="_blank" rel="noopener noreferrer">"Ustozlik ilmi" kanali ↗</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="contactView" class="reader">
+    <a class="back-link" href="/" data-go>&larr; Insholar ro'yxatiga</a>
+    <div class="reader-head">
+      <h1 class="reader-title">Murojaat</h1>
+    </div>
+    <div class="reader-body">
+      <p class="kitob-lead">Dasturlarga ariza, kitob buyurtmasi, hamkorlik yoki ma'ruzaga taklif uchun shu yerdan yozing. Murojaatingiz to'g'ridan-to'g'ri menga yetib keladi.</p>
+      <form class="mform" id="mForm" novalidate>
+        <label class="mform-l">Murojaat turi
+          <select id="mTuri">
+            <option value="shogirdlik">Shogirdlik dasturi</option>
+            <option value="ttp">TTP: Ustozlik Psixologiyasi</option>
+            <option value="kitob">Kitob buyurtmasi</option>
+            <option value="hamkorlik">Hamkorlik yoki ma'ruzaga taklif</option>
+            <option value="boshqa">Boshqa</option>
+          </select>
+        </label>
+        <p class="mform-eslatma" id="mEslatma">Shogirdlik dasturiga faqat yigitlar qabul qilinadi.</p>
+        <div class="mform-qator">
+          <label class="mform-l">Ismingiz
+            <input type="text" id="mIsm" maxlength="60" autocomplete="name">
+          </label>
+          <label class="mform-l">Telefon yoki Telegram
+            <input type="text" id="mAloqa" maxlength="60" autocomplete="tel" placeholder="+998 90 123 45 67 yoki @username" data-notr>
+          </label>
+        </div>
+        <div class="mform-qator">
+          <label class="mform-l">Yoshingiz
+            <input type="text" id="mYosh" maxlength="2" inputmode="numeric">
+          </label>
+          <label class="mform-l">Shahar yoki tuman
+            <input type="text" id="mShahar" maxlength="60">
+          </label>
+        </div>
+        <label class="mform-l">Xabar
+          <textarea id="mXabar" rows="5" maxlength="1500" placeholder="O'zingiz haqingizda qisqacha va nima uchun murojaat qilayotganingizni yozing"></textarea>
+        </label>
+        <input type="text" id="mHp" class="izoh-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="cta-qator">
+          <button type="submit" class="cta-btn" id="mSend">Yuborish</button>
+        </div>
+        <p class="mform-holat" id="mHolat" role="status"></p>
+        <p class="mform-maxfiy">Ma'lumotlaringiz faqat menga yetib boradi va boshqa maqsadda ishlatilmaydi.</p>
+      </form>
+    </div>
+  </div>
+
   <div id="aboutView" class="reader">
-    <span class="back-link" id="aboutBackLink">&larr; Insholar ro'yxatiga</span>
+    <a class="back-link" id="aboutBackLink" href="/" data-go>&larr; Insholar ro'yxatiga</a>
     <div class="reader-head">
       <h1 class="reader-title">Men haqimda</h1>
     </div>
@@ -1393,13 +1748,40 @@
     </div>
   </div>
 
+  <footer class="sayt-oyoq">
+    <div class="oyoq-ust">
+      <div>
+        <div class="oyoq-nom">Jahongir Zoxidov</div>
+        <div class="oyoq-izoh">Pedagog, tadbirkor, mentor va muallif</div>
+      </div>
+      <a class="cta-btn" href="/murojaat" data-go>Murojaat qoldirish</a>
+    </div>
+    <div class="oyoq-ustunlar">
+      <nav class="oyoq-ustun" aria-label="Sayt">
+        <span class="oyoq-sarlavha">Sayt</span>
+        <a href="/" data-go>Insholar</a>
+        <a href="/kitoblar" data-go>O'qigan kitoblarim</a>
+        <a href="/yozgan-kitoblarim" data-go>Yozgan kitoblarim</a>
+        <a href="/dasturlar" data-go>Dasturlar</a>
+        <a href="/men-haqimda" data-go>Men haqimda</a>
+      </nav>
+      <div class="oyoq-ustun">
+        <span class="oyoq-sarlavha">Kanallar</span>
+        <a href="https://t.me/JahongirZoxidov" target="_blank" rel="noopener noreferrer">Telegram kanalim</a>
+        <a href="https://t.me/ustozlikilmi" target="_blank" rel="noopener noreferrer">"Ustozlik ilmi" kanali</a>
+        <a href="https://www.instagram.com/jahongir_zoxidov/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+    <div class="oyoq-past">© 2026 Jahongir Zoxidov</div>
+  </footer>
+
 </div>
 
 <div class="toast" id="toast"></div>
 
-<script src="essays.js"></script>
-<script src="kitoblar.js?v=2"></script>
-<script src="yozuv.js?v=7"></script>
+<script src="/essays.js"></script>
+<script src="/kitoblar.js?v=3"></script>
+<script src="/yozuv.js?v=8"></script>
 <script>
 (function () {
   let essays = [];
@@ -1520,8 +1902,8 @@
           ${pendingIzoh[essay.folio] ? '<span class="izoh-new">' + Number(pendingIzoh[essay.folio]) + ' yangi izoh</span>' : ''}
         </div>
       `;
-      li.addEventListener('click', () => { location.hash = 'insho-' + essay.folio; });
-      li.addEventListener('keypress', (e) => { if (e.key === 'Enter') location.hash = 'insho-' + essay.folio; });
+      li.addEventListener('click', () => { go('/insho/' + essay.folio); });
+      li.addEventListener('keypress', (e) => { if (e.key === 'Enter') go('/insho/' + essay.folio); });
       essayListEl.appendChild(li);
     });
   }
@@ -1575,7 +1957,7 @@
         const ichki = /^https?:\/\/(www\.)?jahongirzoxidov\.uz\//i.test(url);
         if (ichki) {
           /* o'z saytimizdagi insho: shu oynada ochiladi */
-          a.href = url.replace(/^https?:\/\/(www\.)?jahongirzoxidov\.uz/i, '');
+          a.href = url.replace(/^https?:\/\/(www\.)?jahongirzoxidov\.uz/i, '').replace(/^\/#insho-([\w-]+)$/, '/insho/$1');
         } else {
           a.href = url;
           a.target = '_blank';
@@ -1726,7 +2108,7 @@
     if (prevEssay) {
       prevBtn.disabled = false;
       document.getElementById('prevTitle').textContent = view(prevEssay).title;
-      prevBtn.onclick = () => { location.hash = 'insho-' + prevEssay.folio; };
+      prevBtn.onclick = () => { go('/insho/' + prevEssay.folio); };
     } else {
       prevBtn.disabled = true;
       document.getElementById('prevTitle').textContent = '';
@@ -1735,16 +2117,13 @@
     if (nextEssay) {
       nextBtn.disabled = false;
       document.getElementById('nextTitle').textContent = view(nextEssay).title;
-      nextBtn.onclick = () => { location.hash = 'insho-' + nextEssay.folio; };
+      nextBtn.onclick = () => { go('/insho/' + nextEssay.folio); };
     } else {
       nextBtn.disabled = true;
       document.getElementById('nextTitle').textContent = '';
     }
 
-    listView.classList.add('hidden');
-    aboutView.classList.remove('active');
-    booksView.classList.remove('active');
-    readerView.classList.add('active');
+    showOnly(readerView);
     if (!soft) window.scrollTo({ top: 0, behavior: 'auto' });
     document.title = v.title + ' — Jahongir Zoxidov';
     return true;
@@ -1987,25 +2366,74 @@
   }
 
   const aboutView = document.getElementById('aboutView');
+  const myBooksView = document.getElementById('myBooksView');
+  const programsView = document.getElementById('programsView');
+  const contactView = document.getElementById('contactView');
+  const VIEWS = [readerView, booksView, myBooksView, programsView, contactView, aboutView];
+
+  /* Bitta ko'rinish ochiq turadi; null bo'lsa bosh sahifa (insholar ro'yxati) */
+  function showOnly(v) {
+    VIEWS.forEach(x => x.classList.toggle('active', x === v));
+    listView.classList.toggle('hidden', !!v);
+  }
+  function openPage(v, title) {
+    activeId = null;
+    showOnly(v);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.title = title;
+  }
 
   function showList() {
     activeId = null;
-    readerView.classList.remove('active');
-    aboutView.classList.remove('active');
-    booksView.classList.remove('active');
-    listView.classList.remove('hidden');
+    showOnly(null);
     document.title = 'Jahongir Zoxidov — Insholar';
   }
 
-  function showAbout() {
-    activeId = null;
-    listView.classList.add('hidden');
-    readerView.classList.remove('active');
-    booksView.classList.remove('active');
-    aboutView.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'auto' });
-    document.title = "Men haqimda — Jahongir Zoxidov";
+  function showAbout() { openPage(aboutView, "Men haqimda — Jahongir Zoxidov"); }
+  function showMyBooks() { openPage(myBooksView, "Yozgan kitoblarim — Jahongir Zoxidov"); }
+  function showPrograms() { openPage(programsView, "Dasturlar — Jahongir Zoxidov"); }
+  function showContact() {
+    openPage(contactView, "Murojaat — Jahongir Zoxidov");
+    const t = new URLSearchParams(location.search).get('turi');
+    if (t && mTuri.querySelector('option[value="' + t.replace(/[^a-z]/g, '') + '"]')) mTuri.value = t;
+    syncTuri();
   }
+
+  /* ---------- Murojaat shakli (/api/murojaat) ---------- */
+  const mForm = document.getElementById('mForm');
+  const mTuri = document.getElementById('mTuri');
+  const mHolat = document.getElementById('mHolat');
+  const mSend = document.getElementById('mSend');
+  function syncTuri() {
+    document.getElementById('mEslatma').hidden = mTuri.value !== 'shogirdlik';
+  }
+  mTuri.addEventListener('change', syncTuri);
+  function mStatus(text, cls) {
+    mHolat.textContent = text;
+    mHolat.className = 'mform-holat' + (cls ? ' ' + cls : '');
+  }
+  mForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = id => document.getElementById(id).value.trim();
+    const data = { turi: mTuri.value, ism: val('mIsm'), aloqa: val('mAloqa'), yosh: val('mYosh'), shahar: val('mShahar'), xabar: val('mXabar'), website: val('mHp') };
+    if (data.ism.length < 2) { mStatus('Ismingizni yozing.', 'err'); document.getElementById('mIsm').focus(); return; }
+    if (data.aloqa.replace(/\s/g, '').length < 5) { mStatus('Telefon raqamingiz yoki Telegram manzilingizni yozing.', 'err'); document.getElementById('mAloqa').focus(); return; }
+    mSend.disabled = true;
+    mStatus('Yuborilmoqda...');
+    fetch('/api/murojaat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      .then(r => r.json().catch(() => ({})).then(d => ({ ok: r.ok, d })))
+      .then(({ ok, d }) => {
+        if (ok && d.ok) {
+          mForm.reset();
+          syncTuri();
+          mStatus("Rahmat! Murojaatingiz menga yetib keldi. Tez orada siz bilan bog'lanaman.", 'ok');
+        } else {
+          mStatus((d && d.error ? d.error : "Yuborib bo'lmadi") + '. Telegram orqali yozishingiz ham mumkin: t.me/JahongirZoxidov', 'err');
+        }
+      })
+      .catch(() => mStatus("Internet bilan bog'lanib bo'lmadi. Birozdan keyin qayta urinib ko'ring.", 'err'))
+      .then(() => { mSend.disabled = false; });
+  });
 
   /* O'qigan kitoblarim: kitoblar.js dagi ro'yxat, yillar bo'yicha (eng yangi yil tepada) */
   const KITOB = window.KITOBLAR || [];
@@ -2079,7 +2507,8 @@
       bt.className = 'kitob-yil-btn';
       const b = document.createElement('b'); b.textContent = y.yil;
       bt.appendChild(b);
-      bt.appendChild(document.createTextNode(y.kitoblar.length + ' ta'));
+      const bs = document.createElement('span'); bs.className = 'kitob-yil-soni'; bs.textContent = y.kitoblar.length + ' ta';
+      bt.appendChild(bs);
       bt.addEventListener('click', () => {
         const el = document.getElementById('kitob-yil-' + yi);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2118,6 +2547,13 @@
           main.appendChild(m);
         }
         if (k.en) { nom.setAttribute('data-notr', ''); if (main.childNodes[1]) main.childNodes[1].setAttribute('data-notr', ''); }
+        if (k.t) {
+          li.classList.add('shart');
+          const sh = document.createElement('span');
+          sh.className = 'kitob-shart';
+          sh.textContent = "O'qishi shart";
+          main.appendChild(sh);
+        }
         li.appendChild(n); li.appendChild(main); li.appendChild(bahoEl(k.b));
         if (k.r && k.q) {
           const q = document.createElement('span');
@@ -2151,17 +2587,53 @@
       frag.appendChild(sec);
     });
     root.appendChild(frag);
+
+    /* Saralash: hammasi / o'qishi shart / 10 ball */
+    const FILTR = [
+      ['hammasi', 'Hammasi', () => true],
+      ['shart', "O'qishi shart", k => !!k.t],
+      ['b10', '10/10', k => k.b >= 10]
+    ];
+    const fbox = document.getElementById('booksFilter');
+    fbox.innerHTML = '';
+    FILTR.forEach(([key, nom, f]) => {
+      const bt = document.createElement('button');
+      bt.type = 'button';
+      bt.setAttribute('aria-pressed', key === 'hammasi' ? 'true' : 'false');
+      bt.appendChild(document.createTextNode(nom));
+      const c = document.createElement('span'); c.setAttribute('data-notr', ''); c.textContent = hamma.filter(f).length;
+      bt.appendChild(c);
+      bt.addEventListener('click', () => {
+        fbox.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === bt ? 'true' : 'false'));
+        applyFiltr(f);
+      });
+      fbox.appendChild(bt);
+    });
+  }
+
+  function applyFiltr(f) {
+    const btns = document.querySelectorAll('#booksYears .kitob-yil-btn');
+    KITOB.forEach((y, yi) => {
+      const sec = document.getElementById('kitob-yil-' + yi);
+      if (!sec) return;
+      let n = 0;
+      sec.querySelectorAll('li.kitob').forEach((li, i) => {
+        const ok = f(y.kitoblar[i]);
+        li.hidden = !ok;
+        if (ok) n++;
+      });
+      sec.hidden = n === 0;
+      sec.querySelector('.kitob-soni').textContent = n + ' ta kitob';
+      if (btns[yi]) {
+        btns[yi].hidden = n === 0;
+        btns[yi].querySelector('.kitob-yil-soni').textContent = n + ' ta';
+      }
+    });
   }
 
   function showBooks() {
-    activeId = null;
     renderBooks();
-    listView.classList.add('hidden');
-    readerView.classList.remove('active');
-    aboutView.classList.remove('active');
-    booksView.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'auto' });
-    document.title = "O'qigan kitoblarim — Jahongir Zoxidov";
+    openPage(booksView, "O'qigan kitoblarim — Jahongir Zoxidov");
   }
 
   /* English tanlanganda "Men haqimda" matni ham inglizchaga almashadi */
@@ -2183,39 +2655,62 @@
   }
   if (window.Yozuv) window.Yozuv.onChange(rerender);
 
-  /* Har bir insho o'z havolasiga ega: /#insho-2 — Telegramga tashlash uchun */
+  /* Har bir sahifa o'z manziliga ega: /insho/2, /kitoblar, /dasturlar ...
+     Server (api/sahifa.js) shu manzil uchun sarlavha va rasmni <head> ga qo'yadi,
+     shuning uchun Telegram havola ostida insho nomi va muqovasini ko'rsatadi. */
+  const PAGES = {
+    'kitoblar': showBooks,
+    'yozgan-kitoblarim': showMyBooks,
+    'dasturlar': showPrograms,
+    'murojaat': showContact,
+    'men-haqimda': showAbout
+  };
+
   function route() {
+    /* Eski havolalar (/#insho-2, /#kitoblar) yangi manzilga o'tkaziladi */
     let h = '';
     try { h = decodeURIComponent((location.hash || '').replace(/^#/, '')); }
     catch (err) { h = (location.hash || '').replace(/^#/, ''); }
+    if (h) {
+      const hm = h.match(/^insho-([\w-]+)$/);
+      const yangi = hm ? '/insho/' + hm[1] : (PAGES[h] ? '/' + h : '');
+      if (yangi) history.replaceState(null, '', yangi + location.search);
+    }
 
-    if (h === 'men-haqimda') { showAbout(); return; }
-    if (h === 'kitoblar') { showBooks(); return; }
-
-    const m = h.match(/^insho-(.+)$/);
-    if (m) {
-      const target = essays.find(e => e.folio === m[1]);
+    const seg = location.pathname.split('/').filter(Boolean);
+    document.querySelectorAll('.head-nav a').forEach(a => {
+      if (a.pathname === location.pathname) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    if (seg.length === 1 && PAGES[seg[0]]) { PAGES[seg[0]](); return; }
+    if (seg.length === 2 && seg[0] === 'insho') {
+      const target = essays.find(e => e.folio === seg[1]);
       if (target && showEssay(target.id)) return;
     }
     showList();
   }
 
-  function goHome() {
-    if (location.hash) {
-      history.pushState(null, '', location.pathname + location.search);
-    }
-    showList();
+  function go(path) {
+    if (path !== location.pathname + location.search) history.pushState(null, '', path);
+    route();
   }
+  function goHome() { go('/'); }
 
   window.addEventListener('hashchange', route);
   window.addEventListener('popstate', route);
 
-  document.getElementById('backLink').addEventListener('click', goHome);
+  /* Sayt ichidagi havolalar sahifani qayta yuklamasdan ochiladi */
+  document.addEventListener('click', (e) => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a || a.target || a.hasAttribute('download') || a.origin !== location.origin) return;
+    const seg = a.pathname.split('/').filter(Boolean);
+    const ichki = seg.length === 0 ? !a.hash : (seg.length === 1 && PAGES[seg[0]]) || (seg.length === 2 && seg[0] === 'insho');
+    if (!ichki) return;
+    e.preventDefault();
+    go(a.pathname + a.search);
+  });
+
   document.getElementById('brandLink').addEventListener('click', goHome);
-  document.getElementById('aboutBackLink').addEventListener('click', goHome);
-  document.getElementById('aboutLink').addEventListener('click', () => { location.hash = 'men-haqimda'; });
-  document.getElementById('booksLink').addEventListener('click', () => { location.hash = 'kitoblar'; });
-  document.getElementById('booksBackLink').addEventListener('click', goHome);
 
   document.getElementById('copyBtn').addEventListener('click', () => {
     const url = location.href;
@@ -2308,7 +2803,7 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (isTyping(e.target)) return;
-      if (readerView.classList.contains('active') || aboutView.classList.contains('active')) goHome();
+      if (VIEWS.some(v => v.classList.contains('active'))) goHome();
     }
   });
 
