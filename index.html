@@ -19,6 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.jahongirzoxidov.uz/assets/og/sayt.png">
+<script type="application/ld+json" id="ld">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.jahongirzoxidov.uz/#website","url":"https://www.jahongirzoxidov.uz/","name":"Jahongir Zoxidov","description":"Ta'lim, oila, moliya, o'z-o'zini anglash va din haqida tajribadan kelib chiqqan insholar.","inLanguage":"uz","author":{"@id":"https://www.jahongirzoxidov.uz/#person"},"publisher":{"@id":"https://www.jahongirzoxidov.uz/#person"}},{"@type":"Person","@id":"https://www.jahongirzoxidov.uz/#person","name":"Jahongir Zoxidov","alternateName":["Jahongir Zohidov","Zoxidov Jahongir Ilhomjonovich"],"url":"https://www.jahongirzoxidov.uz/men-haqimda","image":"https://www.jahongirzoxidov.uz/assets/jahongir-2.jpg","jobTitle":"Pedagog, tadbirkor, mentor va muallif","worksFor":{"@type":"EducationalOrganization","name":"Jony Academy"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Sunderland"},"knowsAbout":["Ta'lim","Ingliz tili","IELTS","Ustozlik","Mentorlik"],"sameAs":["https://t.me/JahongirZoxidov","https://www.instagram.com/jahongir_zoxidov/","https://t.me/ustozlikilmi"]}]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%233B4A6B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='%23EDE7D9' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1356,6 +1357,47 @@
   .mform-holat.err { color: #9B2C2C; font-weight: 600; }
   .reader-body .mform-maxfiy { margin: 0; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft); }
 
+  /* ---------- Chiqishlarim (videolar) ---------- */
+  .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; margin: 28px 0 8px; }
+  .video { margin: 0; }
+  .video-play, .video iframe {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #1d1a15;
+    box-shadow: 0 12px 24px -16px rgba(38, 32, 25, 0.6);
+  }
+  .video-play img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease, opacity 0.2s ease; }
+  .video-play:hover img { transform: scale(1.03); opacity: 0.92; }
+  .video-btn {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 62px; height: 62px;
+    margin: -31px 0 0 -31px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease;
+  }
+  .video-btn::after {
+    content: '';
+    position: absolute;
+    left: 25px; top: 19px;
+    border-style: solid;
+    border-width: 12px 0 12px 19px;
+    border-color: transparent transparent transparent var(--indigo);
+  }
+  .video-play:hover .video-btn { transform: scale(1.08); }
+  .video figcaption { display: flex; flex-direction: column; gap: 4px; margin-top: 12px; }
+  .video-kanal { font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--clay-gold); }
+  .video-nom { font-family: 'Fraunces', 'Literata', Georgia, serif; font-size: 17px; font-weight: 500; line-height: 1.35; color: var(--ink); }
+  .video .cta-link { align-self: flex-start; margin-top: 2px; font-size: 12.5px; }
+
   /* ---------- Sayt osti ---------- */
   .sayt-oyoq { margin-top: 88px; padding-top: 32px; border-top: 1px solid var(--rule); font-family: 'Inter', sans-serif; }
   .oyoq-ust { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 20px; }
@@ -1372,6 +1414,7 @@
     .head-nav { gap: 0 14px; }
     .ykitob-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
     .ym-nom { font-size: 17px; }
+    .video-grid { grid-template-columns: 1fr; gap: 26px; }
     .dastur { padding: 20px 18px; }
     .reader-body h2.dastur-nom { font-size: 22px; }
     .obuna, .cta-blok { padding: 18px; }
@@ -1402,6 +1445,7 @@
         <a class="about-link" href="/kitoblar" data-go>O'qigan kitoblarim</a>
         <a class="about-link" href="/yozgan-kitoblarim" data-go>Yozgan kitoblarim</a>
         <a class="about-link" href="/dasturlar" data-go>Dasturlar</a>
+        <a class="about-link" href="/chiqishlar" data-go>Chiqishlarim</a>
         <a class="about-link" href="/men-haqimda" data-go>Men haqimda</a>
       </nav>
     </div>
@@ -1630,6 +1674,66 @@
     </div>
   </div>
 
+  <div id="chiqishView" class="reader">
+    <a class="back-link" href="/" data-go>&larr; Insholar ro'yxatiga</a>
+    <div class="reader-head">
+      <h1 class="reader-title">Chiqishlarim</h1>
+    </div>
+    <div class="reader-body">
+      <p class="kitob-lead">Podkast va suhbatlardagi chiqishlarim. Videoni shu sahifaning o'zida ko'rish mumkin.</p>
+      <div class="video-grid">
+        <figure class="video">
+          <button type="button" class="video-play" data-yt="6-YrHygyu5Q" aria-label="Videoni ko'rish">
+            <img src="https://i.ytimg.com/vi/6-YrHygyu5Q/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+            <span class="video-btn" aria-hidden="true"></span>
+          </button>
+          <figcaption>
+            <span class="video-kanal" data-notr>Zed Avlod podkasti, 1-son</span>
+            <span class="video-nom">Gamerlikdan Liderlikgacha</span>
+            <a class="cta-link" href="https://youtu.be/6-YrHygyu5Q" target="_blank" rel="noopener noreferrer">YouTube'da ochish ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="video">
+          <button type="button" class="video-play" data-yt="9KCKcw6oASY" aria-label="Videoni ko'rish">
+            <img src="https://i.ytimg.com/vi/9KCKcw6oASY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+            <span class="video-btn" aria-hidden="true"></span>
+          </button>
+          <figcaption>
+            <span class="video-kanal" data-notr>Zed Avlod podkasti</span>
+            <span class="video-nom">Zed Avlod qanday o'ylaydi? Abdurazzoq Xanov bilan ochiq suhbat</span>
+            <a class="cta-link" href="https://youtu.be/9KCKcw6oASY" target="_blank" rel="noopener noreferrer">YouTube'da ochish ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="video">
+          <button type="button" class="video-play" data-yt="k1GG9092cIQ" aria-label="Videoni ko'rish">
+            <img src="https://i.ytimg.com/vi/k1GG9092cIQ/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+            <span class="video-btn" aria-hidden="true"></span>
+          </button>
+          <figcaption>
+            <span class="video-kanal" data-notr>Jony Academy</span>
+            <span class="video-nom">Bekobodlik yigit Amerikada — 100 000 dollarlik grant hikoyasi</span>
+            <a class="cta-link" href="https://youtu.be/k1GG9092cIQ" target="_blank" rel="noopener noreferrer">YouTube'da ochish ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="video">
+          <button type="button" class="video-play" data-yt="z3us0C6KRDo" aria-label="Videoni ko'rish">
+            <img src="https://i.ytimg.com/vi/z3us0C6KRDo/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+            <span class="video-btn" aria-hidden="true"></span>
+          </button>
+          <figcaption>
+            <span class="video-kanal" data-notr>Jony Academy</span>
+            <span class="video-nom">Amerikaga grant yutish oson, viza olish esa...</span>
+            <a class="cta-link" href="https://youtu.be/z3us0C6KRDo" target="_blank" rel="noopener noreferrer">YouTube'da ochish ↗</a>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="cta-blok">
+        <p>Podkast, suhbat yoki tadbirga taklif qilmoqchi bo'lsangiz, murojaat qoldiring.</p>
+        <a class="cta-btn" href="/murojaat?turi=hamkorlik" data-go>Taklif yuborish</a>
+      </div>
+    </div>
+  </div>
+
   <div id="aboutView" class="reader">
     <a class="back-link" id="aboutBackLink" href="/" data-go>&larr; Insholar ro'yxatiga</a>
     <div class="reader-head">
@@ -1763,6 +1867,7 @@
         <a href="/kitoblar" data-go>O'qigan kitoblarim</a>
         <a href="/yozgan-kitoblarim" data-go>Yozgan kitoblarim</a>
         <a href="/dasturlar" data-go>Dasturlar</a>
+        <a href="/chiqishlar" data-go>Chiqishlarim</a>
         <a href="/men-haqimda" data-go>Men haqimda</a>
       </nav>
       <div class="oyoq-ustun">
@@ -1781,7 +1886,7 @@
 
 <script src="/essays.js"></script>
 <script src="/kitoblar.js?v=3"></script>
-<script src="/yozuv.js?v=9"></script>
+<script src="/yozuv.js?v=10"></script>
 <script>
 (function () {
   let essays = [];
@@ -2339,6 +2444,45 @@
     readsEl.classList.add('show');
   }
 
+  /* Tashrif manbai: o'quvchi saytga qayerdan keldi (Telegram, Instagram, Google ...).
+     Sessiya boshida bir marta aniqlanadi; sayt ichida yurganda o'zgarmaydi.
+     Havola oxiridagi ?tg yoki ?ig belgisi ham hisobga olinadi va manzildan olib tashlanadi. */
+  const MANBA = (function () {
+    try { const s = sessionStorage.getItem('jz_src'); if (s) return s; } catch (err) {}
+    const q = new URLSearchParams(location.search);
+    const ua = navigator.userAgent || '';
+    const host = location.hostname.replace(/^www\./, '');
+    let ref = '';
+    try { ref = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '').toLowerCase() : ''; } catch (err) {}
+    const utm = (q.get('utm_source') || '').toLowerCase();
+    let m = 'togridan';
+    if (q.has('tg') || /^(tg|telegram)/.test(utm) || /(^|\.)(t\.me|telegram\.org|telegram\.me)$/.test(ref) || /Telegram/i.test(ua)) m = 'telegram';
+    else if (q.has('ig') || /^(ig|instagram)/.test(utm) || /(^|\.)instagram\.com$/.test(ref) || /Instagram/.test(ua)) m = 'instagram';
+    else if (/^(fb|facebook)/.test(utm) || /(^|\.)facebook\.com$/.test(ref) || /FBAN|FBAV/.test(ua)) m = 'facebook';
+    else if (/(^|\.)google\.[a-z.]+$/.test(ref)) m = 'google';
+    else if (/(^|\.)(yandex\.[a-z.]+|ya\.ru)$/.test(ref)) m = 'yandex';
+    else if (/(^|\.)(bing\.com|duckduckgo\.com|search\.yahoo\.com)$/.test(ref)) m = 'qidiruv';
+    else if (ref && ref !== host && !/vercel\.app$/.test(ref)) m = 'sayt:' + ref;
+    try { sessionStorage.setItem('jz_src', m); } catch (err) {}
+    if (q.has('tg') || q.has('ig') || utm) {
+      ['tg', 'ig', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(k => q.delete(k));
+      const qs = q.toString();
+      try { history.replaceState(history.state, '', location.pathname + (qs ? '?' + qs : '') + location.hash); } catch (err) {}
+    }
+    return m;
+  })();
+
+  function trackVisit() {
+    if (location.protocol === 'file:') return;
+    try { if (sessionStorage.getItem('jz_tashrif')) return; sessionStorage.setItem('jz_tashrif', '1'); } catch (err) {}
+    fetch('/api/view', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tashrif: 1, vid: visitorId(), src: MANBA }),
+      keepalive: true
+    }).catch(() => {});
+  }
+
   function trackView(essay) {
     readsEl.textContent = '';
     readsEl.classList.remove('show');
@@ -2357,7 +2501,7 @@
       fetch('/api/view', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ folio: folio, vid: visitorId() })
+        body: JSON.stringify({ folio: folio, vid: visitorId(), src: MANBA })
       })
         .then(r => r.ok ? r.json() : null)
         .then(d => { if (d && activeId === essay.id) showReads(d.views); })
@@ -2369,7 +2513,8 @@
   const myBooksView = document.getElementById('myBooksView');
   const programsView = document.getElementById('programsView');
   const contactView = document.getElementById('contactView');
-  const VIEWS = [readerView, booksView, myBooksView, programsView, contactView, aboutView];
+  const chiqishView = document.getElementById('chiqishView');
+  const VIEWS = [readerView, booksView, myBooksView, programsView, chiqishView, contactView, aboutView];
 
   /* Bitta ko'rinish ochiq turadi; null bo'lsa bosh sahifa (insholar ro'yxati) */
   function showOnly(v) {
@@ -2392,6 +2537,21 @@
   function showAbout() { openPage(aboutView, "Men haqimda — Jahongir Zoxidov"); }
   function showMyBooks() { openPage(myBooksView, "Yozgan kitoblarim — Jahongir Zoxidov"); }
   function showPrograms() { openPage(programsView, "Dasturlar — Jahongir Zoxidov"); }
+  function showChiqish() { openPage(chiqishView, "Chiqishlarim — Jahongir Zoxidov"); }
+
+  /* Video rasmini bosganda YouTube pleyeri shu joyning o'zida ochiladi */
+  document.querySelectorAll('.video-play').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-yt');
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+      f.title = 'YouTube video';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      btn.replaceWith(f);
+    });
+  });
   function showContact() {
     openPage(contactView, "Murojaat — Jahongir Zoxidov");
     const t = new URLSearchParams(location.search).get('turi');
@@ -2415,7 +2575,7 @@
   mForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const val = id => document.getElementById(id).value.trim();
-    const data = { turi: mTuri.value, ism: val('mIsm'), aloqa: val('mAloqa'), yosh: val('mYosh'), shahar: val('mShahar'), xabar: val('mXabar'), website: val('mHp') };
+    const data = { turi: mTuri.value, ism: val('mIsm'), aloqa: val('mAloqa'), yosh: val('mYosh'), shahar: val('mShahar'), xabar: val('mXabar'), website: val('mHp'), src: MANBA };
     if (data.ism.length < 2) { mStatus('Ismingizni yozing.', 'err'); document.getElementById('mIsm').focus(); return; }
     if (data.aloqa.replace(/\s/g, '').length < 5) { mStatus('Telefon raqamingiz yoki Telegram manzilingizni yozing.', 'err'); document.getElementById('mAloqa').focus(); return; }
     mSend.disabled = true;
@@ -2666,6 +2826,7 @@
     'kitoblar': showBooks,
     'yozgan-kitoblarim': showMyBooks,
     'dasturlar': showPrograms,
+    'chiqishlar': showChiqish,
     'murojaat': showContact,
     'men-haqimda': showAbout
   };
@@ -2812,6 +2973,7 @@
   });
 
   initEssays();
+  trackVisit();
 })();
 </script>
 

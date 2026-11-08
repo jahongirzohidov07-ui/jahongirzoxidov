@@ -7,6 +7,7 @@
 const crypto = require('crypto');
 const { configured, redis } = require('./_lib/redis');
 const { clientIp, readJson, send, checkPin } = require('./_lib/util');
+const { NOMLAR, manba } = require('./_lib/manba');
 
 const TURLAR = {
   shogirdlik: 'Shogirdlik dasturi',
@@ -47,6 +48,7 @@ async function notify(m) {
   ];
   if (m.yosh) lines.push('<b>Yosh:</b> ' + esc(m.yosh));
   if (m.shahar) lines.push('<b>Shahar:</b> ' + esc(m.shahar));
+  if (m.src) lines.push('<b>Qayerdan:</b> ' + esc(NOMLAR[m.src] || m.src.replace(/^sayt:/, '')));
   if (m.xabar) lines.push('', esc(m.xabar.slice(0, 1500)));
   await tg.send(owner, lines.join('\n'), { parse_mode: 'HTML' });
   return { sent: true };
@@ -61,7 +63,7 @@ module.exports = async (req, res) => {
     try {
       const raw = (await redis('LRANGE', KEY, 0, 299)) || [];
       const items = raw.map(s => { try { return JSON.parse(s); } catch (e) { return null; } }).filter(Boolean);
-      return send(res, 200, { items, turlar: TURLAR });
+      return send(res, 200, { items, turlar: TURLAR, nomlar: NOMLAR });
     } catch (e) { return send(res, 500, { error: 'redis' }); }
   }
 
@@ -85,7 +87,7 @@ module.exports = async (req, res) => {
       if (n === 1) await redis('EXPIRE', rl, WINDOW);
       if (n > LIMIT) return send(res, 429, { error: "Juda ko'p murojaat yuborildi. Birozdan keyin qayta urinib ko'ring" });
 
-      const m = { id: crypto.randomBytes(6).toString('hex'), at: new Date().toISOString(), turi, ism, aloqa, yosh, shahar, xabar };
+      const m = { id: crypto.randomBytes(6).toString('hex'), at: new Date().toISOString(), turi, ism, aloqa, yosh, shahar, xabar, src: manba(b.src) };
       await redis('LPUSH', KEY, JSON.stringify(m));
       await redis('LTRIM', KEY, 0, 999);
       /* Telegram xabari javobni sekinlashtirmasin: ko'pi bilan 3 soniya kutamiz */

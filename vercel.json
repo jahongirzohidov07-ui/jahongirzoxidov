@@ -58,7 +58,7 @@
       "destination": "/api/sahifa?insho=:folio"
     },
     {
-      "source": "/:s(kitoblar|yozgan-kitoblarim|dasturlar|murojaat|men-haqimda)",
+      "source": "/:s(kitoblar|yozgan-kitoblarim|dasturlar|chiqishlar|murojaat|men-haqimda)",
       "destination": "/api/sahifa?s=:s"
     },
     {

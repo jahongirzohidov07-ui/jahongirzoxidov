@@ -55,6 +55,7 @@ const jobs = [
   { name: 'sayt', kicker: 'Insholar', title: 'Jahongir Zoxidov', sub: "Tajribadan, ilmdan kelib chiqqan insholar: ta'lim, oila, moliya, o'z-o'zini anglash va din haqida", size: 96 },
   { name: 'kitoblar', kicker: "Kitoblar", title: "O'qigan kitoblarim", sub: `2010-yildan beri ${kitobSoni} ta kitob: har biriga qo'ygan bahom va taqrizlarim`, size: 92 },
   { name: 'yozgan-kitoblarim', kicker: 'Muallif', title: 'Yozgan kitoblarim', sub: "Ingliz tilini o'rganish va IELTS'ga tayyorlanish bo'yicha kitoblar", size: 92 },
+  { name: 'chiqishlar', kicker: 'Podkast va suhbatlar', title: 'Chiqishlarim', sub: "Zed Avlod podkasti va Jony Academy videolaridagi suhbatlarim", size: 96 },
   { name: 'dasturlar', kicker: 'Dasturlar', title: 'Shogirdlik dasturi va TTP: Ustozlik Psixologiyasi', sub: 'Bilim va tajribamni ulashadigan dasturlar. Ariza qoldirish', size: 74 }
 ];
 essays.filter(e => !e.draft).forEach(e => {

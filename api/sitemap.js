@@ -28,6 +28,7 @@ module.exports = (req, res) => {
     { loc: SITE + '/kitoblar', pri: '0.7' },
     { loc: SITE + '/yozgan-kitoblarim', pri: '0.6' },
     { loc: SITE + '/dasturlar', pri: '0.7' },
+    { loc: SITE + '/chiqishlar', pri: '0.6' },
     { loc: SITE + '/men-haqimda', pri: '0.6' },
     { loc: SITE + '/murojaat', pri: '0.4' }
   ];

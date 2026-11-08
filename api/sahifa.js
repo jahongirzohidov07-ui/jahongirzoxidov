@@ -11,6 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const LD = require('./_lib/ld');
 
 const SITE = 'https://www.jahongirzoxidov.uz';
 
@@ -79,6 +80,11 @@ const SAHIFALAR = {
     desc: "Dasturlarga ariza, kitob buyurtmasi, hamkorlik yoki ma'ruzaga taklif uchun murojaat qoldiring.",
     img: 'sayt'
   }),
+  'chiqishlar': () => ({
+    title: 'Chiqishlarim — Jahongir Zoxidov',
+    desc: "Podkast va suhbatlardagi chiqishlarim: Zed Avlod podkasti va Jony Academy videolari.",
+    img: 'chiqishlar'
+  }),
   'men-haqimda': () => ({
     title: 'Men haqimda — Jahongir Zoxidov',
     desc: "Pedagog, tadbirkor, mentor va muallif. Jony Academy va Jony School asoschisi.",
@@ -97,6 +103,7 @@ function setMeta(html, m) {
   r(/<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + attr(m.url) + '">');
   r(/<meta property="og:image" content="[^"]*">/, '<meta property="og:image" content="' + attr(m.img) + '">');
   r(/<meta name="twitter:image" content="[^"]*">/, '<meta name="twitter:image" content="' + attr(m.img) + '">');
+  if (m.ld) r(/<script type="application\/ld\+json" id="ld">[\s\S]*?<\/script>/, () => '<script type="application/ld+json" id="ld">' + LD.json(m.ld) + '</script>');
   return html;
 }
 
@@ -122,6 +129,7 @@ module.exports = (req, res) => {
         img: ogImage('insho-' + folio),
         type: 'article'
       };
+      m.ld = LD.insho(e, m);
     } else {
       /* Qoralama yoki mavjud bo'lmagan insho: sahifa ochiladi (muallif PIN bilan ko'radi), lekin umumiy ko'rinish bilan */
       m = { title: 'Jahongir Zoxidov — Insholar', desc: "Ta'lim, oila, moliya, o'z-o'zini anglash va din haqida tajribadan kelib chiqqan uzun insholar.", url: SITE + '/insho/' + folio, img: SITE + '/assets/og/sayt.png' };
@@ -132,6 +140,7 @@ module.exports = (req, res) => {
     if (f) {
       const p = f(data.kitobSoni);
       m = { title: p.title, desc: p.desc, url: SITE + '/' + s, img: ogImage(p.img) };
+      m.ld = LD.sahifa(s, m);
     } else {
       status = 404;
       m = { title: 'Jahongir Zoxidov — Insholar', desc: "Ta'lim, oila, moliya, o'z-o'zini anglash va din haqida tajribadan kelib chiqqan uzun insholar.", url: SITE + '/', img: SITE + '/assets/og/sayt.png' };

@@ -114,6 +114,19 @@
     td.date { display: none; } th.date { display: none; }
     .tile .v { font-size: 32px; }
   }
+  /* Qayerdan kelishyapti */
+  .manba-t { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 14px; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; }
+  .manba-t th, .manba-t td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--rule); }
+  .manba-t th { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); background: var(--parchment-deep); }
+  .manba-t tr:last-child td { border-bottom: 0; }
+  .manba-t td.r, .manba-t th.r { text-align: right; font-variant-numeric: tabular-nums; }
+  .manba-t td.jami { color: var(--ink-soft); }
+  .manba-t .bar { width: 34%; }
+  .manba-t .barline { height: 8px; background: var(--parchment-deep); border-radius: 99px; overflow: hidden; }
+  .manba-t .barline i { display: block; height: 100%; background: var(--indigo); border-radius: 99px; }
+  .manba-izoh { margin: 12px 2px 0; font-family: 'Inter', sans-serif; font-size: 12.5px; line-height: 1.6; color: var(--ink-soft); }
+  @media (max-width: 640px) { .manba-t .bar, .manba-t td.jami, .manba-t th.jami { display: none; } }
+
   /* Murojaatlar (saytdagi /murojaat shaklidan) */
   .mur-filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: -4px 0 14px; }
   .mur-filtr .btn[aria-pressed="true"] { background: var(--indigo); color: var(--parchment); border-color: var(--indigo); }
@@ -165,6 +178,12 @@
         <div class="lbl"><span id="chartFrom"></span><span>kunlik o'qilganlar, oxirgi 30 kun</span><span id="chartTo"></span></div>
       </div>
       <div class="err" id="statsErr" style="display:none;margin-top:14px"></div>
+    </section>
+
+    <section>
+      <h2>Qayerdan kelishyapti <small>oxirgi 30 kun</small></h2>
+      <div id="manbaBox"><div class="empty">Yuklanmoqda…</div></div>
+      <p class="manba-izoh">Tashrif: saytga kirgan odamlar (bir kishi kuniga bir marta sanaladi). O'qish: insho kamida 8 soniya o'qilgan. Telegram'ning iPhone ilovasidan ochilganlar ko'pincha «To'g'ridan» bo'lib ko'rinadi. Kanalga havola tashlaganda oxiriga <b>?tg</b> qo'shsangiz (masalan, jahongirzoxidov.uz/insho/11?tg), aniq Telegram deb sanaladi. Instagram uchun <b>?ig</b>.</p>
     </section>
 
     <section>
@@ -314,6 +333,23 @@
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 
+  /* ---------- qayerdan kelishyapti ---------- */
+  function manbaNom(k, nomlar) { return (nomlar || {})[k] || String(k || '').replace(/^sayt:/, '') || "To'g'ridan yoki noma'lum"; }
+  function renderManba() {
+    const box = document.getElementById('manbaBox');
+    const m = stats && stats.manba;
+    if (!m) { box.innerHTML = '<div class="empty">Ma\'lumot yo\'q.</div>'; return; }
+    const keys = Array.from(new Set([].concat(Object.keys(m.tashrif.jami), Object.keys(m.oqish.jami), Object.keys(m.tashrif.d30), Object.keys(m.oqish.d30))));
+    if (!keys.length) { box.innerHTML = '<div class="empty">Hozircha ma\'lumot yo\'q. Hisob shu kundan boshlandi: odamlar kira boshlagach shu yerda ko\'rinadi.</div>'; return; }
+    const t30 = k => m.tashrif.d30[k] || 0;
+    keys.sort((a, b) => (t30(b) - t30(a)) || ((m.tashrif.jami[b] || 0) - (m.tashrif.jami[a] || 0)));
+    const max = Math.max(1, ...keys.map(t30));
+    const sum = o => Object.values(o).reduce((a, b) => a + b, 0);
+    box.innerHTML = '<table class="manba-t"><thead><tr><th>Manba</th><th class="r">Tashrif</th><th class="r">O\'qish</th><th class="bar"></th><th class="r jami">Jami tashrif</th></tr></thead><tbody>' +
+      keys.map(k => '<tr><td>' + esc(manbaNom(k, m.nomlar)) + '</td><td class="r">' + t30(k) + '</td><td class="r">' + (m.oqish.d30[k] || 0) + '</td><td class="bar"><div class="barline"><i style="width:' + (t30(k) / max * 100).toFixed(1) + '%"></i></div></td><td class="r jami">' + (m.tashrif.jami[k] || 0) + '</td></tr>').join('') +
+      '<tr><td><b>Jami</b></td><td class="r"><b>' + sum(m.tashrif.d30) + '</b></td><td class="r"><b>' + sum(m.oqish.d30) + '</b></td><td class="bar"></td><td class="r jami"><b>' + sum(m.tashrif.jami) + '</b></td></tr></tbody></table>';
+  }
+
   /* ---------- murojaatlar ---------- */
   let mur = { items: [], turlar: {} }, murTuri = '';
   function aloqaLink(a) {
@@ -343,7 +379,7 @@
     box.innerHTML = '<div class="mur-list">' + rows.map(m => `
       <div class="mur">
         <div class="mur-h"><b>${esc(m.ism)}</b><span class="mur-tur">${esc((mur.turlar || {})[m.turi] || m.turi)}</span><span class="mur-vaqt">${vaqt(m.at)}</span></div>
-        <div class="mur-meta">${aloqaLink(m.aloqa)}${m.yosh ? ' · ' + esc(m.yosh) + ' yosh' : ''}${m.shahar ? ' · ' + esc(m.shahar) : ''}</div>
+        <div class="mur-meta">${aloqaLink(m.aloqa)}${m.yosh ? ' · ' + esc(m.yosh) + ' yosh' : ''}${m.shahar ? ' · ' + esc(m.shahar) : ''}${m.src ? ' · qayerdan: ' + esc(manbaNom(m.src, mur.nomlar)) : ''}</div>
         ${m.xabar ? '<p class="mur-x">' + esc(m.xabar) + '</p>' : ''}
       </div>`).join('') + '</div>';
   }
@@ -365,6 +401,7 @@
       if (s._err) { stats = { views: {}, daily: {}, total: 0, today: 0 }; statsErr.textContent = 'Statistika olinmadi: ' + s._err; statsErr.style.display = 'block'; }
       else stats = s;
       renderStats();
+      renderManba();
       renderEssays();
       renderPrograms(p);
       loadMur();
