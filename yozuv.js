@@ -137,13 +137,18 @@
     "ta kitob o'qiganman": "books read",
     "2010-yildan beri": "since 2010",
     "Taqriz": "Review",
+    "o'rtacha baho": "average rating",
+    "ta kitobga 10 ball qo'yganman": "books rated 10/10",
+    "ta taqriz": "reviews",
+    "Yillar": "Years",
     "Telegramda o'qish ↗": "Read on Telegram ↗"
   };
   const EN_RE = [
     [/(\d+) daqiqa o'qish/, '$1 min read'],
     [/(\d+) marta o'qilgan/, 'read $1 times'],
     [/^2010-yildan beri (\d+) ta kitob$/, '$1 books since 2010'],
-    [/^(\d+) ta kitob$/, '$1 books']
+    [/^(\d+) ta kitob$/, '$1 books'],
+    [/^(\d+) ta$/, '$1']
   ];
   function toEn(s) {
     const t = s.trim();

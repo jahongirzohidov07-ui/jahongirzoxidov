@@ -283,34 +283,34 @@
   }
   .kitob-card-arrow { color: var(--clay-gold); font-size: 18px; }
 
-  .kitob-lead {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px !important;
-    color: var(--ink-soft);
-  }
+  /* Umumiy son bloki */
   .kitob-jami {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 16px;
-    margin: 0 0 18px;
-    padding: 18px 22px;
+    gap: 6px 20px;
+    margin: 0 0 14px;
+    padding: 22px 24px;
     background: var(--surface);
     border: 1px solid var(--rule);
-    border-radius: 12px;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
   }
   .kitob-jami-son {
     font-family: 'Fraunces', 'Literata', Georgia, serif;
-    font-size: 54px;
+    font-size: 64px;
     font-weight: 600;
-    line-height: 1;
+    line-height: 0.9;
     color: var(--indigo);
+    letter-spacing: -0.02em;
   }
   .kitob-jami-matn {
     display: flex;
     flex-direction: column;
     gap: 4px;
     font-family: 'Fraunces', 'Literata', Georgia, serif;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 500;
     color: var(--ink);
   }
@@ -321,40 +321,164 @@
     color: var(--clay-gold);
     letter-spacing: 0.02em;
   }
+  .kitob-stat {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 10px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .kitob-stat b { color: var(--ink); font-weight: 600; }
+  .kitob-stat .yulduz { color: #C08A2E; }
+
+  /* Yillar bo'yicha tez o'tish */
+  .kitob-yillar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 18px;
+  }
+  .kitob-yil-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding: 5px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: transparent;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+  .kitob-yil-btn b { font-weight: 600; color: var(--indigo); margin-right: 4px; }
+  .kitob-yil-btn:hover { border-color: var(--clay-gold); background: rgba(156, 122, 60, 0.08); color: var(--ink); }
+
+  .kitob-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px !important;
+    color: var(--ink-soft);
+  }
+  .kitob-yil { scroll-margin-top: 20px; }
+  .kitob-yil h2 .kitob-soni {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--clay-gold);
+    margin-left: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Kitob qatori: insholar ro'yxatidagi uslubda */
+  .reader-body ol.kitob-list { list-style: none; margin: 0 0 8px; padding: 0; }
+  .kitob {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    column-gap: 16px;
+    align-items: start;
+    padding: 16px 0;
+    margin: 0 !important;
+    border-bottom: 1px solid var(--rule);
+    transition: padding-left 0.18s ease;
+  }
+  .kitob:last-child { border-bottom: none; }
+  .kitob:hover { padding-left: 4px; }
+  .kitob:hover .kitob-n { border-color: var(--clay-gold); color: var(--clay-gold); }
+  .kitob-n {
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
+    font-variant-numeric: oldstyle-nums;
+    font-size: 15px;
+    color: var(--ink-soft);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .kitob-nom {
+    display: block;
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .kitob-muallif {
+    display: block;
+    margin-top: 3px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+
+  /* Baho: ★ 9/10 */
+  .kitob-baho {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 3px;
+    margin-top: 4px;
+    padding: 4px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--surface);
+  }
+  .kitob-baho .yulduz { color: #C08A2E; font-size: 12px; }
+  .kitob-baho .max { font-weight: 400; font-size: 11px; color: var(--ink-soft); }
+  .kitob-baho.b10 { background: linear-gradient(135deg, #F3E3BF, #E9D3A2); border-color: #C9A45E; color: #6E4F17; }
+  .kitob-baho.b10 .max { color: #8A6A2E; }
+  .kitob-baho.past { opacity: 0.75; }
+  .kitob-baho.past .yulduz { color: var(--ink-soft); }
+
   .kitob-qisqa {
     display: block;
-    margin-top: 5px;
+    margin-top: 6px;
     font-size: 14.5px;
     line-height: 1.55;
     font-style: italic;
     color: var(--ink-soft);
   }
   .kitob-btn {
-    display: inline-block;
-    margin-top: 6px;
-    padding: 2px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 7px;
+    padding: 0;
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 500;
     color: var(--indigo);
-    border: 1px solid rgba(59, 74, 107, 0.35);
-    border-radius: 999px;
-    background: transparent;
+    background: none;
+    border: 0;
+    border-bottom: 1px dashed rgba(59, 74, 107, 0.45);
   }
-  .kitob-btn:hover { background: rgba(59, 74, 107, 0.08); }
+  .kitob-btn:hover { color: var(--clay-gold); border-color: var(--clay-gold); }
+  .kitob-btn .chev { display: inline-block; font-size: 10px; transition: transform 0.2s ease; }
+  .kitob-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
   .kitob-sharh {
+    grid-column: 2 / -1;
     display: none;
-    margin: 10px 0 4px;
-    padding: 12px 16px;
+    margin: 12px 0 2px;
+    padding: 14px 18px;
     background: var(--surface);
     border-left: 3px solid var(--clay-gold);
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 10px 10px 0;
   }
-  .kitob-sharh.ochiq { display: block; }
+  .kitob-sharh.ochiq { display: block; animation: sharhOch 0.2s ease; }
+  @keyframes sharhOch { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
   .reader-body .kitob-sharh p {
     margin: 0 0 10px;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--ink);
     white-space: pre-line;
   }
@@ -367,54 +491,15 @@
   }
   .kitob-sharh a.kitob-url { color: var(--indigo); border-bottom: 1px solid rgba(59, 74, 107, 0.35); word-break: break-all; }
 
-  .kitob-yil h2 .kitob-soni {
-    font-family: 'Inter', sans-serif;
-    font-size: 12.5px;
-    font-weight: 500;
-    color: var(--clay-gold);
-    margin-left: 8px;
-    letter-spacing: 0.02em;
+  @media (max-width: 560px) {
+    .kitob { grid-template-columns: 32px 1fr auto; column-gap: 12px; }
+    .kitob-n { height: 30px; font-size: 14px; }
+    .kitob-nom { font-size: 16.5px; }
+    .kitob-sharh { grid-column: 1 / -1; }
+    .kitob-jami { padding: 18px; gap: 6px 14px; }
+    .kitob-jami-son { font-size: 52px; }
+    .kitob-jami-matn { font-size: 18px; }
   }
-  .reader-body ol.kitob-list { list-style: none; margin: 0 0 8px; padding: 0; }
-  .kitob {
-    display: grid;
-    grid-template-columns: 30px 1fr auto;
-    gap: 14px;
-    align-items: baseline;
-    padding: 10px 0;
-    margin: 0 !important;
-    border-bottom: 1px dotted var(--rule);
-  }
-  .kitob:last-child { border-bottom: none; }
-  .kitob-n {
-    font-family: 'Fraunces', 'Literata', Georgia, serif;
-    font-variant-numeric: oldstyle-nums;
-    font-size: 15px;
-    color: var(--ink-soft);
-    text-align: right;
-  }
-  .kitob-nom { font-size: 16.5px; line-height: 1.4; color: var(--ink); }
-  .kitob-muallif {
-    display: block;
-    margin-top: 2px;
-    font-family: 'Inter', sans-serif;
-    font-size: 12.5px;
-    line-height: 1.4;
-    color: var(--ink-soft);
-  }
-  .kitob-baho {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    min-width: 32px;
-    text-align: center;
-    padding: 2px 8px;
-    border-radius: 999px;
-    border: 1px solid var(--rule);
-    color: var(--ink-soft);
-  }
-  .kitob-baho.b10 { background: rgba(156, 122, 60, 0.14); border-color: rgba(156, 122, 60, 0.55); color: #7A5A22; }
-  .kitob-baho.b8 { border-color: rgba(59, 74, 107, 0.4); color: var(--indigo); }
 
   /* ---------- Reader view ---------- */
 
@@ -1182,7 +1267,9 @@
       <div class="kitob-jami">
         <span class="kitob-jami-son" id="booksTotal" data-notr></span>
         <span class="kitob-jami-matn"><span>ta kitob o'qiganman</span><small>2010-yildan beri</small></span>
+        <div class="kitob-stat" id="booksStat"></div>
       </div>
+      <nav class="kitob-yillar" id="booksYears" aria-label="Yillar"></nav>
       <p class="kitob-lead">Ro'yxat yillar bo'yicha. Kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada. Ko'p kitoblar tagida o'qib bo'lgach Telegram kanalimda yozgan taqrizim bor.</p>
       <div id="booksBody"></div>
     </div>
@@ -1312,7 +1399,7 @@
 
 <script src="essays.js"></script>
 <script src="kitoblar.js?v=2"></script>
-<script src="yozuv.js?v=6"></script>
+<script src="yozuv.js?v=7"></script>
 <script>
 (function () {
   let essays = [];
@@ -1952,14 +2039,58 @@
     return frag;
   }
   let booksDone = false;
+  function bahoEl(b) {
+    const el = document.createElement('span');
+    el.className = 'kitob-baho' + (b >= 10 ? ' b10' : b <= 5 ? ' past' : '');
+    el.setAttribute('data-notr', '');
+    el.title = b + '/10';
+    const y = document.createElement('span'); y.className = 'yulduz'; y.textContent = '★';
+    const n = document.createElement('span'); n.textContent = b;
+    const m = document.createElement('span'); m.className = 'max'; m.textContent = '/10';
+    el.appendChild(y); el.appendChild(n); el.appendChild(m);
+    return el;
+  }
   function renderBooks() {
     if (booksDone) return;
     booksDone = true;
     const root = document.getElementById('booksBody');
     const frag = document.createDocumentFragment();
-    KITOB.forEach(y => {
+
+    /* Umumiy ko'rsatkichlar: o'rtacha baho, 10 ball olganlar, taqrizlar */
+    const hamma = KITOB.reduce((a, y) => a.concat(y.kitoblar), []);
+    const ortacha = (hamma.reduce((s, k) => s + k.b, 0) / (hamma.length || 1)).toFixed(1).replace('.', ',');
+    const st = document.getElementById('booksStat');
+    st.innerHTML = '';
+    [['★ ' + ortacha, "o'rtacha baho"], [String(hamma.filter(k => k.b >= 10).length), "ta kitobga 10 ball qo'yganman"], [String(hamma.filter(k => k.r).length), 'ta taqriz']].forEach(([son, matn]) => {
+      const sp = document.createElement('span');
+      const b = document.createElement('b'); b.setAttribute('data-notr', ''); b.textContent = son;
+      if (son.startsWith('★')) { b.innerHTML = '<span class="yulduz">★</span> ' + ortacha; }
+      const t = document.createElement('span'); t.textContent = matn;
+      sp.appendChild(b); sp.appendChild(document.createTextNode(' ')); sp.appendChild(t);
+      st.appendChild(sp);
+    });
+
+    /* Yillar bo'yicha tez o'tish tugmalari */
+    const nav = document.getElementById('booksYears');
+    nav.innerHTML = '';
+    KITOB.forEach((y, yi) => {
+      const bt = document.createElement('button');
+      bt.type = 'button';
+      bt.className = 'kitob-yil-btn';
+      const b = document.createElement('b'); b.textContent = y.yil;
+      bt.appendChild(b);
+      bt.appendChild(document.createTextNode(y.kitoblar.length + ' ta'));
+      bt.addEventListener('click', () => {
+        const el = document.getElementById('kitob-yil-' + yi);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      nav.appendChild(bt);
+    });
+
+    KITOB.forEach((y, yi) => {
       const sec = document.createElement('section');
       sec.className = 'kitob-yil';
+      sec.id = 'kitob-yil-' + yi;
       const h = document.createElement('h2');
       h.appendChild(document.createTextNode(y.yil + ' '));
       const soni = document.createElement('span');
@@ -1974,8 +2105,8 @@
         li.className = 'kitob';
         const n = document.createElement('span');
         n.className = 'kitob-n';
-        n.textContent = (i + 1) + '.';
-        const main = document.createElement('span');
+        n.textContent = i + 1;
+        const main = document.createElement('div');
         const nom = document.createElement('span');
         nom.className = 'kitob-nom';
         nom.textContent = k.n;
@@ -1986,7 +2117,8 @@
           m.textContent = k.m;
           main.appendChild(m);
         }
-        if (k.en) main.setAttribute('data-notr', '');
+        if (k.en) { nom.setAttribute('data-notr', ''); if (main.childNodes[1]) main.childNodes[1].setAttribute('data-notr', ''); }
+        li.appendChild(n); li.appendChild(main); li.appendChild(bahoEl(k.b));
         if (k.r && k.q) {
           const q = document.createElement('span');
           q.className = 'kitob-qisqa';
@@ -1997,7 +2129,9 @@
           const btn = document.createElement('button');
           btn.type = 'button';
           btn.className = 'kitob-btn';
-          btn.textContent = 'Taqriz';
+          const bt = document.createElement('span'); bt.textContent = 'Taqriz';
+          const ch = document.createElement('span'); ch.className = 'chev'; ch.textContent = '▾'; ch.setAttribute('aria-hidden', 'true');
+          btn.appendChild(bt); btn.appendChild(ch);
           btn.setAttribute('aria-expanded', 'false');
           const box = document.createElement('div');
           box.className = 'kitob-sharh';
@@ -2008,16 +2142,9 @@
             const ochiq = box.classList.toggle('ochiq');
             btn.setAttribute('aria-expanded', ochiq ? 'true' : 'false');
           });
-          const wrap = document.createElement('div');
-          wrap.appendChild(btn);
-          wrap.appendChild(box);
-          main.appendChild(wrap);
+          main.appendChild(btn);
+          li.appendChild(box);
         }
-        const b = document.createElement('span');
-        b.className = 'kitob-baho' + (k.b >= 10 ? ' b10' : k.b >= 8 ? ' b8' : '');
-        b.textContent = k.b;
-        b.setAttribute('data-notr', '');
-        li.appendChild(n); li.appendChild(main); li.appendChild(b);
         ol.appendChild(li);
       });
       sec.appendChild(ol);
