@@ -253,6 +253,90 @@
     font-size: 14px;
   }
 
+  /* ---------- O'qigan kitoblarim ---------- */
+
+  .kitob-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    margin: 22px 0 0;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, padding-left 0.18s ease;
+  }
+  .kitob-card:hover { border-color: var(--clay-gold); padding-left: 22px; }
+  .kitob-card-k {
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--indigo);
+  }
+  .kitob-card-v {
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .kitob-card-arrow { color: var(--clay-gold); font-size: 18px; }
+
+  .kitob-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px !important;
+    color: var(--ink-soft);
+  }
+  .kitob-yil h2 .kitob-soni {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--clay-gold);
+    margin-left: 8px;
+    letter-spacing: 0.02em;
+  }
+  .reader-body ol.kitob-list { list-style: none; margin: 0 0 8px; padding: 0; }
+  .kitob {
+    display: grid;
+    grid-template-columns: 30px 1fr auto;
+    gap: 14px;
+    align-items: baseline;
+    padding: 10px 0;
+    margin: 0 !important;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .kitob:last-child { border-bottom: none; }
+  .kitob-n {
+    font-family: 'Fraunces', 'Literata', Georgia, serif;
+    font-variant-numeric: oldstyle-nums;
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-align: right;
+  }
+  .kitob-nom { font-size: 16.5px; line-height: 1.4; color: var(--ink); }
+  .kitob-muallif {
+    display: block;
+    margin-top: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+  .kitob-baho {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 32px;
+    text-align: center;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+  }
+  .kitob-baho.b10 { background: rgba(156, 122, 60, 0.14); border-color: rgba(156, 122, 60, 0.55); color: #7A5A22; }
+  .kitob-baho.b8 { border-color: rgba(59, 74, 107, 0.4); color: var(--indigo); }
+
   /* ---------- Reader view ---------- */
 
   .reader { display: none; }
@@ -934,11 +1018,17 @@
         <button type="button" data-yz="yangi" aria-pressed="false" title="Yangilangan lotin alifbosi (2027-yil 22-apreldan)">Yangi alifbo</button>
         <button type="button" data-yz="en" aria-pressed="false" title="Read in English">English</button>
       </div>
+      <span class="about-link" id="booksLink">O'qigan kitoblarim</span>
       <span class="about-link" id="aboutLink">Men haqimda</span>
     </div>
   </header>
 
   <div id="listView" class="list-view">
+    <a class="kitob-card" id="booksCard" href="#kitoblar">
+      <span class="kitob-card-k">O'qigan kitoblarim</span>
+      <span class="kitob-card-v" id="booksCardMeta"></span>
+      <span class="kitob-card-arrow" aria-hidden="true">&rarr;</span>
+    </a>
     <div class="toolbar">
       <div class="search-wrap">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#55503F" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -1001,6 +1091,17 @@
     <div class="reader-foot">
       <span><span id="readerFolioFoot"></span><span id="readerReads" class="reader-reads"></span></span>
       <button class="copy-btn" id="copyBtn">Havolani ulashish</button>
+    </div>
+  </div>
+
+  <div id="booksView" class="reader">
+    <span class="back-link" id="booksBackLink">&larr; Insholar ro'yxatiga</span>
+    <div class="reader-head">
+      <h1 class="reader-title">O'qigan kitoblarim</h1>
+    </div>
+    <div class="reader-body">
+      <p class="kitob-lead">2010-yildan beri o'qigan kitoblarim, yillar bo'yicha. Har bir kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada.</p>
+      <div id="booksBody"></div>
     </div>
   </div>
 
@@ -1127,7 +1228,8 @@
 <div class="toast" id="toast"></div>
 
 <script src="essays.js"></script>
-<script src="yozuv.js?v=4"></script>
+<script src="kitoblar.js?v=1"></script>
+<script src="yozuv.js?v=5"></script>
 <script>
 (function () {
   let essays = [];
@@ -1135,6 +1237,7 @@
 
   const listView = document.getElementById('listView');
   const readerView = document.getElementById('readerView');
+  const booksView = document.getElementById('booksView');
   const essayListEl = document.getElementById('essayList');
   const emptyState = document.getElementById('emptyState');
   const searchInput = document.getElementById('searchInput');
@@ -1470,6 +1573,7 @@
 
     listView.classList.add('hidden');
     aboutView.classList.remove('active');
+    booksView.classList.remove('active');
     readerView.classList.add('active');
     if (!soft) window.scrollTo({ top: 0, behavior: 'auto' });
     document.title = v.title + ' — Jahongir Zoxidov';
@@ -1718,6 +1822,7 @@
     activeId = null;
     readerView.classList.remove('active');
     aboutView.classList.remove('active');
+    booksView.classList.remove('active');
     listView.classList.remove('hidden');
     document.title = 'Jahongir Zoxidov — Insholar';
   }
@@ -1726,9 +1831,74 @@
     activeId = null;
     listView.classList.add('hidden');
     readerView.classList.remove('active');
+    booksView.classList.remove('active');
     aboutView.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'auto' });
     document.title = "Men haqimda — Jahongir Zoxidov";
+  }
+
+  /* O'qigan kitoblarim: kitoblar.js dagi ro'yxat, yillar bo'yicha (eng yangi yil tepada) */
+  const KITOB = window.KITOBLAR || [];
+  const kitobJami = KITOB.reduce((n, y) => n + y.kitoblar.length, 0);
+  document.getElementById('booksCardMeta').textContent = '2010-yildan beri ' + kitobJami + ' ta kitob';
+  let booksDone = false;
+  function renderBooks() {
+    if (booksDone) return;
+    booksDone = true;
+    const root = document.getElementById('booksBody');
+    const frag = document.createDocumentFragment();
+    KITOB.forEach(y => {
+      const sec = document.createElement('section');
+      sec.className = 'kitob-yil';
+      const h = document.createElement('h2');
+      h.appendChild(document.createTextNode(y.yil + ' '));
+      const soni = document.createElement('span');
+      soni.className = 'kitob-soni';
+      soni.textContent = y.kitoblar.length + ' ta kitob';
+      h.appendChild(soni);
+      sec.appendChild(h);
+      const ol = document.createElement('ol');
+      ol.className = 'kitob-list';
+      y.kitoblar.forEach((k, i) => {
+        const li = document.createElement('li');
+        li.className = 'kitob';
+        const n = document.createElement('span');
+        n.className = 'kitob-n';
+        n.textContent = (i + 1) + '.';
+        const main = document.createElement('span');
+        const nom = document.createElement('span');
+        nom.className = 'kitob-nom';
+        nom.textContent = k.n;
+        main.appendChild(nom);
+        if (k.m) {
+          const m = document.createElement('span');
+          m.className = 'kitob-muallif';
+          m.textContent = k.m;
+          main.appendChild(m);
+        }
+        if (k.en) main.setAttribute('data-notr', '');
+        const b = document.createElement('span');
+        b.className = 'kitob-baho' + (k.b >= 10 ? ' b10' : k.b >= 8 ? ' b8' : '');
+        b.textContent = k.b;
+        b.setAttribute('data-notr', '');
+        li.appendChild(n); li.appendChild(main); li.appendChild(b);
+        ol.appendChild(li);
+      });
+      sec.appendChild(ol);
+      frag.appendChild(sec);
+    });
+    root.appendChild(frag);
+  }
+
+  function showBooks() {
+    activeId = null;
+    renderBooks();
+    listView.classList.add('hidden');
+    readerView.classList.remove('active');
+    aboutView.classList.remove('active');
+    booksView.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.title = "O'qigan kitoblarim — Jahongir Zoxidov";
   }
 
   /* English tanlanganda "Men haqimda" matni ham inglizchaga almashadi */
@@ -1757,6 +1927,7 @@
     catch (err) { h = (location.hash || '').replace(/^#/, ''); }
 
     if (h === 'men-haqimda') { showAbout(); return; }
+    if (h === 'kitoblar') { showBooks(); return; }
 
     const m = h.match(/^insho-(.+)$/);
     if (m) {
@@ -1780,6 +1951,8 @@
   document.getElementById('brandLink').addEventListener('click', goHome);
   document.getElementById('aboutBackLink').addEventListener('click', goHome);
   document.getElementById('aboutLink').addEventListener('click', () => { location.hash = 'men-haqimda'; });
+  document.getElementById('booksLink').addEventListener('click', () => { location.hash = 'kitoblar'; });
+  document.getElementById('booksBackLink').addEventListener('click', goHome);
 
   document.getElementById('copyBtn').addEventListener('click', () => {
     const url = location.href;

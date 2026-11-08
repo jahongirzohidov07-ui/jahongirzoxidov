@@ -130,11 +130,16 @@
     "Havolani nusxalash imkoni bo'lmadi.": "Couldn't copy the link.",
     "Insho matnini nusxalab bo'lmaydi. Havolani ulashing.": "The essay text can't be copied. Please share the link instead.",
     "Jahongir Zoxidov — Insholar": "Jahongir Zoxidov — Essays",
-    "Men haqimda — Jahongir Zoxidov": "About me — Jahongir Zoxidov"
+    "Men haqimda — Jahongir Zoxidov": "About me — Jahongir Zoxidov",
+    "O'qigan kitoblarim": "Books I've read",
+    "O'qigan kitoblarim — Jahongir Zoxidov": "Books I've read — Jahongir Zoxidov",
+    "2010-yildan beri o'qigan kitoblarim, yillar bo'yicha. Har bir kitob yonidagi raqam o'zim qo'ygan baho, 10 ballik shkalada.": "The books I have read since 2010, by year. The number next to each book is my own rating, out of 10."
   };
   const EN_RE = [
     [/(\d+) daqiqa o'qish/, '$1 min read'],
-    [/(\d+) marta o'qilgan/, 'read $1 times']
+    [/(\d+) marta o'qilgan/, 'read $1 times'],
+    [/^2010-yildan beri (\d+) ta kitob$/, '$1 books since 2010'],
+    [/^(\d+) ta kitob$/, '$1 books']
   ];
   function toEn(s) {
     const t = s.trim();
