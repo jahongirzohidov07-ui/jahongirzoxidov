@@ -98,5 +98,42 @@ module.exports = [
       "Qizlar, sizga «kuchli bo'l», «hech kimga tobe bo'lma» deyishadi. Lekin bu yo'lning oxirida nima kutib turganini kam odam aytadi. Islom sizga tenglik emas, adolat beradi: haqqingizni ham, hurmatingizni ham, himoyangizni ham. Uni boshqa joydan qidirishga hojat yo'q.",
       "> **Haqiqiy Islomni bilgan va unga amal qilgan odamga hech qanday «izm» kerak emas.** Tenglik adolat degani emas."
     ].join(PARA)
+  },
+  {
+    folio: "14",
+    title: "Oqibat bilan emas, sabab bilan kurashing",
+    date: "18.11.2026",
+    body: [
+      "Boshingiz og'risa, nima qilasiz? Ko'pchilik o'ylab ham o'tirmay, og'riq qoldiruvchi dori ichadi. Yarim soatdan keyin og'riq bosiladi. Muammo hal bo'ldi, deb o'ylaymiz.",
+      "Lekin ko'p hollarda bosh og'rig'i o'zi kasallik emas, u boshqa narsaning belgisi. Tana «qayerdadir nimadir joyida emas» deb xabar beryapti. Dori shu xabarni o'chiradi, xolos. Sababi esa joyida qoladi va ertaga og'riq yana qaytadi.",
+      "Hayotda biz ko'p muammoga xuddi shunday yondashamiz: sababini emas, oqibatini davolaymiz. Bu inshoda shu xato haqida gapirmoqchiman. Xulosam shu: **muammoni hal qilish uchun uning oqibati bilan emas, sababi bilan kurashish kerak.** Buning uchun esa sabab va oqibat bo'yicha fikrlashni o'rganish kerak.",
+      "## Har bir oqibatning sababi bor",
+      "Bu qonun hamma joyda ishlaydi. Falsafada, dialektikada sabab va oqibat asosiy tushunchalardan biri: har bir hodisaning o'z sababi bor va har bir sabab o'z oqibatini keltirib chiqaradi. Fizikada ham shunday. Nyutonning birinchi qonuniga ko'ra, jismga kuch ta'sir qilmasa, u tinch holatini yoki bir tekis harakatini o'zgartirmaydi. Demak, harakatdagi har bir o'zgarishning sababi bor: unga ta'sir qilgan kuch.",
+      "Hayotda ham hech narsa o'z-o'zidan bo'lmaydi. Aytaylik, qo'lingizga yara chiqdi. Ko'pchilik uni tezroq yo'qotishni o'ylaydi: siqadi, kesib tashlaydi. Lekin sababi qolsa, yara yana chiqadi. Undan ko'ra yara nega chiqqanini o'ylash kerak.",
+      "## Bitta oqibat, ko'p sabab",
+      "Bosh og'rig'iga qaytaylik. Uning sababi bitta emas. Balki tomoq og'riyapti va isitma chiqqandir. Unda tomoqni davolash kerak. Balki boshini yuvib, ho'l holida ko'chaga chiqqan va sovuq urgandir. Balki kecha yaxshi uxlamagandir. Unda dam olsa, o'tib ketadi. Yoki boshini biror joyga urib olgandir. Unda shifokorga ko'rinish kerak.",
+      "![Bosh og'rig'i bitta oqibat. Uning sababi to'rt xil bo'lishi mumkin va har bir sababning o'z yechimi bor.](/assets/insho/14-sabab-oqibat.svg)",
+      "Ko'rib turganingizdek, oqibat bitta, sabablar esa har xil. Har bir sababning o'z yechimi bor. Og'riq qoldiruvchi dori esa to'rttasida ham bir xil ishni qiladi: og'riqni bosadi, sababiga tegmaydi.",
+      "Katta muammolarda sabab yana ham ko'p bo'ladi. Shuning uchun ularni bitta yechim bilan hal qilib bo'lmaydi. Har bir sababga alohida yechim topiladi va muammo sekin-asta kamaytirib boriladi.",
+      "Yaqinda bunga bir misol bo'ldi. Ajrim ishlarida sudyalar er-xotinga beradigan yarashish muddatini 6 oydan 1 yilgacha uzaytirish taklif qilindi. Niyat yaxshi: oilalar buzilmasin. Lekin ajrimning o'zi oqibat. Muddatni uzaytirish bilan oqibat biroz kechiktiriladi, xolos. Ajrimning sababi esa joyida qoladi.",
+      "Ajrimning sababi ham bitta emas. Masalan, yoshlar oila qurishga tayyor bo'lmasdan turmush quradi. Yoki oilada uy-joy, ish yo'q. Yoki ota-ona kelin-kuyovning ishiga ortiqcha aralashadi. Har birining yechimi boshqa: birida yoshlarni oilaga tayyorlash, birida iqtisodiy masalani hal qilish, birida ota-onalar bilan ishlash kerak. Shunda ajrimlar soni kamayib boradi.",
+      "## Maktabda ham shunday",
+      "Ta'limda bu xato yanada ko'p uchraydi. Bola sho'xlik qilsa, biz sho'xlikka qarshi kurashamiz: urishamiz, jazolaymiz. Darsda diqqat qilmasa, yana urishamiz. Lekin sho'xlik ham, diqqatsizlik ham oqibat.",
+      "Sababi har xil bo'lishi mumkin. Bola kechasi kech yotgandir. Uyda unga e'tibor yetishmayotgandir. Dars unga tushunarsizdir yoki aksincha, juda osondir. Balki och qolgandir. Urishish bularning birortasini ham hal qilmaydi. Faqat bolani jim qiladi, sababi esa ichida qolaveradi.",
+      "Shuning uchun maktabimizda «Muammo emas, signal» degan qoida bor. Bola yomon xulq qilsa, biz «Uni qanday jazolaymiz?» deb emas, «Unga nima og'riyapti?» deb so'raymiz. Sababini topsak, muammo ham hal bo'ladi. **Sababini qidirishni o'rgansak, hamma sohada o'samiz.**",
+      "## Fikrlashni o'rgatadigan fan",
+      "Sabab va oqibat bo'yicha fikrlashni eng yaxshi o'rgatadigan fanlardan biri matematika. Matematik masalada har bir qadam oldingisidan kelib chiqadi: «Agar shunday bo'lsa, demak shunday bo'ladi». Javob xato chiqsa, xatoni javobdan emas, qaysi qadamda adashganingizdan qidirasiz. Bu aynan sabab izlash.",
+      "Aslida hamma fan shuni o'rgatishi kerak. Tarix faqat sanalarni yodlatsa, bola sana biladi, xolos. «Bu urush nega boshlandi?» deb so'rasa, bola sabab izlashni o'rganadi. Fizika faqat formulani yodlatsa, formula esdan chiqadi. «Nega shunday bo'ladi?» deb so'rasa, fikrlash qoladi. **Fanlar faqat fikrlashni o'rgatgandagina hayotni osonlashtiradi.**",
+      "## Sababni qanday topish mumkin",
+      "Sababni topishning oddiy usuli bor: muammoga qarab ketma-ket bir necha marta «Nega?» deb so'rash. Bu usul Yaponiyadagi Toyota kompaniyasida keng qo'llanilgan va «5 ta nega» deb nomlanadi. Masalan, bola darsda diqqat qilmayapti:",
+      "- Nega diqqat qilmayapti? Charchagan.\n- Nega charchagan? Kechasi kech yotgan.\n- Nega kech yotgan? Kechgacha telefonda o'tirgan.\n- Nega telefonda o'tirgan? Uyda boshqa mashg'uloti yo'q, ota-onasi ham band.",
+      "Endi ko'ring: urishish birinchi qatorga qarshi kurash edi. Haqiqiy yechim esa oxirgi qatorda: bolaning kechki vaqtini mazmunli qilish va ota-onasi bilan gaplashish.",
+      "O'zingizni ham tekshirib ko'ring. Quyidagi holatlarda biz ko'pincha oqibat bilan kurashamiz:",
+      "- Pul yetmayapti, qarz olamiz. Lekin sabab daromad kamligidami yoki xarajat rejasizligidami?\n- Xodim ishdan ketdi, yangisini olamiz. Lekin nega ketganini so'radikmi?\n- Bola baho olmayapti, repetitor yollaymiz. Lekin u tushunmayaptimi, qiziqmayaptimi yoki uxlamayaptimi?",
+      "Har birida birinchi yechim oqibatga qaratilgan. U tez va oson, natijasi ham darrov ko'rinadi. Sababni topish esa vaqt va fikr talab qiladi. Shuning uchun ko'pchilik birinchisini tanlaydi va muammo qayta-qayta qaytib kelaveradi.",
+      "## Fundamentga tushing",
+      "Muammoning ildizi har doim chuqurroqda bo'ladi. Yuzada faqat oqibat ko'rinadi. **Fundamentga tushsangiz, hammasi topiladi.**",
+      "Keyingi safar boshingiz og'risa, dori ichishdan oldin bir daqiqa to'xtab, o'zingizdan so'rang: «Nega og'riyapti?» Shu bitta savol hayotingizdagi ko'p muammoga boshqacha qarashni o'rgatadi."
+    ].join(PARA)
   }
 ];
