@@ -127,6 +127,16 @@
   .manba-izoh { margin: 12px 2px 0; font-family: 'Inter', sans-serif; font-size: 12.5px; line-height: 1.6; color: var(--ink-soft); }
   @media (max-width: 640px) { .manba-t .bar, .manba-t td.jami, .manba-t th.jami { display: none; } }
 
+  /* Qoralama insholar (faqat muallif ko'radi) */
+  .qor-note { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-soft); margin: -6px 0 14px; }
+  .qor-list { display: grid; gap: 12px; }
+  .qor { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px dashed var(--clay-gold); border-radius: 12px; padding: 14px 18px; }
+  .qor .n { font-family: 'Fraunces', serif; color: var(--clay-gold); font-weight: 600; font-size: 22px; min-width: 30px; }
+  .qor .t { flex: 1; min-width: 0; }
+  .qor .t b { display: block; font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; line-height: 1.3; }
+  .qor .t span { font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink-soft); }
+  .qor-open { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: var(--indigo); white-space: nowrap; text-decoration: none; }
+  .qor-open:hover { text-decoration: underline; }
   /* Murojaatlar (saytdagi /murojaat shaklidan) */
   .mur-filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: -4px 0 14px; }
   .mur-filtr .btn[aria-pressed="true"] { background: var(--indigo); color: var(--parchment); border-color: var(--indigo); }
@@ -190,6 +200,12 @@
       <h2>Murojaatlar <small id="murCount"></small></h2>
       <div class="mur-filtr" id="murFiltr"></div>
       <div id="murList"><div class="empty">Yuklanmoqda…</div></div>
+    </section>
+
+    <section>
+      <h2>Qoralamalar <small id="qorCount"></small></h2>
+      <p class="qor-note">Faqat sizga ko'rinadi. Insho tayyor bo'lsa, Claude'ga «N-inshoni chiqar» deng.</p>
+      <div id="qorList"><div class="empty">Yuklanmoqda…</div></div>
     </section>
 
     <section>
@@ -314,6 +330,23 @@
     renderEssays();
   }));
 
+  /* ---------- qoralamalar ---------- */
+  function sozSoni(t) { return String(t || '').replace(/[#*!\[\]()>]/g, ' ').split(/\s+/).filter(Boolean).length; }
+  function loadQor() {
+    const box = document.getElementById('qorList');
+    api('/api/insho').then(d => {
+      const list = (d.drafts || []).slice().sort((a, b) => (parseInt(b.folio, 10) || 0) - (parseInt(a.folio, 10) || 0));
+      document.getElementById('qorCount').textContent = list.length ? list.length + ' ta' : '';
+      if (!list.length) { box.innerHTML = '<div class="empty">Hozircha qoralama yo\'q.</div>'; return; }
+      box.innerHTML = '<div class="qor-list">' + list.map(e => `
+        <div class="qor">
+          <span class="n">${esc(e.folio)}</span>
+          <span class="t"><b>${esc(e.title)}</b><span>${esc(e.date)} · ${sozSoni(e.body)} so'z</span></span>
+          <a class="qor-open" href="/insho/${encodeURIComponent(e.folio)}" target="_blank" rel="noopener">Ko'rish →</a>
+        </div>`).join('') + '</div>';
+    }).catch(e => { box.innerHTML = '<div class="err">Qoralamalar olinmadi: ' + esc(e.message) + '</div>'; });
+  }
+
   /* ---------- dasturlar ---------- */
   function renderPrograms(data) {
     const box = document.getElementById('programs');
@@ -405,6 +438,7 @@
       renderEssays();
       renderPrograms(p);
       loadMur();
+      loadQor();
     } catch (e) {
       if (e.auth) { setPin(''); showGate(e.message === 'PIN' ? 'PIN noto\'g\'ri' : e.message); return; }
       statsErr.textContent = e.message; statsErr.style.display = 'block';
