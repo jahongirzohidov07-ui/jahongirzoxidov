@@ -2124,6 +2124,10 @@
   function renderBody(bodyEl, body) {
     bodyEl.innerHTML = '';
     let ul = null;
+    /* Har bo'lak (paragraf, sarlavha, rasm, iqtibos, ro'yxat bandi) tartib raqami: data-b.
+       O'qish chuqurligi shu raqamlar bo'yicha o'lchanadi; serverdagi api/_lib/chuqur.js
+       matnni xuddi shu tartibda bo'ladi, shuning uchun bu ikkisi birga o'zgarishi kerak. */
+    let bi = 0;
     String(body || '').split('\n\n').forEach(raw => {
       const block = (raw || '').trim();
       if (!block) return;
@@ -2137,6 +2141,7 @@
         }
         lines.forEach(l => {
           const li = document.createElement('li');
+          li.dataset.b = bi++;
           fillText(li, l.slice(2).trim());
           ul.appendChild(li);
         });
@@ -2147,6 +2152,7 @@
 
       if (block.indexOf('## ') === 0) {
         const h = document.createElement('h2');
+        h.dataset.b = bi++;
         h.textContent = block.slice(3).trim();
         bodyEl.appendChild(h);
         return;
@@ -2154,12 +2160,15 @@
 
       const rasm = block.match(/^!\[([^\]]*)\]\((\S+?)\)$/);
       if (rasm) {
-        bodyEl.appendChild(makeFigure(rasm[2], rasm[1]));
+        const fig = makeFigure(rasm[2], rasm[1]);
+        fig.dataset.b = bi++;
+        bodyEl.appendChild(fig);
         return;
       }
 
       if (block.indexOf('> ') === 0) {
         const bq = document.createElement('blockquote');
+        bq.dataset.b = bi++;
         const bp = document.createElement('p');
         fillText(bp, block.replace(/^>\s?/gm, '').replace(/\n+/g, ' ').trim());
         bq.appendChild(bp);
@@ -2168,6 +2177,7 @@
       }
 
       const p = document.createElement('p');
+      p.dataset.b = bi++;
       fillText(p, block.replace(/\n+/g, ' '));
       bodyEl.appendChild(p);
     });
@@ -2204,6 +2214,8 @@
       readsEl.textContent = ''; readsEl.classList.remove('show');
       document.getElementById('readerViews').textContent += ' · QORALAMA — hozircha faqat sizga ko\'rinadi';
     } else if (!soft) trackView(essay);
+    /* O'qish chuqurligi faqat o'zbekcha asl matn uchun (English tarjimaning bo'laklari boshqa) */
+    if (essay.draft || isEn) Chuqur.stop(); else Chuqur.start(essay, v.body);
     if (!soft) loadIzoh(essay);
 
     const prevEssay = idx > 0 ? list[idx - 1] : null;
@@ -2509,6 +2521,137 @@
         .catch(() => {});
     }, 8000);
   }
+
+  /* ---------- O'qish chuqurligi: o'quvchi inshoning qayerigacha o'qidi ----------
+     Har bir bo'lak (data-b) uchun ikki narsa yig'iladi:
+       yetdi  — bo'lak ekranga chiqdimi (max: eng oxirgi ko'rilgan bo'lak);
+       o'qidi — bo'lak ekranda o'qishga yetarli vaqt turdimi (bits: 1/0).
+     Vaqt ketma-ket taqsimlanadi: ekrandagi hali o'qilmagan eng yuqori bo'lakka beriladi,
+     u "o'qildi" bo'lgach keyingisiga o'tadi. Tez aylantirib o'tilgan bo'lak o'qilgan sanalmaydi.
+     90 soniya hech qanday harakat bo'lmasa vaqt to'xtaydi (telefon ochiq qolib ketgan bo'lsa).
+     Holat localStorage'da saqlanadi va qaytib kelganda davom etadi; serverga butun holat
+     yuboriladi. Matn emas, faqat raqamlar ketadi. Muallif brauzeri va avtomat brauzerlar sanalmaydi. */
+  const Chuqur = (function () {
+    const bodyEl = document.getElementById('readerBody');
+    let s = null;
+    let timer = null;
+    let lastAct = Date.now();
+
+    /* api/_lib/chuqur.js dagi versiya() bilan bir xil (FNV-1a) */
+    function versiya(str) {
+      str = String(str || '');
+      let h = 0x811c9dc5;
+      for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 0x01000193) >>> 0;
+      }
+      return h.toString(36);
+    }
+
+    function muallifmi() {
+      try { if (localStorage.getItem('jz_pin')) return true; } catch (err) {}
+      return document.documentElement.classList.contains('muallif');
+    }
+
+    /* Bo'lakni "o'qidi" deyish uchun ekranda turishi kerak bo'lgan vaqt, soniya.
+       So'ziga 0.12 s: daqiqasiga ~500 so'z, ya'ni juda tez o'qiydigan odam ham sig'adi,
+       lekin shunchaki aylantirib o'tgan odam sig'maydi. */
+    function kerakVaqt(el) {
+      if (el.tagName === 'H2') return 0.6;
+      if (el.tagName === 'FIGURE') return 1.5;
+      const w = (el.textContent || '').split(/\s+/).filter(Boolean).length;
+      return Math.min(12, Math.max(1, w * 0.12));
+    }
+
+    function holat() {
+      return { n: s.n, max: s.max, bits: s.bits.join(''), sec: Math.round(s.sec) };
+    }
+    function saqla() {
+      try { localStorage.setItem(s.key, JSON.stringify(holat())); } catch (err) {}
+    }
+
+    function yubor() {
+      if (!s || s.max < 0) return;
+      saqla();
+      if (s.sec < 3) return;
+      const h = holat();
+      const k = h.max + ':' + h.bits + ':' + Math.floor(h.sec / 15);
+      if (k === s.sent) return;
+      s.sent = k;
+      const payload = JSON.stringify({ chuq: 1, folio: s.folio, ver: s.ver, max: h.max, bits: h.bits, sec: h.sec, vid: visitorId(), src: MANBA });
+      try { if (navigator.sendBeacon && navigator.sendBeacon('/api/view', payload)) return; } catch (err) {}
+      fetch('/api/view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true }).catch(() => {});
+    }
+
+    function tick() {
+      if (!s) return;
+      const now = Date.now();
+      const dt = Math.min(1, (now - s.last) / 1000);
+      s.last = now;
+      if (activeId !== s.id) { stop(); return; }
+      if (document.hidden) return;
+      const units = bodyEl.querySelectorAll('[data-b]');
+      if (units.length !== s.n) { stop(); return; }
+      const faol = now - lastAct < 90000;
+      if (faol) s.sec += dt;
+      let qoldi = faol ? dt : 0;
+      const H = window.innerHeight || document.documentElement.clientHeight;
+      for (let i = 0; i < s.n; i++) {
+        const r = units[i].getBoundingClientRect();
+        if (!r.height) continue;
+        if (r.top < H * 0.85 && i > s.max) s.max = i;
+        if (qoldi <= 0 || s.bits[i] === '1') continue;
+        const vis = Math.min(r.bottom, H) - Math.max(r.top, 0);
+        if (vis <= 0 || (vis < r.height * 0.5 && vis < H * 0.4)) continue;
+        const kerak = s.kerak[i] || (s.kerak[i] = kerakVaqt(units[i]));
+        const ol = Math.min(qoldi, kerak - s.acc[i]);
+        s.acc[i] += ol;
+        qoldi -= ol;
+        if (s.acc[i] >= kerak - 0.001) s.bits[i] = '1';
+      }
+      if (now - s.saved > 60000) { s.saved = now; yubor(); }
+      else if (now - s.lsaved > 5000) { s.lsaved = now; saqla(); }
+    }
+
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+      if (s) { yubor(); s = null; }
+    }
+
+    function start(essay, body) {
+      const folio = String(essay.folio || '');
+      const ver = versiya(body);
+      if (s && s.id === essay.id && s.ver === ver) return;
+      stop();
+      if (location.protocol === 'file:' || navigator.webdriver || muallifmi() || !folio) return;
+      const n = bodyEl.querySelectorAll('[data-b]').length;
+      if (!n) return;
+      const key = 'jz_cq:' + folio + ':' + ver;
+      let old = null;
+      try { old = JSON.parse(localStorage.getItem(key) || 'null'); } catch (err) {}
+      const ok = old && old.n === n && typeof old.bits === 'string' && old.bits.length === n && /^[01]+$/.test(old.bits);
+      const now = Date.now();
+      s = {
+        id: essay.id, folio, ver, n, key,
+        max: ok && old.max >= 0 && old.max < n ? old.max : -1,
+        bits: ok ? old.bits.split('') : new Array(n).fill('0'),
+        sec: ok ? Number(old.sec) || 0 : 0,
+        acc: new Array(n).fill(0),
+        kerak: new Array(n).fill(0),
+        sent: '', last: now, saved: now, lsaved: now
+      };
+      lastAct = now;
+      timer = setInterval(tick, 500);
+    }
+
+    const act = () => { lastAct = Date.now(); };
+    ['scroll', 'wheel', 'touchstart', 'touchmove', 'keydown', 'mousemove', 'pointerdown'].forEach(ev =>
+      window.addEventListener(ev, act, { passive: true }));
+    document.addEventListener('visibilitychange', () => { if (document.hidden) yubor(); else act(); });
+    window.addEventListener('pagehide', yubor);
+
+    return { start, stop };
+  })();
 
   const aboutView = document.getElementById('aboutView');
   const myBooksView = document.getElementById('myBooksView');

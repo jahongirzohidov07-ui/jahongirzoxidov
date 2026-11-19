@@ -43,6 +43,12 @@
     },
     "api/indexnow.js": {
       "includeFiles": "essays.js"
+    },
+    "api/view.js": {
+      "includeFiles": "essays.js"
+    },
+    "api/stats.js": {
+      "includeFiles": "essays.js"
     }
   },
   "crons": [

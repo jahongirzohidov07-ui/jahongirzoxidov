@@ -127,6 +127,57 @@
   .manba-izoh { margin: 12px 2px 0; font-family: 'Inter', sans-serif; font-size: 12.5px; line-height: 1.6; color: var(--ink-soft); }
   @media (max-width: 640px) { .manba-t .bar, .manba-t td.jami, .manba-t th.jami { display: none; } }
 
+  /* O'qish chuqurligi */
+  .cq-izoh { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.6; color: var(--ink-soft); margin: -6px 0 16px; max-width: 760px; }
+  .cq-izoh b { color: var(--ink); font-weight: 600; }
+  #cqTable tbody tr { cursor: pointer; }
+  #cqTable tbody tr:hover td { background: rgba(59, 74, 107, 0.05); }
+  #cqTable tbody tr.on td { background: rgba(156, 122, 60, 0.10); }
+  #cqTable td.num { font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  #cqTable td.dim { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+  .cq-box { margin-top: 22px; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 22px 24px; }
+  .cq-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 16px; }
+  .cq-head b { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 600; line-height: 1.3; flex: 1; min-width: 220px; }
+  .cq-head b i { font-style: normal; color: var(--clay-gold); margin-right: 6px; }
+  .cq-head select { font-family: 'Inter', sans-serif; font-size: 13px; padding: 7px 10px; border: 1px solid var(--rule); border-radius: 8px; background: var(--parchment); color: var(--ink); max-width: 100%; }
+  .cq-box .tiles { margin-bottom: 14px; }
+  .cq-box .tile { background: var(--parchment); }
+  .cq-box .tile .v { font-size: 32px; }
+  .cq-warn { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--clay-gold); border: 1px dashed rgba(156, 122, 60, 0.55); border-radius: 10px; padding: 10px 14px; margin-bottom: 14px; }
+  .cq-manba { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.7; }
+  .cq-manba span { display: inline-block; margin-right: 14px; white-space: nowrap; }
+  .cq-manba b { color: var(--ink); font-weight: 600; }
+  .cq-leg { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft); margin: 0 0 10px; }
+  .cq-leg i { display: inline-block; width: 18px; height: 8px; border-radius: 4px; vertical-align: middle; margin-right: 6px; }
+  .cq-leg .ly { background: rgba(59, 74, 107, 0.28); }
+  .cq-leg .lo { background: var(--indigo); }
+  .cq-leg .lt { background: var(--bad); }
+  .cq-rows { list-style: none; margin: 0; padding: 0; }
+  .cq-row { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 10px 8px 10px 6px; border-bottom: 1px solid rgba(201, 191, 168, 0.5); border-left: 3px solid transparent; }
+  .cq-row .i { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft); text-align: right; padding-top: 2px; font-variant-numeric: tabular-nums; }
+  .cq-row .s { font-size: 14.5px; line-height: 1.45; }
+  .cq-row.h .s { font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; color: var(--indigo); }
+  .cq-row.li .s::before { content: '• '; color: var(--clay-gold); }
+  .cq-row.q .s { font-style: italic; }
+  .cq-row.img .s { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-soft); }
+  .cq-row.img .s::before { content: 'Rasm: '; font-weight: 600; }
+  .cq-track { position: relative; height: 8px; background: var(--parchment-deep); border-radius: 4px; overflow: hidden; margin-top: 7px; }
+  .cq-track .y, .cq-track .o { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; }
+  .cq-track .y { background: rgba(59, 74, 107, 0.28); }
+  .cq-track .o { background: var(--indigo); }
+  .cq-num { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft); margin-top: 5px; font-variant-numeric: tabular-nums; }
+  .cq-num em { font-style: normal; font-weight: 600; margin-left: 8px; }
+  .cq-row.toxta { border-left-color: var(--bad); background: rgba(163, 81, 63, 0.06); }
+  .cq-row.toxta .cq-num em { color: var(--bad); }
+  .cq-row.skip { border-left-color: var(--clay-gold); }
+  .cq-row.skip .cq-num em.sk { color: var(--clay-gold); }
+  @media (max-width: 720px) {
+    .cq-box { padding: 18px 14px; }
+    .cq-box .tile .v { font-size: 25px; }
+    .cq-manba span { display: block; white-space: normal; margin-right: 0; }
+    #cqTable td.dim, #cqTable th.dim { display: none; }
+  }
+
   /* Qoralama insholar (faqat muallif ko'radi) */
   .qor-note { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-soft); margin: -6px 0 14px; }
   .qor-list { display: grid; gap: 12px; }
@@ -194,6 +245,13 @@
       <h2>Qayerdan kelishyapti <small>oxirgi 30 kun</small></h2>
       <div id="manbaBox"><div class="empty">Yuklanmoqda…</div></div>
       <p class="manba-izoh">Tashrif: saytga kirgan odamlar (bir kishi kuniga bir marta sanaladi). O'qish: insho kamida 8 soniya o'qilgan. Telegram'ning iPhone ilovasidan ochilganlar ko'pincha «To'g'ridan» bo'lib ko'rinadi. Kanalga havola tashlaganda oxiriga <b>?tg</b> qo'shsangiz (masalan, jahongirzoxidov.uz/insho/11?tg), aniq Telegram deb sanaladi. Instagram uchun <b>?ig</b>.</p>
+    </section>
+
+    <section id="cqSec">
+      <h2>O'qish chuqurligi <small>qayergacha o'qishyapti</small></h2>
+      <p class="cq-izoh">Har insho bo'laklarga bo'lingan: paragraf, sarlavha, rasm, ro'yxat bandi. <b>Yetdi</b>: bo'lak o'quvchining ekraniga chiqdi. <b>O'qidi</b>: ekranda o'qishga yetarli vaqt turdi, tez aylantirib o'tilgani sanalmaydi. <b>To'xtadi</b>: o'quvchi aynan shu bo'lakka kelib o'qishni to'xtatdi, ya'ni qiziqish shu yerda so'ngan. Insho tahrir qilinsa, yangi matn uchun hisob noldan boshlanadi, eski versiya ham saqlanib qoladi: tuzatishdan oldin va keyin solishtirish mumkin. Sizning brauzeringiz hisobga kirmaydi.</p>
+      <div id="cqList"><div class="empty">Yuklanmoqda…</div></div>
+      <div id="cqDetail"></div>
     </section>
 
     <section>
@@ -422,6 +480,103 @@
       .catch(e => { document.getElementById('murList').innerHTML = '<div class="empty">Murojaatlar olinmadi: ' + esc(e.message) + '</div>'; });
   }
 
+  /* ---------- o'qish chuqurligi ---------- */
+  let cqOpen = '';
+  function foiz(a, b) { return b ? Math.round(a / b * 100) : 0; }
+  function sekund(s) {
+    s = Math.round(Number(s) || 0);
+    const m = Math.floor(s / 60);
+    return m ? m + ' daq ' + (s % 60) + ' s' : s + ' s';
+  }
+  function kunUz(k) { if (!k) return ''; const p = String(k).split('-'); return p.length === 3 ? p[2] + '.' + p[1] + '.' + p[0] : k; }
+
+  function loadChuq() {
+    api('/api/stats?chuq=hammasi')
+      .then(renderChuqList)
+      .catch(e => { document.getElementById('cqList').innerHTML = '<div class="empty">Ma\'lumot olinmadi: ' + esc(e.message) + '</div>'; });
+  }
+
+  function renderChuqList(d) {
+    const box = document.getElementById('cqList');
+    const list = ((d && d.insholar) || []).slice().sort((a, b) => (parseInt(b.raqam, 10) || 0) - (parseInt(a.raqam, 10) || 0));
+    if (!list.length) { box.innerHTML = '<div class="empty">Insholar topilmadi.</div>'; return; }
+    const jami = list.reduce((a, x) => a + x.R, 0);
+    box.innerHTML = (jami ? '' : '<div class="cq-warn">Hali ma\'lumot yo\'q: hisob shu yangilanishdan keyin boshlandi. O\'quvchilar insho o\'qigan sari raqamlar shu yerda paydo bo\'ladi.</div>') + `
+      <table id="cqTable">
+        <thead><tr>
+          <th>№</th><th>Sarlavha</th><th class="r">O'quvchi</th><th class="r">Oxirigacha o'qidi</th><th class="r dim">O'rtacha chuqurlik</th><th class="dim">Eng ko'p to'xtagan joy</th>
+        </tr></thead>
+        <tbody>${list.map(x => `
+          <tr data-f="${esc(x.folio)}"${x.folio === cqOpen ? ' class="on"' : ''}>
+            <td class="folio">${esc(x.raqam)}</td>
+            <td class="title">${esc(x.title)}</td>
+            <td class="num r">${x.R || '–'}</td>
+            <td class="num r">${x.R ? foiz(x.oxiriniOqidi, x.R) + '%' : '–'}</td>
+            <td class="dim r">${x.R ? x.chuqur + '%' : '–'}</td>
+            <td class="dim">${x.R && x.toxtash >= 0 ? (x.toxtash === 0 ? 'boshlamay ketgan' : (x.toxtash + 1) + '-bo\'lak') + ' · ' + foiz(x.toxtashSoni, x.R) + '%' : '–'}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`;
+    box.querySelectorAll('#cqTable tbody tr').forEach(tr => tr.addEventListener('click', () => openChuq(tr.dataset.f, '', true)));
+  }
+
+  function openChuq(folio, ver, scroll) {
+    cqOpen = folio;
+    document.querySelectorAll('#cqTable tbody tr').forEach(tr => tr.classList.toggle('on', tr.dataset.f === folio));
+    const det = document.getElementById('cqDetail');
+    det.innerHTML = '<div class="cq-box"><div class="empty">Yuklanmoqda…</div></div>';
+    api('/api/stats?chuq=' + encodeURIComponent(folio) + (ver ? '&ver=' + encodeURIComponent(ver) : ''))
+      .then(d => { renderChuq(d); if (scroll) det.scrollIntoView({ behavior: 'smooth', block: 'start' }); })
+      .catch(e => { det.innerHTML = '<div class="cq-box"><div class="err">Ma\'lumot olinmadi: ' + esc(e.message) + '</div></div>'; });
+  }
+
+  function renderChuq(d) {
+    const det = document.getElementById('cqDetail');
+    const R = d.R || 0, n = d.n || 0;
+    /* Eng ko'p to'xtagan 3 joy (kamida 2 kishi va 5%) va ko'pchilik o'qimay o'tgan bo'laklar */
+    const chegara = Math.max(2, R * 0.05);
+    const top = d.toxtadi.map((v, i) => ({ v, i })).filter(x => x.v >= chegara).sort((a, b) => b.v - a.v).slice(0, 3).map(x => x.i);
+    const vers = d.versiyalar || [];
+    const sel = vers.length > 1 ? `<select id="cqVer">${vers.map(v => `<option value="${esc(v.ver)}"${v.ver === d.ver ? ' selected' : ''}>${v.joriy ? 'Joriy matn' : 'Eski matn'}${v.d ? ' · ' + kunUz(v.d) + ' dan' : ''} · ${v.R} o'quvchi</option>`).join('')}</select>` : '';
+    const manba = Object.keys(d.manba || {}).sort((a, b) => d.manba[b].R - d.manba[a].R)
+      .map(k => `<span><b>${esc(manbaNom(k, d.nomlar))}</b>: ${d.manba[k].R} o'quvchi, ${d.manba[k].chuqur}% chuqurlik</span>`).join('');
+    const rows = d.units.map((u, i) => {
+      const y = d.yetdi[i] || 0, o = d.oqidi[i] || 0, t = d.toxtadi[i] || 0;
+      const isTop = top.indexOf(i) >= 0;
+      const isSkip = !isTop && u.t !== 'h' && y >= 5 && o / y < 0.5;
+      let em = '';
+      if (isTop) em = `<em>${i === 0 ? 'boshlamay ketgan' : 'shu yerda to\'xtagan'}: ${foiz(t, R)}% (${t} kishi)</em>`;
+      else if (isSkip) em = `<em class="sk">ko'pchilik o'qimay o'tib ketgan</em>`;
+      return `<li class="cq-row ${esc(u.t)}${isTop ? ' toxta' : ''}${isSkip ? ' skip' : ''}">
+        <span class="i">${i + 1}</span>
+        <div>
+          <div class="s">${esc(u.s)}</div>
+          <div class="cq-track"><span class="y" style="width:${foiz(y, R)}%"></span><span class="o" style="width:${foiz(o, R)}%"></span></div>
+          <div class="cq-num">yetdi ${foiz(y, R)}% · o'qidi ${foiz(o, R)}%${em}</div>
+        </div>
+      </li>`;
+    }).join('');
+    det.innerHTML = `<div class="cq-box">
+      <div class="cq-head"><b><i>№ ${esc(d.raqam)}</i>${esc(d.title)}</b>${sel}<button class="btn" id="cqClose" type="button">Yopish</button></div>
+      <div class="tiles">
+        <div class="tile"><div class="v">${R}</div><div class="l">O'quvchi</div></div>
+        <div class="tile"><div class="v">${foiz(d.oxiriniOqidi, R)}%</div><div class="l">Oxirigacha o'qidi</div></div>
+        <div class="tile"><div class="v">${d.chuqur || 0}%</div><div class="l">O'rtacha chuqurlik</div></div>
+        <div class="tile"><div class="v">${sekund(d.secMed)}</div><div class="l">O'qish vaqti (o'rtasi)</div></div>
+      </div>
+      ${R < 20 ? `<div class="cq-warn">${R ? 'Hali ' + R + ' o\'quvchi.' : 'Bu matn bo\'yicha hali o\'quvchi yo\'q.'} Kamida 20–30 o'quvchi yig'ilgandan keyin xulosa qilish ishonchliroq: bir-ikki kishi tasodifan chiqib ketgan bo'lishi mumkin.</div>` : ''}
+      ${manba ? `<div class="cq-manba">${manba}</div>` : ''}
+      <div class="cq-leg"><span><i class="ly"></i>yetdi</span><span><i class="lo"></i>o'qidi</span><span><i class="lt"></i>eng ko'p to'xtagan joylar</span><span>${n} bo'lak</span></div>
+      <ol class="cq-rows">${rows}</ol>
+    </div>`;
+    document.getElementById('cqClose').addEventListener('click', () => {
+      cqOpen = ''; det.innerHTML = '';
+      document.querySelectorAll('#cqTable tbody tr').forEach(tr => tr.classList.remove('on'));
+    });
+    const s = document.getElementById('cqVer');
+    if (s) s.addEventListener('change', () => openChuq(d.folio, s.value));
+  }
+
   /* ---------- boshlash ---------- */
   async function boot() {
     if (!getPin()) { showGate(''); return; }
@@ -439,6 +594,8 @@
       renderPrograms(p);
       loadMur();
       loadQor();
+      loadChuq();
+      if (cqOpen) openChuq(cqOpen, '');
     } catch (e) {
       if (e.auth) { setPin(''); showGate(e.message === 'PIN' ? 'PIN noto\'g\'ri' : e.message); return; }
       statsErr.textContent = e.message; statsErr.style.display = 'block';
