@@ -144,9 +144,9 @@ module.exports = [
     date: "26.11.2026",
     body: [
       "Sizga bir gap aytaymi? Ilm olinmaydi, u yuqadi. Ustozdan sizga yuqadi. Qanchalik ko'p yuqishi esa ko'p jihatdan sizning o'zingizga bog'liq. Ishonmayapsizmi? Keling, oddiy misol bilan tushuntiray.",
-      "Tasavvur qiling, ustozingiz darsga bor kuchini berdi, ya'ni 100 foiz. Oxirida vazifa berdi. Siz esa ertasiga vazifani qilmay keldingiz. Sizningcha, ustoz o'zini qanday his qiladi?",
-      "Ko'ngli o'ksiydi. Keyingi darsda u endi 100 foiz bera olmaydi, 90 foiz beradi. Yana qilmay kelsangiz, 80 foiz. Shunday qilib uning mehri pasayib boradi va siz uning ilmini yuqtira olmay qolasiz.",
-      "Endi teskarisini tasavvur qiling. Vazifani qilib keldingiz. Ustoz xursand bo'lib ketadi va keyingi darsni 100 emas, 110 foiz o'tadi.",
+      "Bir guruhga birinchi marta dars o'tayotgan ustoz darsga bor kuchini, 100 foizini beradi. Oxirida vazifa beradi. Siz esa ertasiga vazifani qilmay kelasiz. Endi aytingchi, ustoz o'zini qanday his qiladi?",
+      "Albatta, ko'ngli o'ksiydi. Keyingi darsda u endi 100 foiz bera olmaydi, 90 foiz beradi. Yana qilmay kelsangiz, 80 foiz. Shunday qilib uning mehri pasayib boradi va siz uning ilmini yuqtira olmay qolasiz.",
+      "Endi teskarisini tasavvur qiling: vazifani qilib kelasiz. Ustoz xursand bo'lib ketadi va keyingi darsni 100 emas, 110 foiz o'tadi.",
       "Ko'rdingizmi? Siz bilan ustozingiz o'rtasida **energiya almashinuvi** bor. Siz energiya bersangiz, ustoz sizga energiya qaytaradi. Shuning uchun ustoz pul to'laydigan, lekin dars qilmaydigan o'quvchidan ko'ra pul to'lamasa ham dars qiladigan o'quvchini o'qitishni yaxshi ko'radi.",
       "Ustozlarga atab yozgan [«Vaqtingizni emas, natijangizni soting»](https://www.jahongirzoxidov.uz/insho/13) inshomda «Bola ko'pincha fanni emas, ustozni yaxshi ko'radi» degandim. Endi sizga uning ikkinchi tomonini aytyapman: ustoz ham dars qiladigan o'quvchini yaxshi ko'radi.",
       "Xo'sh, ustozingiz sizga bor-budini berishi uchun yana nima qilish kerak? Bir nechta narsani aytib beraman.",
