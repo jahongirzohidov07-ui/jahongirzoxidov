@@ -174,6 +174,8 @@ module.exports = [
       "Eng muhimi: oldin yuz marta eshitgan bo'lsangiz ham, birinchi marta eshitayotgandek tinglayotganingizni ko'rgan ustozning ishtiyoqi yanada oshadi. Boyagi 100 foiz balki 150, hatto 200 foizga chiqib ketadi. Shunda sizga ilm yuqishi osonroq bo'ladi.",
       "Ustoz rostdan ham bir xil narsani takrorlasa-chi? Hech bo'lmasa siz uchun takrorlash, mustahkamlash bo'ladi. Hech qanday zarari yo'q-ku. Tinglash haqida [«Suhbatdoshni tinglashni o'rganing»](https://www.jahongirzoxidov.uz/insho/4) inshosida ham yozganman.",
       "## Ustozning fikrini bo'lmang",
+      "Bir kuni dars tugab, eshikni ochsam, o'quvchim turibdi. «Ha, nima qilyapsiz?» desam, «Sizni kutyapman», deydi. «Qanchadan beri?» «Bir soatdan oshdi, bir yarim soat». «Iya, nega chaqirmadingiz?» «Sizni bezovta qilmay dedim. Fikringizni bo'lsam, o'quvchilar mavzuni tushunmay qolishardi», dedi.",
+      "Xuddi shunday voqea bir ona bilan ham bo'ldi. U ham ustozning darsini bo'lmay, uni chalg'itmay deb dars tugashini kutib turdi. Ilmga va ustozga bo'lgan hurmatni qarang.",
       "Ustozni bezovta qilavermang. Bezovta bo'lgan ustoz chalg'iydi, gapi esidan chiqadi va mavzuni to'liq yetkazib bera olmaydi. Bu to'g'ridan-to'g'ri sizning tushunishingizga ta'sir qiladi.",
       "Biz eng ko'p qilmaydigan odob esa ustozning huzurida ruxsatsiz gapirmaslik. Ruxsatsiz gapirsangiz, ustozning fikri bo'linadi, u chalg'iydi. Ikkala holatda ham zarar sizga: mavzuni tushunmay qolasiz.",
       "## Ustozning energiyasini tugatmang",
