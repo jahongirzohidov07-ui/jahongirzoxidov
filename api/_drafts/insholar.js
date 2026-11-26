@@ -137,5 +137,42 @@ module.exports = [
       "Insho boshidagi onani eslang. Ustoz «Bolangiz uy vazifasini qilmaydi-ku» deyish o'rniga «Qaysi mavzuni tushunmayapti?» deb so'raganida, suhbat aybdor qidirishga emas, bolaga yordam berishga ketardi. Bitta savol bahsni hamkorlikka aylantirardi.",
       "**Xato hukm emas, ma'lumot. Xatongizni aytgan odam sizga hujum qilmayapti, sizga ma'lumot olib kelyapti.** Uni o'ldirmang. U olib kelgan xabar ko'pincha sizni kattaroq xatodan saqlab qoladi."
     ].join(PARA)
+  },
+  {
+    folio: "17",
+    title: "Ilm olinmaydi, yuqadi",
+    date: "26.11.2026",
+    body: [
+      "Yaqinda o'quvchilarimga «Ilm olish sirlari» kitobi asosida dars o'tdim. Darsni bitta gap bilan boshladim: «Ilm olinmaydi, u yuqadi». O'quvchilar «vao» deyishdi.",
+      "Bu insho sizga, o'quvchilarga atalgan. O'sha darsda aytganlarimni shu yerga yozdim: ustozdan ilm qanday yuqadi, buning uchun unga qanday munosabatda bo'lish kerak va qanday qilib uning ilmidan ko'proq olish mumkin.",
+      "Avval asosiy gapni aytay: **ustozingiz sizga qanchalik ko'p berishi ko'p jihatdan sizning o'zingizga bog'liq.**",
+      "## Ilm qanday yuqadi?",
+      "Tasavvur qiling, ustozingiz darsga bor kuchini berdi, ya'ni 100 foiz. Oxirida vazifa berdi. Siz esa ertasiga vazifani qilmay keldingiz. Ustoz o'zini qanday his qiladi?",
+      "Ko'ngli o'ksiydi. Keyingi darsda u endi 100 foiz bera olmaydi, 90 foiz beradi. Yana qilmay kelsangiz, 80 foiz. Shunday qilib uning mehri pasayib boradi va siz uning ilmidan yuqtira olmay qolasiz.",
+      "Endi teskarisini tasavvur qiling. Vazifani qilib keldingiz. Ustoz xursand bo'lib ketadi va keyingi darsni endi 100 emas, 110 foiz o'tadi.",
+      "Ustoz bilan siz **energiya almashadigan jarayondasiz**. Siz energiya bersangiz, ustoz sizga energiya qaytaradi.",
+      "Shuning uchun ustoz pul to'laydigan, lekin dars qilmaydigan o'quvchidan ko'ra pul to'lamasa ham dars qiladigan o'quvchini o'qitishni yaxshi ko'radi. [«Vaqtingizni emas, natijangizni soting»](https://www.jahongirzoxidov.uz/insho/13) inshosida ustozlarga «Bola ko'pincha fanni emas, ustozni yaxshi ko'radi» deb yozgandim. Bu gapning ikkinchi tomoni ham bor: ustoz ham dars qiladigan o'quvchini yaxshi ko'radi.",
+      "## Ustozga o'zingizni topshiring",
+      "«Ilm olish sirlari»da shunday deyiladi:",
+      "> «Ilm talab qiluvchi shaxs xuddi bemor o'zini tabibga topshirgani kabi, ustoziga tamomila bo'ysunmog'i, unga tavozu' ko'rsatmog'i va xizmatida qoim bo'lmog'i kerak».",
+      "Ya'ni ustozga «Mana bu kitobdan o'ting», «Bunaqa qilib o'ting» demang. Siz nima xohlayotganingizni bilasiz, ya'ni boradigan manzilingizni. Ustoz esa sizga nima kerakligini, ya'ni qaysi yo'ldan borish kerakligini biladi.",
+      "Doktorga borib «Menga falon dorini yozib bering» demaysiz-ku. Siz tuzalishni xohlaysiz. Doktor tuzalish uchun nima kerakligini aytadi. Aytganini qilasiz va tuzalasiz. Ustoz bilan ham shunday.",
+      "## Hurmat kichik ishlarda ko'rinadi",
+      "Ustozni hurmat qilish faqat salom berish emas. U kichik ishlarda ko'rinadi. «Ilm olish sirlari» kitobida shulardan biri aytilgan: ustozning joyiga o'tirmaslik.",
+      "Darsda shu haqda ko'p gaplashdik. O'quvchilarimdan so'radim: «Ustoz keldi, siz esa uning joyida o'tiribsiz. U o'zini qanday his qiladi?» «Hurmatsizlik», deyishdi. Ha, shunday. Ustozning ko'ngli soviydi.",
+      "Bir o'quvchim so'radi: «Agar ustozning o'zi taklif qilsa-chi? Masalan, joy yo'q, ustoz «Keling, mening joyimga o'tiring» desa?» Men shunday javob berdim: «Men tik tursam turamanki, ustozning joyiga o'tirmayman. Qaysi kalla bilan ustoz tik turadi-yu, men o'tiraman?» Ustoz ming marta aytsa ham, uning hurmatidan o'tirmang.",
+      "## Aytmasidan hojatini chiqaring",
+      "Yaxshi o'quvchi ustoz so'rashini kutib o'tirmaydi. Ustoz sinfga kirib, doskaga qaradimi? Demak, doskani artish kerak. U aytmasidan borib artib qo'ying. Ko'ziga qarang: mel yo'qmi? Mel bering. Ustozning o'zi doska artib yurmasligi kerak.",
+      "Bu kichik ishlar ustozga «Men sizni qadrlayman» degan gapni so'zsiz aytadi.",
+      "## Ustozni maqtang",
+      "Odatda paxta qo'yish, ya'ni tilyog'lamalik yomon narsa. Lekin «Ilm olish sirlari»da aytilishicha, unga faqat bitta joyda ruxsat bor: ilm olishda, ustozga. Ustozni maqtash, unga shirin so'z aytish mumkin.",
+      "O'ylab ko'ring: ustoz shuncha mehnat qilib sizni o'qityapti. U mehnatining natijasini qachon ko'radi? O'quvchilarim «Natija qilganimizda», deyishdi. To'g'ri, lekin ungacha natija ko'rinmaydi. Hech bo'lmasa iliq so'z bilan «Rahmat, ustoz, mavzuni zo'r tushuntirdingiz» deb tursangiz, boyagi 100 foiz 110 foizga aylanadi.",
+      "Tushunmagan joyingiz bo'lsa ham, avval rahmat ayting, keyin so'rang: «Ustoz, zo'r tushuntirdingiz, hali hech kim bunaqa zo'r qilib o'rgatmagandi. Faqat manashu joyini ozgina anglamay qoldim. Yana sal soddaroq qilib tushuntirib bering, iltimos». Shunda ustoz bor-budini beradi.",
+      "## Ustozning energiyasini tugatmang",
+      "Endi teskari holatni ko'raylik. Ustoz darsning yarmini «Jim o'tir», «Gap qaytarma» deyish bilan o'tkazsa, uning energiyasi dars o'tishga emas, sizni tinchlantirishga ketadi. Energiyasi tugagan ustoz sizga dars ham o'ta olmay qoladi, ko'ngli ham soviydi. Siz esa uning ilmini yuqtira olmaysiz.",
+      "## Ilm hurmatga yuqadi",
+      "Boshida aytganimdek, ilm olinmaydi, yuqadi. Ustozingiz sizga qancha ko'p bersa, shuncha ko'p yuqadi. Uning qancha berishi esa ko'p jihatdan sizga bog'liq: vazifani qilib kelasizmi, u ko'rsatgan yo'ldan borasizmi, uning joyiga o'tirmaysizmi, doskani u aytmasidan artasizmi, «Rahmat, ustoz» deysizmi.",
+      "> **Siz ustozga energiya bersangiz, ustoz sizga ilm beradi.** Hurmat qiling, ilm o'zi yuqadi."
+    ].join(PARA)
   }
 ];
