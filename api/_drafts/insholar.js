@@ -143,7 +143,7 @@ module.exports = [
     title: "Ilm olinmaydi, yuqadi",
     date: "26.11.2026",
     body: [
-      "Sizga bir gap aytaymi? Ilm olinmaydi, u yuqadi. Ustozdan sizga yuqadi. Qanchalik ko'p yuqishi esa ko'p jihatdan sizning o'zingizga bog'liq. Ishonmayapsizmi? Keling, oddiy misol bilan tushuntiray.",
+      "Sizga bir gap aytaymi? Ilm olinmaydi, u yuqadi. «Iye, qanday qilib yuqadi? Uni qanday qilib ko'proq yuqtirsak bo'ladi?» deyayotgandirsiz. Ilm ustozdan sizga yuqadi. Qanchalik ko'p yuqishi esa ko'p jihatdan sizning o'zingizga bog'liq. Keling, oddiy misol bilan tushuntiray.",
       "Bir guruhga birinchi marta dars o'tayotgan ustoz darsga bor kuchini, 100 foizini beradi. Oxirida vazifa beradi. Siz esa ertasiga vazifani qilmay kelasiz. Endi aytingchi, ustoz o'zini qanday his qiladi?",
       "Albatta, ko'ngli o'ksiydi. Keyingi darsda endi u ming xohlasa ham 100 foizini bera olmaydi, 90 foiz beradi. Chunki ko'ngli og'rigan. Yana qilmay kelsangiz, 80 foiz. Shunday qilib uning mehri pasayib boradi va siz uning ilmini yuqtira olmay qolasiz.",
       "Endi teskarisini tasavvur qiling: vazifani qilib kelasiz. Ustoz xursand bo'lib ketadi va keyingi darsni 100 emas, 110 foiz o'tadi.",
@@ -176,8 +176,10 @@ module.exports = [
       "Nega bu muhim? Bezovta bo'lgan ustoz chalg'iydi, gapi esidan chiqadi va mavzuni to'liq yetkazib bera olmaydi. Ruxsatsiz gapirsangiz ham shunday bo'ladi: ustozning fikri bo'linadi. Biz eng ko'p qilmaydigan odob ham aynan shu, ustozning huzurida ruxsatsiz gapirmaslik. Ikkala holatda ham zarar ko'radigan odam sizsiz: mavzuni tushunmay qolasiz.",
       "Yoki ustoz darsning yarmini «Jim o'tir», «Gap qaytarma» deyish bilan o'tkazsa-chi? Uning energiyasi dars o'tishga emas, sizni tinchlantirishga ketadi. Energiyasi tugagan ustoz sizga dars ham o'ta olmay qoladi, ko'ngli ham soviydi. Siz esa uning ilmini yuqtira olmaysiz.",
       "**Oltinchisi, eng muhimi: qalbingizni pok tuting.** Ikki quyonning ortidan quvgan odam ikkalasini ham ushlay olmaydi. Birinchi quyon ilm, ikkinchisi kayfu safo. Ham yomon ishlar va kayfu safoni, ham ilmni birdek olib ketaman desangiz, hech qachon maqsadingizga erisha olmaysiz.",
+      "![Qaysi quyonni tanlaysiz?](/assets/insho/17-quyon.svg)",
       "Nega? Chunki ilm qalbning ibodati. Ibodat esa pok qalb bilan qilinadi. Ilm qalbingizni poklaydi, kayfu safo esa uni kirlaydi. Ikkalasi birga bo'lmaydi.",
-      "Boshida aytganimdek, ilm olinmaydi, yuqadi. Qanchalik ko'p yuqishi esa sizga bog'liq. Vazifani qilib keling. Ustozingizga ishoning. Uni hurmat qiling, rahmat ayting, gapini birinchi martadek tinglang, fikrini bo'lmang. Qalbingizni pok tuting.",
+      "Boshida «Ilm olinmaydi, yuqadi» degandim. Endi uni qanday yuqtirishni bilasiz.",
+      "Ertaga darsga kirganingizda bitta tajriba qilib ko'ring. Vazifangizni qilib boring. Ustoz tushuntirayotganda butun vujudingiz bilan tinglang. Dars tugagach esa «Rahmat, ustoz» deng. Keyin uning keyingi darsini kuzating. Ustozingiz sizga qanday dars o'tishini o'zingiz ko'rasiz.",
       "> **Siz ustozga energiya bersangiz, ustoz sizga ilm beradi.** Ilm esa ustozini hurmat qilgan va qalbini pok tutgan o'quvchiga yuqadi.",
       "Bu mavzuni yanada chuqurroq o'rganmoqchi bo'lsangiz, «Ilm olish sirlari» kitobini o'qing."
     ].join(PARA)
