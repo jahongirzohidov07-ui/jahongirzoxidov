@@ -168,6 +168,11 @@ module.exports = [
       "Odatda paxta qo'yish, ya'ni tilyog'lamalik yomon narsa. Lekin unga ruxsat berilgan bitta joy bor: ilm olishda, ustozga. Ustozni maqtash, unga shirin so'z aytish mumkin.",
       "O'ylab ko'ring: ustoz shuncha mehnat qilib sizni o'qityapti. U mehnatining natijasini qachon ko'radi? O'quvchilarim «Natija qilganimizda», deyishdi. To'g'ri, lekin ungacha natija ko'rinmaydi. Hech bo'lmasa iliq so'z bilan «Rahmat, ustoz, mavzuni zo'r tushuntirdingiz» deb tursangiz, boyagi 100 foiz 110 foizga aylanadi.",
       "Tushunmagan joyingiz bo'lsa ham, avval rahmat ayting, keyin so'rang: «Ustoz, zo'r tushuntirdingiz, hali hech kim bunaqa zo'r qilib o'rgatmagandi. Faqat manashu joyini ozgina anglamay qoldim. Yana sal soddaroq qilib tushuntirib bering, iltimos». Shunda ustoz bor-budini beradi.",
+      "## Ming marta aytsa ham, birinchi martadek tinglang",
+      "Ustoz bir narsani qayta aytayotgan bo'lsa, ming marta aytgan bo'lsa ham, uni xuddi birinchi marta eshitayotgandek butun vujudingiz bilan tinglang.",
+      "Ko'pincha shunday bo'ladi: ustoz bir-ikki marta aytgan narsani yana aytsa, «Ee, buni aytgansiz, yangisini ayting» deysiz. Ha, aytgan. Lekin ustoz ming marta aytgan bo'lsa ham, sizda harakat nol bo'lsa, balki 1001-marta harakatingiz bir bo'lib qolar deb yana aytadi. Balki bu safar oldingisiga yangi narsa qo'shib, boshqa usulda aytar.",
+      "Eng muhimi: oldin yuz marta eshitgan bo'lsangiz ham, birinchi marta eshitayotgandek tinglayotganingizni ko'rgan ustozning ishtiyoqi yanada oshadi. Boyagi 100 foiz balki 150, hatto 200 foizga chiqib ketadi. Shunda sizga ilm yuqishi osonroq bo'ladi.",
+      "Ustoz rostdan ham bir xil narsani takrorlasa-chi? Hech bo'lmasa siz uchun takrorlash, mustahkamlash bo'ladi. Hech qanday zarari yo'q-ku. Tinglash haqida [«Suhbatdoshni tinglashni o'rganing»](https://www.jahongirzoxidov.uz/insho/4) inshosida ham yozganman.",
       "## Ustozning fikrini bo'lmang",
       "Ustozni bezovta qilavermang. Bezovta bo'lgan ustoz chalg'iydi, gapi esidan chiqadi va mavzuni to'liq yetkazib bera olmaydi. Bu to'g'ridan-to'g'ri sizning tushunishingizga ta'sir qiladi.",
       "Biz eng ko'p qilmaydigan odob esa ustozning huzurida ruxsatsiz gapirmaslik. Ruxsatsiz gapirsangiz, ustozning fikri bo'linadi, u chalg'iydi. Ikkala holatda ham zarar sizga: mavzuni tushunmay qolasiz.",
@@ -180,7 +185,7 @@ module.exports = [
       "> «Ilm talab qiluvchi shaxs nafs pokligini axloqiy razolat va yomon sifatlardan yuqori qo'ymog'i lozimdir. Zotan, ilm qalbning ibodatidir».",
       "Ham yomon ishlar va kayfu safoni, ham ilmni birdek olib ketaman desangiz, hech qachon maqsadingizga erisha olmaysiz. Ikki quyonning ortidan quvsangiz, ikkalasini ham ushlay olmaysiz. Birinchi quyon ilm, ikkinchisi kayfu safo. Ikkalasi birga bo'lmaydi, chunki ilm qalbning ibodati. Ilm qalbingizni poklaydi, kayfu safo esa uni kirlaydi.",
       "## Ilm hurmatga yuqadi",
-      "Boshida aytganimdek, ilm olinmaydi, yuqadi. Ustozingiz sizga qancha ko'p bersa, shuncha ko'p yuqadi. Uning qancha berishi esa ko'p jihatdan sizga bog'liq: vazifani qilib kelasizmi, u ko'rsatgan yo'ldan borasizmi, uning joyiga o'tirmaysizmi, doskani u aytmasidan artasizmi, ruxsatsiz gapirmaysizmi, «Rahmat, ustoz» deysizmi.",
+      "Boshida aytganimdek, ilm olinmaydi, yuqadi. Ustozingiz sizga qancha ko'p bersa, shuncha ko'p yuqadi. Uning qancha berishi esa ko'p jihatdan sizga bog'liq: vazifani qilib kelasizmi, u ko'rsatgan yo'ldan borasizmi, uning joyiga o'tirmaysizmi, doskani u aytmasidan artasizmi, aytganini birinchi martadek tinglaysizmi, ruxsatsiz gapirmaysizmi, «Rahmat, ustoz» deysizmi.",
       "> **Siz ustozga energiya bersangiz, ustoz sizga ilm beradi.** Ilm esa ustozini hurmat qilgan va qalbini pok tutgan o'quvchiga yuqadi."
     ].join(PARA)
   }
