@@ -186,7 +186,8 @@ module.exports = [
       "Boshida «Ilm olinmaydi, yuqadi» degandim. Endi uni qanday yuqtirishni bilasiz.",
       "Ertaga darsga kirganingizda bitta tajriba qilib ko'ring. Vazifangizni qilib boring. Ustoz tushuntirayotganda butun vujudingiz bilan tinglang. Dars tugagach esa ustozga nimani tushunganingizni aytib, rahmat ayting. Keyin uning keyingi darsini kuzating. Ustozingiz sizga qanday dars o'tishini o'zingiz ko'rasiz.",
       "> **Siz ustozga energiya bersangiz, ustoz sizga ilm beradi.** Ilm esa ustozini hurmat qilgan va qalbini pok tutgan o'quvchiga yuqadi.",
-      "Bu mavzuni yanada chuqurroq o'rganmoqchi bo'lsangiz, «Ilm olish sirlari» kitobini o'qing."
+      "Bu mavzuni yanada chuqurroq o'rganmoqchi bo'lsangiz, «Ilm olish sirlari» kitobini o'qing. Bugun aytgan gaplarimning asosi shu kitobdan olingan, men esa ularni o'z talqinimda, o'z misollarim bilan sizga izohlab berdim.",
+      "Insho sizga foydali bo'lgan bo'lsa, uni sinfdoshlaringizga ham yuboring. Ertangi tajribangiz qanday o'tganini, ustozingizning darsi o'zgarganini sezdingizmi, izohlarda yozib qoldiring. Men ularni o'qib boraman."
     ].join(PARA)
   }
 ];
