@@ -137,5 +137,41 @@ module.exports = [
       "Insho boshidagi onani eslang. Ustoz «Bolangiz uy vazifasini qilmaydi-ku» deyish o'rniga «Qaysi mavzuni tushunmayapti?» deb so'raganida, suhbat aybdor qidirishga emas, bolaga yordam berishga ketardi. Bitta savol bahsni hamkorlikka aylantirardi.",
       "**Xato hukm emas, ma'lumot. Xatongizni aytgan odam sizga hujum qilmayapti, sizga ma'lumot olib kelyapti.** Uni o'ldirmang. U olib kelgan xabar ko'pincha sizni kattaroq xatodan saqlab qoladi."
     ].join(PARA)
+  },
+  {
+    folio: "18",
+    title: "Ilm yuqtiradigan ustoz",
+    date: "26.11.2026",
+    body: [
+      "Ilm olinmaydi, u yuqadi. Bu gapni [«Ilm olinmaydi, yuqadi»](https://www.jahongirzoxidov.uz/insho/17) inshosida o'quvchilarga aytgandim va ularga o'z ulushini tushuntirgandim. Lekin ilm yuqishi uchun ikki tomon kerak. Bugun gap sizda, ustoz.",
+      "Ustozning odobini asrlar oldin Imom G'azzoliy «Ihyou ulumid-din» kitobida sanab bergan. Imom Zarnujiyning «Ilm olish sirlari» kitobida ham bunga oid ibratli voqealar bor. Ulardan 7 tasini tanladim. Keling, ularni bugungi sinf misolida birga ko'rib chiqamiz.",
+      "**Birinchisi: shogirdingizni o'z farzandingizdek ko'ring.**",
+      "O'z bolangizga dars tushuntirayotganingizni tasavvur qiling. U tushunmasa, achchiqlanasizmi yoki yana bir yo'l izlaysizmi? Sinfdagi har bir bola ham kimningdir farzandi. Ota-onasi uni sizga ishonib topshirgan.",
+      "«Ilm olish sirlari»da bir voqea bor. Buyuk olim Sadrul Ajall o'z o'g'illariga dars vaqtini kunning eng issiq paytiga qo'ygan ekan. O'g'illari «Bu vaqtda charchab qolamiz», deyishganda, u shunday javob bergan: «Mana bu musofirlar ham ulug' insonlarning farzandlari. Ular mendan ilm o'rganish uchun qancha mashaqqat chekib, uzoq yurtlardan kelgan. Shuning uchun avval ularga dars berishim kerak». Shu shafqatning barakasi bilan uning o'g'illari ham o'z zamonasining yetuk olimlari bo'lishgan.",
+      "Burhoniddin Marg'inoniy «Muallimning farzandi albatta olim bo'ladi», der ekan. Chunki har bir ustoz shogirdlarining olim bo'lishini orzu qiladi. Begona bolaga qilgan shafqatingiz o'z farzandingizga qaytadi.",
+      "**Ikkinchisi: niyatingizni toza tuting.**",
+      "Qadimgi olimlar ta'lim bergani uchun haq olmagan, mukofot va tashakkur ham tama qilmagan. Ajrini faqat Alloh taolodan so'ragan. Salafi solihlar hatto shogirdning hadyasini olishdan ham bosh tortgan.",
+      "Bugun ustozlar maosh oladi va bu tabiiy: ustoz ham oila boqadi. Lekin maosh bilan niyat boshqa-boshqa narsa. Faqat maosh uchun dars o'tgan ustoz maosh miqdoricha ishlaydi. Alloh roziligi uchun o'tgan ustoz esa bola tushunguncha ishlaydi.",
+      "O'quvchilarga «Ustozga rahmat ayting» degandim. Sizga esa buning teskarisini aytaman: rahmat kutmang. Aytilsa, Allohning sovg'asi. Aytilmasa, ajringiz kamaymaydi.",
+      "**Uchinchisi: shogirdingizga minnat qilmang.**",
+      "«Men senga shuncha narsa o'rgatdim» degan gap ustozning og'zidan chiqmasin. Aksincha, shogirdning ilm uchun qilgan himmatini o'zingizga qilingan yaxshilik deb biling.",
+      "Nega? Imom G'azzoliy shogirdni ekin ekish uchun yerini ijaraga bergan odamga o'xshatadi. O'ylab ko'ring: siz dehqonsiz, ilm esa urug'. Urug'ni qayerga ekasiz? Shogirdning qalbiga. U sizga qalbini, vaqtini, kuchini bermasa, urug'ingiz qopda qolib ketardi. Hosilning savobi esa sizga yoziladi. Endi ayting-chi, kim kimga yaxshilik qilyapti?",
+      "**To'rtinchisi: nasihat qilishdan charchamang.**",
+      "O'quvchilarga «Ustoz ming marta aytsa ham, birinchi martadek tinglang» degandim. Bu tanganing bir tomoni. Ikkinchi tomoni sizda: ming marta aytsangiz ham, malollanmasdan, birinchi martadek ayting. Balki aynan shu safar bola eshitar.",
+      "**Beshinchisi: do'q-po'pisa qilmang.**",
+      "Sinfda bola odobsizlik qildi deylik. Eng oson yo'l baqirish. Lekin ustoz do'q-po'pisa qilsa, haybat pardasi yirtiladi. Haybat bu ustozga bo'lgan ichki hurmat, qo'rquv emas. Baqirganingizda bolalar bir zum jim bo'ladi, lekin ichidagi hurmat yo'qoladi. Keyingi safar baqirig'ingiz ham ta'sir qilmay qo'yadi.",
+      "Shuning uchun odobsizlikni ishora yo'li va lutf bilan to'g'rilang. Gapirayotgan bolaning yoniga borib, jimgina turing. Uning ismini aytmasdan, butun sinfga murojaat qiling. Zarur bo'lsa, darsdan keyin yolg'iz chaqirib, xotirjam gaplashing. Maktabimizdagi «Muammo emas, signal» qoidasi haqida [«Oqibat bilan emas, sabab bilan kurashing»](https://www.jahongirzoxidov.uz/insho/14) inshosida yozganman: odobsizlik ortida ko'pincha boshqa sabab yotadi.",
+      "**Oltinchisi: shogirdning tushunchasiga qarab o'rgating.**",
+      "Shogirdning fahmi va aqli qancha yetsa, shuncha bering. Fahmi yetmaydigan, aqli qamrab ololmaydigan narsani o'rgatmang. «Ilm olish sirlari»da ham shunday maslahat bor: boshlovchiga dars u yodlay oladigan va ikki marta takrorlay oladigan miqdorda berilsin, manba esa kichik va yaxshi tushuntirilgan bo'lsin.",
+      "Yaxshi ustoz faqat dars bermaydi, shogirdga o'z yo'lini ham ko'rsatadi. Imom Buxoriy yoshligida Imom Muhammaddan fiqh o'qigan. Ustozi uning tabiatini ko'rib: «Siz hadis ilmini o'qing», degan. Buxoriy keyinchalik hadis ilmining peshvosi bo'ldi.",
+      "**Yettinchisi, eng muhimi: aytganingizga avval o'zingiz amal qiling.**",
+      "Rivoyat qilinishicha, Abdulloh ibn Muborakning oldiga bir bolani olib kelishibdi: «Bu bola ko'p asal yeydi. Asal yema, deb nasihat qiling». U «Bir oydan keyin keling», debdi. Bir oydan keyin kelishganda, bolaga «Asal yema», debdi. Bola «Xo'p», debdi.",
+      "Undan so'rashibdi: «Shu gapni bir oy oldin aytsangiz ham bo'lardi-ku?» U shunday javob beribdi: «O'shanda o'zim ham asal yerdim. Bir oy yemadim. Endi o'zim amal qilganim uchun aytdim. Endi u bajaradi».",
+      "Bola gapingizni emas, o'zingizni ko'radi. «Telefonni qo'yinglar» deb, o'zingiz telefonga qarab o'tirsangiz, gapingizning kuchi qolmaydi. Vaqtida kelishni talab qilib, o'zingiz kechiksangiz ham shunday.",
+      "Boshida aytganimdek, ilm olinmaydi, yuqadi. O'quvchi o'z ulushini qilsa, ilm yuqishi osonlashadi. Lekin uni yuqtiradigan siz, ustoz. Shogirdingizni farzandingizdek ko'ring, niyatingizni toza tuting, minnat qilmang, nasihatdan charchamang, baqirmang, uning tushunchasiga qarab o'rgating va avval o'zingiz amal qiling.",
+      "> **Ilm shafqatli, sabrli va aytganiga o'zi amal qiladigan ustozdan yuqadi.**",
+      "Ustozlik odobi haqida chuqurroq o'qimoqchi bo'lsangiz, Imom G'azzoliyning «Ihyou ulumid-din» kitobidagi «Ilm kitobi»ni va Imom Zarnujiyning «Ilm olish sirlari»ni o'qing.",
+      "Bu inshoni hamkasblaringizga ham yuboring. Shu 7 ta odobdan qaysi biri siz uchun eng qiyin? Izohlarda yozib qoldiring."
+    ].join(PARA)
   }
 ];
