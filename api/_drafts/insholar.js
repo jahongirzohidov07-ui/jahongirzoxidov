@@ -151,9 +151,11 @@ module.exports = [
       "Ko'rdingizmi? Siz bilan ustozingiz o'rtasida **energiya almashinuvi** bor. Siz energiya bersangiz, ustoz sizga energiya qaytaradi. Shuning uchun ustoz pul to'laydigan, lekin dars qilmaydigan o'quvchidan ko'ra pul to'lamasa ham dars qiladigan o'quvchini o'qitishni yaxshi ko'radi. Chunki ustoz dars qiladigan o'quvchidan energiya oladi.",
       "Ustozlarga atab yozgan [«Vaqtingizni emas, natijangizni soting»](https://www.jahongirzoxidov.uz/insho/13) inshomda «Bola ko'pincha fanni emas, ustozni yaxshi ko'radi» degandim. Endi sizga uning ikkinchi tomonini aytyapman: ustoz ham dars qiladigan o'quvchini yaxshi ko'radi.",
       "Xo'sh, ustozingiz sizga bor-budini berishi uchun yana nima qilish kerak? Oltita narsani aytib beraman.",
-      "Birinchisi: ustozingizga ishoning. Doktorga borib «Menga falon dorini yozib bering» demaysiz-ku? Siz tuzalishni xohlaysiz, doktor esa tuzalish uchun nima kerakligini biladi. Aytganini qilasiz va tuzalasiz.",
-      "Ustoz bilan ham xuddi shunday. Unga «Mana bu kitobdan o'ting», «Bunaqa qilib o'ting» demang. Siz qayerga borishni xohlayotganingizni bilasiz. Ustoz esa u yerga qaysi yo'ldan borish kerakligini biladi. «Ilm olish sirlari» kitobida ham ilm oluvchi bemorga o'xshatiladi: bemor o'zini tabibga qanday topshirsa, ilm oluvchi ham o'zini ustoziga shunday topshirishi kerak.",
-      "Ikkinchisi: ustozni hurmat qiling. Hurmat katta gaplarda emas, kichik ishlarda ko'rinadi.",
+      "Birinchisi: ustozingizga ishoning va o'zingizni unga topshiring.",
+      "Kasal bo'lib doktorga bordingiz deylik. Doktorga «Menga falon dorini yozib bering» demaysiz-ku? Siz faqat tuzalishni xohlaysiz. Qaysi dorini, qancha va qachon ichish kerakligini esa doktor biladi. U nima desa, shuni qilasiz: dori achchiq bo'lsa ham ichasiz, kuniga uch mahal desa, uch mahal ichasiz. Shunda tuzalasiz.",
+      "Ustoz bilan ham xuddi shunday. Siz qayerga borishni xohlayotganingizni bilasiz: masalan, IELTS'dan 7 olishni yoki imtihondan o'tishni. Ustoz esa u yerga qaysi yo'ldan borish kerakligini biladi. Shuning uchun unga «Mana bu kitobdan o'ting», «Bunaqa qilib o'ting» demang. U bergan vazifa zerikarli yoki qiyin tuyulsa ham, qiling. Doktorning achchiq dorisi kabi, ustozning har bir vazifasi bir maqsad uchun berilgan.",
+      "Bemor dorini yarmida tashlab qo'ysa, tuzalmaydi. Siz ham ustoz ko'rsatgan yo'lni yarmida tashlab, o'zingizcha boshqa yo'lga burilsangiz, manzilga yetib bormaysiz.",
+      "Ikkinchisi. «Ustozni hurmat qil» degan gapni ming marta eshitganmiz. Lekin hurmat qanday bo'ladi? U katta gaplarda emas, kichik ishlarda ko'rinadi.",
       "Masalan, ustozning joyiga o'tirmang. Bir tasavvur qiling: ustoz xonaga kirdi, siz esa uning joyida o'tiribsiz. U o'zini qanday his qiladi? To'g'ri, hurmatsizlikni his qiladi. Ko'ngli soviydi.",
       "«Ustozning o'zi taklif qilsa-chi?» deyayotgandirsiz. Joy yo'q, ustoz «Keling, mening joyimga o'tiring» desa-chi? Men bunga shunday javob beraman: tik tursam turamanki, ustozning joyiga o'tirmayman. Qaysi kalla bilan ustoz tik turadi-yu, men o'tiraman? Ustoz ming marta aytsa ham, uning hurmatidan o'tirmang.",
       "Ustozning hojatini u aytmasidan chiqaring. Ustoz sinfga kirib, doskaga qaradimi? Demak, doskani artish kerak. U aytmasidan borib artib qo'ying. Ko'ziga qarang: mel yo'qmi? Mel bering. Ustozning o'zi doska artib yurmasligi kerak. Bunday kichik ishlar ustozga «Men sizni qadrlayman» degan gapni so'zsiz aytadi.",
@@ -169,9 +171,10 @@ module.exports = [
       "Nega bu muhim? Bezovta bo'lgan ustoz chalg'iydi, gapi esidan chiqadi va mavzuni to'liq yetkazib bera olmaydi. Ruxsatsiz gapirsangiz ham shunday bo'ladi: ustozning fikri bo'linadi. Biz eng ko'p qilmaydigan odob ham aynan shu, ustozning huzurida ruxsatsiz gapirmaslik. Ikkala holatda ham zarar ko'radigan odam sizsiz: mavzuni tushunmay qolasiz.",
       "Yoki ustoz darsning yarmini «Jim o'tir», «Gap qaytarma» deyish bilan o'tkazsa-chi? Uning energiyasi dars o'tishga emas, sizni tinchlantirishga ketadi. Energiyasi tugagan ustoz sizga dars ham o'ta olmay qoladi, ko'ngli ham soviydi. Siz esa uning ilmini yuqtira olmaysiz.",
       "Oltinchisi, eng muhimi: qalbingizni pok tuting. Ikki quyonning ortidan quvgan odam ikkalasini ham ushlay olmaydi. Birinchi quyon ilm, ikkinchisi kayfu safo. Ham yomon ishlar va kayfu safoni, ham ilmni birdek olib ketaman desangiz, hech qachon maqsadingizga erisha olmaysiz.",
-      "Nega? Chunki ilm qalbning ibodati. «Ilm olish sirlari»da ham ilm oluvchi qalbini yomon xulq va yomon sifatlardan pok tutishi kerakligi aytiladi. Ilm qalbingizni poklaydi, kayfu safo esa uni kirlaydi. Ikkalasi birga bo'lmaydi.",
+      "Nega? Chunki ilm qalbning ibodati. Ibodat esa pok qalb bilan qilinadi. Ilm qalbingizni poklaydi, kayfu safo esa uni kirlaydi. Ikkalasi birga bo'lmaydi.",
       "Boshida aytganimdek, ilm olinmaydi, yuqadi. Qanchalik ko'p yuqishi esa sizga bog'liq. Vazifani qilib keling. Ustozingizga ishoning. Uni hurmat qiling, rahmat ayting, gapini birinchi martadek tinglang, fikrini bo'lmang. Qalbingizni pok tuting.",
-      "> **Siz ustozga energiya bersangiz, ustoz sizga ilm beradi.** Ilm esa ustozini hurmat qilgan va qalbini pok tutgan o'quvchiga yuqadi."
+      "> **Siz ustozga energiya bersangiz, ustoz sizga ilm beradi.** Ilm esa ustozini hurmat qilgan va qalbini pok tutgan o'quvchiga yuqadi.",
+      "Bu mavzuni yanada chuqurroq o'rganmoqchi bo'lsangiz, «Ilm olish sirlari» kitobini o'qing."
     ].join(PARA)
   }
 ];
