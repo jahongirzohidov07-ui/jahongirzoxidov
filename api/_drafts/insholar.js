@@ -168,14 +168,19 @@ module.exports = [
       "Odatda paxta qo'yish, ya'ni tilyog'lamalik yomon narsa. Lekin unga ruxsat berilgan bitta joy bor: ilm olishda, ustozga. Ustozni maqtash, unga shirin so'z aytish mumkin.",
       "O'ylab ko'ring: ustoz shuncha mehnat qilib sizni o'qityapti. U mehnatining natijasini qachon ko'radi? O'quvchilarim «Natija qilganimizda», deyishdi. To'g'ri, lekin ungacha natija ko'rinmaydi. Hech bo'lmasa iliq so'z bilan «Rahmat, ustoz, mavzuni zo'r tushuntirdingiz» deb tursangiz, boyagi 100 foiz 110 foizga aylanadi.",
       "Tushunmagan joyingiz bo'lsa ham, avval rahmat ayting, keyin so'rang: «Ustoz, zo'r tushuntirdingiz, hali hech kim bunaqa zo'r qilib o'rgatmagandi. Faqat manashu joyini ozgina anglamay qoldim. Yana sal soddaroq qilib tushuntirib bering, iltimos». Shunda ustoz bor-budini beradi.",
+      "## Ustozning fikrini bo'lmang",
+      "Ustozni bezovta qilavermang. Bezovta bo'lgan ustoz chalg'iydi, gapi esidan chiqadi va mavzuni to'liq yetkazib bera olmaydi. Bu to'g'ridan-to'g'ri sizning tushunishingizga ta'sir qiladi.",
+      "Biz eng ko'p qilmaydigan odob esa ustozning huzurida ruxsatsiz gapirmaslik. Ruxsatsiz gapirsangiz, ustozning fikri bo'linadi, u chalg'iydi. Ikkala holatda ham zarar sizga: mavzuni tushunmay qolasiz.",
       "## Ustozning energiyasini tugatmang",
-      "Endi teskari holatni ko'raylik. Ustoz darsning yarmini «Jim o'tir», «Gap qaytarma» deyish bilan o'tkazsa, uning energiyasi dars o'tishga emas, sizni tinchlantirishga ketadi. Energiyasi tugagan ustoz sizga dars ham o'ta olmay qoladi, ko'ngli ham soviydi. Siz esa uning ilmini yuqtira olmaysiz.",
+      "Ustoz darsning yarmini «Jim o'tir», «Gap qaytarma» deyish bilan o'tkazsa, uning energiyasi dars o'tishga emas, sizni tinchlantirishga ketadi. Energiyasi tugagan ustoz sizga dars ham o'ta olmay qoladi, ko'ngli ham soviydi. Siz esa uning ilmini yuqtira olmaysiz.",
+      "## Ustozlar orasida chaqimchi bo'lmang",
+      "Ustozga «Falonchi ustoz sizning aytganingizning xilofini, ya'ni teskarisini aytdi», «Falonchi ustoz bunaqa dedi-ku» demang. Birining gapini ikkinchisiga, ikkinchisining gapini birinchisiga tashib, o'rtada chaqimchi bo'lmang. Shunday qilib ikki ustozni urishtirib qo'yasiz.",
       "## Ikki quyonning ortidan quvmang",
       "«Ilm olish sirlari»da yana bir muhim gap bor:",
       "> «Ilm talab qiluvchi shaxs nafs pokligini axloqiy razolat va yomon sifatlardan yuqori qo'ymog'i lozimdir. Zotan, ilm qalbning ibodatidir».",
       "Ham yomon ishlar va kayfu safoni, ham ilmni birdek olib ketaman desangiz, hech qachon maqsadingizga erisha olmaysiz. Ikki quyonning ortidan quvsangiz, ikkalasini ham ushlay olmaysiz. Birinchi quyon ilm, ikkinchisi kayfu safo. Ikkalasi birga bo'lmaydi, chunki ilm qalbning ibodati. Ilm qalbingizni poklaydi, kayfu safo esa uni kirlaydi.",
       "## Ilm hurmatga yuqadi",
-      "Boshida aytganimdek, ilm olinmaydi, yuqadi. Ustozingiz sizga qancha ko'p bersa, shuncha ko'p yuqadi. Uning qancha berishi esa ko'p jihatdan sizga bog'liq: vazifani qilib kelasizmi, u ko'rsatgan yo'ldan borasizmi, uning joyiga o'tirmaysizmi, doskani u aytmasidan artasizmi, «Rahmat, ustoz» deysizmi.",
+      "Boshida aytganimdek, ilm olinmaydi, yuqadi. Ustozingiz sizga qancha ko'p bersa, shuncha ko'p yuqadi. Uning qancha berishi esa ko'p jihatdan sizga bog'liq: vazifani qilib kelasizmi, u ko'rsatgan yo'ldan borasizmi, uning joyiga o'tirmaysizmi, doskani u aytmasidan artasizmi, ruxsatsiz gapirmaysizmi, «Rahmat, ustoz» deysizmi.",
       "> **Siz ustozga energiya bersangiz, ustoz sizga ilm beradi.** Ilm esa ustozini hurmat qilgan va qalbini pok tutgan o'quvchiga yuqadi."
     ].join(PARA)
   }
